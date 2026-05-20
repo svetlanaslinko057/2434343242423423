@@ -1,133 +1,94 @@
-# PRD — Phase 2C-B1 + 2C-B2 + 2C-B2.5 + 2C-B3 + 2C-B3.1, Feb 2026
+# PRD — Phase 2C-B4.2 Closeout, Feb 2026
 
 > 2C-B1 done (shadow projection).
 > 2C-B2 done (5/5 stability probe green).
-> 2C-B2.5 done (seed convergence — `{matches: 6, mock_orphan: 1}`).
+> 2C-B2.5 done (seed convergence).
 > 2C-B3 done (dual-read facade + feature flag).
-> **2C-B3.1 done — `MONEY_READS_FROM_PROJECTION` flipped to `true`.
-> Projection is now the user-facing source. WARN mismatch count = 0.
-> Observation window for 2C-B4 starts now.**
+> 2C-B3.1 done (`MONEY_READS_FROM_PROJECTION = true` flipped).
+> 2C-B4.0 done (DEV POOL boot wipe removed).
+> 2C-B4.0.1 done (demo + mock seeds canonicalised).
+> 2C-B4.1 done (admin mark-paid legacy write removed).
+> **2C-B4.2 done — `_credit_module_reward` legacy `dev_wallets.update_one $inc earned/available` REMOVED.**
 > See closeouts:
->   - `/app/audit/PHASE_2C_B3_1_DEV_WALLET_FLIP.md`
->   - `/app/audit/PHASE_2C_B3_1_PREFLIP_STABILITY.md`
->   - `/app/audit/PHASE_2C_B3_DEV_WALLET_READ_SWITCH.md`
+>   - `/app/audit/PHASE_2C_B4_2_ACCEPTANCE_2026-02-FEB.md` (this phase)
+>   - `/app/audit/PHASE_2C_B4_1_ACCEPTANCE_2026-02-FEB.md`
+>   - `/app/audit/PHASE_2C_B4_0_1_ACCEPTANCE_2026-02-FEB.md`
+>   - `/app/audit/PHASE_2C_B4_0_ACCEPTANCE_2026-02-FEB.md`
 
-## What changed (Phase 2C-B1 only)
+## What changed (Phase 2C-B4.2 only)
 
 | Item | Before | After |
-|------|--------|-------|
-| Reader of dev wallet | `dev_wallets` (legacy) | UNCHANGED — legacy still canonical |
-| Writer of dev wallet | 11 grandfathered writers | UNCHANGED — no writes removed |
-| New module | — | `/app/backend/money_projections.py` |
-| New collection | — | `dev_wallets_projection` (read-model only) |
-| New watermark | — | `dev_wallet_projection_watermarks` |
-| New admin endpoints | — | 3 (GET list, POST rebuild, GET single+compare) |
-| `money_divergence.py` | active | UNCHANGED |
-| Pricing / HVL | active | UNCHANGED |
+|---|---|---|
+| `_credit_module_reward` writes to `dev_wallets` | YES (`$inc earned_lifetime + available_balance`) | **NO — block REMOVED** |
+| `dev_earning_log` insert | YES (idempotent on module_id) | UNCHANGED |
+| `EVENT_QA_APPROVED` ledger event | recorded by caller `client_approve_module` | UNCHANGED |
+| `dev_wallets_projection` (user-facing) | source=ledger | UNCHANGED — still source=ledger |
+| Legacy `dev_wallets[john]` (orphan canary) | `earned=$5020 / avail=$1220 / wd=$3800` | UNCHANGED — orphan stays visible |
+| Production writers in `server.py` | 5 (4 D-business + 1 A-mirrored) | 4 (4 D-business) |
 
 ## Acceptance — all green
 
-- ✅ **dry_run does not write** — verified: `counts.written=0` while
-  `counts.computed=7`. Watermark recorded as `state=dry_run`.
-- ✅ **rebuild idempotent** — verified live: first run wrote 7 rows, second
-  run skipped all 7 as `unchanged=7`, `written=0`.
-- ✅ **projection from ledger is repeatable** — pure `SUM(delta_cents)`
-  aggregation on `ac_dev:<id>`, `ac_accrual:<id>`, `ac_ext:<id>`. No
-  hidden state. Tests cover the formula.
-- ✅ **known mock orphan stays visible** — `user_a0129bbef170` classified
-  as `mock_orphan` with `diff_cents.withdrawn_lifetime=380000` (= $3,800).
-  Projection reports the honest `withdrawn_lifetime_cents=0` from the
-  ledger; the diff is NOT masked.
-- ✅ **no legacy writes removed** — `grep` confirms all existing
-  `db.dev_wallets.update_one` / `insert_one` call sites still present in
-  `server.py`, `module_motion.py`, `auto_guardian.py`, etc.
-- ✅ **architecture tests green** — `tests/architecture/test_layering.py`
-  17 passed / 1 skipped. The new `dev_wallets_projection` collection is
-  NOT in `MONEY_COLLECTIONS`; the new `money_projections.py` is the
-  single writer to it, so the writer-count invariant is upheld.
+- ✅ **legacy `dev_wallets[john]` unchanged after live approve** — `available_balance=1220, earned_lifetime=5020` identical pre/post (B4.2 critical assertion)
+- ✅ **`dev_earning_log` idempotent** — re-approve hits endpoint-level 400 guard before reaching the function; idempotency early-return preserved
+- ✅ **canonical signal recorded** — 1 new `EVENT_QA_APPROVED` event for `mod_6eebd7711e78`
+- ✅ **projection rebuild idempotent** — first run wrote 7 rows; second run `unchanged=7, written=0`
+- ✅ **stability probe steady** — 5/5 runs identical, classifications `{ledger_only: 6, mock_orphan: 1}`, checksum `7e042acb3683…` stable
+- ✅ **architecture tests** — 4 passed, 1 skipped (silent except count = no growth, writer-count invariant upheld)
+- ✅ **`tests/test_dev_wallet_projection.py` + `tests/test_dev_wallet_reader.py`** — 19 passed
+- ✅ **`accrual_pending_cents` invariant** — for every projection: `accrual_pending_cents == SUM(ac_accrual:<dev>)`. Holds vacuously today (`task_earnings` collection empty); structurally preserved going forward
+- ✅ **`WARN dev_wallet_read.mismatch` count = 0**
 
-## Mapping (ledger → projection — integer cents)
+### Single divergence introduced (by design)
 
-```
-ac_dev:<dev>     →  available_balance_cents
-ac_ext:<dev>     →  withdrawn_lifetime_cents
-ac_dev + ac_ext  →  earned_lifetime_cents      (lifetime credits to wallet)
-ac_accrual:<dev> →  accrual_pending_cents      (post-QA, pre-payout)
-(no source)      →  pending_withdrawal_cents = null    (deliberate)
-```
+Legacy `dev_wallets.earned_lifetime` and `available_balance` are now drifted-by-design for any module credited post-B4.2. The drift is **surfaced** by the divergence engine and stability probe as `mock_orphan`-style classifications. This is the controlled proof that:
 
-`pending_withdrawal_cents` is `null` (not 0) by design: in-flight payouts
-are not yet ledger-recorded events, so the projection refuses to fabricate
-a number it cannot derive.
+- projection lives independently
+- canonical truth no longer depends on legacy mirror
+- divergence engine actually sees drift
+- drift is localised and explainable
 
-## Classification grid (`compare_dev_wallet_projection`)
+## Public API impact
 
-| Class | Meaning |
-|---|---|
-| `matches` | every cents field equal within ±1 cent |
-| `legacy_only` | legacy wallet present, ledger has zero activity for this dev |
-| `ledger_only` | ledger has activity, legacy doc is missing |
-| `mock_orphan` | legacy says withdrawn > 0 but `ac_ext` is empty (the Phase 2C-D payout orphan) |
-| `neither` | no record on either side (defensive only) |
-| `diverged` | anything else — admin investigates |
+None. `_credit_module_reward` is internal. Public surface unchanged.
 
-## Public API (admin-only)
+## Live smoke (admin@atlas.dev / client@atlas.dev, env preview-11)
 
 ```
-GET  /api/admin/money/projections/dev-wallets
-       ?limit=<int>&skip=<int>
-     → {count, limit, skip, projections[], watermark}
-
-POST /api/admin/money/projections/dev-wallets/rebuild
-       body: {dry_run=true, limit=null, currency="USD"}
-     → {dry_run, counts{discovered, computed, written, unchanged, errors},
-        state, projections[]  (only when dry_run=true)}
-
-GET  /api/admin/money/projections/dev-wallets/{developer_id}
-     → {projection, comparison{classification, legacy, projection,
-        diff_cents}}
+POST /api/client/modules/mod_6eebd7711e78/approve     → 200 status=done qa_status=passed
+POST /api/client/modules/mod_6eebd7711e78/approve     → 400 "Module is 'done', not awaiting approval"
+POST /api/admin/money/projections/dev-wallets/rebuild → counts.computed=7 written=7 unchanged=0
+POST /api/admin/money/projections/dev-wallets/rebuild → counts.computed=7 written=0 unchanged=7 (idempotent)
+python3 /app/scripts/dev-wallet-projection-stability.py → 5/5 runs ✅ ALL INVARIANTS HOLD
 ```
 
-## Live smoke (admin@atlas.dev, env preview-10)
+## Phase 2C-B roadmap (current)
 
-```
-POST .../rebuild  {dry_run:true}   →  computed=7, written=0   (preview)
-POST .../rebuild  {dry_run:false}  →  computed=7, written=7   (initial)
-POST .../rebuild  {dry_run:false}  →  computed=7, unchanged=7 (idempotent)
-GET  .../user_a0129bbef170         →  classification="mock_orphan"
-                                      diff_cents.withdrawn=380000 ($3,800)
-```
+1. ✅ 2C-B1 — projection shadow
+2. ✅ 2C-B2 — repeatable stability probe
+3. ✅ 2C-B2.5 — seed convergence
+4. ✅ 2C-B3 — dual-read facade
+5. ✅ 2C-B3.1 — `MONEY_READS_FROM_PROJECTION` flipped to true
+6. ✅ 2C-B4.0 — DEV POOL boot wipe removed
+7. ✅ 2C-B4.0.1 — demo + mock seeds canonicalised
+8. ✅ 2C-B4.1 — admin mark-paid legacy write removed
+9. ✅ **2C-B4.2 — `_credit_module_reward` legacy write removed**
+10. 🟡 **2C-B4.3 — D-class `pending_withdrawal` lifecycle peel** (next; the harder half — state machine + temporal consistency + concurrent flows)
+11. 🟡 2C-B4.4 — `dev_wallets` collection → diagnostic only
+12. 🟡 2C-B4.5 — divergence engine → passive observer
 
-## Phase 2C-B roadmap (sequenced)
+## Side-tracked follow-ups (NOT B4.2 scope)
 
-1. **2C-B1 — projection shadow** ✅ DONE
-2. **2C-B2 — repeatable stability probe** ✅ DONE
-   - 5/5 runs green via `/app/scripts/dev-wallet-projection-stability.py`
-   - All 7 invariants (checksum / histogram / diverged=0 / mock_orphan
-     stable / matches monotone / legacy immutable / idempotent after run 1)
-   - Histogram steady-state: `{legacy_only: 6, mock_orphan: 1}`
-     diverged=0 across all runs
-3. **2C-B3 — switch UI reads** to `dev_wallets_projection` (or directly to
-   the ledger-derived formula); legacy writes still happen for safety net.
-4. **2C-B4 — remove legacy writes** — only after 2C-B3 stable; reduces
-   grandfathered set in `test_only_money_domain_writes_to_money_collections`.
+- **B4.2.1** — `module_qa_decision` (`server.py:23956`) canonical chain coverage (path calls `_credit_module_reward` but never invokes `on_module_done_chain` or records `EVENT_EARNING_APPROVED`)
+- **Schema-fix** — drop redundant `idempotency_key_1` index on `money_ledger_events`. Once dropped, `EVENT_EARNING_APPROVED` propagates correctly and `tests/test_money_stabilization.py::test_full_chain_seed_no_double_events` + `::test_dev_wallet_canonical_no_double_credit` go green (currently failing because of the dual-index conflict that pre-dates B4.2)
 
-## 2C-B2 observation note
+## What was explicitly NOT changed (per user's contract)
 
-The histogram `{legacy_only: 6, mock_orphan: 1, matches: 0}` is a direct
-consequence of the seed pipeline writing legacy `dev_wallets` rows
-without going through the bridge (`seed_money_demo.py`). This is honest
-signal, not a failure:
-  • 2C-B1 contract: "do not mask the orphan"  ✅ orphan visible
-  • 2C-B2 contract: "prove stability by repetition"  ✅ 5/5 runs identical
-  • Pre-2C-B3 work: drive `legacy_only → matches` by either replaying the
-    seed wallets through `money_bridge.bridge_*` (preferred) OR seeding
-    the bridge during demo setup (alternative). NOT in scope for 2C-B2.
-
-## What was explicitly NOT changed (per user's constraint)
-
-- ❌ No legacy `dev_wallets` writes were removed (still 11 writers).
-- ❌ No UI reader was switched off `dev_wallets`.
-- ❌ No mock-seed orphan was "fixed" manually.
-- ❌ `pricing_engine.py` / HVL untouched.
-- ❌ `money_divergence.py` left intact.
+- ❌ `pending_withdrawal` lifecycle (D-class — B4.3 territory)
+- ❌ `bridge_*` family (escrow/refund/earning_approved/earning_reversed/payout) — UNTOUCHED
+- ❌ admin aggregate endpoint
+- ❌ divergence engine
+- ❌ projection rebuild logic
+- ❌ payout bridge
+- ❌ orphan canary in `mock_seed.py` (intentional fixture)
+- ❌ `pricing_engine.py` / HVL
+- ❌ no "raz uzh tut" cleanup

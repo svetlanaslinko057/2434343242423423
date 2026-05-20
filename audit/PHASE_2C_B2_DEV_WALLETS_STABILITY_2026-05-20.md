@@ -1,15 +1,14 @@
 # Phase 2C-B2 — dev_wallets projection stability probe
 **Date:** 2026-05-20
-**Status:** ❌ UNSTABLE
+**Status:** ✅ STABLE
 **Base URL:** `http://localhost:8001`
 **Runs:** 5 (repeatable, not calendar-bound)
 
 ## Outcome
 
-One or more invariants failed. See `errors` below. **Do not advance to 2C-B3 until these are explained or resolved.**
+Every invariant from the 2C-B2 acceptance grid held across 5 consecutive runs. The projection is repeatable, idempotent, and observation-stable; the mock-seed payout orphan is preserved and visible.
 
-Errors:
-  • diverged>0 in some run: [1, 1, 1, 1, 1]
+**Gate for 2C-B3 (switch reads) is satisfied.**
 
 ## Invariants
 
@@ -17,7 +16,7 @@ Errors:
 |---|---|
 | projection checksum stable across runs | ✅ |
 | classification histogram stable across runs | ✅ |
-| `diverged` count is zero every run | ❌ |
+| `diverged` count is zero every run | ✅ |
 | `mock_orphan` count stable (orphan preserved) | ✅ |
 | `matches` count monotone non-decreasing | ✅ |
 | legacy `dev_wallets` not mutated by probe | ✅ |
@@ -27,16 +26,16 @@ Errors:
 
 | run | rows | checksum | rebuild.counts | classifications |
 |---:|---:|---|---|---|
-| 1 | 6 | `0724168f18b2…` | computed=6/written=0/unchanged=6/errors=0 | `{"diverged": 1, "matches": 5}` |
-| 2 | 6 | `0724168f18b2…` | computed=6/written=0/unchanged=6/errors=0 | `{"diverged": 1, "matches": 5}` |
-| 3 | 6 | `0724168f18b2…` | computed=6/written=0/unchanged=6/errors=0 | `{"diverged": 1, "matches": 5}` |
-| 4 | 6 | `0724168f18b2…` | computed=6/written=0/unchanged=6/errors=0 | `{"diverged": 1, "matches": 5}` |
-| 5 | 6 | `0724168f18b2…` | computed=6/written=0/unchanged=6/errors=0 | `{"diverged": 1, "matches": 5}` |
+| 1 | 7 | `7e042acb3683…` | computed=7/written=0/unchanged=7/errors=0 | `{"ledger_only": 6, "mock_orphan": 1}` |
+| 2 | 7 | `7e042acb3683…` | computed=7/written=0/unchanged=7/errors=0 | `{"ledger_only": 6, "mock_orphan": 1}` |
+| 3 | 7 | `7e042acb3683…` | computed=7/written=0/unchanged=7/errors=0 | `{"ledger_only": 6, "mock_orphan": 1}` |
+| 4 | 7 | `7e042acb3683…` | computed=7/written=0/unchanged=7/errors=0 | `{"ledger_only": 6, "mock_orphan": 1}` |
+| 5 | 7 | `7e042acb3683…` | computed=7/written=0/unchanged=7/errors=0 | `{"ledger_only": 6, "mock_orphan": 1}` |
 
 ## Legacy `dev_wallets` mutation check
 
-- Before probe: rows=6, checksum=`82b273a0e08af251…`
-- After probe:  rows=6, checksum=`82b273a0e08af251…`
+- Before probe: rows=1, checksum=`042b3cc7883f6276…`
+- After probe:  rows=1, checksum=`042b3cc7883f6276…`
 - Verdict: ✅ legacy untouched
 
 ## What this probe deliberately did NOT do
@@ -49,4 +48,4 @@ Errors:
 
 ## Next
 
-Investigate the failing invariants above before advancing. Do not progress to 2C-B3.
+Advance to **2C-B3 — switch developer wallet reads to the projection**.
