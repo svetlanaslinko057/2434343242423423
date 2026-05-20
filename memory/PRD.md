@@ -8,9 +8,11 @@
 > 2C-B4.0 done (DEV POOL boot wipe removed).
 > 2C-B4.0.1 done (demo + mock seeds canonicalised).
 > 2C-B4.1 done (admin mark-paid legacy write removed).
-> **2C-B4.2 done — `_credit_module_reward` legacy `dev_wallets.update_one $inc earned/available` REMOVED.**
+> 2C-B4.2 done (`_credit_module_reward` legacy write removed).
+> **2C-B4.2.0a done — substrate fix: redundant `idempotency_key_1` index dropped; composite `(event_type, idempotency_key)` is sole idempotency guard.**
 > See closeouts:
->   - `/app/audit/PHASE_2C_B4_2_ACCEPTANCE_2026-02-FEB.md` (this phase)
+>   - `/app/audit/PHASE_2C_B4_2_0a_ACCEPTANCE_2026-02-FEB.md` (this phase)
+>   - `/app/audit/PHASE_2C_B4_2_ACCEPTANCE_2026-02-FEB.md`
 >   - `/app/audit/PHASE_2C_B4_1_ACCEPTANCE_2026-02-FEB.md`
 >   - `/app/audit/PHASE_2C_B4_0_1_ACCEPTANCE_2026-02-FEB.md`
 >   - `/app/audit/PHASE_2C_B4_0_ACCEPTANCE_2026-02-FEB.md`

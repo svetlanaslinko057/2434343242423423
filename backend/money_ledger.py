@@ -192,8 +192,16 @@ async def list_events(
 
 async def overview(db) -> dict:
     """Aggregate the ledger for an admin dashboard. Returns counts and
-    sums per event_type."""
+    sums per event_type.
+
+    Phase 2C-B4.2.0a: filter to documents with `event_type` set. The
+    `money_ledger_events` collection is shared with the `MoneyRepository`
+    schema (which uses `kind` instead of `event_type`); without this
+    filter the aggregation returns a synthetic row keyed by `_id=null`
+    that breaks downstream string formatting in seed/admin printouts.
+    """
     pipeline = [
+        {"$match": {"event_type": {"$exists": True, "$ne": None}}},
         {
             "$group": {
                 "_id": "$event_type",

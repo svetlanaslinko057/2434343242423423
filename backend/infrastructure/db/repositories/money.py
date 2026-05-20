@@ -58,7 +58,23 @@ class MoneyRepository(BaseRepository):
         # collection. Old `money_ledger.py` indexed `event_id` (unique, NOT
         # sparse) — our new schema uses `entry_id`, so every new doc would
         # collide on `event_id=null`. We are the canonical owner now.
-        legacy_indexes = {"event_id_1", "event_type_1_idempotency_key_1"}
+        #
+        # Phase 2C-B4.2.0a (Feb 2026): also drop the simple `idempotency_key_1`
+        # index. It conflicted with `money_ledger.py`'s composite
+        # `(event_type, idempotency_key)` semantics — the legacy ledger
+        # writer is allowed to have two events sharing the same
+        # idempotency_key when their event_type differs (e.g.
+        # qa_approved + earning_approved both keyed by module_id). The
+        # composite `ledger_idempotency_unique` from `money_ledger.py` is
+        # the canonical idempotency guard for BOTH schemas — for
+        # MoneyRepository entries (no event_type) it reduces to
+        # `(null, idempotency_key)` which still rejects same-key duplicates,
+        # and for ledger events it correctly distinguishes by event_type.
+        legacy_indexes = {
+            "event_id_1",
+            "event_type_1_idempotency_key_1",
+            "idempotency_key_1",
+        }
         existing = await self._coll.index_information()
         for name in legacy_indexes:
             if name in existing:
@@ -73,7 +89,10 @@ class MoneyRepository(BaseRepository):
         # `entry_id`. A non-sparse unique index would collide on null. After
         # Phase 2B drains the legacy writer, the index can be tightened.
         await self._coll.create_index("entry_id", unique=True, sparse=True)
-        await self._coll.create_index("idempotency_key", unique=True, sparse=True)
+        # idempotency_key uniqueness is enforced by the composite
+        # `ledger_idempotency_unique` (event_type, idempotency_key) created
+        # in `money_ledger.ensure_indexes`. We do NOT create a simple unique
+        # index here — see B4.2.0a comment above.
         await self._coll.create_index([("account_id", ASCENDING), ("occurred_at", ASCENDING)])
         await self._coll.create_index("kind")
         await self._coll.create_index("project_id")
