@@ -44,6 +44,25 @@ def db():
     client.close()
 
 
+async def _ensure_money_service_wired(db_inst):
+    """Phase 2C-B4.2.1 — bring the money substrate up on the SAME asyncio
+    loop the test is using. Outside FastAPI startup the MoneyService
+    singleton is `None`, which makes every `money_bridge.bridge_escrow_*`
+    call early-return — `chain_module_approved` then records ledger
+    events but never credits `ac_dev:<dev>` / `ac_escrow:<project>` and
+    any "canonical >= legacy" invariant test trivially fails.
+
+    Idempotent: returns immediately if already initialised. Must be
+    awaited inside the test's own coroutine (the motor client is
+    bound to the loop that runs that coroutine, so the init must run
+    on the same loop)."""
+    import money_bridge as _mb
+    import money_runtime as _mr
+    if _mb.get_money_service() is None:
+        await _mb.init_money_service(db_inst)
+    _mr._db = db_inst
+
+
 def _run(coro):
     """Synchronously run an async coroutine in a fresh loop (per-test)."""
     return asyncio.new_event_loop().run_until_complete(coro)
@@ -104,6 +123,7 @@ def test_full_chain_seed_no_double_events(db):
     EXACTLY ONCE for the demo chain. Re-running the seed must NOT
     increase the count of demo-keyed events."""
     async def _go():
+        await _ensure_money_service_wired(db)
         # Run the seed twice to assert idempotency
         from seed_money_demo import main as seed_main
         await seed_main("full")
@@ -145,9 +165,17 @@ def test_dev_wallet_canonical_no_double_credit(db):
     equivalent is enforced via the projection comparison below.
     """
     async def _go():
+        await _ensure_money_service_wired(db)
         from seed_money_demo import main as seed_main
         await seed_main("full")
         await seed_main("full")  # idempotency
+
+        # Phase 2C-B4.2.1 — rebuild the projection from canonical ledger
+        # so the test reads the same source of truth that user-facing
+        # endpoints do (since 2C-B3.1 the projection is the canonical
+        # read path). The rebuild is idempotent.
+        from money_projections import rebuild_all_dev_wallet_projections
+        await rebuild_all_dev_wallet_projections(db, dry_run=False)
 
         dev_id = "demo_dev_001"
         log_entries = await db.dev_earning_log.find(

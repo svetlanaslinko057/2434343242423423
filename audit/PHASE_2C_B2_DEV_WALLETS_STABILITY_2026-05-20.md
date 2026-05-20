@@ -26,11 +26,11 @@ Every invariant from the 2C-B2 acceptance grid held across 5 consecutive runs. T
 
 | run | rows | checksum | rebuild.counts | classifications |
 |---:|---:|---|---|---|
-| 1 | 7 | `7e042acb3683…` | computed=7/written=0/unchanged=7/errors=0 | `{"ledger_only": 6, "mock_orphan": 1}` |
-| 2 | 7 | `7e042acb3683…` | computed=7/written=0/unchanged=7/errors=0 | `{"ledger_only": 6, "mock_orphan": 1}` |
-| 3 | 7 | `7e042acb3683…` | computed=7/written=0/unchanged=7/errors=0 | `{"ledger_only": 6, "mock_orphan": 1}` |
-| 4 | 7 | `7e042acb3683…` | computed=7/written=0/unchanged=7/errors=0 | `{"ledger_only": 6, "mock_orphan": 1}` |
-| 5 | 7 | `7e042acb3683…` | computed=7/written=0/unchanged=7/errors=0 | `{"ledger_only": 6, "mock_orphan": 1}` |
+| 1 | 8 | `fd82421f9121…` | computed=8/written=0/unchanged=8/errors=0 | `{"ledger_only": 7, "mock_orphan": 1}` |
+| 2 | 8 | `fd82421f9121…` | computed=8/written=0/unchanged=8/errors=0 | `{"ledger_only": 7, "mock_orphan": 1}` |
+| 3 | 8 | `fd82421f9121…` | computed=8/written=0/unchanged=8/errors=0 | `{"ledger_only": 7, "mock_orphan": 1}` |
+| 4 | 8 | `fd82421f9121…` | computed=8/written=0/unchanged=8/errors=0 | `{"ledger_only": 7, "mock_orphan": 1}` |
+| 5 | 8 | `fd82421f9121…` | computed=8/written=0/unchanged=8/errors=0 | `{"ledger_only": 7, "mock_orphan": 1}` |
 
 ## Legacy `dev_wallets` mutation check
 

@@ -9,9 +9,11 @@
 > 2C-B4.0.1 done (demo + mock seeds canonicalised).
 > 2C-B4.1 done (admin mark-paid legacy write removed).
 > 2C-B4.2 done (`_credit_module_reward` legacy write removed).
-> **2C-B4.2.0a done — substrate fix: redundant `idempotency_key_1` index dropped; composite `(event_type, idempotency_key)` is sole idempotency guard.**
+> 2C-B4.2.0a done (substrate fix: redundant `idempotency_key_1` index dropped; composite `(event_type, idempotency_key)` is sole idempotency guard).
+> **2C-B4.2.1 done — `module_qa_decision` canonical chain coverage; single source-of-truth helper `_record_module_approval_canonical` used by both approve paths.**
 > See closeouts:
->   - `/app/audit/PHASE_2C_B4_2_0a_ACCEPTANCE_2026-02-FEB.md` (this phase)
+>   - `/app/audit/PHASE_2C_B4_2_1_ACCEPTANCE_2026-02-FEB.md` (this phase)
+>   - `/app/audit/PHASE_2C_B4_2_0a_ACCEPTANCE_2026-02-FEB.md`
 >   - `/app/audit/PHASE_2C_B4_2_ACCEPTANCE_2026-02-FEB.md`
 >   - `/app/audit/PHASE_2C_B4_1_ACCEPTANCE_2026-02-FEB.md`
 >   - `/app/audit/PHASE_2C_B4_0_1_ACCEPTANCE_2026-02-FEB.md`

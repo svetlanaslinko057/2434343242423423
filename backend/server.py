@@ -11273,6 +11273,111 @@ async def _credit_module_reward(module: dict) -> Optional[dict]:
     }
 
 
+async def _record_module_approval_canonical(
+    module: dict,
+    actor_id: str,
+) -> None:
+    """Phase 2C-B4.2.1 — single canonical chain entry point for a module
+    approval. Idempotent per `(event_type, module_id)`.
+
+    This is the **single source of truth** for canonical ledger coverage
+    when a module is approved, regardless of WHICH endpoint did the
+    approval. Both `client_approve_module` and `module_qa_decision` must
+    call this helper after `_credit_module_reward` to avoid the
+    split-brain that B4.2.1 closes:
+
+      Pre-B4.2.1 split:
+        client_approve_module   → _credit_module_reward + inline canonical block  ✓
+        module_qa_decision pass → _credit_module_reward only                       ✗ (canonical missing)
+
+      Post-B4.2.1:
+        client_approve_module   → _credit_module_reward + this helper             ✓
+        module_qa_decision pass → _credit_module_reward + this helper             ✓ (canonical complete)
+
+    Writes (all idempotent on `module_id` via composite
+    `(event_type, idempotency_key)` from B4.2.0a):
+      • EVENT_QA_APPROVED      — recorded once per module
+      • EVENT_EARNING_APPROVED — recorded once per module, amount from
+                                 `dev_earning_log`. Only fires if the
+                                 earn-log row exists for this module.
+      • on_module_done_chain   — drives `bridge_escrow_release` →
+                                 `MoneyService.release_escrow` which
+                                 credits `ac_dev:<dev>` (and debits
+                                 `ac_escrow:<project>`). Idempotent per
+                                 `payout_id`.
+      • EVENT_ESCROW_RELEASED  — recorded once per `escrow_id`, only if
+                                 the chain returned `payouts`.
+
+    NEVER writes to legacy `dev_wallets`. NEVER writes to
+    `users.total_earnings`. NEVER duplicates a prior canonical entry
+    (idempotency keys are scoped to module_id / escrow_id).
+
+    If the helper is called twice for the same module (e.g. the same
+    approval is replayed, or both `client_approve_module` and a
+    subsequent admin `module_qa_decision` fire for the same module), the
+    second call is a no-op at the ledger level — `record_event` returns
+    `{duplicate: True}` and `on_module_done_chain` short-circuits on the
+    already-released escrow.
+    """
+    module_id = module.get("module_id")
+    if not module_id:
+        return
+    dev_id = module.get("assigned_to") or module.get("developer_id")
+    project_id = module.get("project_id")
+
+    try:
+        # qa_approved — once per module
+        await _money_ledger.record_event(
+            db,
+            event_type=_money_ledger.EVENT_QA_APPROVED,
+            entity_id=module_id,
+            project_id=project_id,
+            actor_id=actor_id,
+            idempotency_key=module_id,
+            payload={"approved_by": actor_id},
+        )
+        # earning_approved — link the credited reward log row.
+        if dev_id:
+            earn_log = await db.dev_earning_log.find_one(
+                {"module_id": module_id}, {"_id": 0}
+            )
+            if earn_log:
+                await _money_ledger.record_event(
+                    db,
+                    event_type=_money_ledger.EVENT_EARNING_APPROVED,
+                    entity_id=earn_log.get("log_id") or module_id,
+                    project_id=project_id,
+                    actor_id=actor_id,
+                    amount=float(earn_log.get("amount") or 0),
+                    idempotency_key=module_id,
+                    payload={
+                        "developer_id": dev_id,
+                        "module_id": module_id,
+                        "tier": earn_log.get("tier"),
+                        "rate": earn_log.get("rate"),
+                    },
+                )
+        # escrow_released — only fires if escrow is funded for this module.
+        chain = await _money_runtime.on_module_done_chain(module_id)
+        if chain.get("released") is not False and chain.get("payouts"):
+            esc = chain.get("escrow") or {}
+            await _money_ledger.record_event(
+                db,
+                event_type=_money_ledger.EVENT_ESCROW_RELEASED,
+                entity_id=esc.get("escrow_id") or module_id,
+                project_id=project_id,
+                actor_id=actor_id,
+                amount=float(chain.get("release_total") or 0),
+                idempotency_key=esc.get("escrow_id") or f"release_{module_id}",
+                payload={
+                    "module_id": module_id,
+                    "payout_count": len(chain.get("payouts") or []),
+                },
+            )
+    except Exception as e:
+        logger.error(f"money_ledger hook on module approve: {e}")
+
+
 # ============ END PHASE 5 helpers ============
 
 
@@ -23954,6 +24059,14 @@ async def module_qa_decision(
             credited_module = await db.modules.find_one({"module_id": module_id}, {"_id": 0})
             if credited_module:
                 await _credit_module_reward(credited_module)
+                # Phase 2C-B4.2.1 — close the canonical-coverage gap on the
+                # admin/QA approve path. Same helper as `client_approve_module`
+                # → single canonical spine, idempotent per (event_type,
+                # module_id). If `client_approve_module` already ran for this
+                # module, the helper is a no-op (composite idempotency keys
+                # short-circuit `record_event`; `on_module_done_chain`
+                # short-circuits on already-released escrow).
+                await _record_module_approval_canonical(credited_module, admin.user_id)
         except Exception as e:
             logger.error(f"QA PASS earning credit failed for module {module_id}: {e}")
         
@@ -24731,59 +24844,14 @@ async def client_approve_module(module_id: str, user: User = Depends(get_current
     except Exception as e:
         logger.error(f"module-approve earning credit failed: {e}")
 
-    # Этап 6.1 — canonical chain: ledger event for QA approval, earning
-    # approved, and escrow release. Each is idempotent per module_id.
-    try:
-        # qa_approved is recorded once per module
-        await _money_ledger.record_event(
-            db,
-            event_type=_money_ledger.EVENT_QA_APPROVED,
-            entity_id=module_id,
-            project_id=module.get("project_id"),
-            actor_id=user.user_id,
-            idempotency_key=module_id,
-            payload={"approved_by": user.user_id},
-        )
-        # earning_approved — link the credited reward log row.
-        if dev_id:
-            earn_log = await db.dev_earning_log.find_one(
-                {"module_id": module_id}, {"_id": 0}
-            )
-            if earn_log:
-                await _money_ledger.record_event(
-                    db,
-                    event_type=_money_ledger.EVENT_EARNING_APPROVED,
-                    entity_id=earn_log.get("log_id") or module_id,
-                    project_id=module.get("project_id"),
-                    actor_id=user.user_id,
-                    amount=float(earn_log.get("amount") or 0),
-                    idempotency_key=module_id,
-                    payload={
-                        "developer_id": dev_id,
-                        "module_id": module_id,
-                        "tier": earn_log.get("tier"),
-                        "rate": earn_log.get("rate"),
-                    },
-                )
-        # escrow_released — only fires if escrow is funded for this module.
-        chain = await _money_runtime.on_module_done_chain(module_id)
-        if chain.get("released") is not False and chain.get("payouts"):
-            esc = chain.get("escrow") or {}
-            await _money_ledger.record_event(
-                db,
-                event_type=_money_ledger.EVENT_ESCROW_RELEASED,
-                entity_id=esc.get("escrow_id") or module_id,
-                project_id=module.get("project_id"),
-                actor_id=user.user_id,
-                amount=float(chain.get("release_total") or 0),
-                idempotency_key=esc.get("escrow_id") or f"release_{module_id}",
-                payload={
-                    "module_id": module_id,
-                    "payout_count": len(chain.get("payouts") or []),
-                },
-            )
-    except Exception as e:
-        logger.error(f"money_ledger hook on module approve: {e}")
+    # Phase 2C-B4.2.1 — canonical chain: delegate to single source of truth.
+    # `_record_module_approval_canonical` writes EVENT_QA_APPROVED +
+    # EVENT_EARNING_APPROVED + drives `on_module_done_chain` (escrow
+    # release → `ac_dev:<dev>` via bridge) + records EVENT_ESCROW_RELEASED.
+    # Idempotent per (event_type, module_id). The same helper is invoked
+    # from `module_qa_decision` so both approve paths share one canonical
+    # spine (no duplicated reward logic).
+    await _record_module_approval_canonical(module, user.user_id)
 
     # Timeline — so Activity feed picks it up on next poll.
     try:
