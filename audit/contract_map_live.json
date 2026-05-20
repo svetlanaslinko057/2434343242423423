@@ -1,0 +1,4506 @@
+[
+ {
+  "method": "GET",
+  "path": "/api/auth/me",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "App.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/auth/login",
+  "http_status": 422,
+  "sources": [
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "App.js",
+   "pages/AdminLoginPage.js"
+  ],
+  "status": "OK_VALIDATION"
+ },
+ {
+  "method": "POST",
+  "path": "/api/auth/logout",
+  "http_status": 200,
+  "sources": [
+   "expo",
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "App.js",
+   "app/admin/profile.tsx"
+  ],
+  "status": "OK_PUBLIC"
+ },
+ {
+  "method": "GET",
+  "path": "/api/ai/recommendations",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "components/AIRecommendationsPanel.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/ai/recommendations/{v}/dismiss",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "components/AIRecommendationsPanel.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/ai/recommendations/{v}/accept",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "components/AIRecommendationsPanel.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/assignment-engine/{v}/candidates",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "components/AssignmentPanel.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/assignment-engine/{v}/assign",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "components/AssignmentPanel.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/assignment-engine/{v}/assign-best",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "components/AssignmentPanel.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/notifications/unread-count",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "components/NotificationBell.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/notifications",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "components/NotificationBell.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/notifications/{v}/read",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "components/NotificationBell.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/notifications/read-all",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "components/NotificationBell.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/ai/estimate-price",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 3,
+  "files": [
+   "components/AutoPricingPanel.js",
+   "pages/ClientEstimatePage.js",
+   "pages/ClientHub.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/ai/price-override",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "components/AutoPricingPanel.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/submissions",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "components/AdminReviewQueue.js",
+   "pages/AdminDashboard.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/review",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "components/AdminReviewQueue.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/profit/projects/{v}",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "components/profit/ProjectProfitDetailSheet.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/client/invoices/{v}/pay",
+  "http_status": 401,
+  "sources": [
+   "expo",
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "lib/payWithGate.js",
+   "src/pay-with-gate.ts"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/contracts/prepare",
+  "http_status": 401,
+  "sources": [
+   "expo",
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "lib/payWithGate.js",
+   "src/pay-with-gate.ts"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/developer/work-units",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 6,
+  "files": [
+   "pages/DeveloperAssignments.js",
+   "pages/DeveloperHub.js",
+   "pages/DeveloperPerformance.js",
+   "pages/DeveloperWorkPage.js",
+   "pages/DeveloperWorkUnit.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/work-units/{v}/logs",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/DeveloperWorkPage.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/work-units/{v}/submissions",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/DeveloperWorkPage.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/developer/work-units/{v}/start",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 3,
+  "files": [
+   "pages/DeveloperWorkPage.js",
+   "pages/DeveloperWorkUnit.js",
+   "pages/ExecutorBoard.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/work-units/{v}/log",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "pages/DeveloperWorkPage.js",
+   "pages/DeveloperWorkUnit.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/work-units/{v}/submit",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 3,
+  "files": [
+   "pages/DeveloperWorkPage.js",
+   "pages/DeveloperWorkUnit.js",
+   "pages/ExecutorBoard.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/auth/demo-provider",
+  "http_status": 200,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ProviderAuth.js"
+  ],
+  "status": "OK_PUBLIC"
+ },
+ {
+  "method": "GET",
+  "path": "/api/developer/intelligence/growth",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/DeveloperIntelGrowth.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/projects/{v}/war-room",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminProjectWarRoom.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/projects/{v}/workspace",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "pages/ClientProjectPage.js",
+   "pages/ClientProjectWorkspaceOS.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/client/modules/{v}/approve",
+  "http_status": 401,
+  "sources": [
+   "expo",
+   "web"
+  ],
+  "file_count": 3,
+  "files": [
+   "app/client/activity.tsx",
+   "app/workspace/[id].tsx",
+   "pages/ClientProjectWorkspaceOS.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/client/modules/{v}/reject",
+  "http_status": 404,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ClientProjectWorkspaceOS.js"
+  ],
+  "status": "MISSING"
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/mobile/workflow",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminV2Workflow.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/mobile/qa/{v}/{v}",
+  "http_status": 404,
+  "sources": [
+   "expo",
+   "web"
+  ],
+  "file_count": 3,
+  "files": [
+   "app/admin/qa.tsx",
+   "pages/AdminQAPage.js",
+   "pages/AdminV2Workflow.js"
+  ],
+  "status": "OK_DYNAMIC",
+  "note": "dynamic {action} suffix \u2014 verified exists"
+ },
+ {
+  "method": "POST",
+  "path": "/api/ai/match-template",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/NewRequest.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/ai/generate-scope",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "pages/GPTScopeBuilder.js",
+   "pages/NewRequest.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/requests",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "pages/ClientHub.js",
+   "pages/NewRequest.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/auth/quick",
+  "http_status": 422,
+  "sources": [
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "pages/BuilderAuth.js",
+   "pages/ClientAuth.js"
+  ],
+  "status": "OK_VALIDATION"
+ },
+ {
+  "method": "POST",
+  "path": "/api/auth/onboarding",
+  "http_status": 422,
+  "sources": [
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "pages/BuilderAuth.js",
+   "pages/ClientAuth.js"
+  ],
+  "status": "OK_VALIDATION"
+ },
+ {
+  "method": "GET",
+  "path": "/api/deliverables/{v}",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ClientDeliverablePage.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/deliverables/{v}/approve",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 3,
+  "files": [
+   "pages/ClientDeliverable.js",
+   "pages/ClientDeliverablePage.js",
+   "pages/ClientProjectPage.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/deliverables/{v}/reject",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 3,
+  "files": [
+   "pages/ClientDeliverable.js",
+   "pages/ClientDeliverablePage.js",
+   "pages/ClientProjectPage.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/mobile/qa",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminQAPage.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/growth/overview",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminGrowthPage.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/growth/payouts",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminGrowthPage.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/growth/payouts/{v}/approve",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminGrowthPage.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/growth/payouts/{v}/cancel",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminGrowthPage.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/referral/dashboard",
+  "http_status": 401,
+  "sources": [
+   "expo",
+   "web"
+  ],
+  "file_count": 3,
+  "files": [
+   "app/client/referrals.tsx",
+   "pages/AdminGrowthPage.js",
+   "pages/ClientReferralPage.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/requests/{v}",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "pages/ClientProjectPage.js",
+   "pages/GPTScopeBuilder.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/scopes",
+  "http_status": 404,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/GPTScopeBuilder.js"
+  ],
+  "status": "MISSING"
+ },
+ {
+  "method": "POST",
+  "path": "/api/ai/scope-to-units",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/GPTScopeBuilder.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/growth/leaderboard",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ClientLeaderboardPage.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/projects/{v}/contract",
+  "http_status": 401,
+  "sources": [
+   "expo",
+   "web"
+  ],
+  "file_count": 3,
+  "files": [
+   "app/client/contract/[id].tsx",
+   "pages/ClientContractPage.js",
+   "pages/ClientDashboardOS.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/client/contracts/{v}/sign",
+  "http_status": 401,
+  "sources": [
+   "expo",
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "app/client/contract/[id].tsx",
+   "pages/ClientContractPage.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/invoices-os",
+  "http_status": 404,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ClientBillingOS.js"
+  ],
+  "status": "MISSING"
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/messages/inbox",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminInboxPage.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/messages/thread/{v}",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminInboxPage.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/messages/thread/{v}/reply",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminInboxPage.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/contracts/my",
+  "http_status": 401,
+  "sources": [
+   "expo",
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "app/documents.tsx",
+   "pages/ClientDocumentsPage.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/contracts/{v}/evidence",
+  "http_status": 401,
+  "sources": [
+   "expo",
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "app/documents.tsx",
+   "pages/ClientDocumentsPage.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/system/users",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminSystemUsers.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/projects",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 3,
+  "files": [
+   "pages/AdminDashboard.js",
+   "pages/AdminDeliverableBuilder.js",
+   "pages/DeliverableBuilder.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/projects/{v}/completed-units",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminDeliverableBuilder.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/deliverable",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "pages/AdminDeliverableBuilder.js",
+   "pages/DeliverableBuilder.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/team/overloaded",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminV2Team.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/team/rebalance/{v}",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminV2Team.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/team/auto-rebalance",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminV2Team.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/projects/{v}",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 4,
+  "files": [
+   "pages/AdminFinancialsPage.js",
+   "pages/ClientProjectPage.js",
+   "pages/ProjectDetails.js",
+   "pages/ScopeBuilder.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/projects/{v}/scope",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ScopeBuilder.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/developers/available",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ScopeBuilder.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/projects/{v}/scope",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ScopeBuilder.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/scopes/{v}/units/bulk",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ScopeBuilder.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/scopes/{v}/units",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ScopeBuilder.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/work-units/{v}/assign",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ScopeBuilder.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/work-units/{v}/review",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ScopeBuilder.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/work-units/{v}",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ScopeBuilder.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/auth/demo",
+  "http_status": 200,
+  "sources": [
+   "web"
+  ],
+  "file_count": 3,
+  "files": [
+   "pages/AdminLoginPage.js",
+   "pages/BuilderAuthPage.js",
+   "pages/ClientAuthPage.js"
+  ],
+  "status": "OK_PUBLIC"
+ },
+ {
+  "method": "POST",
+  "path": "/api/ai/estimate",
+  "http_status": 422,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ClientEstimatePage.js"
+  ],
+  "status": "OK_VALIDATION"
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/billing/invoices/{v}/resend",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminBillingPage.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/billing/invoices/{v}/mark-paid",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminBillingPage.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/developer/marketplace/my-modules",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "pages/DeveloperMarketplace.js",
+   "pages/DeveloperWorkspace.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/modules/{v}/submit",
+  "http_status": 401,
+  "sources": [
+   "expo",
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "app/developer/work.tsx",
+   "pages/DeveloperWorkspace.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/marketplace/modules/{v}/release",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "pages/DeveloperMarketplace.js",
+   "pages/DeveloperWorkspace.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/public/capture-referral",
+  "http_status": 422,
+  "sources": [
+   "expo",
+   "web"
+  ],
+  "file_count": 3,
+  "files": [
+   "pages/BuilderAuthPage.js",
+   "pages/ClientAuthPage.js",
+   "src/referral.ts"
+  ],
+  "status": "OK_VALIDATION"
+ },
+ {
+  "method": "POST",
+  "path": "/api/referral/bind",
+  "http_status": 401,
+  "sources": [
+   "expo",
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "pages/ClientAuthPage.js",
+   "src/referral.ts"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/auth/register",
+  "http_status": 422,
+  "sources": [
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "pages/BuilderAuthPage.js",
+   "pages/ClientAuthPage.js"
+  ],
+  "status": "OK_VALIDATION"
+ },
+ {
+  "method": "POST",
+  "path": "/api/auth/google",
+  "http_status": 400,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ClientAuthPage.js"
+  ],
+  "status": "OK_VALIDATION"
+ },
+ {
+  "method": "GET",
+  "path": "/api/developer/focus",
+  "http_status": 401,
+  "sources": [
+   "expo",
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "pages/DeveloperWorkspaceV2.js",
+   "src/dev-retention-layer.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/developer/workload",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/DeveloperWorkspaceV2.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/developer/performance",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/DeveloperWorkspaceV2.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/contracts/{v}",
+  "http_status": 401,
+  "sources": [
+   "expo",
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "app/contract/[id]/sign.tsx",
+   "pages/ContractSignEvidencePage.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/legal/profile",
+  "http_status": 401,
+  "sources": [
+   "expo",
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "app/contract/[id]/sign.tsx",
+   "pages/ContractSignEvidencePage.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/contracts/{v}/sign/request-otp",
+  "http_status": 401,
+  "sources": [
+   "expo",
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "app/contract/[id]/sign.tsx",
+   "pages/ContractSignEvidencePage.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/contracts/{v}/sign/confirm",
+  "http_status": 401,
+  "sources": [
+   "expo",
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "app/contract/[id]/sign.tsx",
+   "pages/ContractSignEvidencePage.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/tester/issues",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "pages/TesterIssues.js",
+   "pages/TesterPerformance.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/contracts/{v}",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminContractsPage.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/ai/templates",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminTemplatesPage.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/ai/templates",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminTemplatesPage.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "DELETE",
+  "path": "/api/ai/templates/{v}",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminTemplatesPage.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/projects/mine",
+  "http_status": 401,
+  "sources": [
+   "expo",
+   "web"
+  ],
+  "file_count": 10,
+  "files": [
+   "app/client/billing.tsx",
+   "app/client/control.tsx",
+   "app/client/profile.tsx",
+   "app/client/projects/index.tsx",
+   "app/hub.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/projects/{v}/deliverables",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 4,
+  "files": [
+   "pages/ClientDashboard.js",
+   "pages/ClientDeliverable.js",
+   "pages/ClientProjectPage.js",
+   "pages/ProjectDetails.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "PATCH",
+  "path": "/api/requests/{v}",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ClientHub.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/audit-log",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminV2System.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/operator",
+  "http_status": 401,
+  "sources": [
+   "expo",
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "app/client/home.tsx",
+   "pages/ClientOperator.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/client/operator/{v}/action",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ClientOperator.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/users",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminDashboard.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/requests",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminDashboard.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/work-units",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 3,
+  "files": [
+   "pages/AdminDashboard.js",
+   "pages/DeliverableBuilder.js",
+   "pages/WorkUnitDetail.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/support-tickets",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminDashboard.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/scope-templates",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminDashboard.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/scope-templates",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminDashboard.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "DELETE",
+  "path": "/api/admin/scope-templates/{v}",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminDashboard.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/master/request/{v}/start-review",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "pages/AdminDashboard.js",
+   "pages/MasterAdminDashboard.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/master/request/{v}/proposal",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "pages/AdminDashboard.js",
+   "pages/MasterAdminDashboard.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/developer/tasks/awaiting-response",
+  "http_status": 401,
+  "sources": [
+   "expo",
+   "web"
+  ],
+  "file_count": 3,
+  "files": [
+   "app/developer/acceptance.tsx",
+   "app/developer/work.tsx",
+   "pages/AcceptanceQueue.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/developer/tasks/{v}/accept",
+  "http_status": 401,
+  "sources": [
+   "expo",
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "app/developer/acceptance.tsx",
+   "pages/AcceptanceQueue.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/developer/tasks/{v}/decline",
+  "http_status": 401,
+  "sources": [
+   "expo",
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "app/developer/acceptance.tsx",
+   "pages/AcceptanceQueue.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/developer/tasks/{v}/clarification",
+  "http_status": 401,
+  "sources": [
+   "expo",
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "app/developer/acceptance.tsx",
+   "pages/AcceptanceQueue.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/marketplace/modules",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/DeveloperMarketplace.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/marketplace/modules/{v}/accept",
+  "http_status": 401,
+  "sources": [
+   "expo",
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "app/developer/market.tsx",
+   "pages/DeveloperMarketplace.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/marketplace/modules/{v}/start",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/DeveloperMarketplace.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/developer/feedback",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/DeveloperIntelFeedback.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/withdrawals/{v}/{v}",
+  "http_status": 404,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminWithdrawalsPage.js"
+  ],
+  "status": "OK_DYNAMIC",
+  "note": "dynamic {action} suffix \u2014 verified exists"
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/mobile/profile",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminV2Profile.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "PATCH",
+  "path": "/api/work-units/{v}/status",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ExecutorBoard.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/mobile/home",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminV2Dashboard.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/tester/validation-tasks",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 5,
+  "files": [
+   "pages/TesterDashboard.js",
+   "pages/TesterHub.js",
+   "pages/TesterPerformance.js",
+   "pages/TesterValidation.js",
+   "pages/TesterValidationList.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/tester/validation/{v}/details",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/TesterValidation.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/tester/validation/{v}/issues",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/TesterValidation.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/validation/{v}/pass",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "pages/TesterValidation.js",
+   "pages/TesterValidationPage.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/validation/{v}/fail",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "pages/TesterValidation.js",
+   "pages/TesterValidationPage.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/validation/{v}/issue",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/TesterValidation.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/provider/profile",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ProviderInbox.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/provider/inbox",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ProviderInbox.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/provider/pressure",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ProviderInbox.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/provider/missed",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ProviderInbox.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/provider/status",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ProviderInbox.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/provider/quick-mode",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ProviderInbox.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/provider/requests/{v}/accept",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ProviderInbox.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/provider/requests/{v}/reject",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ProviderInbox.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/master/pipeline",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/MasterAdminDashboard.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/master/request/{v}",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/MasterAdminDashboard.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/master/request/{v}/reject",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/MasterAdminDashboard.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/modules/create-with-pricing",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/CreateModuleDominance.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/projects/{v}/versions",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ClientVersionsPage.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/projects",
+  "http_status": 404,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ClientVersionsPage.js"
+  ],
+  "status": "MISSING"
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/transparency",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ClientTransparency.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/billing/summary",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ClientTransparency.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/client/billing/continue",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ClientTransparency.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/client/billing/auto-charge",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ClientTransparency.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/settings/integrations",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "pages/AdminIntegrationsPage.js",
+   "pages/AdminPaymentsPage.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/payments/transactions",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminPaymentsPage.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "PUT",
+  "path": "/api/admin/settings/integrations/{v}",
+  "http_status": 404,
+  "sources": [
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "pages/AdminIntegrationsPage.js",
+   "pages/AdminPaymentsPage.js"
+  ],
+  "status": "MISSING"
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/settings/integrations/test-checkout",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminPaymentsPage.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/developers/{v}/profile",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminDeveloperProfile.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/requests",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ClientDashboard.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/support-tickets",
+  "http_status": 401,
+  "sources": [
+   "expo",
+   "web"
+  ],
+  "file_count": 3,
+  "files": [
+   "app/client/profile.tsx",
+   "pages/ClientDashboard.js",
+   "pages/ClientSupport.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/qa/overview",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminMarketplaceQuality.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/qa/providers",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminMarketplaceQuality.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/qa/issues",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminMarketplaceQuality.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/qa/flag-provider",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminMarketplaceQuality.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/qa/limit-provider",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminMarketplaceQuality.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/qa/unlimit-provider",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminMarketplaceQuality.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/projects/{v}/scope",
+  "http_status": 404,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ProjectDetails.js"
+  ],
+  "status": "MISSING"
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/projects/{v}/full",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ClientCabinet.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/client/deliverables/{v}/simulate-payment",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ClientCabinet.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/projects/{v}/work-status",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ClientProjectPage.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/requests/{v}/approve-proposal",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ClientProjectPage.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/requests/{v}/request-changes",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ClientProjectPage.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/client/deliverables/{v}/pay",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ClientProjectPage.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/team/capacity",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminTeamPanel.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/team/developers",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminTeamPanel.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/team/bottlenecks",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminTeamPanel.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/client/support-tickets",
+  "http_status": 401,
+  "sources": [
+   "expo",
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "app/client/profile.tsx",
+   "pages/ClientSupport.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/developer/growth/dashboard",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/DeveloperGrowthPage.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/developer/growth/leaderboard",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/DeveloperGrowthPage.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/developer/growth/link",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/DeveloperGrowthPage.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/developer/growth/recalculate-score",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/DeveloperGrowthPage.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/costs",
+  "http_status": 401,
+  "sources": [
+   "expo",
+   "web"
+  ],
+  "file_count": 4,
+  "files": [
+   "app/client/billing.tsx",
+   "app/client/home.tsx",
+   "app/client/profile.tsx",
+   "pages/ClientCosts.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/payouts/{v}/approve",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ClientCosts.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/modules/{v}/pause",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ClientCosts.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/requests/mine",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ClientProjects.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "DELETE",
+  "path": "/api/requests/{v}",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ClientProjects.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "DELETE",
+  "path": "/api/projects/{v}",
+  "http_status": 405,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ClientProjects.js"
+  ],
+  "status": "METHOD_MISMATCH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/settings/llm",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminIntegrationsPage.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "PUT",
+  "path": "/api/admin/settings/llm",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminIntegrationsPage.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/developer/intelligence/leaderboard",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/DeveloperIntelLeaderboard.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/users-v2",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminUsersPage.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/users-v2/{v}",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminUsersPage.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/users-v2/{v}/block",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminUsersPage.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/users-v2/{v}/unblock",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminUsersPage.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/users-v2/{v}/role",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminUsersPage.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/users-v2/{v}/logout-all",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminUsersPage.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "DELETE",
+  "path": "/api/admin/users-v2/{v}",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminUsersPage.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/dashboard",
+  "http_status": 404,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ClientDashboardOS.js"
+  ],
+  "status": "MISSING"
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/projects/{v}/trust",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ClientDashboardOS.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/projects/{v}/risks",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ClientDashboardOS.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/projects/{v}/next-steps",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ClientDashboardOS.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/projects/{v}/transparency",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ClientDashboardOS.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/projects/{v}/updates",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ClientDashboardOS.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/developer/growth/bind",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/BuilderAuthPage.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/earnings/overview",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminEarningsControl.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/earnings/approved",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminEarningsControl.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/payout/batches",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminEarningsControl.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/earnings/held",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminEarningsControl.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/earnings/flagged",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminEarningsControl.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/payout/batches",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminEarningsControl.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/payout/batches/{v}/approve",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminEarningsControl.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/payout/batches/{v}/mark-paid",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminEarningsControl.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/payout/batches/{v}",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminEarningsControl.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/mobile/finance",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminV2Finance.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/projects/{v}/financials",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminFinancialsPage.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/billing/invoices/{v}",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminFinancialsPage.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/billing/invoice",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminFinancialsPage.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/billing/invoice/{v}/mark-paid",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminFinancialsPage.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/developer/earnings/summary",
+  "http_status": 401,
+  "sources": [
+   "expo",
+   "web"
+  ],
+  "file_count": 3,
+  "files": [
+   "app/developer/earnings.tsx",
+   "pages/DeveloperEarnings.js",
+   "src/dev-retention-layer.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/developer/earnings/tasks",
+  "http_status": 401,
+  "sources": [
+   "expo",
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "app/developer/earnings.tsx",
+   "pages/DeveloperEarnings.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/developer/earnings/held",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/DeveloperEarnings.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/developer/earnings/flagged",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/DeveloperEarnings.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/developer/payout/batches",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/DeveloperEarnings.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/tester/validations",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/TesterValidationPage.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/validation/{v}/start",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/TesterValidationPage.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/developer/work-logs/{v}",
+  "http_status": 401,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/DeveloperWorkUnit.js"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/activity/live",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/activity.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/me/context",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 2,
+  "files": [
+   "app/developer/profile.tsx",
+   "app/profile.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/estimate",
+  "http_status": 200,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 4,
+  "files": [
+   "app/estimate-improve.tsx",
+   "app/hub.tsx",
+   "app/index.tsx",
+   "app/project/wizard.tsx"
+  ],
+  "status": "OK_PUBLIC"
+ },
+ {
+  "method": "GET",
+  "path": "/api/account/me",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 2,
+  "files": [
+   "app/client/account.tsx",
+   "app/settings.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/account/me/2fa/enable",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 2,
+  "files": [
+   "app/client/account.tsx",
+   "app/settings.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/account/me/2fa/disable/request",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 2,
+  "files": [
+   "app/client/account.tsx",
+   "app/settings.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/account/me/2fa/disable/confirm",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 2,
+  "files": [
+   "app/client/account.tsx",
+   "app/settings.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/projects",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 3,
+  "files": [
+   "app/estimate-result.tsx",
+   "app/hub.tsx",
+   "app/project/wizard.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/leads/intake",
+  "http_status": 422,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/estimate-result.tsx"
+  ],
+  "status": "OK_VALIDATION"
+ },
+ {
+  "method": "GET",
+  "path": "/api/global/actions",
+  "http_status": 404,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/inbox.tsx"
+  ],
+  "status": "MISSING"
+ },
+ {
+  "method": "GET",
+  "path": "/api/global/pressure",
+  "http_status": 404,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/inbox.tsx"
+  ],
+  "status": "MISSING"
+ },
+ {
+  "method": "POST",
+  "path": "/api/developer/apply",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 3,
+  "files": [
+   "app/auth.tsx",
+   "app/gateway.tsx",
+   "app/hub.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/estimate/parse-file",
+  "http_status": 422,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/index.tsx"
+  ],
+  "status": "OK_VALIDATION"
+ },
+ {
+  "method": "POST",
+  "path": "/api/chat/message",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/chat.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/client/deliverables/{v}/approve",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/chat.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/client/deliverables/{v}/reject",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/chat.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/auth/exists",
+  "http_status": 422,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/auth.tsx"
+  ],
+  "status": "OK_VALIDATION"
+ },
+ {
+  "method": "POST",
+  "path": "/api/auth/send-code",
+  "http_status": 422,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 2,
+  "files": [
+   "app/auth.tsx",
+   "src/auth-gate.tsx"
+  ],
+  "status": "OK_VALIDATION"
+ },
+ {
+  "method": "POST",
+  "path": "/api/leads/{v}/claim",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 3,
+  "files": [
+   "app/auth.tsx",
+   "app/lead/workspace.tsx",
+   "src/pending-lead-banner.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/me",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 3,
+  "files": [
+   "app/auth.tsx",
+   "app/project-booting.tsx",
+   "src/use-me.ts"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/project/{v}/workspace",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 6,
+  "files": [
+   "app/client/control.tsx",
+   "app/client/projects/[id].tsx",
+   "app/client/projects/index.tsx",
+   "app/hub.tsx",
+   "app/project-booting.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/dev/work",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 4,
+  "files": [
+   "app/developer/home.tsx",
+   "app/developer/work.tsx",
+   "app/hub.tsx",
+   "src/dev-retention-layer.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/pricing/preview",
+  "http_status": 422,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/hub.tsx"
+  ],
+  "status": "OK_VALIDATION"
+ },
+ {
+  "method": "GET",
+  "path": "/api/operator/feed",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/operator.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/operator/automation",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/operator.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/operator/execute/{v}",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 2,
+  "files": [
+   "app/operator.tsx",
+   "src/workspace-operator-hints.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/operator/auto-run",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/operator.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/client/modules/{v}/request-changes",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 2,
+  "files": [
+   "app/client/activity.tsx",
+   "app/workspace/[id].tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/owner-summary",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 2,
+  "files": [
+   "app/client/home.tsx",
+   "app/client/profile.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "PATCH",
+  "path": "/api/account/me",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 2,
+  "files": [
+   "app/client/account.tsx",
+   "src/i18n.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/account/me/avatar/signature",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/client/account.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/account/me/avatar",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/client/account.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "DELETE",
+  "path": "/api/account/me/avatar",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/client/account.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/account/me/change-email/confirm",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/client/account.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "DELETE",
+  "path": "/api/account/me/confirm",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/client/account.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/account/me/change-email/request",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/client/account.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "DELETE",
+  "path": "/api/account/me/request",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/client/account.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/account/sessions",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/client/account.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/account/sessions/revoke-others",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/client/account.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/attention",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/client/home.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/invoices",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 3,
+  "files": [
+   "app/client/billing.tsx",
+   "app/client/contract/[id].tsx",
+   "app/client/projects/[id].tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/invoices/{v}",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 2,
+  "files": [
+   "app/client/billing.tsx",
+   "app/client/contract/[id].tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/payments/wayforpay/create",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/client/billing.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/support/tickets",
+  "http_status": 404,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/client/support.tsx"
+  ],
+  "status": "MISSING"
+ },
+ {
+  "method": "POST",
+  "path": "/api/client/support/tickets",
+  "http_status": 404,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/client/support.tsx"
+  ],
+  "status": "MISSING"
+ },
+ {
+  "method": "GET",
+  "path": "/api/referral/my-link",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/client/referrals.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/projects/{v}/deliverables",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/client/projects/[id].tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/activity/full",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/client/projects/[id].tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/modules/catalog",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 2,
+  "files": [
+   "app/client/modules/catalog.tsx",
+   "app/client/projects/[id].tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/client/deliverables/{v}/{v}",
+  "http_status": 404,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/client/projects/[id].tsx"
+  ],
+  "status": "OK_DYNAMIC",
+  "note": "dynamic {action} suffix \u2014 verified exists"
+ },
+ {
+  "method": "POST",
+  "path": "/api/client/projects/{v}/modules/add",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 2,
+  "files": [
+   "app/client/modules/catalog.tsx",
+   "app/client/projects/[id].tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/billing/plans",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/client/billing/plans.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/subscription",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/client/billing/plans.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/client/subscribe",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/client/billing/plans.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/projects/{v}/payment-plan/preview",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/client/payment-plan/[id].tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/client/projects/{v}/payment-plan",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/client/payment-plan/[id].tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/operator/history",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/operator/history.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/mobile/withdrawals/{v}/approve",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/admin/finance.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/mobile/withdrawals/{v}/reject",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/admin/finance.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/mobile/payout-batches/{v}/approve",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/admin/finance.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/developer/wallet",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 2,
+  "files": [
+   "app/developer/profile.tsx",
+   "app/developer/wallet.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/developer/withdrawals",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/developer/wallet.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/developer/withdraw",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/developer/wallet.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/developer/time-logs",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/developer/time-logs.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/dev/tasks",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/developer/work.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/dev/tasks/{v}/start",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/developer/work.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/dev/tasks/{v}/complete",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/developer/work.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/marketplace/feed",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 2,
+  "files": [
+   "app/developer/market.tsx",
+   "src/dev-opportunities-pressure.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/developer/rank",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/developer/market.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/modules/{v}/bid",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/developer/market.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/activity/workspace/{v}",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/workspace/[id].tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/leads/{v}",
+  "http_status": 404,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/lead/workspace.tsx"
+  ],
+  "status": "OK_DYNAMIC",
+  "note": "dynamic {action} suffix \u2014 verified exists"
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/pending-deliverables",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/decision-hub.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/modules/{v}/team",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/module-team.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/alerts",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/alerts-sheet.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/opportunities",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/client-opportunity-feed.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/client/opportunities/{v}/accept",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/client-opportunity-feed.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/client/opportunities/{v}/dismiss",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/client-opportunity-feed.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/leads/claim",
+  "http_status": 405,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/auth-gate.tsx"
+  ],
+  "status": "METHOD_MISMATCH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/system/truth",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/system-truth.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/system/health/deep",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/system-balance.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/operator/auto-balance",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/system-balance.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/retainer-offer",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/retainer-offer.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/client/retainer/{v}/accept",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/retainer-offer.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/devices/register",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/push.ts"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/metrics/event",
+  "http_status": 404,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/metrics.ts"
+  ],
+  "status": "MISSING"
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/system-actions",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/system-actions-feed.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/auto-actions/{v}/revert",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/system-actions-feed.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/modules/{v}/reopen-bidding",
+  "http_status": 404,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/stuck-module-actions.tsx"
+  ],
+  "status": "MISSING"
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/modules/{v}/boost",
+  "http_status": 404,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/stuck-module-actions.tsx"
+  ],
+  "status": "MISSING"
+ },
+ {
+  "method": "GET",
+  "path": "/api/modules/{v}/recommended-developers",
+  "http_status": 404,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/recommended-developers.tsx"
+  ],
+  "status": "MISSING"
+ },
+ {
+  "method": "POST",
+  "path": "/api/modules/{v}/invite-developers",
+  "http_status": 404,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/recommended-developers.tsx"
+  ],
+  "status": "MISSING"
+ },
+ {
+  "method": "GET",
+  "path": "/api/developer/recommended-modules",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/dev-recommended-modules.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/notifications",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/magic-client-pull.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/recommendations",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/magic-client-pull.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/modules/{v}/assign",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/magic-client-pull.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/notifications/my",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/notification-poller.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/notifications/mark-read",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/notification-poller.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/revenue-timeline",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/revenue-timeline.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/mobile/auth/me",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/auth.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "POST",
+  "path": "/api/mobile/auth/login",
+  "http_status": 422,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/auth.tsx"
+  ],
+  "status": "OK_VALIDATION"
+ },
+ {
+  "method": "POST",
+  "path": "/api/mobile/auth/register",
+  "http_status": 422,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/auth.tsx"
+  ],
+  "status": "OK_VALIDATION"
+ },
+ {
+  "method": "POST",
+  "path": "/api/auth/verify-code",
+  "http_status": 422,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/auth.tsx"
+  ],
+  "status": "OK_VALIDATION"
+ },
+ {
+  "method": "POST",
+  "path": "/api/mobile/auth/demo",
+  "http_status": 200,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/auth.tsx"
+  ],
+  "status": "OK_PUBLIC"
+ },
+ {
+  "method": "POST",
+  "path": "/api/mobile/auth/google",
+  "http_status": 503,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/auth.tsx"
+  ],
+  "status": "SERVER_ERROR"
+ },
+ {
+  "method": "POST",
+  "path": "/api/mobile/auth/logout",
+  "http_status": 200,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/auth.tsx"
+  ],
+  "status": "OK_PUBLIC"
+ },
+ {
+  "method": "POST",
+  "path": "/api/mobile/auth/switch-role",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/auth.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/leads/by-email/pending",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/pending-lead-banner.tsx"
+  ],
+  "status": "OK_AUTH"
+ },
+ {
+  "method": "GET",
+  "path": "/api/global/status",
+  "http_status": 404,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/global-control-bar.tsx"
+  ],
+  "status": "MISSING"
+ },
+ {
+  "method": "GET",
+  "path": "/api/projects/{v}/operator-hints",
+  "http_status": 404,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/workspace-operator-hints.tsx"
+  ],
+  "status": "MISSING"
+ },
+ {
+  "method": "GET",
+  "path": "/api/developer/motivation",
+  "http_status": 401,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/dev-motivation.tsx"
+  ],
+  "status": "OK_AUTH"
+ }
+]

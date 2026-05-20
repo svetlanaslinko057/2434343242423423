@@ -1,0 +1,129 @@
+{
+  "pilot": "p3_developer_earnings",
+  "description": "Pilot #3 \u2014 developer earnings",
+  "role": "developer",
+  "url": "https://681ec133-7045-47dc-8d28-9f6ca9049c50.preview.emergentagent.com/api/web-ui/developer/earnings",
+  "nav_status": "ok",
+  "api_calls": [
+    {
+      "method": "GET",
+      "url": "/api/web-ui/developer/earnings",
+      "status": 200,
+      "request_id": "2a2c5a6436d44bc2",
+      "compat": null,
+      "canonical": null
+    },
+    {
+      "method": "GET",
+      "url": "/api/web-ui/static/css/main.84cac008.css",
+      "status": 200,
+      "request_id": "3acc058a19384a2e",
+      "compat": null,
+      "canonical": null
+    },
+    {
+      "method": "GET",
+      "url": "/api/web-ui/static/js/main.34198410.js",
+      "status": 200,
+      "request_id": "29f2470b00d64b0b",
+      "compat": null,
+      "canonical": null
+    },
+    {
+      "method": "GET",
+      "url": "/api/integrations/manifest",
+      "status": 200,
+      "request_id": "83bca623f4e34385",
+      "compat": null,
+      "canonical": null
+    },
+    {
+      "method": "GET",
+      "url": "/api/auth/me",
+      "status": 200,
+      "request_id": "5b3b453774e94153",
+      "compat": null,
+      "canonical": null
+    },
+    {
+      "method": "GET",
+      "url": "/api/web-ui/evax-logo-light.png",
+      "status": 200,
+      "request_id": "12df1725a7b74480",
+      "compat": null,
+      "canonical": null
+    },
+    {
+      "method": "GET",
+      "url": "/api/notifications/unread-count",
+      "status": 200,
+      "request_id": "a3ae15cf49c84584",
+      "compat": null,
+      "canonical": null
+    },
+    {
+      "method": "GET",
+      "url": "/api/developer/earnings/flagged",
+      "status": 200,
+      "request_id": "a10eef6d78f04b72",
+      "compat": null,
+      "canonical": null
+    },
+    {
+      "method": "GET",
+      "url": "/api/developer/earnings/held",
+      "status": 200,
+      "request_id": "85c2143a492c4453",
+      "compat": null,
+      "canonical": null
+    },
+    {
+      "method": "GET",
+      "url": "/api/developer/payout/batches",
+      "status": 200,
+      "request_id": "c76a0cbe865944ca",
+      "compat": null,
+      "canonical": null
+    },
+    {
+      "method": "GET",
+      "url": "/api/developer/earnings/summary",
+      "status": 200,
+      "request_id": "5942bfbad04d4d08",
+      "compat": null,
+      "canonical": null
+    },
+    {
+      "method": "GET",
+      "url": "/api/developer/earnings/tasks",
+      "status": 200,
+      "request_id": "50ab0d2dcdb445a4",
+      "compat": null,
+      "canonical": null
+    }
+  ],
+  "console": [
+    {
+      "type": "error",
+      "text": "WebSocket connection to 'wss://681ec133-7045-47dc-8d28-9f6ca9049c50.preview.emergentagent.com/socket.io/?EIO=4&transport=websocket' failed: Error during WebSocket handshake: Unexpected response code: 502",
+      "kind": "error"
+    },
+    {
+      "type": "log",
+      "text": "[Socket] Connection error: websocket error",
+      "kind": "error"
+    },
+    {
+      "type": "error",
+      "text": "WebSocket connection to 'wss://681ec133-7045-47dc-8d28-9f6ca9049c50.preview.emergentagent.com/socket.io/?EIO=4&transport=websocket' failed: Error during WebSocket handshake: Unexpected response code: 502",
+      "kind": "error"
+    },
+    {
+      "type": "log",
+      "text": "[Socket] Connection error: websocket error",
+      "kind": "error"
+    }
+  ],
+  "pageerrors": [],
+  "screenshot": "/app/audit/baseline/p3_developer_earnings.jpg"
+}

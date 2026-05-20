@@ -1,0 +1,39 @@
+{
+  "summary": "RETEST PASS. After main agent rebuilt the Metro bundle, all three previously-missing testIDs are now present and wired correctly in the live web preview: awaiting-deposit-sidebar, awaiting-deposit-{project_id}, deposit-card, pay-deposit-btn. End-to-end client conversion + deposit chain verified through the UI: login → /client/home shows AWAITING DEPOSIT sidebar with project row → tap row navigates to /client/projects/proj_d079feb035f2 → deposit-card with '$170 / 10% of $1,695' renders at top → pay-deposit-btn taps fire POST /api/client/projects/{id}/deposit/checkout returning 200 with mode='mock' and a stub payment_url. Auth screen state-machine (email → code/password) also verified — auth-email-input, auth-continue-btn, auth-code-input, auth-verify-btn, auth-name-input, auth-use-password, auth-back-to-code, auth-password-input, auth-submit-btn all present.",
+  "backend_issues": {
+    "critical": [],
+    "minor": []
+  },
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": [],
+    "react_native_issues": []
+  },
+  "test_report_links": [
+    "Live test screenshots: /tmp/r3_client_home.png, /tmp/r3_project.png, /tmp/r3_after_pay.png",
+    "/app/test_reports/iteration_8.json (previous iteration — cache-stale false negatives)"
+  ],
+  "action_items": [
+    "[INFO] auth-dev-code-banner is NOT rendered in the preview environment because AUTH_OTP_DEV_MODE is not set. This is intentional per /app/backend/auth_otp.py — banner only surfaces when DEV_MODE=true OR mail delivery hard-fails. For QA/test convenience, consider setting AUTH_OTP_DEV_MODE=true in the preview .env so the banner appears, or expose the latest code via an admin endpoint. Currently testers must read auth_codes collection in Mongo to retrieve the OTP.",
+    "[INFO] For existing users with a password, /auth lands directly on the password step (auth-password-input + auth-submit-btn). The review_request's 'OTP-first' description only applies to new users / users without passwords. The 'Use email code instead' link (testID auth-use-password) does provide the fallback. This is by design — flagging only so the next test agent doesn't misread it as a regression."
+  ],
+  "critical_code_review_comments": [
+    "All testIDs from the review_request are now present in source AND rendered DOM: auth-email-input, auth-continue-btn, auth-code-input, auth-verify-btn, auth-name-input, auth-use-password, auth-back-to-code, auth-password-input, auth-submit-btn, awaiting-deposit-sidebar, awaiting-deposit-{project_id}, deposit-card, pay-deposit-btn.",
+    "/client/home renders the AWAITING DEPOSIT sidebar only when /api/client/attention returns awaiting_deposit_projects.length > 0 — correct conditional render (verified: hidden for users with no awaiting deposit; visible for test_1779139462@atlas.dev who owns proj_d079feb035f2).",
+    "Pay deposit happy path is wired: POST /api/client/projects/proj_d079feb035f2/deposit/checkout → 200 {ok:true, invoice_id, payment_url, amount:169.5, currency:'USD', mode:'mock', provider:'mock-payment'} — matches the iteration_8 backend contract exactly.",
+    "Previous iteration's 'CRITICAL' findings (no signup form / no deposit-card / no sidebar) were stale-bundle artifacts. Main agent's Metro rebuild has fully fixed the rendered DOM."
+  ],
+  "updated_files": [
+    "/app/backend (Mongo): set password_hash for test_1779139462@atlas.dev to bcrypt('TestPass123!') so the UI password path could be exercised — this user was originally OTP-only because the funnel-register code path didn't set one in earlier iterations. Non-destructive test seed."
+  ],
+  "success_rate": {
+    "backend": "100% (8/8 from iteration_8, not re-run — change scope was frontend only)",
+    "frontend": "100% — all 9 UI testIDs visible, all 3 critical flows (login, sidebar→row navigation, deposit-card + pay-deposit-btn → checkout POST 200) PASS"
+  },
+  "seed_data_creation": "Re-used existing seed from iteration_8: test_1779139462@atlas.dev (user_7d1f1d594cb9) + proj_d079feb035f2 (status=awaiting_deposit, deposit_amount=169.5, final_price≈1695). Password reset to TestPass123! to allow UI login (previous tests created OTP-only accounts). No other test data created in this iteration.",
+  "retest_needed": false,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "Conversion + deposit chain is fully green end-to-end (backend AND mobile UI). To repro the UI happy path: (1) POST /api/auth/login {email:'test_1779139462@atlas.dev', password:'TestPass123!'} OR navigate to /auth?mode=login&email=test_1779139462%40atlas.dev and complete the password form (testIDs auth-password-input + auth-submit-btn). (2) GET /client/home → sidebar testID=awaiting-deposit-sidebar visible, row testID=awaiting-deposit-proj_d079feb035f2 visible. (3) Click row → /client/projects/proj_d079feb035f2 → testIDs deposit-card and pay-deposit-btn visible at top of the screen ('Deposit required to start · $170 · 10% of $1,695'). (4) Click pay-deposit-btn → fires POST /api/client/projects/proj_d079feb035f2/deposit/checkout → 200 with mode='mock', provider='mock-payment', payment_url stub.",
+  "rca_of_issue": "Iteration_8 'CRITICAL' findings about missing testIDs (deposit-card, pay-deposit-btn, awaiting-deposit-sidebar) were caused by a stale Metro bundle — the testIDs were already in /app/frontend/app/auth.tsx, /app/frontend/app/client/home.tsx and /app/frontend/app/client/projects/[id].tsx source but Expo's hashed JS bundle had not picked up the latest commits. After the main agent ran a from-scratch rebundle, the new bundle hydrates the DOM with the correct testIDs. Mitigation already applied: clear Metro cache + restart supervisor expo. Confirmed by this iteration's full-flow Playwright walk-through."
+}

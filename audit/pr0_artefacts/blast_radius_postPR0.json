@@ -1,0 +1,114 @@
+{
+  "checked_at": "2026-05-14T20:50:22.533952+00:00",
+  "decision": "1=D signed; 2-6 awaiting memo sign-off",
+  "principle": "Canonical declared (Decision 1=D) ≠ canonical executed — measure the gap here.",
+  "metrics": {
+    "M1_legacy_signal_without_wallet": {
+      "count": 0,
+      "sample": [],
+      "question": "Decision 3 — how many developers would Decision 3.A (freeze legacy) silently zero?",
+      "blocker_for": [
+        "Decision 3.A"
+      ]
+    },
+    "M2_wallet_journal_drift": {
+      "count": 0,
+      "sample": [],
+      "question": "Decision 1 — is the canonical contract already broken in live data?",
+      "blocker_for": [
+        "any reconciliation job"
+      ]
+    },
+    "M3_payouts_root_vs_journal": {
+      "count": 1,
+      "sample": [
+        {
+          "developer_id": "user_eb68aa99e062",
+          "payouts_root_sum": 3100.0,
+          "payouts_root_count": 3,
+          "dev_earning_log_sum": 5020.0,
+          "delta": -1920.0
+        }
+      ],
+      "question": "Decision 2 — how large is the work-pipeline domain vs the canonical wallet?",
+      "blocker_for": [
+        "Decision 2.A freeze",
+        "any payouts(root) reader change"
+      ]
+    },
+    "M4_escrow_releases_without_ledger": {
+      "count": 1,
+      "sample": [
+        {
+          "escrow_id": "esc_2c4e5a4a1aa9",
+          "module_id": "smoke_mod_05881ed1",
+          "released_amount": 1000.0,
+          "status": "completed"
+        }
+      ],
+      "question": "Decision 6 — how silent is the ledger on the canonical chain right now?",
+      "blocker_for": [
+        "Decision 6.A enforcement"
+      ]
+    },
+    "M5_payout_intents_never_settled": {
+      "count": 3,
+      "sample": [
+        {
+          "payout_id": "po_ed2ace5821",
+          "module_id": "mod_0a17e26b979f",
+          "developer_id": "user_eb68aa99e062",
+          "amount": 1200.0,
+          "status": "paid",
+          "created_at": "2026-05-14T16:39:43.901253+00:00"
+        },
+        {
+          "payout_id": "po_a3480df37e",
+          "module_id": "mod_c22f4ec86380",
+          "developer_id": "user_eb68aa99e062",
+          "amount": 800.0,
+          "status": "approved",
+          "created_at": "2026-05-14T16:39:43.901253+00:00"
+        },
+        {
+          "payout_id": "po_3186391ce7",
+          "module_id": "mod_3118f7e01dba",
+          "developer_id": "user_eb68aa99e062",
+          "amount": 1100.0,
+          "status": "approved",
+          "created_at": "2026-05-14T16:39:43.901253+00:00"
+        }
+      ],
+      "question": "Decision 2 / 5 — how many work-pipeline intents never reached canonical?",
+      "blocker_for": [
+        "Decision 5 ordering decision"
+      ]
+    },
+    "M6_modules_done_without_canonical_credit": {
+      "count": 0,
+      "sample": [],
+      "question": "THE Stage 7A question — declared ≠ executed at module level.",
+      "blocker_for": [
+        "Decision 5 priority",
+        "Stage 7B unsafe writer freeze"
+      ]
+    },
+    "M7_carrier_mass": {
+      "carriers": {
+        "invoices_paid_sum": 5200.0,
+        "escrows_locked_sum": 0.0,
+        "escrows_released_sum": 1000.0,
+        "dev_wallets_earned_sum": 5020.0,
+        "dev_earning_log_sum": 5020.0,
+        "escrow_payouts_sum": 1000.0,
+        "payouts_root_sum": 3100.0,
+        "users_total_earnings_sum": 0.0,
+        "money_ledger_events_count": 0
+      },
+      "question": "Cross-carrier sizing. Numbers that don't match each other = scale of the problem.",
+      "blocker_for": [
+        "any reconciliation budget estimate"
+      ]
+    }
+  }
+}

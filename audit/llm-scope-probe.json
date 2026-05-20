@@ -1,0 +1,302 @@
+{
+  "generated_at": "2026-05-18T12:16:30.502588Z",
+  "tally": {
+    "calibrated": 0,
+    "under-scoping": 0,
+    "demo-mode": 10,
+    "over-scoping": 0,
+    "?": 0
+  },
+  "rows": [
+    {
+      "archetype": "Slack clone",
+      "implementation_price": 0.0,
+      "final_price": 0.0,
+      "reality_multiplier": 1.0,
+      "hours": "?",
+      "modules": 0,
+      "llm_axes": {},
+      "reviewer_axes": {
+        "product_maturity": "production",
+        "system_coupling": "platform",
+        "unknowns": "medium",
+        "realtime_pressure": "critical",
+        "longevity": "long_term"
+      },
+      "axes_disagreements": [
+        "product_maturity: LLM=? vs reviewer=production",
+        "system_coupling: LLM=? vs reviewer=platform",
+        "unknowns: LLM=? vs reviewer=medium",
+        "realtime_pressure: LLM=? vs reviewer=critical",
+        "longevity: LLM=? vs reviewer=long_term"
+      ],
+      "verdict": "demo-mode",
+      "market_band": [
+        30000,
+        80000
+      ],
+      "latency_sec": 21.23
+    },
+    {
+      "archetype": "Linear clone",
+      "implementation_price": 0.0,
+      "final_price": 0.0,
+      "reality_multiplier": 1.0,
+      "hours": "?",
+      "modules": 0,
+      "llm_axes": {},
+      "reviewer_axes": {
+        "product_maturity": "production",
+        "system_coupling": "connected",
+        "unknowns": "medium",
+        "realtime_pressure": "collaborative",
+        "longevity": "long_term"
+      },
+      "axes_disagreements": [
+        "product_maturity: LLM=? vs reviewer=production",
+        "system_coupling: LLM=? vs reviewer=connected",
+        "unknowns: LLM=? vs reviewer=medium",
+        "realtime_pressure: LLM=? vs reviewer=collaborative",
+        "longevity: LLM=? vs reviewer=long_term"
+      ],
+      "verdict": "demo-mode",
+      "market_band": [
+        25000,
+        60000
+      ],
+      "latency_sec": 9.22
+    },
+    {
+      "archetype": "Stripe-for-X",
+      "implementation_price": 0.0,
+      "final_price": 0.0,
+      "reality_multiplier": 1.0,
+      "hours": "?",
+      "modules": 0,
+      "llm_axes": {},
+      "reviewer_axes": {
+        "product_maturity": "production",
+        "system_coupling": "platform",
+        "unknowns": "high",
+        "realtime_pressure": "async",
+        "longevity": "infrastructure"
+      },
+      "axes_disagreements": [
+        "product_maturity: LLM=? vs reviewer=production",
+        "system_coupling: LLM=? vs reviewer=platform",
+        "unknowns: LLM=? vs reviewer=high",
+        "realtime_pressure: LLM=? vs reviewer=async",
+        "longevity: LLM=? vs reviewer=infrastructure"
+      ],
+      "verdict": "demo-mode",
+      "market_band": [
+        80000,
+        200000
+      ],
+      "latency_sec": 10.44
+    },
+    {
+      "archetype": "B2B CRM",
+      "implementation_price": 0.0,
+      "final_price": 0.0,
+      "reality_multiplier": 1.0,
+      "hours": "?",
+      "modules": 0,
+      "llm_axes": {},
+      "reviewer_axes": {
+        "product_maturity": "production",
+        "system_coupling": "connected",
+        "unknowns": "medium",
+        "realtime_pressure": "async",
+        "longevity": "long_term"
+      },
+      "axes_disagreements": [
+        "product_maturity: LLM=? vs reviewer=production",
+        "system_coupling: LLM=? vs reviewer=connected",
+        "unknowns: LLM=? vs reviewer=medium",
+        "realtime_pressure: LLM=? vs reviewer=async",
+        "longevity: LLM=? vs reviewer=long_term"
+      ],
+      "verdict": "demo-mode",
+      "market_band": [
+        20000,
+        50000
+      ],
+      "latency_sec": 9.81
+    },
+    {
+      "archetype": "AI copilot",
+      "implementation_price": 0.0,
+      "final_price": 0.0,
+      "reality_multiplier": 1.0,
+      "hours": "?",
+      "modules": 0,
+      "llm_axes": {},
+      "reviewer_axes": {
+        "product_maturity": "production",
+        "system_coupling": "platform",
+        "unknowns": "high",
+        "realtime_pressure": "critical",
+        "longevity": "long_term"
+      },
+      "axes_disagreements": [
+        "product_maturity: LLM=? vs reviewer=production",
+        "system_coupling: LLM=? vs reviewer=platform",
+        "unknowns: LLM=? vs reviewer=high",
+        "realtime_pressure: LLM=? vs reviewer=critical",
+        "longevity: LLM=? vs reviewer=long_term"
+      ],
+      "verdict": "demo-mode",
+      "market_band": [
+        30000,
+        80000
+      ],
+      "latency_sec": 10.28
+    },
+    {
+      "archetype": "Infra observability",
+      "implementation_price": 0.0,
+      "final_price": 0.0,
+      "reality_multiplier": 1.0,
+      "hours": "?",
+      "modules": 0,
+      "llm_axes": {},
+      "reviewer_axes": {
+        "product_maturity": "production",
+        "system_coupling": "platform",
+        "unknowns": "high",
+        "realtime_pressure": "critical",
+        "longevity": "infrastructure"
+      },
+      "axes_disagreements": [
+        "product_maturity: LLM=? vs reviewer=production",
+        "system_coupling: LLM=? vs reviewer=platform",
+        "unknowns: LLM=? vs reviewer=high",
+        "realtime_pressure: LLM=? vs reviewer=critical",
+        "longevity: LLM=? vs reviewer=infrastructure"
+      ],
+      "verdict": "demo-mode",
+      "market_band": [
+        60000,
+        150000
+      ],
+      "latency_sec": 11.89
+    },
+    {
+      "archetype": "Marketplace",
+      "implementation_price": 0.0,
+      "final_price": 0.0,
+      "reality_multiplier": 1.0,
+      "hours": "?",
+      "modules": 0,
+      "llm_axes": {},
+      "reviewer_axes": {
+        "product_maturity": "production",
+        "system_coupling": "platform",
+        "unknowns": "medium",
+        "realtime_pressure": "async",
+        "longevity": "long_term"
+      },
+      "axes_disagreements": [
+        "product_maturity: LLM=? vs reviewer=production",
+        "system_coupling: LLM=? vs reviewer=platform",
+        "unknowns: LLM=? vs reviewer=medium",
+        "realtime_pressure: LLM=? vs reviewer=async",
+        "longevity: LLM=? vs reviewer=long_term"
+      ],
+      "verdict": "demo-mode",
+      "market_band": [
+        30000,
+        80000
+      ],
+      "latency_sec": 11.2
+    },
+    {
+      "archetype": "Realtime multiplayer",
+      "implementation_price": 0.0,
+      "final_price": 0.0,
+      "reality_multiplier": 1.0,
+      "hours": "?",
+      "modules": 0,
+      "llm_axes": {},
+      "reviewer_axes": {
+        "product_maturity": "production",
+        "system_coupling": "platform",
+        "unknowns": "high",
+        "realtime_pressure": "critical",
+        "longevity": "long_term"
+      },
+      "axes_disagreements": [
+        "product_maturity: LLM=? vs reviewer=production",
+        "system_coupling: LLM=? vs reviewer=platform",
+        "unknowns: LLM=? vs reviewer=high",
+        "realtime_pressure: LLM=? vs reviewer=critical",
+        "longevity: LLM=? vs reviewer=long_term"
+      ],
+      "verdict": "demo-mode",
+      "market_band": [
+        40000,
+        100000
+      ],
+      "latency_sec": 0.51
+    },
+    {
+      "archetype": "Banking dashboard",
+      "implementation_price": 0.0,
+      "final_price": 0.0,
+      "reality_multiplier": 1.0,
+      "hours": "?",
+      "modules": 0,
+      "llm_axes": {},
+      "reviewer_axes": {
+        "product_maturity": "production",
+        "system_coupling": "platform",
+        "unknowns": "high",
+        "realtime_pressure": "collaborative",
+        "longevity": "infrastructure"
+      },
+      "axes_disagreements": [
+        "product_maturity: LLM=? vs reviewer=production",
+        "system_coupling: LLM=? vs reviewer=platform",
+        "unknowns: LLM=? vs reviewer=high",
+        "realtime_pressure: LLM=? vs reviewer=collaborative",
+        "longevity: LLM=? vs reviewer=infrastructure"
+      ],
+      "verdict": "demo-mode",
+      "market_band": [
+        50000,
+        120000
+      ],
+      "latency_sec": 9.6
+    },
+    {
+      "archetype": "Enterprise ERP",
+      "implementation_price": 0.0,
+      "final_price": 0.0,
+      "reality_multiplier": 1.0,
+      "hours": "?",
+      "modules": 0,
+      "llm_axes": {},
+      "reviewer_axes": {
+        "product_maturity": "scaled",
+        "system_coupling": "operating_system",
+        "unknowns": "research",
+        "realtime_pressure": "collaborative",
+        "longevity": "infrastructure"
+      },
+      "axes_disagreements": [
+        "product_maturity: LLM=? vs reviewer=scaled",
+        "system_coupling: LLM=? vs reviewer=operating_system",
+        "unknowns: LLM=? vs reviewer=research",
+        "realtime_pressure: LLM=? vs reviewer=collaborative",
+        "longevity: LLM=? vs reviewer=infrastructure"
+      ],
+      "verdict": "demo-mode",
+      "market_band": [
+        200000,
+        2000000
+      ],
+      "latency_sec": 8.39
+    }
+  ]
+}

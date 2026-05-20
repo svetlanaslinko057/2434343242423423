@@ -1,0 +1,136 @@
+/* ============================================================
+ * palette.css — RAW HEX VALUES per theme.
+ *
+ * THIS FILE IS THE ONLY PLACE WHERE HEX VALUES APPEAR FOR THE
+ * CANONICAL TOKEN NAMESPACE. If a hex value is needed elsewhere,
+ * it MUST come through a semantic alias from semantic.css.
+ *
+ * Mirrors `/app/packages/design-system/tokens/palette.ts` 1:1.
+ * Both files must update together.
+ *
+ * Theme selectors (any of these activates a palette):
+ *   - `<html class="theme-dark">` or `<html class="dark">`
+ *   - `<html class="theme-light">` or `<html class="light">`
+ *   - `<html data-theme="dark|light">`
+ * ============================================================ */
+
+:root,
+.theme-dark,
+.dark,
+[data-theme="dark"] {
+  /* SUBSTRATE */
+  --t-bg:              #0F0F11;
+  --t-surface:         #16161A;
+  --t-surface-raised:  #1E1E22;
+  --t-surface-sunken:  #0A0A0C;
+
+  /* BORDER */
+  --t-border-subtle:   rgba(255,255,255,0.06);
+  --t-border-default:  rgba(255,255,255,0.10);
+  --t-border-strong:   rgba(255,255,255,0.16);
+
+  /* TEXT */
+  --t-text-primary:    #EBEAE5;
+  --t-text-secondary:  #9C9B95;
+  --t-text-muted:      #73716C;
+  --t-text-inverse:    #0F0F11;
+
+  /* SIGNAL — operational gravity */
+  --t-signal:          #8C9B90;
+  --t-signal-hover:    #A1B0A5;
+  --t-signal-active:   #7A877E;
+  --t-signal-ink:      #0F0F11;
+  --t-signal-bg-soft:  rgba(140,155,144,0.10);
+  --t-signal-bg-strong:rgba(140,155,144,0.20);
+  --t-signal-border:   rgba(140,155,144,0.32);
+
+  /* STATUS — separate semantic identities, NOT identical to signal */
+  --t-success:           #7E9684;
+  --t-success-ink:       #0F0F11;
+  --t-success-bg-soft:   rgba(126,150,132,0.10);
+  --t-success-border:    rgba(126,150,132,0.32);
+
+  --t-warning:           #C9A961;
+  --t-warning-ink:       #0F0F11;
+  --t-warning-bg-soft:   rgba(201,169,97,0.10);
+  --t-warning-border:    rgba(201,169,97,0.32);
+
+  --t-danger:            #B86A6A;
+  --t-danger-ink:        #0F0F11;
+  --t-danger-bg-soft:    rgba(184,106,106,0.10);
+  --t-danger-border:     rgba(184,106,106,0.32);
+
+  --t-info:              #788491;
+  --t-info-ink:          #0F0F11;
+  --t-info-bg-soft:      rgba(120,132,145,0.10);
+  --t-info-border:       rgba(120,132,145,0.32);
+
+  /* ELEVATION — heavy */
+  --t-shadow-sm: 0 1px 0 rgba(255,255,255,0.04), 0 4px 12px rgba(0,0,0,0.30);
+  --t-shadow-md: 0 1px 0 rgba(255,255,255,0.05), 0 8px 24px rgba(0,0,0,0.40);
+  --t-shadow-lg: 0 1px 0 rgba(255,255,255,0.06), 0 16px 36px rgba(0,0,0,0.55);
+}
+
+.theme-light,
+.light,
+[data-theme="light"] {
+  /* SUBSTRATE — warm operational paper */
+  --t-bg:              #FAF8F4;
+  --t-surface:         #FFFFFF;
+  --t-surface-raised:  #F1EEE7;
+  --t-surface-sunken:  #E9E4DA;
+
+  /* BORDER */
+  --t-border-subtle:   rgba(20,18,15,0.06);
+  --t-border-default:  rgba(20,18,15,0.10);
+  --t-border-strong:   rgba(20,18,15,0.16);
+
+  /* TEXT — warm ink */
+  --t-text-primary:    #1A1714;
+  --t-text-secondary:  #5C544D;
+  --t-text-muted:      #8C8278;
+  --t-text-inverse:    #FFFFFF;
+
+  /* SIGNAL — deep sage on paper */
+  --t-signal:          #4A6B5C;
+  --t-signal-hover:    #5C7E6E;
+  --t-signal-active:   #3B5749;
+  --t-signal-ink:      #FFFFFF;
+  --t-signal-bg-soft:  rgba(74,107,92,0.08);
+  --t-signal-bg-strong:rgba(74,107,92,0.14);
+  --t-signal-border:   rgba(74,107,92,0.28);
+
+  /* STATUS */
+  --t-success:           #3E5F4F;
+  --t-success-ink:       #FFFFFF;
+  --t-success-bg-soft:   rgba(62,95,79,0.08);
+  --t-success-border:    rgba(62,95,79,0.24);
+
+  --t-warning:           #8A6925;
+  --t-warning-ink:       #FFFFFF;
+  --t-warning-bg-soft:   rgba(138,105,37,0.08);
+  --t-warning-border:    rgba(138,105,37,0.24);
+
+  --t-danger:            #8E3E3E;
+  --t-danger-ink:        #FFFFFF;
+  --t-danger-bg-soft:    rgba(142,62,62,0.06);
+  --t-danger-border:     rgba(142,62,62,0.24);
+
+  --t-info:              #4B6074;
+  --t-info-ink:          #FFFFFF;
+  --t-info-bg-soft:      rgba(75,96,116,0.06);
+  --t-info-border:       rgba(75,96,116,0.24);
+
+  /* ELEVATION — paper-soft */
+  --t-shadow-sm: 0 1px 2px rgba(20,18,15,0.04);
+  --t-shadow-md: 0 1px 2px rgba(20,18,15,0.06), 0 1px 0 rgba(20,18,15,0.04);
+  --t-shadow-lg: 0 4px 12px rgba(20,18,15,0.08), 0 1px 0 rgba(20,18,15,0.04);
+}
+
+/* Light theme — antialiased text rendering ("paid product" feel) */
+.theme-light,
+.light,
+[data-theme="light"] {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

@@ -1,0 +1,97 @@
+{
+  "pilot": "p2_client_billing",
+  "description": "Pilot #2 \u2014 client billing OS",
+  "role": "client",
+  "url": "https://681ec133-7045-47dc-8d28-9f6ca9049c50.preview.emergentagent.com/api/web-ui/client/billing-os",
+  "nav_status": "ok",
+  "api_calls": [
+    {
+      "method": "GET",
+      "url": "/api/web-ui/client/billing-os",
+      "status": 200,
+      "request_id": "91988012783b4c11",
+      "compat": null,
+      "canonical": null
+    },
+    {
+      "method": "GET",
+      "url": "/api/web-ui/static/css/main.84cac008.css",
+      "status": 200,
+      "request_id": "39fdf5b982ee4ae7",
+      "compat": null,
+      "canonical": null
+    },
+    {
+      "method": "GET",
+      "url": "/api/web-ui/static/js/main.34198410.js",
+      "status": 200,
+      "request_id": "a9a4aa2ad7724d93",
+      "compat": null,
+      "canonical": null
+    },
+    {
+      "method": "GET",
+      "url": "/api/integrations/manifest",
+      "status": 200,
+      "request_id": "094772218fb84350",
+      "compat": null,
+      "canonical": null
+    },
+    {
+      "method": "GET",
+      "url": "/api/auth/me",
+      "status": 200,
+      "request_id": "07fa3bdc9a7c4ff6",
+      "compat": null,
+      "canonical": null
+    },
+    {
+      "method": "GET",
+      "url": "/api/web-ui/evax-logo-light.png",
+      "status": 200,
+      "request_id": "63c907a2458a40d3",
+      "compat": null,
+      "canonical": null
+    },
+    {
+      "method": "GET",
+      "url": "/api/notifications/unread-count",
+      "status": 200,
+      "request_id": "1ac3013d19bb4073",
+      "compat": null,
+      "canonical": null
+    },
+    {
+      "method": "GET",
+      "url": "/api/client/invoices",
+      "status": 200,
+      "request_id": "5bc319715b5d4fd3",
+      "compat": null,
+      "canonical": null
+    }
+  ],
+  "console": [
+    {
+      "type": "error",
+      "text": "WebSocket connection to 'wss://681ec133-7045-47dc-8d28-9f6ca9049c50.preview.emergentagent.com/socket.io/?EIO=4&transport=websocket' failed: Error during WebSocket handshake: Unexpected response code: 502",
+      "kind": "error"
+    },
+    {
+      "type": "log",
+      "text": "[Socket] Connection error: websocket error",
+      "kind": "error"
+    },
+    {
+      "type": "error",
+      "text": "WebSocket connection to 'wss://681ec133-7045-47dc-8d28-9f6ca9049c50.preview.emergentagent.com/socket.io/?EIO=4&transport=websocket' failed: Error during WebSocket handshake: Unexpected response code: 502",
+      "kind": "error"
+    },
+    {
+      "type": "log",
+      "text": "[Socket] Connection error: websocket error",
+      "kind": "error"
+    }
+  ],
+  "pageerrors": [],
+  "screenshot": "/app/audit/baseline/p2_client_billing.jpg"
+}

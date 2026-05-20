@@ -1,0 +1,521 @@
+[
+  {
+    "platform": "web",
+    "role": "admin",
+    "page": "AdminDashboard",
+    "url": "/admin/dashboard",
+    "nav": "ok",
+    "api_calls": 8,
+    "compat_hits": [],
+    "failures": []
+  },
+  {
+    "platform": "web",
+    "role": "admin",
+    "page": "AdminIntegrationsPage",
+    "url": "/admin/integrations",
+    "nav": "ok",
+    "api_calls": 8,
+    "compat_hits": [],
+    "failures": []
+  },
+  {
+    "platform": "web",
+    "role": "admin",
+    "page": "AdminContractsPage",
+    "url": "/admin/contracts",
+    "nav": "ok",
+    "api_calls": 8,
+    "compat_hits": [],
+    "failures": []
+  },
+  {
+    "platform": "web",
+    "role": "admin",
+    "page": "AdminTemplatesPage",
+    "url": "/admin/templates",
+    "nav": "ok",
+    "api_calls": 8,
+    "compat_hits": [],
+    "failures": []
+  },
+  {
+    "platform": "web",
+    "role": "admin",
+    "page": "AdminBillingPage",
+    "url": "/admin/billing",
+    "nav": "ok",
+    "api_calls": 8,
+    "compat_hits": [],
+    "failures": []
+  },
+  {
+    "platform": "web",
+    "role": "admin",
+    "page": "AdminSystemUsers",
+    "url": "/admin/system",
+    "nav": "ok",
+    "api_calls": 8,
+    "compat_hits": [],
+    "failures": []
+  },
+  {
+    "platform": "web",
+    "role": "admin",
+    "page": "AdminInboxPage",
+    "url": "/admin/inbox",
+    "nav": "ok",
+    "api_calls": 6,
+    "compat_hits": [],
+    "failures": []
+  },
+  {
+    "platform": "web",
+    "role": "admin",
+    "page": "AdminTeamPanel",
+    "url": "/admin/team",
+    "nav": "ok",
+    "api_calls": 11,
+    "compat_hits": [],
+    "failures": []
+  },
+  {
+    "platform": "web",
+    "role": "admin",
+    "page": "AdminOperatorPanel",
+    "url": "/admin/operator",
+    "nav": "ok",
+    "api_calls": 6,
+    "compat_hits": [],
+    "failures": []
+  },
+  {
+    "platform": "web",
+    "role": "admin",
+    "page": "AdminV2Dashboard",
+    "url": "/admin/v2/dashboard",
+    "nav": "ok",
+    "api_calls": 6,
+    "compat_hits": [],
+    "failures": []
+  },
+  {
+    "platform": "web",
+    "role": "admin",
+    "page": "AdminV2Workflow",
+    "url": "/admin/v2/workflow",
+    "nav": "ok",
+    "api_calls": 6,
+    "compat_hits": [],
+    "failures": []
+  },
+  {
+    "platform": "web",
+    "role": "admin",
+    "page": "AdminV2Team",
+    "url": "/admin/v2/team",
+    "nav": "ok",
+    "api_calls": 6,
+    "compat_hits": [],
+    "failures": []
+  },
+  {
+    "platform": "web",
+    "role": "admin",
+    "page": "AdminV2System",
+    "url": "/admin/v2/system",
+    "nav": "ok",
+    "api_calls": 6,
+    "compat_hits": [],
+    "failures": []
+  },
+  {
+    "platform": "web",
+    "role": "admin",
+    "page": "AdminV2Profile",
+    "url": "/admin/v2/profile",
+    "nav": "ok",
+    "api_calls": 6,
+    "compat_hits": [],
+    "failures": []
+  },
+  {
+    "platform": "web",
+    "role": "client",
+    "page": "ClientDashboard",
+    "url": "/client/dashboard",
+    "nav": "ok",
+    "api_calls": 9,
+    "compat_hits": [],
+    "failures": []
+  },
+  {
+    "platform": "web",
+    "role": "client",
+    "page": "ClientWorkspace",
+    "url": "/client/workspace",
+    "nav": "ok",
+    "api_calls": 6,
+    "compat_hits": [],
+    "failures": []
+  },
+  {
+    "platform": "web",
+    "role": "client",
+    "page": "ClientOperator",
+    "url": "/client/operator",
+    "nav": "ok",
+    "api_calls": 9,
+    "compat_hits": [],
+    "failures": []
+  },
+  {
+    "platform": "web",
+    "role": "client",
+    "page": "ClientLeaderboardPage",
+    "url": "/client/leaderboard",
+    "nav": "ok",
+    "api_calls": 8,
+    "compat_hits": [],
+    "failures": []
+  },
+  {
+    "platform": "web",
+    "role": "client",
+    "page": "ClientVersionsPage",
+    "url": "/client/versions",
+    "nav": "ok",
+    "api_calls": 6,
+    "compat_hits": [],
+    "failures": []
+  },
+  {
+    "platform": "web",
+    "role": "developer",
+    "page": "DeveloperDashboard",
+    "url": "/developer/dashboard",
+    "nav": "ok",
+    "api_calls": 8,
+    "compat_hits": [],
+    "failures": []
+  },
+  {
+    "platform": "web",
+    "role": "developer",
+    "page": "DeveloperAssignments",
+    "url": "/developer/assignments",
+    "nav": "ok",
+    "api_calls": 8,
+    "compat_hits": [],
+    "failures": []
+  },
+  {
+    "platform": "web",
+    "role": "developer",
+    "page": "DeveloperTimeControl",
+    "url": "/developer/time-control",
+    "nav": "ok",
+    "api_calls": 8,
+    "compat_hits": [],
+    "failures": []
+  },
+  {
+    "platform": "web",
+    "role": "developer",
+    "page": "DeveloperLeaderboard",
+    "url": "/developer/leaderboard",
+    "nav": "ok",
+    "api_calls": 8,
+    "compat_hits": [],
+    "failures": []
+  },
+  {
+    "platform": "web",
+    "role": "developer",
+    "page": "DeveloperIntelLeaderboard",
+    "url": "/developer/intel/leaderboard",
+    "nav": "ok",
+    "api_calls": 8,
+    "compat_hits": [],
+    "failures": []
+  },
+  {
+    "platform": "web",
+    "role": "developer",
+    "page": "DeveloperIntelFeedback",
+    "url": "/developer/intel/feedback",
+    "nav": "ok",
+    "api_calls": 8,
+    "compat_hits": [],
+    "failures": []
+  },
+  {
+    "platform": "web",
+    "role": "developer",
+    "page": "DeveloperIntelGrowth",
+    "url": "/developer/intel/growth",
+    "nav": "ok",
+    "api_calls": 8,
+    "compat_hits": [],
+    "failures": []
+  },
+  {
+    "platform": "expo",
+    "role": "client",
+    "page": "ClientHome",
+    "url": "/client/home",
+    "nav": "ok",
+    "api_calls": 18,
+    "compat_hits": [],
+    "failures": []
+  },
+  {
+    "platform": "expo",
+    "role": "client",
+    "page": "ClientBilling",
+    "url": "/client/billing",
+    "nav": "ok",
+    "api_calls": 9,
+    "compat_hits": [],
+    "failures": []
+  },
+  {
+    "platform": "expo",
+    "role": "client",
+    "page": "ClientActivity",
+    "url": "/client/activity",
+    "nav": "ok",
+    "api_calls": 7,
+    "compat_hits": [],
+    "failures": []
+  },
+  {
+    "platform": "expo",
+    "role": "client",
+    "page": "ClientAccount",
+    "url": "/client/account",
+    "nav": "ok",
+    "api_calls": 7,
+    "compat_hits": [],
+    "failures": []
+  },
+  {
+    "platform": "expo",
+    "role": "client",
+    "page": "ClientProfile",
+    "url": "/client/profile",
+    "nav": "ok",
+    "api_calls": 12,
+    "compat_hits": [],
+    "failures": []
+  },
+  {
+    "platform": "expo",
+    "role": "client",
+    "page": "ClientSupport",
+    "url": "/client/support",
+    "nav": "ok",
+    "api_calls": 7,
+    "compat_hits": [],
+    "failures": []
+  },
+  {
+    "platform": "expo",
+    "role": "client",
+    "page": "ClientReferrals",
+    "url": "/client/referrals",
+    "nav": "ok",
+    "api_calls": 8,
+    "compat_hits": [],
+    "failures": []
+  },
+  {
+    "platform": "expo",
+    "role": "client",
+    "page": "ClientControl",
+    "url": "/client/control",
+    "nav": "ok",
+    "api_calls": 10,
+    "compat_hits": [],
+    "failures": []
+  },
+  {
+    "platform": "expo",
+    "role": "developer",
+    "page": "DeveloperHomeMobile",
+    "url": "/developer/home",
+    "nav": "ok",
+    "api_calls": 16,
+    "compat_hits": [],
+    "failures": []
+  },
+  {
+    "platform": "expo",
+    "role": "developer",
+    "page": "DeveloperMarket",
+    "url": "/developer/market",
+    "nav": "ok",
+    "api_calls": 8,
+    "compat_hits": [],
+    "failures": []
+  },
+  {
+    "platform": "expo",
+    "role": "developer",
+    "page": "DeveloperWork",
+    "url": "/developer/work",
+    "nav": "ok",
+    "api_calls": 11,
+    "compat_hits": [],
+    "failures": []
+  },
+  {
+    "platform": "expo",
+    "role": "developer",
+    "page": "DeveloperEarningsMobile",
+    "url": "/developer/earnings",
+    "nav": "ok",
+    "api_calls": 8,
+    "compat_hits": [],
+    "failures": []
+  },
+  {
+    "platform": "expo",
+    "role": "developer",
+    "page": "DeveloperTimeLogs",
+    "url": "/developer/time-logs",
+    "nav": "ok",
+    "api_calls": 7,
+    "compat_hits": [],
+    "failures": []
+  },
+  {
+    "platform": "expo",
+    "role": "developer",
+    "page": "DeveloperProfileMobile",
+    "url": "/developer/profile",
+    "nav": "ok",
+    "api_calls": 8,
+    "compat_hits": [],
+    "failures": []
+  },
+  {
+    "platform": "expo",
+    "role": "admin",
+    "page": "AdminHomeMobile",
+    "url": "/admin/home",
+    "nav": "ok",
+    "api_calls": 6,
+    "compat_hits": [],
+    "failures": []
+  },
+  {
+    "platform": "expo",
+    "role": "admin",
+    "page": "AdminQAMobile",
+    "url": "/admin/qa",
+    "nav": "ok",
+    "api_calls": 6,
+    "compat_hits": [],
+    "failures": []
+  },
+  {
+    "platform": "expo",
+    "role": "admin",
+    "page": "AdminFinanceMobile",
+    "url": "/admin/finance",
+    "nav": "ok",
+    "api_calls": 6,
+    "compat_hits": [],
+    "failures": []
+  },
+  {
+    "platform": "expo",
+    "role": "admin",
+    "page": "AdminProfileMobile",
+    "url": "/admin/profile",
+    "nav": "ok",
+    "api_calls": 6,
+    "compat_hits": [],
+    "failures": []
+  },
+  {
+    "platform": "expo",
+    "role": "developer",
+    "page": "Inbox",
+    "url": "/inbox",
+    "nav": "ok",
+    "api_calls": 7,
+    "compat_hits": [],
+    "failures": []
+  },
+  {
+    "platform": "expo",
+    "role": "developer",
+    "page": "Operator",
+    "url": "/operator",
+    "nav": "ok",
+    "api_calls": 6,
+    "compat_hits": [],
+    "failures": [
+      {
+        "method": "GET",
+        "url": "/api/operator/feed",
+        "status": 403,
+        "request_id": "req_ca361100_19e0e53dff7",
+        "compat": null,
+        "canonical": null
+      }
+    ]
+  },
+  {
+    "platform": "expo",
+    "role": "client",
+    "page": "Documents",
+    "url": "/documents",
+    "nav": "ok",
+    "api_calls": 7,
+    "compat_hits": [],
+    "failures": []
+  },
+  {
+    "platform": "expo",
+    "role": "client",
+    "page": "Hub",
+    "url": "/hub",
+    "nav": "ok",
+    "api_calls": 9,
+    "compat_hits": [],
+    "failures": []
+  },
+  {
+    "platform": "expo",
+    "role": "developer",
+    "page": "ProfileGlobal",
+    "url": "/profile",
+    "nav": "ok",
+    "api_calls": 6,
+    "compat_hits": [],
+    "failures": []
+  },
+  {
+    "platform": "expo",
+    "role": "developer",
+    "page": "Settings",
+    "url": "/settings",
+    "nav": "ok",
+    "api_calls": 7,
+    "compat_hits": [],
+    "failures": []
+  },
+  {
+    "platform": "expo",
+    "role": "developer",
+    "page": "ActivityGlobal",
+    "url": "/activity",
+    "nav": "ok",
+    "api_calls": 7,
+    "compat_hits": [],
+    "failures": []
+  }
+]

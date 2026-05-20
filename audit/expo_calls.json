@@ -1,0 +1,932 @@
+[
+ {
+  "file": "app/activity.tsx",
+  "method": "GET",
+  "path": "/api/activity/live"
+ },
+ {
+  "file": "app/profile.tsx",
+  "method": "POST",
+  "path": "/api/me/context"
+ },
+ {
+  "file": "app/estimate-improve.tsx",
+  "method": "POST",
+  "path": "/api/estimate"
+ },
+ {
+  "file": "app/settings.tsx",
+  "method": "GET",
+  "path": "/api/account/me"
+ },
+ {
+  "file": "app/settings.tsx",
+  "method": "POST",
+  "path": "/api/account/me/2fa/enable"
+ },
+ {
+  "file": "app/settings.tsx",
+  "method": "POST",
+  "path": "/api/account/me/2fa/disable/request"
+ },
+ {
+  "file": "app/settings.tsx",
+  "method": "POST",
+  "path": "/api/account/me/2fa/disable/confirm"
+ },
+ {
+  "file": "app/estimate-result.tsx",
+  "method": "POST",
+  "path": "/api/projects"
+ },
+ {
+  "file": "app/estimate-result.tsx",
+  "method": "POST",
+  "path": "/api/leads/intake"
+ },
+ {
+  "file": "app/inbox.tsx",
+  "method": "GET",
+  "path": "/api/global/actions"
+ },
+ {
+  "file": "app/inbox.tsx",
+  "method": "GET",
+  "path": "/api/global/pressure"
+ },
+ {
+  "file": "app/gateway.tsx",
+  "method": "POST",
+  "path": "/api/developer/apply"
+ },
+ {
+  "file": "app/index.tsx",
+  "method": "POST",
+  "path": "/api/estimate/parse-file"
+ },
+ {
+  "file": "app/index.tsx",
+  "method": "POST",
+  "path": "/api/estimate"
+ },
+ {
+  "file": "app/chat.tsx",
+  "method": "POST",
+  "path": "/api/chat/message"
+ },
+ {
+  "file": "app/chat.tsx",
+  "method": "POST",
+  "path": "/api/client/deliverables/{v}/approve"
+ },
+ {
+  "file": "app/chat.tsx",
+  "method": "POST",
+  "path": "/api/client/deliverables/{v}/reject"
+ },
+ {
+  "file": "app/auth.tsx",
+  "method": "GET",
+  "path": "/api/auth/exists"
+ },
+ {
+  "file": "app/auth.tsx",
+  "method": "POST",
+  "path": "/api/auth/send-code"
+ },
+ {
+  "file": "app/auth.tsx",
+  "method": "POST",
+  "path": "/api/developer/apply"
+ },
+ {
+  "file": "app/auth.tsx",
+  "method": "POST",
+  "path": "/api/leads/{v}/claim"
+ },
+ {
+  "file": "app/auth.tsx",
+  "method": "GET",
+  "path": "/api/me"
+ },
+ {
+  "file": "app/project-booting.tsx",
+  "method": "GET",
+  "path": "/api/client/project/{v}/workspace"
+ },
+ {
+  "file": "app/project-booting.tsx",
+  "method": "GET",
+  "path": "/api/me"
+ },
+ {
+  "file": "app/hub.tsx",
+  "method": "GET",
+  "path": "/api/projects/mine"
+ },
+ {
+  "file": "app/hub.tsx",
+  "method": "GET",
+  "path": "/api/dev/work"
+ },
+ {
+  "file": "app/hub.tsx",
+  "method": "POST",
+  "path": "/api/pricing/preview"
+ },
+ {
+  "file": "app/hub.tsx",
+  "method": "POST",
+  "path": "/api/projects"
+ },
+ {
+  "file": "app/hub.tsx",
+  "method": "POST",
+  "path": "/api/estimate"
+ },
+ {
+  "file": "app/hub.tsx",
+  "method": "POST",
+  "path": "/api/developer/apply"
+ },
+ {
+  "file": "app/hub.tsx",
+  "method": "GET",
+  "path": "/api/client/project/{v}/workspace"
+ },
+ {
+  "file": "app/documents.tsx",
+  "method": "GET",
+  "path": "/api/contracts/my"
+ },
+ {
+  "file": "app/documents.tsx",
+  "method": "GET",
+  "path": "/api/contracts/{v}/evidence"
+ },
+ {
+  "file": "app/operator.tsx",
+  "method": "GET",
+  "path": "/api/operator/feed"
+ },
+ {
+  "file": "app/operator.tsx",
+  "method": "POST",
+  "path": "/api/operator/automation"
+ },
+ {
+  "file": "app/operator.tsx",
+  "method": "POST",
+  "path": "/api/operator/execute/{v}"
+ },
+ {
+  "file": "app/operator.tsx",
+  "method": "POST",
+  "path": "/api/operator/auto-run"
+ },
+ {
+  "file": "app/contract/[id]/sign.tsx",
+  "method": "GET",
+  "path": "/api/contracts/{v}"
+ },
+ {
+  "file": "app/contract/[id]/sign.tsx",
+  "method": "GET",
+  "path": "/api/legal/profile"
+ },
+ {
+  "file": "app/contract/[id]/sign.tsx",
+  "method": "POST",
+  "path": "/api/contracts/{v}/sign/request-otp"
+ },
+ {
+  "file": "app/contract/[id]/sign.tsx",
+  "method": "POST",
+  "path": "/api/contracts/{v}/sign/confirm"
+ },
+ {
+  "file": "app/client/activity.tsx",
+  "method": "POST",
+  "path": "/api/client/modules/{v}/approve"
+ },
+ {
+  "file": "app/client/activity.tsx",
+  "method": "POST",
+  "path": "/api/client/modules/{v}/request-changes"
+ },
+ {
+  "file": "app/client/profile.tsx",
+  "method": "GET",
+  "path": "/api/projects/mine"
+ },
+ {
+  "file": "app/client/profile.tsx",
+  "method": "GET",
+  "path": "/api/client/costs"
+ },
+ {
+  "file": "app/client/profile.tsx",
+  "method": "GET",
+  "path": "/api/client/owner-summary"
+ },
+ {
+  "file": "app/client/profile.tsx",
+  "method": "GET",
+  "path": "/api/client/support-tickets"
+ },
+ {
+  "file": "app/client/profile.tsx",
+  "method": "POST",
+  "path": "/api/client/support-tickets"
+ },
+ {
+  "file": "app/client/control.tsx",
+  "method": "GET",
+  "path": "/api/projects/mine"
+ },
+ {
+  "file": "app/client/control.tsx",
+  "method": "GET",
+  "path": "/api/client/project/{v}/workspace"
+ },
+ {
+  "file": "app/client/account.tsx",
+  "method": "GET",
+  "path": "/api/account/me"
+ },
+ {
+  "file": "app/client/account.tsx",
+  "method": "PATCH",
+  "path": "/api/account/me"
+ },
+ {
+  "file": "app/client/account.tsx",
+  "method": "GET",
+  "path": "/api/account/me/avatar/signature"
+ },
+ {
+  "file": "app/client/account.tsx",
+  "method": "POST",
+  "path": "/api/account/me/avatar"
+ },
+ {
+  "file": "app/client/account.tsx",
+  "method": "DELETE",
+  "path": "/api/account/me/avatar"
+ },
+ {
+  "file": "app/client/account.tsx",
+  "method": "POST",
+  "path": "/api/account/me/2fa/enable"
+ },
+ {
+  "file": "app/client/account.tsx",
+  "method": "POST",
+  "path": "/api/account/me/2fa/disable/request"
+ },
+ {
+  "file": "app/client/account.tsx",
+  "method": "POST",
+  "path": "/api/account/me/2fa/disable/confirm"
+ },
+ {
+  "file": "app/client/account.tsx",
+  "method": "POST",
+  "path": "/api/account/me/change-email/confirm"
+ },
+ {
+  "file": "app/client/account.tsx",
+  "method": "DELETE",
+  "path": "/api/account/me/confirm"
+ },
+ {
+  "file": "app/client/account.tsx",
+  "method": "POST",
+  "path": "/api/account/me/change-email/request"
+ },
+ {
+  "file": "app/client/account.tsx",
+  "method": "DELETE",
+  "path": "/api/account/me/request"
+ },
+ {
+  "file": "app/client/account.tsx",
+  "method": "GET",
+  "path": "/api/account/sessions"
+ },
+ {
+  "file": "app/client/account.tsx",
+  "method": "POST",
+  "path": "/api/account/sessions/revoke-others"
+ },
+ {
+  "file": "app/client/home.tsx",
+  "method": "GET",
+  "path": "/api/client/operator"
+ },
+ {
+  "file": "app/client/home.tsx",
+  "method": "GET",
+  "path": "/api/client/costs"
+ },
+ {
+  "file": "app/client/home.tsx",
+  "method": "GET",
+  "path": "/api/client/attention"
+ },
+ {
+  "file": "app/client/home.tsx",
+  "method": "GET",
+  "path": "/api/client/owner-summary"
+ },
+ {
+  "file": "app/client/billing.tsx",
+  "method": "GET",
+  "path": "/api/client/invoices"
+ },
+ {
+  "file": "app/client/billing.tsx",
+  "method": "GET",
+  "path": "/api/client/costs"
+ },
+ {
+  "file": "app/client/billing.tsx",
+  "method": "GET",
+  "path": "/api/projects/mine"
+ },
+ {
+  "file": "app/client/billing.tsx",
+  "method": "GET",
+  "path": "/api/client/invoices/{v}"
+ },
+ {
+  "file": "app/client/billing.tsx",
+  "method": "POST",
+  "path": "/api/payments/wayforpay/create"
+ },
+ {
+  "file": "app/client/support.tsx",
+  "method": "GET",
+  "path": "/api/client/support/tickets"
+ },
+ {
+  "file": "app/client/support.tsx",
+  "method": "POST",
+  "path": "/api/client/support/tickets"
+ },
+ {
+  "file": "app/client/referrals.tsx",
+  "method": "GET",
+  "path": "/api/referral/dashboard"
+ },
+ {
+  "file": "app/client/referrals.tsx",
+  "method": "GET",
+  "path": "/api/referral/my-link"
+ },
+ {
+  "file": "app/client/contract/[id].tsx",
+  "method": "GET",
+  "path": "/api/client/invoices/{v}"
+ },
+ {
+  "file": "app/client/contract/[id].tsx",
+  "method": "GET",
+  "path": "/api/client/projects/{v}/contract"
+ },
+ {
+  "file": "app/client/contract/[id].tsx",
+  "method": "GET",
+  "path": "/api/client/invoices"
+ },
+ {
+  "file": "app/client/contract/[id].tsx",
+  "method": "POST",
+  "path": "/api/client/contracts/{v}/sign"
+ },
+ {
+  "file": "app/client/projects/[id].tsx",
+  "method": "GET",
+  "path": "/api/client/project/{v}/workspace"
+ },
+ {
+  "file": "app/client/projects/[id].tsx",
+  "method": "GET",
+  "path": "/api/client/projects/{v}/deliverables"
+ },
+ {
+  "file": "app/client/projects/[id].tsx",
+  "method": "GET",
+  "path": "/api/client/activity/full"
+ },
+ {
+  "file": "app/client/projects/[id].tsx",
+  "method": "GET",
+  "path": "/api/client/invoices"
+ },
+ {
+  "file": "app/client/projects/[id].tsx",
+  "method": "GET",
+  "path": "/api/client/modules/catalog"
+ },
+ {
+  "file": "app/client/projects/[id].tsx",
+  "method": "POST",
+  "path": "/api/client/deliverables/{v}/{v}"
+ },
+ {
+  "file": "app/client/projects/[id].tsx",
+  "method": "POST",
+  "path": "/api/client/projects/{v}/modules/add"
+ },
+ {
+  "file": "app/client/projects/index.tsx",
+  "method": "GET",
+  "path": "/api/projects/mine"
+ },
+ {
+  "file": "app/client/projects/index.tsx",
+  "method": "GET",
+  "path": "/api/client/project/{v}/workspace"
+ },
+ {
+  "file": "app/client/modules/catalog.tsx",
+  "method": "GET",
+  "path": "/api/client/modules/catalog"
+ },
+ {
+  "file": "app/client/modules/catalog.tsx",
+  "method": "POST",
+  "path": "/api/client/projects/{v}/modules/add"
+ },
+ {
+  "file": "app/client/billing/plans.tsx",
+  "method": "GET",
+  "path": "/api/billing/plans"
+ },
+ {
+  "file": "app/client/billing/plans.tsx",
+  "method": "GET",
+  "path": "/api/client/subscription"
+ },
+ {
+  "file": "app/client/billing/plans.tsx",
+  "method": "POST",
+  "path": "/api/client/subscribe"
+ },
+ {
+  "file": "app/client/payment-plan/[id].tsx",
+  "method": "GET",
+  "path": "/api/client/projects/{v}/payment-plan/preview"
+ },
+ {
+  "file": "app/client/payment-plan/[id].tsx",
+  "method": "POST",
+  "path": "/api/client/projects/{v}/payment-plan"
+ },
+ {
+  "file": "app/operator/history.tsx",
+  "method": "GET",
+  "path": "/api/operator/history"
+ },
+ {
+  "file": "app/project/wizard.tsx",
+  "method": "POST",
+  "path": "/api/estimate"
+ },
+ {
+  "file": "app/project/wizard.tsx",
+  "method": "POST",
+  "path": "/api/projects"
+ },
+ {
+  "file": "app/admin/profile.tsx",
+  "method": "POST",
+  "path": "/api/auth/logout"
+ },
+ {
+  "file": "app/admin/finance.tsx",
+  "method": "POST",
+  "path": "/api/admin/mobile/withdrawals/{v}/approve"
+ },
+ {
+  "file": "app/admin/finance.tsx",
+  "method": "POST",
+  "path": "/api/admin/mobile/withdrawals/{v}/reject"
+ },
+ {
+  "file": "app/admin/finance.tsx",
+  "method": "POST",
+  "path": "/api/admin/mobile/payout-batches/{v}/approve"
+ },
+ {
+  "file": "app/admin/qa.tsx",
+  "method": "POST",
+  "path": "/api/admin/mobile/qa/{v}/{v}"
+ },
+ {
+  "file": "app/developer/profile.tsx",
+  "method": "GET",
+  "path": "/api/developer/wallet"
+ },
+ {
+  "file": "app/developer/profile.tsx",
+  "method": "POST",
+  "path": "/api/me/context"
+ },
+ {
+  "file": "app/developer/acceptance.tsx",
+  "method": "GET",
+  "path": "/api/developer/tasks/awaiting-response"
+ },
+ {
+  "file": "app/developer/acceptance.tsx",
+  "method": "POST",
+  "path": "/api/developer/tasks/{v}/accept"
+ },
+ {
+  "file": "app/developer/acceptance.tsx",
+  "method": "POST",
+  "path": "/api/developer/tasks/{v}/decline"
+ },
+ {
+  "file": "app/developer/acceptance.tsx",
+  "method": "POST",
+  "path": "/api/developer/tasks/{v}/clarification"
+ },
+ {
+  "file": "app/developer/wallet.tsx",
+  "method": "GET",
+  "path": "/api/developer/wallet"
+ },
+ {
+  "file": "app/developer/wallet.tsx",
+  "method": "GET",
+  "path": "/api/developer/withdrawals"
+ },
+ {
+  "file": "app/developer/wallet.tsx",
+  "method": "POST",
+  "path": "/api/developer/withdraw"
+ },
+ {
+  "file": "app/developer/earnings.tsx",
+  "method": "GET",
+  "path": "/api/developer/earnings/summary"
+ },
+ {
+  "file": "app/developer/earnings.tsx",
+  "method": "GET",
+  "path": "/api/developer/earnings/tasks"
+ },
+ {
+  "file": "app/developer/home.tsx",
+  "method": "GET",
+  "path": "/api/dev/work"
+ },
+ {
+  "file": "app/developer/time-logs.tsx",
+  "method": "GET",
+  "path": "/api/developer/time-logs"
+ },
+ {
+  "file": "app/developer/work.tsx",
+  "method": "GET",
+  "path": "/api/dev/work"
+ },
+ {
+  "file": "app/developer/work.tsx",
+  "method": "GET",
+  "path": "/api/developer/tasks/awaiting-response"
+ },
+ {
+  "file": "app/developer/work.tsx",
+  "method": "GET",
+  "path": "/api/dev/tasks"
+ },
+ {
+  "file": "app/developer/work.tsx",
+  "method": "POST",
+  "path": "/api/dev/tasks/{v}/start"
+ },
+ {
+  "file": "app/developer/work.tsx",
+  "method": "POST",
+  "path": "/api/dev/tasks/{v}/complete"
+ },
+ {
+  "file": "app/developer/work.tsx",
+  "method": "POST",
+  "path": "/api/modules/{v}/submit"
+ },
+ {
+  "file": "app/developer/market.tsx",
+  "method": "GET",
+  "path": "/api/marketplace/feed"
+ },
+ {
+  "file": "app/developer/market.tsx",
+  "method": "GET",
+  "path": "/api/developer/rank"
+ },
+ {
+  "file": "app/developer/market.tsx",
+  "method": "POST",
+  "path": "/api/modules/{v}/bid"
+ },
+ {
+  "file": "app/developer/market.tsx",
+  "method": "POST",
+  "path": "/api/marketplace/modules/{v}/accept"
+ },
+ {
+  "file": "app/workspace/[id].tsx",
+  "method": "GET",
+  "path": "/api/client/project/{v}/workspace"
+ },
+ {
+  "file": "app/workspace/[id].tsx",
+  "method": "GET",
+  "path": "/api/activity/workspace/{v}"
+ },
+ {
+  "file": "app/workspace/[id].tsx",
+  "method": "POST",
+  "path": "/api/client/modules/{v}/approve"
+ },
+ {
+  "file": "app/workspace/[id].tsx",
+  "method": "POST",
+  "path": "/api/client/modules/{v}/request-changes"
+ },
+ {
+  "file": "app/lead/workspace.tsx",
+  "method": "GET",
+  "path": "/api/leads/{v}"
+ },
+ {
+  "file": "app/lead/workspace.tsx",
+  "method": "POST",
+  "path": "/api/leads/{v}/claim"
+ },
+ {
+  "file": "src/decision-hub.tsx",
+  "method": "GET",
+  "path": "/api/client/pending-deliverables"
+ },
+ {
+  "file": "src/dev-opportunities-pressure.tsx",
+  "method": "GET",
+  "path": "/api/marketplace/feed"
+ },
+ {
+  "file": "src/module-team.tsx",
+  "method": "GET",
+  "path": "/api/modules/{v}/team"
+ },
+ {
+  "file": "src/alerts-sheet.tsx",
+  "method": "GET",
+  "path": "/api/client/alerts"
+ },
+ {
+  "file": "src/client-opportunity-feed.tsx",
+  "method": "GET",
+  "path": "/api/client/opportunities"
+ },
+ {
+  "file": "src/client-opportunity-feed.tsx",
+  "method": "POST",
+  "path": "/api/client/opportunities/{v}/accept"
+ },
+ {
+  "file": "src/client-opportunity-feed.tsx",
+  "method": "POST",
+  "path": "/api/client/opportunities/{v}/dismiss"
+ },
+ {
+  "file": "src/auth-gate.tsx",
+  "method": "POST",
+  "path": "/api/auth/send-code"
+ },
+ {
+  "file": "src/auth-gate.tsx",
+  "method": "POST",
+  "path": "/api/leads/claim"
+ },
+ {
+  "file": "src/system-truth.tsx",
+  "method": "GET",
+  "path": "/api/system/truth"
+ },
+ {
+  "file": "src/system-balance.tsx",
+  "method": "GET",
+  "path": "/api/system/health/deep"
+ },
+ {
+  "file": "src/system-balance.tsx",
+  "method": "POST",
+  "path": "/api/operator/auto-balance"
+ },
+ {
+  "file": "src/referral.ts",
+  "method": "POST",
+  "path": "/api/public/capture-referral"
+ },
+ {
+  "file": "src/referral.ts",
+  "method": "POST",
+  "path": "/api/referral/bind"
+ },
+ {
+  "file": "src/retainer-offer.tsx",
+  "method": "GET",
+  "path": "/api/client/retainer-offer"
+ },
+ {
+  "file": "src/retainer-offer.tsx",
+  "method": "POST",
+  "path": "/api/client/retainer/{v}/accept"
+ },
+ {
+  "file": "src/push.ts",
+  "method": "POST",
+  "path": "/api/devices/register"
+ },
+ {
+  "file": "src/metrics.ts",
+  "method": "POST",
+  "path": "/api/metrics/event"
+ },
+ {
+  "file": "src/system-actions-feed.tsx",
+  "method": "GET",
+  "path": "/api/client/system-actions"
+ },
+ {
+  "file": "src/system-actions-feed.tsx",
+  "method": "POST",
+  "path": "/api/auto-actions/{v}/revert"
+ },
+ {
+  "file": "src/stuck-module-actions.tsx",
+  "method": "POST",
+  "path": "/api/modules/{v}/reopen-bidding"
+ },
+ {
+  "file": "src/stuck-module-actions.tsx",
+  "method": "POST",
+  "path": "/api/admin/modules/{v}/boost"
+ },
+ {
+  "file": "src/recommended-developers.tsx",
+  "method": "GET",
+  "path": "/api/modules/{v}/recommended-developers"
+ },
+ {
+  "file": "src/recommended-developers.tsx",
+  "method": "POST",
+  "path": "/api/modules/{v}/invite-developers"
+ },
+ {
+  "file": "src/dev-recommended-modules.tsx",
+  "method": "GET",
+  "path": "/api/developer/recommended-modules"
+ },
+ {
+  "file": "src/magic-client-pull.tsx",
+  "method": "GET",
+  "path": "/api/client/notifications"
+ },
+ {
+  "file": "src/magic-client-pull.tsx",
+  "method": "GET",
+  "path": "/api/client/recommendations"
+ },
+ {
+  "file": "src/magic-client-pull.tsx",
+  "method": "POST",
+  "path": "/api/modules/{v}/assign"
+ },
+ {
+  "file": "src/pay-with-gate.ts",
+  "method": "POST",
+  "path": "/api/client/invoices/{v}/pay"
+ },
+ {
+  "file": "src/pay-with-gate.ts",
+  "method": "POST",
+  "path": "/api/contracts/prepare"
+ },
+ {
+  "file": "src/notification-poller.tsx",
+  "method": "GET",
+  "path": "/api/notifications/my"
+ },
+ {
+  "file": "src/notification-poller.tsx",
+  "method": "POST",
+  "path": "/api/notifications/mark-read"
+ },
+ {
+  "file": "src/revenue-timeline.tsx",
+  "method": "GET",
+  "path": "/api/client/revenue-timeline"
+ },
+ {
+  "file": "src/i18n.tsx",
+  "method": "PATCH",
+  "path": "/api/account/me"
+ },
+ {
+  "file": "src/use-me.ts",
+  "method": "GET",
+  "path": "/api/me"
+ },
+ {
+  "file": "src/dev-retention-layer.tsx",
+  "method": "GET",
+  "path": "/api/developer/earnings/summary"
+ },
+ {
+  "file": "src/dev-retention-layer.tsx",
+  "method": "GET",
+  "path": "/api/developer/focus"
+ },
+ {
+  "file": "src/dev-retention-layer.tsx",
+  "method": "GET",
+  "path": "/api/dev/work"
+ },
+ {
+  "file": "src/auth.tsx",
+  "method": "GET",
+  "path": "/api/mobile/auth/me"
+ },
+ {
+  "file": "src/auth.tsx",
+  "method": "POST",
+  "path": "/api/mobile/auth/login"
+ },
+ {
+  "file": "src/auth.tsx",
+  "method": "POST",
+  "path": "/api/mobile/auth/register"
+ },
+ {
+  "file": "src/auth.tsx",
+  "method": "POST",
+  "path": "/api/auth/verify-code"
+ },
+ {
+  "file": "src/auth.tsx",
+  "method": "POST",
+  "path": "/api/mobile/auth/demo"
+ },
+ {
+  "file": "src/auth.tsx",
+  "method": "POST",
+  "path": "/api/mobile/auth/google"
+ },
+ {
+  "file": "src/auth.tsx",
+  "method": "POST",
+  "path": "/api/mobile/auth/logout"
+ },
+ {
+  "file": "src/auth.tsx",
+  "method": "POST",
+  "path": "/api/mobile/auth/switch-role"
+ },
+ {
+  "file": "src/pending-lead-banner.tsx",
+  "method": "GET",
+  "path": "/api/leads/by-email/pending"
+ },
+ {
+  "file": "src/pending-lead-banner.tsx",
+  "method": "POST",
+  "path": "/api/leads/{v}/claim"
+ },
+ {
+  "file": "src/global-control-bar.tsx",
+  "method": "GET",
+  "path": "/api/global/status"
+ },
+ {
+  "file": "src/workspace-operator-hints.tsx",
+  "method": "GET",
+  "path": "/api/projects/{v}/operator-hints"
+ },
+ {
+  "file": "src/workspace-operator-hints.tsx",
+  "method": "POST",
+  "path": "/api/operator/execute/{v}"
+ },
+ {
+  "file": "src/dev-motivation.tsx",
+  "method": "GET",
+  "path": "/api/developer/motivation"
+ }
+]

@@ -1,0 +1,76 @@
+{
+  "summary": "First E2E pass on EVA-X DescribeWidget → /api/estimate → /estimate-result → /client/auth pipeline + admin auth + admin-inbox discovery + auth matrix. 13/15 backend pytest cases PASS (test_evax_describe_estimate.py). UI happy-path on /api/web-ui/ works flawlessly: landing renders with all 3 widget testIDs, 40+ char brief → /estimate-result shows real numbers ($121,614, 12 modules, 526h, ×7.02, narrative chips, scope breakdown, tech-stack), CTA result-cta-continue navigates to /client/auth. TWO BLOCKING ISSUES FOUND: (a) PARITY-1 FAIL — /api/estimate is NON-DETERMINISTIC: same goal in two consecutive calls produced $88,359.85 vs $137,184.84 (≈55% spread). RCA confirmed in /app/backend/pricing_engine.py L417-421: LlmChat used without temperature=0 / seed and session_id includes int(time.time()), so LLM re-classifies entropy axes on every call → reality_multiplier flips → final_price differs. This breaks PRD §0a determinism invariant and means web vs Expo will show DIFFERENT prices for the same brief. (b) ADMIN-INBOX GAP — anonymous /api/estimate submissions are NOT persisted into any admin-visible collection. Endpoint scan: only /api/admin/leads (200, empty), /api/admin/submissions (200, empty), /api/admin/projects (200, has projects but NOT the anonymous estimate). Marker test (planted ATLAS_TEST_LEAD_MARKER through anonymous POST /api/estimate) was NOT found in any of 9 candidate admin endpoints. Plus seeded credentials documented in /app/memory/test_credentials.md are WRONG for 4 of 5 users.",
+  "backend_issues": {
+    "critical": [
+      {
+        "endpoint": "POST /api/estimate (and pricing_engine.classify_reality_axes_via_llm)",
+        "issue": "Non-deterministic pricing. Same input → different final_price ($88,359.85 vs $137,184.84 on consecutive calls). Breaks PARITY-1 web↔Expo invariant. RCA: pricing_engine.py L417-421 uses LlmChat with non-zero temperature (default) AND session_id=f'axes_{int(time.time())}' (fresh session every call), so the LLM picks different entropy-axis levels each run → reality_multiplier flips → final_price changes. Fix: (1) pass with_params(temperature=0, max_tokens=200) AND a stable session_id derived from sha256(goal) so same brief → same axes; (2) optionally cache axes by goal-hash for 24h.",
+        "priority": "CRITICAL"
+      },
+      {
+        "endpoint": "POST /api/estimate persistence + GET admin endpoints",
+        "issue": "Anonymous visitor estimates are NOT saved into any admin-visible queue. Scanned /api/admin/inbox|leads|estimates|estimate-events|submissions|projects|/api/leads|/api/admin/mobile/inbox — none surface the planted ATLAS_TEST_LEAD_MARKER. /api/admin/leads returns 200 but body length 37 bytes (empty list). This means visitor flow (landing → DescribeWidget → /estimate) produces zero admin-visible artifacts. Fix: in the POST /api/estimate handler, write an 'anonymous_lead' / 'estimate_event' document with {goal, estimate, modules, narrative, created_at, ip, user_agent} and expose a GET /api/admin/leads (or admin/estimate-events) that lists them with pagination.",
+        "priority": "CRITICAL"
+      }
+    ],
+    "minor": [
+      {
+        "endpoint": "/app/memory/test_credentials.md",
+        "issue": "Documented passwords are WRONG for 4 of 5 seed users. Actual seed (backend/server.py L9642-9679): admin@atlas.dev=admin123 ✓, client@atlas.dev=client123 (not admin123), john@atlas.dev=dev123 (not admin123), tester@atlas.dev=tester123 (not admin123), multi@atlas.dev=NOT_SEEDED (login 401 with any tried password). Either fix the seed to use admin123 for all, or update /app/memory/test_credentials.md to reflect real seed passwords. The /api/auth/login `curl` example at the bottom of that doc uses admin@atlas.dev which works, but the table above is misleading."
+      },
+      {
+        "endpoint": "GET /openapi.json",
+        "issue": "Known minor: returns 500 (AssertionError per audit doc). Doesn't block runtime but breaks Swagger / SDK-gen tools."
+      }
+    ]
+  },
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [
+      {
+        "flow": "Anonymous estimate → admin moderation",
+        "issue": "Even though /api/web-ui submission works visually, there is no admin endpoint that lists submitted briefs. Admin has no way to see, moderate, or contact visitors who got an estimate. See backend critical issue #2.",
+        "affected_testIDs": ["describe-widget-submit", "result-cta-continue"]
+      }
+    ],
+    "design_issues": [
+      {
+        "screen": "/estimate-result",
+        "issues": [
+          "Headline reads 'Your product is complex complexity.' — the {complexity} token is rendered twice ('complex complexity'). Likely a template formatting bug in EstimateResultPage.js — complexity value is concatenated with the literal word 'complexity'.",
+          "Reality multiplier ×7.02 is extreme (final_price = 7× implementation_price). For a fairly normal B2B SaaS brief this feels like a UX trust-killer. Worth reviewing whether the LLM is over-classifying entropy axes (likely tied to the determinism bug above)."
+        ]
+      }
+    ],
+    "react_native_issues": []
+  },
+  "test_report_links": [
+    "/app/backend/tests/test_evax_describe_estimate.py",
+    "/app/test_reports/pytest/evax_iter7.xml"
+  ],
+  "action_items": [
+    "[CRITICAL P0] Make /api/estimate deterministic: in /app/backend/pricing_engine.py classify_reality_axes_via_llm() pass with_params(temperature=0) and session_id = 'axes_' + sha256(goal[:4000]).hexdigest()[:16]. Add a unit test that calls the endpoint twice with same goal and asserts equal final_price (already present in test_evax_describe_estimate.py::test_estimate_determinism_parity_web_vs_expo).",
+    "[CRITICAL P0] Persist anonymous estimate submissions: in /app/backend/server.py POST /api/estimate handler, after building the response, insert into db.anonymous_leads (or similar): {lead_id, goal, estimate, modules_detailed, narrative, created_at, ip, user_agent, source='web-ui|expo'}. Add GET /api/admin/leads (or extend leads_layer.py) returning paginated list, admin-cookie protected. Then admin Inbox screen can fetch + display + provide contact CTA.",
+    "[P1] Fix /app/memory/test_credentials.md table to match real seeded passwords (client123/dev123/tester123) OR update backend/server.py seed block (L9642-9679) to use admin123 for all dev users. multi@atlas.dev is referenced but not actually seeded — either add it or remove from doc.",
+    "[P1] Fix EstimateResultPage headline 'Your product is {complexity} complexity.' — currently rendering 'complex complexity' (duplicate word). Probably remove the trailing literal ' complexity.' from the template, or change complexity values to noun form.",
+    "[P2] Review reality-multiplier calibration — ×7.02 on a routine B2B SaaS brief suggests LLM is hitting upper-bound levels (operating_system, research, critical, infrastructure) too aggressively. Consider clamping or adding examples in the system prompt.",
+    "[P3] /openapi.json AssertionError → 500. Not blocking but visible in audit doc; fix when convenient."
+  ],
+  "critical_code_review_comments": [
+    "pricing_engine.classify_reality_axes_via_llm() (L380-439) — non-deterministic by design. session_id=f'axes_{int(time.time())}' forces new session every call, and no temperature=0 is passed. This is the root cause of the PARITY-1 failure. Fix is ~3 lines.",
+    "There is NO writer in POST /api/estimate that persists the request for admin visibility. The estimate handler computes and returns the response but does not insert anywhere. Combined with the fact that leads_layer.py has 4 endpoints, /api/admin/leads returns empty, and /api/admin/submissions also empty, this is a structural gap, not a wiring bug.",
+    "WEB UI quality is high: landing testIDs are stable (describe-widget-input/attach-button/submit), result page has result-cta-continue, layouts look polished on 1280x800. No raw text / no missing testIDs blocking E2E. The headline duplication is a content bug, not a rendering bug."
+  ],
+  "updated_files": [
+    "/app/backend/tests/test_evax_describe_estimate.py (NEW — 15-case suite: auth matrix, web-ui reachability, manifest, estimate shape/determinism/short-goal, analyze-url live LLM, parse-file multipart, admin-inbox scan, anonymous-lead marker hunt)"
+  ],
+  "success_rate": {
+    "backend": "86.7% (13/15 PASS). 2 FAIL: determinism + anonymous-lead-persistence — both reflect real product gaps, not test infra issues.",
+    "frontend": "100% on executed web-ui flows (WEB-1 + WEB-2 + WEB-4). ADMIN-1 via UI not fully verified — playwright button-matcher missed the 'Access Dashboard' CTA label, but API /api/auth/login admin@atlas.dev/admin123 returns 200 cleanly, so admin auth itself works."
+  },
+  "seed_data_creation": "Three anonymous estimates were POSTed during tests (one with ATLAS_TEST_LEAD_MARKER text). Because no admin persistence exists, no admin-visible rows were created. No cleanup needed.",
+  "retest_needed": true,
+  "should_main_agent_self_test": false,
+  "context_for_next_testing_agent": "Re-run backend regression: `/root/.venv/bin/python -m pytest /app/backend/tests/test_evax_describe_estimate.py -v --tb=short --junitxml=/app/test_reports/pytest/evax_iterN.xml`. After main agent fixes determinism, test_estimate_determinism_parity_web_vs_expo should flip GREEN. After main agent adds anonymous-lead persistence + GET /api/admin/leads (returning the lead with the matching goal text), test_visitor_estimate_persisted_for_admin should flip GREEN. For frontend re-verification of admin UI login, use button text 'Access Dashboard' (NOT 'Login' / 'Sign in'). Web-ui flows are stable on 1280x800 viewport. Credentials for non-admin users: client@atlas.dev/client123, john@atlas.dev/dev123, tester@atlas.dev/tester123.",
+  "rca_of_issue": "PARITY-1 RCA (DETERMINISM): /app/backend/pricing_engine.py classify_reality_axes_via_llm() L417-422 constructs LlmChat with `.with_params(max_tokens=200)` (no temperature parameter) and `session_id=f'axes_{int(time.time())}'`. Each call → new session + default sampling temperature → LLM picks different entropy-axis levels (system_coupling: platform vs operating_system, longevity: long_term vs infrastructure, etc.). Each axis level maps to a different multiplier in DEFAULT_REALITY_LAYER (e.g., platform=×1.6 vs operating_system likely ×2.5+). Product of 5 axes → reality_multiplier swings wildly (observed ×7.02 on UI, also observed final_price $88k vs $137k = 1.55× spread on two backend calls). Reproduction: `curl -X POST $URL/api/estimate -d '{\"goal\":\"...same string...\"}'` twice → compare estimate.final_price → unequal. Mitigation: (a) temperature=0 in with_params, (b) deterministic session_id derived from sha256(goal), (c) optional 24h cache by goal-hash. ADMIN-INBOX GAP RCA: grep of server.py POST /api/estimate handler shows it only computes and returns the estimate object; no db.insert_one() for the visitor brief. leads_layer.py exists but only handles lead-status updates, not creation from /api/estimate. Therefore admin has zero visibility into who submitted what. Mitigation: add `await db.anonymous_leads.insert_one({...})` in /api/estimate handler and expose GET /api/admin/leads."
+}

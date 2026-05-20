@@ -1,0 +1,2884 @@
+{
+  "generated_at": "2026-05-18T13:09:00Z",
+  "endpoint": "http://localhost:8001/api/estimate",
+  "mode": "hybrid",
+  "categories": {
+    "authentication_identity": {
+      "audience": "both",
+      "keyword_count": 26
+    },
+    "authorization_rbac": {
+      "audience": "both",
+      "keyword_count": 14
+    },
+    "data_persistence": {
+      "audience": "operator",
+      "keyword_count": 12
+    },
+    "admin_operations": {
+      "audience": "operator",
+      "keyword_count": 16
+    },
+    "observability_monitoring": {
+      "audience": "operator",
+      "keyword_count": 19
+    },
+    "deployment_infrastructure": {
+      "audience": "operator",
+      "keyword_count": 21
+    },
+    "payments_billing": {
+      "audience": "both",
+      "keyword_count": 19
+    },
+    "realtime_synchronization": {
+      "audience": "user",
+      "keyword_count": 20
+    },
+    "integrations_external": {
+      "audience": "operator",
+      "keyword_count": 13
+    },
+    "ai_orchestration": {
+      "audience": "operator",
+      "keyword_count": 18
+    },
+    "reliability_recovery": {
+      "audience": "operator",
+      "keyword_count": 15
+    },
+    "compliance_security": {
+      "audience": "operator",
+      "keyword_count": 18
+    },
+    "collaboration_multiplayer": {
+      "audience": "user",
+      "keyword_count": 16
+    },
+    "notifications_delivery": {
+      "audience": "both",
+      "keyword_count": 17
+    },
+    "analytics_reporting": {
+      "audience": "both",
+      "keyword_count": 18
+    },
+    "qa_edge_cases": {
+      "audience": "operator",
+      "keyword_count": 15
+    }
+  },
+  "archetype_count": 10,
+  "rows": [
+    {
+      "archetype_id": "slack",
+      "archetype_name": "Slack clone (team chat MVP)",
+      "brief": "Build a team chat app where companies create workspaces, users join channels and DMs, send messages with attachments, and stay connected in real-time. Production product, not a demo.",
+      "estimate": {
+        "base": 2500.0,
+        "multiplier": 0.75,
+        "final_price": 111099.6,
+        "implementation_price": 11430.0,
+        "reality_multiplier": 9.72,
+        "timeline": "8-9 weeks",
+        "complexity": "medium",
+        "quality_band": "enhanced",
+        "estimated_hours": 340
+      },
+      "reality_layer": {
+        "axes": {
+          "product_maturity": "production",
+          "system_coupling": "platform",
+          "unknowns": "medium",
+          "realtime_pressure": "critical",
+          "longevity": "long_term"
+        },
+        "axes_source": "llm_inferred",
+        "multiplier": 9.72,
+        "breakdown": [
+          {
+            "axis": "product_maturity",
+            "label": "Product maturity",
+            "level": "production",
+            "multiplier": 1.8,
+            "delta": 9144.0
+          },
+          {
+            "axis": "system_coupling",
+            "label": "System coupling",
+            "level": "platform",
+            "multiplier": 1.6,
+            "delta": 12344.4
+          },
+          {
+            "axis": "unknowns",
+            "label": "Unknowns",
+            "level": "medium",
+            "multiplier": 1.25,
+            "delta": 8229.6
+          },
+          {
+            "axis": "realtime_pressure",
+            "label": "Realtime pressure",
+            "level": "critical",
+            "multiplier": 1.8,
+            "delta": 32918.4
+          },
+          {
+            "axis": "longevity",
+            "label": "Longevity",
+            "level": "long_term",
+            "multiplier": 1.5,
+            "delta": 37033.2
+          }
+        ],
+        "narrative_chips": [
+          "Production-grade",
+          "Platform complexity",
+          "Discovery work",
+          "Realtime",
+          "Long-term product"
+        ]
+      },
+      "modules_detailed": [
+        {
+          "title": "User authentication",
+          "description": "Implement secure login and registration for users and organizations.",
+          "hours": 40
+        },
+        {
+          "title": "Workspace management",
+          "description": "Allow companies to create and manage their workspaces efficiently.",
+          "hours": 50
+        },
+        {
+          "title": "Channel messaging",
+          "description": "Enable users to join channels and send messages, including attachments.",
+          "hours": 70
+        },
+        {
+          "title": "Direct messaging",
+          "description": "Implement private messaging between users with real-time updates.",
+          "hours": 60
+        },
+        {
+          "title": "Real-time notifications",
+          "description": "Provide instant notifications for messages and channel activity.",
+          "hours": 40
+        },
+        {
+          "title": "User roles & permissions",
+          "description": "Manage different access levels for users within workspaces and channels.",
+          "hours": 30
+        },
+        {
+          "title": "Admin dashboard",
+          "description": "Allow administrators to monitor and manage user activities and settings.",
+          "hours": 50
+        }
+      ],
+      "modules_preview": [
+        "User authentication",
+        "Workspace management",
+        "Channel messaging",
+        "Direct messaging",
+        "Real-time notifications",
+        "User roles & permissions",
+        "Admin dashboard"
+      ],
+      "tech_stack": [
+        "Node.js",
+        "React",
+        "WebSocket",
+        "MongoDB",
+        "Redux",
+        "Express"
+      ],
+      "complexity": "medium",
+      "confidence": 0.88,
+      "ai_generated": true,
+      "matched_template": null,
+      "goal_length": 182,
+      "elapsed_seconds": 10.2,
+      "classification": {
+        "authentication_identity": {
+          "recognized": true,
+          "audience": "both",
+          "matched_keywords": [
+            "authentication",
+            "login",
+            "registration"
+          ],
+          "hit_count": 4,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "authorization_rbac": {
+          "recognized": true,
+          "audience": "both",
+          "matched_keywords": [
+            "user roles"
+          ],
+          "hit_count": 2,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "data_persistence": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "admin_operations": {
+          "recognized": true,
+          "audience": "operator",
+          "matched_keywords": [
+            "admin dashboard"
+          ],
+          "hit_count": 2,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "observability_monitoring": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "deployment_infrastructure": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "payments_billing": {
+          "recognized": false,
+          "audience": "both",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "realtime_synchronization": {
+          "recognized": true,
+          "audience": "user",
+          "matched_keywords": [
+            "real-time",
+            "realtime",
+            "websocket"
+          ],
+          "hit_count": 5,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "integrations_external": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "ai_orchestration": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "reliability_recovery": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "compliance_security": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "collaboration_multiplayer": {
+          "recognized": false,
+          "audience": "user",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "notifications_delivery": {
+          "recognized": false,
+          "audience": "both",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "analytics_reporting": {
+          "recognized": true,
+          "audience": "both",
+          "matched_keywords": [
+            "dashboard"
+          ],
+          "hit_count": 2,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "qa_edge_cases": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        }
+      },
+      "asymmetry": {
+        "user_side_coverage": 0.571,
+        "operator_side_coverage": 0.286,
+        "user_recognized": 4,
+        "operator_recognized": 4,
+        "user_total": 7,
+        "operator_total": 14,
+        "asymmetry_ratio": 2.0,
+        "asymmetric_high": true
+      }
+    },
+    {
+      "archetype_id": "linear",
+      "archetype_name": "Linear clone (issue tracker)",
+      "brief": "Build a fast issue tracker for software teams. Users create issues, assign owners, move them through statuses on a board, and see updates live as teammates work. Long-term product, multiple companies use it.",
+      "estimate": {
+        "base": 2500.0,
+        "multiplier": 0.75,
+        "final_price": 108019.54,
+        "implementation_price": 11113.12,
+        "reality_multiplier": 9.72,
+        "timeline": "7-8 weeks",
+        "complexity": "medium",
+        "quality_band": "enhanced",
+        "estimated_hours": 330
+      },
+      "reality_layer": {
+        "axes": {
+          "product_maturity": "production",
+          "system_coupling": "platform",
+          "unknowns": "medium",
+          "realtime_pressure": "critical",
+          "longevity": "long_term"
+        },
+        "axes_source": "llm_inferred",
+        "multiplier": 9.72,
+        "breakdown": [
+          {
+            "axis": "product_maturity",
+            "label": "Product maturity",
+            "level": "production",
+            "multiplier": 1.8,
+            "delta": 8890.5
+          },
+          {
+            "axis": "system_coupling",
+            "label": "System coupling",
+            "level": "platform",
+            "multiplier": 1.6,
+            "delta": 12002.17
+          },
+          {
+            "axis": "unknowns",
+            "label": "Unknowns",
+            "level": "medium",
+            "multiplier": 1.25,
+            "delta": 8001.45
+          },
+          {
+            "axis": "realtime_pressure",
+            "label": "Realtime pressure",
+            "level": "critical",
+            "multiplier": 1.8,
+            "delta": 32005.79
+          },
+          {
+            "axis": "longevity",
+            "label": "Longevity",
+            "level": "long_term",
+            "multiplier": 1.5,
+            "delta": 36006.51
+          }
+        ],
+        "narrative_chips": [
+          "Production-grade",
+          "Platform complexity",
+          "Discovery work",
+          "Realtime",
+          "Long-term product"
+        ]
+      },
+      "modules_detailed": [
+        {
+          "title": "User Authentication",
+          "description": "Manage user sign-up, login, and permission levels across teams.",
+          "hours": 40
+        },
+        {
+          "title": "Issue Management",
+          "description": "Create, edit, and assign issues to team members effectively.",
+          "hours": 60
+        },
+        {
+          "title": "Kanban Board",
+          "description": "Visual representation of issues for efficient status management and tracking.",
+          "hours": 80
+        },
+        {
+          "title": "Real-time Updates",
+          "description": "Stream live updates on issue changes and team member activities.",
+          "hours": 50
+        },
+        {
+          "title": "Notifications System",
+          "description": "Alert users on issue updates and assignments through various channels.",
+          "hours": 30
+        },
+        {
+          "title": "Analytics Dashboard",
+          "description": "Provide insights on issue resolution times and team performance metrics.",
+          "hours": 70
+        }
+      ],
+      "modules_preview": [
+        "User Authentication",
+        "Issue Management",
+        "Kanban Board",
+        "Real-time Updates",
+        "Notifications System",
+        "Analytics Dashboard"
+      ],
+      "tech_stack": [
+        "Node.js",
+        "React",
+        "MongoDB",
+        "Socket.io",
+        "Express"
+      ],
+      "complexity": "medium",
+      "confidence": 0.91,
+      "ai_generated": true,
+      "matched_template": null,
+      "goal_length": 207,
+      "elapsed_seconds": 8.95,
+      "classification": {
+        "authentication_identity": {
+          "recognized": true,
+          "audience": "both",
+          "matched_keywords": [
+            "authentication",
+            "login",
+            "sign-up"
+          ],
+          "hit_count": 4,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "authorization_rbac": {
+          "recognized": true,
+          "audience": "both",
+          "matched_keywords": [
+            "permission"
+          ],
+          "hit_count": 1,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "data_persistence": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "admin_operations": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "observability_monitoring": {
+          "recognized": true,
+          "audience": "operator",
+          "matched_keywords": [
+            "metrics"
+          ],
+          "hit_count": 1,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "deployment_infrastructure": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "payments_billing": {
+          "recognized": false,
+          "audience": "both",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "realtime_synchronization": {
+          "recognized": true,
+          "audience": "user",
+          "matched_keywords": [
+            "real-time",
+            "realtime",
+            "socket.io"
+          ],
+          "hit_count": 4,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "integrations_external": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "ai_orchestration": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "reliability_recovery": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "compliance_security": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "collaboration_multiplayer": {
+          "recognized": false,
+          "audience": "user",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "notifications_delivery": {
+          "recognized": false,
+          "audience": "both",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "analytics_reporting": {
+          "recognized": true,
+          "audience": "both",
+          "matched_keywords": [
+            "analytics",
+            "dashboard"
+          ],
+          "hit_count": 4,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "qa_edge_cases": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        }
+      },
+      "asymmetry": {
+        "user_side_coverage": 0.571,
+        "operator_side_coverage": 0.286,
+        "user_recognized": 4,
+        "operator_recognized": 4,
+        "user_total": 7,
+        "operator_total": 14,
+        "asymmetry_ratio": 2.0,
+        "asymmetric_high": true
+      }
+    },
+    {
+      "archetype_id": "stripe_for_x",
+      "archetype_name": "Stripe-for-X (vertical payments platform)",
+      "brief": "Build a payments platform for a specific industry (think: Stripe for law firms). Merchants onboard, accept cards, manage chargebacks, see settlements, and reconcile their books. Production, multi-year horizon.",
+      "estimate": {
+        "base": 2500.0,
+        "multiplier": 0.75,
+        "final_price": 314381.25,
+        "implementation_price": 32343.75,
+        "reality_multiplier": 9.72,
+        "timeline": "23-24 weeks",
+        "complexity": "medium",
+        "quality_band": "enhanced",
+        "estimated_hours": 1000
+      },
+      "reality_layer": {
+        "axes": {
+          "product_maturity": "production",
+          "system_coupling": "platform",
+          "unknowns": "medium",
+          "realtime_pressure": "critical",
+          "longevity": "long_term"
+        },
+        "axes_source": "llm_inferred",
+        "multiplier": 9.72,
+        "breakdown": [
+          {
+            "axis": "product_maturity",
+            "label": "Product maturity",
+            "level": "production",
+            "multiplier": 1.8,
+            "delta": 25875.0
+          },
+          {
+            "axis": "system_coupling",
+            "label": "System coupling",
+            "level": "platform",
+            "multiplier": 1.6,
+            "delta": 34931.25
+          },
+          {
+            "axis": "unknowns",
+            "label": "Unknowns",
+            "level": "medium",
+            "multiplier": 1.25,
+            "delta": 23287.5
+          },
+          {
+            "axis": "realtime_pressure",
+            "label": "Realtime pressure",
+            "level": "critical",
+            "multiplier": 1.8,
+            "delta": 93150.0
+          },
+          {
+            "axis": "longevity",
+            "label": "Longevity",
+            "level": "long_term",
+            "multiplier": 1.5,
+            "delta": 104793.75
+          }
+        ],
+        "narrative_chips": [
+          "Production-grade",
+          "Platform complexity",
+          "Discovery work",
+          "Realtime",
+          "Long-term product"
+        ]
+      },
+      "modules_detailed": [
+        {
+          "title": "Merchant Onboarding",
+          "description": "Facilitate smooth onboarding for law firms to use the payment platform.",
+          "hours": 160
+        },
+        {
+          "title": "Payment Processing",
+          "description": "Enable secure card processing for law firms and their clients.",
+          "hours": 200
+        },
+        {
+          "title": "Chargeback Management",
+          "description": "Manage and automate chargeback responses for law firms.",
+          "hours": 120
+        },
+        {
+          "title": "Settlement Reporting",
+          "description": "Provide detailed reports on transactions and settlements for law firms.",
+          "hours": 100
+        },
+        {
+          "title": "Reconciliation Tools",
+          "description": "Provide tools for law firms to reconcile their financial books easily.",
+          "hours": 140
+        },
+        {
+          "title": "Admin Dashboard",
+          "description": "Admin interface for managing users, transactions, and settings.",
+          "hours": 180
+        }
+      ],
+      "modules_preview": [
+        "Merchant Onboarding",
+        "Payment Processing",
+        "Chargeback Management",
+        "Settlement Reporting",
+        "Reconciliation Tools",
+        "Admin Dashboard"
+      ],
+      "tech_stack": [
+        "Node.js",
+        "React",
+        "PostgreSQL",
+        "Stripe API",
+        "Docker",
+        "AWS"
+      ],
+      "complexity": "medium",
+      "confidence": 0.91,
+      "ai_generated": true,
+      "matched_template": null,
+      "goal_length": 209,
+      "elapsed_seconds": 12.12,
+      "classification": {
+        "authentication_identity": {
+          "recognized": false,
+          "audience": "both",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "authorization_rbac": {
+          "recognized": false,
+          "audience": "both",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "data_persistence": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "admin_operations": {
+          "recognized": true,
+          "audience": "operator",
+          "matched_keywords": [
+            "admin dashboard",
+            "admin interface"
+          ],
+          "hit_count": 3,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "observability_monitoring": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "deployment_infrastructure": {
+          "recognized": true,
+          "audience": "operator",
+          "matched_keywords": [
+            "docker"
+          ],
+          "hit_count": 1,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "payments_billing": {
+          "recognized": true,
+          "audience": "both",
+          "matched_keywords": [
+            "chargeback",
+            "payment",
+            "reconciliation",
+            "settlement",
+            "stripe"
+          ],
+          "hit_count": 11,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "realtime_synchronization": {
+          "recognized": true,
+          "audience": "user",
+          "matched_keywords": [
+            "realtime"
+          ],
+          "hit_count": 1,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "integrations_external": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "ai_orchestration": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "reliability_recovery": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "compliance_security": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "collaboration_multiplayer": {
+          "recognized": false,
+          "audience": "user",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "notifications_delivery": {
+          "recognized": false,
+          "audience": "both",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "analytics_reporting": {
+          "recognized": true,
+          "audience": "both",
+          "matched_keywords": [
+            "dashboard",
+            "reporting"
+          ],
+          "hit_count": 4,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "qa_edge_cases": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        }
+      },
+      "asymmetry": {
+        "user_side_coverage": 0.429,
+        "operator_side_coverage": 0.286,
+        "user_recognized": 3,
+        "operator_recognized": 4,
+        "user_total": 7,
+        "operator_total": 14,
+        "asymmetry_ratio": 1.5,
+        "asymmetric_high": false
+      }
+    },
+    {
+      "archetype_id": "b2b_crm",
+      "archetype_name": "B2B CRM",
+      "brief": "Build a CRM for B2B sales teams: contacts, accounts, deals in a pipeline, activity timeline, email integration, reports. Each company has 20-200 reps. Real product, paying customers expected.",
+      "estimate": {
+        "base": 2500.0,
+        "multiplier": 0.75,
+        "final_price": 84754.85,
+        "implementation_price": 13648.12,
+        "reality_multiplier": 6.21,
+        "timeline": "9-10 weeks",
+        "complexity": "medium",
+        "quality_band": "enhanced",
+        "estimated_hours": 410
+      },
+      "reality_layer": {
+        "axes": {
+          "product_maturity": "production",
+          "system_coupling": "platform",
+          "unknowns": "medium",
+          "realtime_pressure": "async",
+          "longevity": "long_term"
+        },
+        "axes_source": "llm_inferred",
+        "multiplier": 6.21,
+        "breakdown": [
+          {
+            "axis": "product_maturity",
+            "label": "Product maturity",
+            "level": "production",
+            "multiplier": 1.8,
+            "delta": 10918.5
+          },
+          {
+            "axis": "system_coupling",
+            "label": "System coupling",
+            "level": "platform",
+            "multiplier": 1.6,
+            "delta": 14739.97
+          },
+          {
+            "axis": "unknowns",
+            "label": "Unknowns",
+            "level": "medium",
+            "multiplier": 1.25,
+            "delta": 9826.65
+          },
+          {
+            "axis": "realtime_pressure",
+            "label": "Realtime pressure",
+            "level": "async",
+            "multiplier": 1.15,
+            "delta": 7369.99
+          },
+          {
+            "axis": "longevity",
+            "label": "Longevity",
+            "level": "long_term",
+            "multiplier": 1.5,
+            "delta": 28251.62
+          }
+        ],
+        "narrative_chips": [
+          "Production-grade",
+          "Platform complexity",
+          "Discovery work",
+          "Long-term product"
+        ]
+      },
+      "modules_detailed": [
+        {
+          "title": "User Authentication",
+          "description": "Secure login and management for sales representatives and admins.",
+          "hours": 40
+        },
+        {
+          "title": "Contact Management",
+          "description": "Manage and organize contacts, including details and relationship history.",
+          "hours": 60
+        },
+        {
+          "title": "Account Management",
+          "description": "Track and manage accounts with comprehensive insights and interactions.",
+          "hours": 70
+        },
+        {
+          "title": "Deals Pipeline",
+          "description": "Visualize, track, and manage deals through the sales pipeline stages.",
+          "hours": 80
+        },
+        {
+          "title": "Activity Timeline",
+          "description": "Log and display all activities and interactions for better tracking.",
+          "hours": 50
+        },
+        {
+          "title": "Email Integration",
+          "description": "Integrate with email platforms to streamline communication and record keeping.",
+          "hours": 50
+        },
+        {
+          "title": "Reporting Dashboard",
+          "description": "Generate reports on performance metrics and sales activities.",
+          "hours": 60
+        }
+      ],
+      "modules_preview": [
+        "User Authentication",
+        "Contact Management",
+        "Account Management",
+        "Deals Pipeline",
+        "Activity Timeline",
+        "Email Integration",
+        "Reporting Dashboard"
+      ],
+      "tech_stack": [
+        "React",
+        "Node.js",
+        "PostgreSQL",
+        "Express",
+        "GraphQL",
+        "AWS"
+      ],
+      "complexity": "medium",
+      "confidence": 0.89,
+      "ai_generated": true,
+      "matched_template": null,
+      "goal_length": 191,
+      "elapsed_seconds": 10.86,
+      "classification": {
+        "authentication_identity": {
+          "recognized": true,
+          "audience": "both",
+          "matched_keywords": [
+            "authentication",
+            "login"
+          ],
+          "hit_count": 3,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "authorization_rbac": {
+          "recognized": false,
+          "audience": "both",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "data_persistence": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "admin_operations": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "observability_monitoring": {
+          "recognized": true,
+          "audience": "operator",
+          "matched_keywords": [
+            "metrics"
+          ],
+          "hit_count": 1,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "deployment_infrastructure": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "payments_billing": {
+          "recognized": false,
+          "audience": "both",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "realtime_synchronization": {
+          "recognized": false,
+          "audience": "user",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "integrations_external": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "ai_orchestration": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "reliability_recovery": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "compliance_security": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "collaboration_multiplayer": {
+          "recognized": false,
+          "audience": "user",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "notifications_delivery": {
+          "recognized": false,
+          "audience": "both",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "analytics_reporting": {
+          "recognized": true,
+          "audience": "both",
+          "matched_keywords": [
+            "dashboard",
+            "reporting"
+          ],
+          "hit_count": 4,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "qa_edge_cases": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        }
+      },
+      "asymmetry": {
+        "user_side_coverage": 0.286,
+        "operator_side_coverage": 0.214,
+        "user_recognized": 2,
+        "operator_recognized": 3,
+        "user_total": 7,
+        "operator_total": 14,
+        "asymmetry_ratio": 1.333,
+        "asymmetric_high": false
+      }
+    },
+    {
+      "archetype_id": "ai_copilot",
+      "archetype_name": "AI copilot (LLM product)",
+      "brief": "Build an AI copilot inside a domain SaaS app (e.g. legal). Users chat with the assistant, it pulls from their documents, drafts responses, learns their style. Production-grade product with paying users.",
+      "estimate": {
+        "base": 2500.0,
+        "multiplier": 0.75,
+        "final_price": 251705.49,
+        "implementation_price": 33294.38,
+        "reality_multiplier": 7.56,
+        "timeline": "24-25 weeks",
+        "complexity": "complex",
+        "quality_band": "enhanced",
+        "estimated_hours": 1030
+      },
+      "reality_layer": {
+        "axes": {
+          "product_maturity": "production",
+          "system_coupling": "platform",
+          "unknowns": "medium",
+          "realtime_pressure": "collaborative",
+          "longevity": "long_term"
+        },
+        "axes_source": "llm_inferred",
+        "multiplier": 7.56,
+        "breakdown": [
+          {
+            "axis": "product_maturity",
+            "label": "Product maturity",
+            "level": "production",
+            "multiplier": 1.8,
+            "delta": 26635.5
+          },
+          {
+            "axis": "system_coupling",
+            "label": "System coupling",
+            "level": "platform",
+            "multiplier": 1.6,
+            "delta": 35957.93
+          },
+          {
+            "axis": "unknowns",
+            "label": "Unknowns",
+            "level": "medium",
+            "multiplier": 1.25,
+            "delta": 23971.95
+          },
+          {
+            "axis": "realtime_pressure",
+            "label": "Realtime pressure",
+            "level": "collaborative",
+            "multiplier": 1.4,
+            "delta": 47943.9
+          },
+          {
+            "axis": "longevity",
+            "label": "Longevity",
+            "level": "long_term",
+            "multiplier": 1.5,
+            "delta": 83901.83
+          }
+        ],
+        "narrative_chips": [
+          "Production-grade",
+          "Platform complexity",
+          "Discovery work",
+          "Collaboration",
+          "Long-term product"
+        ]
+      },
+      "modules_detailed": [
+        {
+          "title": "User Chat Interface",
+          "description": "Frontend interface for users to interact with the AI copilot.",
+          "hours": 120
+        },
+        {
+          "title": "Document Integration",
+          "description": "System to pull and analyze user documents for context.",
+          "hours": 180
+        },
+        {
+          "title": "AI Response Generation",
+          "description": "Backend logic to generate personalized responses based on user style.",
+          "hours": 200
+        },
+        {
+          "title": "User Learning Module",
+          "description": "Algorithm to learn user preferences and improve response accuracy.",
+          "hours": 160
+        },
+        {
+          "title": "Admin Dashboard",
+          "description": "Management interface for monitoring usage and performance metrics.",
+          "hours": 100
+        },
+        {
+          "title": "User Authentication",
+          "description": "Secure user login and session management.",
+          "hours": 80
+        },
+        {
+          "title": "Analytics & Reporting",
+          "description": "Tools for tracking user engagement and AI performance.",
+          "hours": 90
+        }
+      ],
+      "modules_preview": [
+        "User Chat Interface",
+        "Document Integration",
+        "AI Response Generation",
+        "User Learning Module",
+        "Admin Dashboard",
+        "User Authentication",
+        "Analytics & Reporting"
+      ],
+      "tech_stack": [
+        "React",
+        "Node.js",
+        "Python (for AI modules)",
+        "MongoDB",
+        "AWS (for hosting)"
+      ],
+      "complexity": "complex",
+      "confidence": 0.9,
+      "ai_generated": true,
+      "matched_template": null,
+      "goal_length": 202,
+      "elapsed_seconds": 11.62,
+      "classification": {
+        "authentication_identity": {
+          "recognized": true,
+          "audience": "both",
+          "matched_keywords": [
+            "authentication",
+            "login",
+            "session"
+          ],
+          "hit_count": 4,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "authorization_rbac": {
+          "recognized": false,
+          "audience": "both",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "data_persistence": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "admin_operations": {
+          "recognized": true,
+          "audience": "operator",
+          "matched_keywords": [
+            "admin dashboard"
+          ],
+          "hit_count": 2,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "observability_monitoring": {
+          "recognized": true,
+          "audience": "operator",
+          "matched_keywords": [
+            "metrics",
+            "monitoring"
+          ],
+          "hit_count": 2,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "deployment_infrastructure": {
+          "recognized": true,
+          "audience": "operator",
+          "matched_keywords": [
+            "hosting"
+          ],
+          "hit_count": 1,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "payments_billing": {
+          "recognized": false,
+          "audience": "both",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "realtime_synchronization": {
+          "recognized": false,
+          "audience": "user",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "integrations_external": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "ai_orchestration": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "reliability_recovery": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "compliance_security": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "collaboration_multiplayer": {
+          "recognized": false,
+          "audience": "user",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "notifications_delivery": {
+          "recognized": false,
+          "audience": "both",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "analytics_reporting": {
+          "recognized": true,
+          "audience": "both",
+          "matched_keywords": [
+            "analytics",
+            "dashboard",
+            "reporting"
+          ],
+          "hit_count": 6,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "qa_edge_cases": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        }
+      },
+      "asymmetry": {
+        "user_side_coverage": 0.286,
+        "operator_side_coverage": 0.357,
+        "user_recognized": 2,
+        "operator_recognized": 5,
+        "user_total": 7,
+        "operator_total": 14,
+        "asymmetry_ratio": 0.8,
+        "asymmetric_high": false
+      }
+    },
+    {
+      "archetype_id": "infra_observability",
+      "archetype_name": "Infrastructure observability platform",
+      "brief": "Build an observability platform: customers send logs/metrics/traces from their infrastructure, we ingest at scale, run queries, build dashboards, fire alerts. Multi-tenant, production, infra-grade reliability.",
+      "estimate": {
+        "base": 2500.0,
+        "multiplier": 0.75,
+        "final_price": 196965.66,
+        "implementation_price": 23788.12,
+        "reality_multiplier": 8.28,
+        "timeline": "17-18 weeks",
+        "complexity": "complex",
+        "quality_band": "enhanced",
+        "estimated_hours": 730
+      },
+      "reality_layer": {
+        "axes": {
+          "product_maturity": "production",
+          "system_coupling": "platform",
+          "unknowns": "medium",
+          "realtime_pressure": "async",
+          "longevity": "infrastructure"
+        },
+        "axes_source": "llm_inferred",
+        "multiplier": 8.28,
+        "breakdown": [
+          {
+            "axis": "product_maturity",
+            "label": "Product maturity",
+            "level": "production",
+            "multiplier": 1.8,
+            "delta": 19030.5
+          },
+          {
+            "axis": "system_coupling",
+            "label": "System coupling",
+            "level": "platform",
+            "multiplier": 1.6,
+            "delta": 25691.17
+          },
+          {
+            "axis": "unknowns",
+            "label": "Unknowns",
+            "level": "medium",
+            "multiplier": 1.25,
+            "delta": 17127.45
+          },
+          {
+            "axis": "realtime_pressure",
+            "label": "Realtime pressure",
+            "level": "async",
+            "multiplier": 1.15,
+            "delta": 12845.59
+          },
+          {
+            "axis": "longevity",
+            "label": "Longevity",
+            "level": "infrastructure",
+            "multiplier": 2.0,
+            "delta": 98482.83
+          }
+        ],
+        "narrative_chips": [
+          "Production-grade",
+          "Platform complexity",
+          "Discovery work",
+          "Infrastructure"
+        ]
+      },
+      "modules_detailed": [
+        {
+          "title": "Data Ingestion",
+          "description": "Capture and process logs, metrics, and traces from customer infrastructures.",
+          "hours": 120
+        },
+        {
+          "title": "Query Engine",
+          "description": "Develop a scalable system for executing queries on ingested data.",
+          "hours": 100
+        },
+        {
+          "title": "Dashboard Builder",
+          "description": "Allow users to create and customize dashboards for their observability needs.",
+          "hours": 90
+        },
+        {
+          "title": "Alerting System",
+          "description": "Implement a mechanism for notifying users based on specified triggers.",
+          "hours": 80
+        },
+        {
+          "title": "Multi-tenancy Support",
+          "description": "Ensure data isolation and security for multiple customer environments.",
+          "hours": 70
+        },
+        {
+          "title": "User Management",
+          "description": "Create functionality for user sign-up, roles, and permissions management.",
+          "hours": 60
+        },
+        {
+          "title": "Monitoring & Reliability",
+          "description": "Set up infrastructure monitoring and failover mechanisms for reliability.",
+          "hours": 110
+        }
+      ],
+      "modules_preview": [
+        "Data Ingestion",
+        "Query Engine",
+        "Dashboard Builder",
+        "Alerting System",
+        "Multi-tenancy Support",
+        "User Management",
+        "Monitoring & Reliability"
+      ],
+      "tech_stack": [
+        "AWS/GCP/Azure",
+        "Kafka",
+        "Elasticsearch",
+        "React",
+        "Node.js",
+        "Prometheus"
+      ],
+      "complexity": "complex",
+      "confidence": 0.91,
+      "ai_generated": true,
+      "matched_template": null,
+      "goal_length": 209,
+      "elapsed_seconds": 11.57,
+      "classification": {
+        "authentication_identity": {
+          "recognized": true,
+          "audience": "both",
+          "matched_keywords": [
+            "sign-up"
+          ],
+          "hit_count": 1,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "authorization_rbac": {
+          "recognized": false,
+          "audience": "both",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "data_persistence": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "admin_operations": {
+          "recognized": true,
+          "audience": "operator",
+          "matched_keywords": [
+            "user management"
+          ],
+          "hit_count": 2,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "observability_monitoring": {
+          "recognized": true,
+          "audience": "operator",
+          "matched_keywords": [
+            "alerting",
+            "logs",
+            "metrics",
+            "monitoring",
+            "observability",
+            "prometheus"
+          ],
+          "hit_count": 9,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "deployment_infrastructure": {
+          "recognized": true,
+          "audience": "operator",
+          "matched_keywords": [
+            "infrastructure"
+          ],
+          "hit_count": 2,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "payments_billing": {
+          "recognized": false,
+          "audience": "both",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "realtime_synchronization": {
+          "recognized": false,
+          "audience": "user",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "integrations_external": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "ai_orchestration": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "reliability_recovery": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "compliance_security": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "collaboration_multiplayer": {
+          "recognized": false,
+          "audience": "user",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "notifications_delivery": {
+          "recognized": false,
+          "audience": "both",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "analytics_reporting": {
+          "recognized": true,
+          "audience": "both",
+          "matched_keywords": [
+            "dashboard"
+          ],
+          "hit_count": 2,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "qa_edge_cases": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        }
+      },
+      "asymmetry": {
+        "user_side_coverage": 0.286,
+        "operator_side_coverage": 0.357,
+        "user_recognized": 2,
+        "operator_recognized": 5,
+        "user_total": 7,
+        "operator_total": 14,
+        "asymmetry_ratio": 0.8,
+        "asymmetric_high": false
+      }
+    },
+    {
+      "archetype_id": "marketplace",
+      "archetype_name": "Two-sided marketplace",
+      "brief": "Build an online marketplace where buyers find services and sellers list offers, messages and bookings happen on-platform, payments held in escrow until delivery, with reviews and dispute handling. Real production product.",
+      "estimate": {
+        "base": 2500.0,
+        "multiplier": 0.75,
+        "final_price": 98388.69,
+        "implementation_price": 13014.38,
+        "reality_multiplier": 7.56,
+        "timeline": "9-10 weeks",
+        "complexity": "medium",
+        "quality_band": "enhanced",
+        "estimated_hours": 390
+      },
+      "reality_layer": {
+        "axes": {
+          "product_maturity": "production",
+          "system_coupling": "platform",
+          "unknowns": "medium",
+          "realtime_pressure": "collaborative",
+          "longevity": "long_term"
+        },
+        "axes_source": "llm_inferred",
+        "multiplier": 7.56,
+        "breakdown": [
+          {
+            "axis": "product_maturity",
+            "label": "Product maturity",
+            "level": "production",
+            "multiplier": 1.8,
+            "delta": 10411.5
+          },
+          {
+            "axis": "system_coupling",
+            "label": "System coupling",
+            "level": "platform",
+            "multiplier": 1.6,
+            "delta": 14055.53
+          },
+          {
+            "axis": "unknowns",
+            "label": "Unknowns",
+            "level": "medium",
+            "multiplier": 1.25,
+            "delta": 9370.35
+          },
+          {
+            "axis": "realtime_pressure",
+            "label": "Realtime pressure",
+            "level": "collaborative",
+            "multiplier": 1.4,
+            "delta": 18740.7
+          },
+          {
+            "axis": "longevity",
+            "label": "Longevity",
+            "level": "long_term",
+            "multiplier": 1.5,
+            "delta": 32796.23
+          }
+        ],
+        "narrative_chips": [
+          "Production-grade",
+          "Platform complexity",
+          "Discovery work",
+          "Collaboration",
+          "Long-term product"
+        ]
+      },
+      "modules_detailed": [
+        {
+          "title": "User authentication",
+          "description": "Secure registration and login for buyers and sellers.",
+          "hours": 40
+        },
+        {
+          "title": "Service listings",
+          "description": "Allows sellers to create and manage service offers on the platform.",
+          "hours": 60
+        },
+        {
+          "title": "Messaging system",
+          "description": "In-platform communication between buyers and sellers for inquiries and coordination.",
+          "hours": 50
+        },
+        {
+          "title": "Booking management",
+          "description": "Facilitates appointment scheduling and calendar integration for services offered.",
+          "hours": 70
+        },
+        {
+          "title": "Payments & escrow",
+          "description": "Handles secure transactions, holding payments until service completion.",
+          "hours": 80
+        },
+        {
+          "title": "Reviews & ratings",
+          "description": "Enables buyers to leave feedback and ratings for services received.",
+          "hours": 40
+        },
+        {
+          "title": "Dispute resolution",
+          "description": "Processes complaints and mediates disputes between buyers and sellers.",
+          "hours": 50
+        }
+      ],
+      "modules_preview": [
+        "User authentication",
+        "Service listings",
+        "Messaging system",
+        "Booking management",
+        "Payments & escrow",
+        "Reviews & ratings",
+        "Dispute resolution"
+      ],
+      "tech_stack": [
+        "React",
+        "Node.js",
+        "MongoDB",
+        "Express",
+        "Stripe API",
+        "Socket.io"
+      ],
+      "complexity": "medium",
+      "confidence": 0.93,
+      "ai_generated": true,
+      "matched_template": null,
+      "goal_length": 221,
+      "elapsed_seconds": 8.68,
+      "classification": {
+        "authentication_identity": {
+          "recognized": true,
+          "audience": "both",
+          "matched_keywords": [
+            "authentication",
+            "login",
+            "registration"
+          ],
+          "hit_count": 4,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "authorization_rbac": {
+          "recognized": false,
+          "audience": "both",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "data_persistence": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "admin_operations": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "observability_monitoring": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "deployment_infrastructure": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "payments_billing": {
+          "recognized": true,
+          "audience": "both",
+          "matched_keywords": [
+            "escrow",
+            "stripe"
+          ],
+          "hit_count": 3,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "realtime_synchronization": {
+          "recognized": true,
+          "audience": "user",
+          "matched_keywords": [
+            "socket.io"
+          ],
+          "hit_count": 1,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "integrations_external": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "ai_orchestration": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "reliability_recovery": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "compliance_security": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "collaboration_multiplayer": {
+          "recognized": false,
+          "audience": "user",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "notifications_delivery": {
+          "recognized": false,
+          "audience": "both",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "analytics_reporting": {
+          "recognized": false,
+          "audience": "both",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "qa_edge_cases": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        }
+      },
+      "asymmetry": {
+        "user_side_coverage": 0.429,
+        "operator_side_coverage": 0.143,
+        "user_recognized": 3,
+        "operator_recognized": 2,
+        "user_total": 7,
+        "operator_total": 14,
+        "asymmetry_ratio": 3.0,
+        "asymmetric_high": true
+      }
+    },
+    {
+      "archetype_id": "multiplayer",
+      "archetype_name": "Realtime multiplayer experience",
+      "brief": "Build a realtime multiplayer collaborative whiteboard. Multiple users see each other's cursors, edit shapes together with no flicker, comment, share via link. Production product, teams use it daily.",
+      "estimate": {
+        "base": 2500.0,
+        "multiplier": 0.75,
+        "final_price": 120339.64,
+        "implementation_price": 12380.62,
+        "reality_multiplier": 9.72,
+        "timeline": "8-9 weeks",
+        "complexity": "medium",
+        "quality_band": "enhanced",
+        "estimated_hours": 370
+      },
+      "reality_layer": {
+        "axes": {
+          "product_maturity": "production",
+          "system_coupling": "platform",
+          "unknowns": "medium",
+          "realtime_pressure": "critical",
+          "longevity": "long_term"
+        },
+        "axes_source": "llm_inferred",
+        "multiplier": 9.72,
+        "breakdown": [
+          {
+            "axis": "product_maturity",
+            "label": "Product maturity",
+            "level": "production",
+            "multiplier": 1.8,
+            "delta": 9904.5
+          },
+          {
+            "axis": "system_coupling",
+            "label": "System coupling",
+            "level": "platform",
+            "multiplier": 1.6,
+            "delta": 13371.07
+          },
+          {
+            "axis": "unknowns",
+            "label": "Unknowns",
+            "level": "medium",
+            "multiplier": 1.25,
+            "delta": 8914.05
+          },
+          {
+            "axis": "realtime_pressure",
+            "label": "Realtime pressure",
+            "level": "critical",
+            "multiplier": 1.8,
+            "delta": 35656.19
+          },
+          {
+            "axis": "longevity",
+            "label": "Longevity",
+            "level": "long_term",
+            "multiplier": 1.5,
+            "delta": 40113.21
+          }
+        ],
+        "narrative_chips": [
+          "Production-grade",
+          "Platform complexity",
+          "Discovery work",
+          "Realtime",
+          "Long-term product"
+        ]
+      },
+      "modules_detailed": [
+        {
+          "title": "User authentication",
+          "description": "Manage user sign-up, login, and session handling securely.",
+          "hours": 40
+        },
+        {
+          "title": "Realtime collaboration",
+          "description": "Implement live updates for multiple users interacting on the whiteboard.",
+          "hours": 100
+        },
+        {
+          "title": "Drawing tools",
+          "description": "Provide tools for shapes, drawing, and editing on the whiteboard.",
+          "hours": 80
+        },
+        {
+          "title": "Comments & feedback",
+          "description": "Enable users to leave comments and feedback on the whiteboard.",
+          "hours": 40
+        },
+        {
+          "title": "Link sharing",
+          "description": "Allow users to share editable whiteboard links with others.",
+          "hours": 50
+        },
+        {
+          "title": "User management",
+          "description": "Admin features for managing users and permissions within the app.",
+          "hours": 60
+        }
+      ],
+      "modules_preview": [
+        "User authentication",
+        "Realtime collaboration",
+        "Drawing tools",
+        "Comments & feedback",
+        "Link sharing",
+        "User management"
+      ],
+      "tech_stack": [
+        "Node.js",
+        "React",
+        "WebSocket",
+        "MongoDB",
+        "Redis"
+      ],
+      "complexity": "medium",
+      "confidence": 0.9,
+      "ai_generated": true,
+      "matched_template": null,
+      "goal_length": 198,
+      "elapsed_seconds": 8.8,
+      "classification": {
+        "authentication_identity": {
+          "recognized": true,
+          "audience": "both",
+          "matched_keywords": [
+            "authentication",
+            "login",
+            "session",
+            "sign-up"
+          ],
+          "hit_count": 5,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "authorization_rbac": {
+          "recognized": false,
+          "audience": "both",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "data_persistence": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "admin_operations": {
+          "recognized": true,
+          "audience": "operator",
+          "matched_keywords": [
+            "user management"
+          ],
+          "hit_count": 2,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "observability_monitoring": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "deployment_infrastructure": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "payments_billing": {
+          "recognized": false,
+          "audience": "both",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "realtime_synchronization": {
+          "recognized": true,
+          "audience": "user",
+          "matched_keywords": [
+            "realtime",
+            "websocket"
+          ],
+          "hit_count": 4,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "integrations_external": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "ai_orchestration": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "reliability_recovery": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "compliance_security": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "collaboration_multiplayer": {
+          "recognized": true,
+          "audience": "user",
+          "matched_keywords": [
+            "comments"
+          ],
+          "hit_count": 3,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "notifications_delivery": {
+          "recognized": false,
+          "audience": "both",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "analytics_reporting": {
+          "recognized": false,
+          "audience": "both",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "qa_edge_cases": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        }
+      },
+      "asymmetry": {
+        "user_side_coverage": 0.429,
+        "operator_side_coverage": 0.143,
+        "user_recognized": 3,
+        "operator_recognized": 2,
+        "user_total": 7,
+        "operator_total": 14,
+        "asymmetry_ratio": 3.0,
+        "asymmetric_high": true
+      }
+    },
+    {
+      "archetype_id": "banking_dashboard",
+      "archetype_name": "Banking-grade financial dashboard",
+      "brief": "Build a financial dashboard for a fintech: customers see accounts, transactions, transfer money between accounts, set up scheduled payments, view statements. Production banking-grade product, regulated environment.",
+      "estimate": {
+        "base": 2500.0,
+        "multiplier": 0.75,
+        "final_price": 157299.95,
+        "implementation_price": 16183.12,
+        "reality_multiplier": 9.72,
+        "timeline": "11-12 weeks",
+        "complexity": "complex",
+        "quality_band": "enhanced",
+        "estimated_hours": 490
+      },
+      "reality_layer": {
+        "axes": {
+          "product_maturity": "production",
+          "system_coupling": "platform",
+          "unknowns": "medium",
+          "realtime_pressure": "critical",
+          "longevity": "long_term"
+        },
+        "axes_source": "llm_inferred",
+        "multiplier": 9.72,
+        "breakdown": [
+          {
+            "axis": "product_maturity",
+            "label": "Product maturity",
+            "level": "production",
+            "multiplier": 1.8,
+            "delta": 12946.5
+          },
+          {
+            "axis": "system_coupling",
+            "label": "System coupling",
+            "level": "platform",
+            "multiplier": 1.6,
+            "delta": 17477.77
+          },
+          {
+            "axis": "unknowns",
+            "label": "Unknowns",
+            "level": "medium",
+            "multiplier": 1.25,
+            "delta": 11651.85
+          },
+          {
+            "axis": "realtime_pressure",
+            "label": "Realtime pressure",
+            "level": "critical",
+            "multiplier": 1.8,
+            "delta": 46607.39
+          },
+          {
+            "axis": "longevity",
+            "label": "Longevity",
+            "level": "long_term",
+            "multiplier": 1.5,
+            "delta": 52433.32
+          }
+        ],
+        "narrative_chips": [
+          "Production-grade",
+          "Platform complexity",
+          "Discovery work",
+          "Realtime",
+          "Long-term product"
+        ]
+      },
+      "modules_detailed": [
+        {
+          "title": "User authentication",
+          "description": "Secure login and registration for customer accounts.",
+          "hours": 40
+        },
+        {
+          "title": "Account overview",
+          "description": "Display a summary of customer accounts and balances.",
+          "hours": 60
+        },
+        {
+          "title": "Transaction history",
+          "description": "Show detailed transactions for each account over time.",
+          "hours": 80
+        },
+        {
+          "title": "Money transfers",
+          "description": "Enable customers to transfer funds between their accounts securely.",
+          "hours": 100
+        },
+        {
+          "title": "Scheduled payments",
+          "description": "Allow customers to set up and manage recurring payments.",
+          "hours": 70
+        },
+        {
+          "title": "Statement generation",
+          "description": "Generate and display account statements for customer review.",
+          "hours": 50
+        },
+        {
+          "title": "Compliance & reporting",
+          "description": "Ensure regulatory requirements are met and generate necessary reports.",
+          "hours": 90
+        }
+      ],
+      "modules_preview": [
+        "User authentication",
+        "Account overview",
+        "Transaction history",
+        "Money transfers",
+        "Scheduled payments",
+        "Statement generation",
+        "Compliance & reporting"
+      ],
+      "tech_stack": [
+        "React",
+        "Node.js",
+        "PostgreSQL",
+        "Firebase Authentication",
+        "AWS"
+      ],
+      "complexity": "complex",
+      "confidence": 0.92,
+      "ai_generated": true,
+      "matched_template": null,
+      "goal_length": 214,
+      "elapsed_seconds": 8.15,
+      "classification": {
+        "authentication_identity": {
+          "recognized": true,
+          "audience": "both",
+          "matched_keywords": [
+            "authentication",
+            "login",
+            "registration"
+          ],
+          "hit_count": 5,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "authorization_rbac": {
+          "recognized": false,
+          "audience": "both",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "data_persistence": {
+          "recognized": true,
+          "audience": "operator",
+          "matched_keywords": [
+            "transaction"
+          ],
+          "hit_count": 2,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "admin_operations": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "observability_monitoring": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "deployment_infrastructure": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "payments_billing": {
+          "recognized": false,
+          "audience": "both",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "realtime_synchronization": {
+          "recognized": true,
+          "audience": "user",
+          "matched_keywords": [
+            "realtime"
+          ],
+          "hit_count": 1,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "integrations_external": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "ai_orchestration": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "reliability_recovery": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "compliance_security": {
+          "recognized": true,
+          "audience": "operator",
+          "matched_keywords": [
+            "compliance"
+          ],
+          "hit_count": 2,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "collaboration_multiplayer": {
+          "recognized": false,
+          "audience": "user",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "notifications_delivery": {
+          "recognized": false,
+          "audience": "both",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "analytics_reporting": {
+          "recognized": true,
+          "audience": "both",
+          "matched_keywords": [
+            "reporting"
+          ],
+          "hit_count": 2,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "qa_edge_cases": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        }
+      },
+      "asymmetry": {
+        "user_side_coverage": 0.429,
+        "operator_side_coverage": 0.286,
+        "user_recognized": 3,
+        "operator_recognized": 4,
+        "user_total": 7,
+        "operator_total": 14,
+        "asymmetry_ratio": 1.5,
+        "asymmetric_high": false
+      }
+    },
+    {
+      "archetype_id": "enterprise_erp",
+      "archetype_name": "Enterprise ERP system",
+      "brief": "Build an ERP for mid-size manufacturers: inventory, purchase orders, invoices, general ledger, customer/vendor records, basic HR, role-based access. Used by 50-500 employees per company. Production, long-term contract.",
+      "estimate": {
+        "base": 2500.0,
+        "multiplier": 0.75,
+        "final_price": 133589.25,
+        "implementation_price": 24738.75,
+        "reality_multiplier": 5.4,
+        "timeline": "18-19 weeks",
+        "complexity": "medium",
+        "quality_band": "enhanced",
+        "estimated_hours": 760
+      },
+      "reality_layer": {
+        "axes": {
+          "product_maturity": "production",
+          "system_coupling": "platform",
+          "unknowns": "medium",
+          "realtime_pressure": "none",
+          "longevity": "long_term"
+        },
+        "axes_source": "llm_inferred",
+        "multiplier": 5.4,
+        "breakdown": [
+          {
+            "axis": "product_maturity",
+            "label": "Product maturity",
+            "level": "production",
+            "multiplier": 1.8,
+            "delta": 19791.0
+          },
+          {
+            "axis": "system_coupling",
+            "label": "System coupling",
+            "level": "platform",
+            "multiplier": 1.6,
+            "delta": 26717.85
+          },
+          {
+            "axis": "unknowns",
+            "label": "Unknowns",
+            "level": "medium",
+            "multiplier": 1.25,
+            "delta": 17811.9
+          },
+          {
+            "axis": "realtime_pressure",
+            "label": "Realtime pressure",
+            "level": "none",
+            "multiplier": 1.0,
+            "delta": 0.0
+          },
+          {
+            "axis": "longevity",
+            "label": "Longevity",
+            "level": "long_term",
+            "multiplier": 1.5,
+            "delta": 44529.75
+          }
+        ],
+        "narrative_chips": [
+          "Production-grade",
+          "Platform complexity",
+          "Discovery work",
+          "Long-term product"
+        ]
+      },
+      "modules_detailed": [
+        {
+          "title": "Inventory Management",
+          "description": "Track and manage inventory levels, orders, and deliveries.",
+          "hours": 120
+        },
+        {
+          "title": "Purchase Orders",
+          "description": "Manage creation, approval, and tracking of purchase orders.",
+          "hours": 100
+        },
+        {
+          "title": "Invoices & Billing",
+          "description": "Handle invoicing, payments, and billing processes.",
+          "hours": 100
+        },
+        {
+          "title": "General Ledger",
+          "description": "Recording and managing financial transactions and reporting.",
+          "hours": 150
+        },
+        {
+          "title": "Customer/Vendor Records",
+          "description": "Store and manage detailed information for customers and vendors.",
+          "hours": 90
+        },
+        {
+          "title": "Basic HR Module",
+          "description": "Manage employee records, payroll and leave management.",
+          "hours": 120
+        },
+        {
+          "title": "Access Control",
+          "description": "Implement role-based access for secure user management.",
+          "hours": 80
+        }
+      ],
+      "modules_preview": [
+        "Inventory Management",
+        "Purchase Orders",
+        "Invoices & Billing",
+        "General Ledger",
+        "Customer/Vendor Records",
+        "Basic HR Module",
+        "Access Control"
+      ],
+      "tech_stack": [
+        "React",
+        "Node.js",
+        "MongoDB",
+        "AWS",
+        "Express"
+      ],
+      "complexity": "medium",
+      "confidence": 0.92,
+      "ai_generated": true,
+      "matched_template": null,
+      "goal_length": 218,
+      "elapsed_seconds": 9.21,
+      "classification": {
+        "authentication_identity": {
+          "recognized": false,
+          "audience": "both",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "authorization_rbac": {
+          "recognized": true,
+          "audience": "both",
+          "matched_keywords": [
+            "access control",
+            "role-based"
+          ],
+          "hit_count": 3,
+          "false_simplicity": true,
+          "false_simplicity_evidence": "customer/vendor records\nbasic hr module\naccess control\nreact\nnode.js\nmongodb\naws\nexpress\nprodu"
+        },
+        "data_persistence": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "admin_operations": {
+          "recognized": true,
+          "audience": "operator",
+          "matched_keywords": [
+            "user management"
+          ],
+          "hit_count": 1,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "observability_monitoring": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "deployment_infrastructure": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "payments_billing": {
+          "recognized": true,
+          "audience": "both",
+          "matched_keywords": [
+            "billing",
+            "invoicing"
+          ],
+          "hit_count": 4,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "realtime_synchronization": {
+          "recognized": false,
+          "audience": "user",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "integrations_external": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "ai_orchestration": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "reliability_recovery": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "compliance_security": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "collaboration_multiplayer": {
+          "recognized": false,
+          "audience": "user",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "notifications_delivery": {
+          "recognized": false,
+          "audience": "both",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "analytics_reporting": {
+          "recognized": true,
+          "audience": "both",
+          "matched_keywords": [
+            "reporting"
+          ],
+          "hit_count": 1,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "qa_edge_cases": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        }
+      },
+      "asymmetry": {
+        "user_side_coverage": 0.429,
+        "operator_side_coverage": 0.286,
+        "user_recognized": 3,
+        "operator_recognized": 4,
+        "user_total": 7,
+        "operator_total": 14,
+        "asymmetry_ratio": 1.5,
+        "asymmetric_high": false
+      }
+    }
+  ]
+}

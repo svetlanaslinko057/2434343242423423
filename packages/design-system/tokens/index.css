@@ -1,0 +1,22 @@
+/* ============================================================
+ * Design System — entry point.
+ *
+ * Import order matters:
+ *   1. palette.css       — raw hex per theme
+ *   2. semantic.css      — semantic aliases (--ds-*)
+ *   3. spacing.css       — 4pt grid + radius
+ *   4. typography.css    — type scale
+ *   5. ../motion/motion.css — durations + easings + global transitions
+ *   6. deprecated.css    — bridges old 4 namespaces during Phase 2
+ *
+ * Phase 3 removal: drop the `deprecated.css` import (and the file itself)
+ * once every page has been migrated off legacy variables.
+ * ============================================================ */
+
+@import './palette.css';
+@import './semantic.css';
+@import './spacing.css';
+@import './typography.css';
+@import '../motion/motion.css';
+@import './primitives.css';
+@import './deprecated.css';

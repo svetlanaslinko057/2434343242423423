@@ -1,0 +1,47 @@
+{
+  "summary": "Runtime-client migration regression (Batch 4b + Batch 5) PASSED. 41/41 backend regression tests green plus 11/11 (1 seed-skip) on Stage 4 tester suite. Expo /developer/* (profile, market, acceptance, work) all 200 with no axios residue and runtime/ApiError imports intact. work.tsx submit-module POST verified to carry capability:'payment' + idempotencyKey 'submit-module:<id>' on /api/modules/${moduleId}/submit. 23 migrated web client .js files (representative spot-check on 5: ClientHub, ClientCabinet, ClientWorkspace, ClientDocumentsPage, BuilderAuth) confirmed importing { runtime } from '@/runtime' + { ApiError } from '@/runtime-client', zero axios imports, zero axios.<m>(`${API}/...) residue. All 7 web SPA shell routes (/api/web-ui/, /client/hub, /client/cabinet, /client/dashboard, /client/projects, /client/transparency, /builder/auth) return 200. Backend client APIs (/api/projects/mine, /api/client/invoices, /api/client/dashboard, /api/contracts/my, /api/auth/me) all 200 under cookie-based client@atlas.dev session — confirming the bare-prefix paths the migrated code now uses resolve correctly through the ingress. Browser smoke on /developer/work + /api/web-ui/client/hub: no red screen, no Module-not-found, no runtime exceptions. Backend healthz=200, supervisor: backend/expo/mongodb RUNNING.",
+  "backend_issues": { "critical": [], "minor": [] },
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": [],
+    "react_native_issues": []
+  },
+  "regression_results": {
+    "BATCH_4b_expo_pages_200": "PASS — /developer/profile, /developer/market, /developer/acceptance, /developer/work all 200",
+    "BATCH_4b_transport_invariants": "PASS — no axios imports, no axios.* calls in any of the 4 developer files; runtime + ApiError imports present",
+    "BATCH_4b_work_payment_capability": "PASS — runtime.post(`/api/modules/${moduleId}/submit`, body, { idempotencyKey:`submit-module:${moduleId}`, capability:'payment' }) present at work.tsx:172-176 with the canonical 8-line capability-gate doctrine comment",
+    "BATCH_5_web_shell_200": "PASS — /api/web-ui/, /api/web-ui/client/hub, /api/web-ui/client/cabinet, /api/web-ui/client/dashboard, /api/web-ui/client/projects, /api/web-ui/client/transparency, /api/web-ui/builder/auth all 200",
+    "BATCH_5_transport_invariants": "PASS — 5/5 representative migrated files import { runtime } from '@/runtime' + ApiError; 0 axios imports; 0 axios.<m>(`${API}/...) residue. The two manual-patch files (ClientWorkspace.js multi-line, ClientDocumentsPage.js htmlUrl) hold up: ClientWorkspace uses runtime.<m>().catch with ApiError type-narrow, ClientDocumentsPage keeps `htmlUrl` as a plain string template (only used as an <a href>, not an HTTP call) which is correct.",
+    "BATCH_5_client_api_endpoints": "PASS — /api/projects/mine 200, /api/client/invoices 200, /api/client/dashboard 200, /api/contracts/my 200, /api/auth/me 200 (cookie-based client session). Confirms migrated bare-prefix paths (runtime.get('/api/...')) resolve correctly behind ingress.",
+    "REGRESSION_stage4_tester_surface": "PASS — /tester/home, /tester/validations, /tester/history all 200; /api/tester/validation-tasks 200 with ≥1 task; existing test_tester_surface.py: 11 passed, 1 skipped (same environmental skip as iter_4 — single unclaimed pending row).",
+    "REGRESSION_no_runtime_errors": "PASS — Expo logs show only routine bundler progress + benign expo-notifications/pointerEvents/shadow* warnings. Backend log clean. Browser smoke on /developer/work + /api/web-ui/client/hub: no red screen, no Module-not-found, no PageError; the 4 console 401s on /developer/work are expected unauthenticated API calls (browser had no token)."
+  },
+  "test_report_links": [
+    "/app/backend/tests/test_runtime_client_migration_b4b_b5.py",
+    "/app/test_reports/pytest/runtime_migration_b4b_b5_iter5.xml",
+    "/app/backend/tests/test_tester_surface.py",
+    "/app/test_reports/pytest/tester_surface_iter5.xml"
+  ],
+  "action_items": [
+    "(no blockers) Optional follow-up only: tester seed still has only ONE unclaimed pending row (carried over from iter_4) — pytest test_fail_idempotent_symmetric still skips. Same recommendation as iter_4: seed at least 2 unclaimed pending rows.",
+    "(housekeeping) /tmp/codemod_batch5.py is a one-shot codemod artifact; safe to delete once Batch 5 is permanently FROZEN in /app/audit/RUNTIME_CLIENT_MIGRATION.md (already done per agent-to-agent note)."
+  ],
+  "critical_code_review_comments": [
+    "BATCH 4b is now consistent with the surgical-observability doctrine in RUNTIME_CLIENT_MIGRATION.md: work.tsx submit-module is the SOLE payment-capability commit site in the developer surface; start (line 123) and complete (line 138) are explicitly annotated as state transitions WITHOUT capability:'payment'. This is the correct invariant — only POSTs that trigger ledger movement carry the capability flag.",
+    "BATCH 5 codemod was mechanical and clean: the two manual-patch sites (ClientWorkspace.js multi-line .then/.catch chain and ClientDocumentsPage.js htmlUrl <a href>) are correctly handled. ClientDocumentsPage's `htmlUrl` is a same-origin <a href>, NOT an HTTP call, so it correctly stays as a string template — no runtime.<m> call needed.",
+    "Bare-prefix URL convention (`runtime.get('/api/projects/mine')` instead of ``${API}/projects/mine``) makes the runtime-client the SINGLE source of base-URL truth. Confirmed via curl that the ingress resolves bare-prefix calls under cookie auth — the migration's load-bearing assumption holds."
+  ],
+  "updated_files": [
+    "/app/backend/tests/test_runtime_client_migration_b4b_b5.py (NEW — 41-case regression suite covering Batch 4b + Batch 5 + Stage 4 cross-check)"
+  ],
+  "success_rate": {
+    "backend": "100% (41/41 new regression cases + 11/11 executed Stage-4 cases; 1 pre-existing seed-skip carried from iter_4)",
+    "frontend": "100% on reachability (5/5 Expo developer routes 200 + 7/7 web SPA shell routes 200) + browser smoke clean on 2/2 representative routes (no red screen, no Module-not-found, no PageError)"
+  },
+  "seed_data_creation": "None new. Re-used existing seed (client@atlas.dev / tester@atlas.dev). The pass-idempotency case in test_tester_surface.py consumed the lone pending row again (same as iter_4) — main agent should re-seed at least one fresh unclaimed pending row before next pytest run if they want test_fail_idempotent_symmetric to execute.",
+  "retest_needed": false,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "Re-run combined regression: `/root/.venv/bin/python -m pytest /app/backend/tests/test_runtime_client_migration_b4b_b5.py /app/backend/tests/test_tester_surface.py -v --tb=short`. Expect 52 passed + 1 skip on a stale DB; 53 passed on a freshly seeded DB. Both XML reports at /app/test_reports/pytest/runtime_migration_b4b_b5_iter5.xml and tester_surface_iter5.xml. If a future batch adds more migrated files, append them to TestBatch5TransportInvariants.REP_FILES and TestBatch5ClientAPIs.",
+  "rca_of_issue": "No bugs found. One test-author regex mistake during initial pytest run (TestBatch4bExpoDeveloperPages.test_work_tsx_has_payment_capability_on_submit_module) was caused by my assumption that the URL would contain 'submit-module' — actually the URL is `/api/modules/${moduleId}/submit` and the string 'submit-module' only appears in the idempotencyKey value. Test was fixed in place (regex now matches the full canonical pattern: URL `/api/modules/${moduleId}/submit` + idempotencyKey `submit-module:${moduleId}` + capability:'payment'). The app code itself was always correct."
+}

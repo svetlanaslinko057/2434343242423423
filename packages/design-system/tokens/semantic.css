@@ -1,0 +1,66 @@
+/* ============================================================
+ * semantic.css — semantic aliases over raw palette.
+ *
+ * Pages SHOULD prefer these over `--t-bg`/`--t-surface` etc, because
+ * semantic names survive palette refactors. Hex values live ONLY in
+ * palette.css.
+ *
+ * Tailwind config maps `bg-app`, `text-foreground`, etc. to these.
+ *
+ * If a new role is needed:
+ *   1. Add it here as a `--ds-*` variable pointing to existing `--t-*`.
+ *   2. Add corresponding Tailwind utility in tailwind.config.js.
+ *   3. NEVER add a new raw hex here.
+ * ============================================================ */
+
+:root {
+  /* App-level */
+  --ds-app:               var(--t-bg);
+  --ds-surface:           var(--t-surface);
+  --ds-surface-raised:    var(--t-surface-raised);
+  --ds-surface-sunken:    var(--t-surface-sunken);
+
+  --ds-text:              var(--t-text-primary);
+  --ds-text-secondary:    var(--t-text-secondary);
+  --ds-text-muted:        var(--t-text-muted);
+  --ds-text-inverse:      var(--t-text-inverse);
+
+  --ds-border:            var(--t-border-default);
+  --ds-border-subtle:     var(--t-border-subtle);
+  --ds-border-strong:     var(--t-border-strong);
+
+  /* Action — signal is the only "brand-ish" surface */
+  --ds-action:            var(--t-signal);
+  --ds-action-hover:      var(--t-signal-hover);
+  --ds-action-active:     var(--t-signal-active);
+  --ds-action-ink:        var(--t-signal-ink);
+  --ds-action-bg:         var(--t-signal-bg-soft);
+  --ds-action-bg-strong:  var(--t-signal-bg-strong);
+  --ds-action-border:     var(--t-signal-border);
+
+  /* Status — never the same as action */
+  --ds-success:           var(--t-success);
+  --ds-success-bg:        var(--t-success-bg-soft);
+  --ds-success-border:    var(--t-success-border);
+  --ds-success-ink:       var(--t-success-ink);
+
+  --ds-warning:           var(--t-warning);
+  --ds-warning-bg:        var(--t-warning-bg-soft);
+  --ds-warning-border:    var(--t-warning-border);
+  --ds-warning-ink:       var(--t-warning-ink);
+
+  --ds-danger:            var(--t-danger);
+  --ds-danger-bg:         var(--t-danger-bg-soft);
+  --ds-danger-border:     var(--t-danger-border);
+  --ds-danger-ink:        var(--t-danger-ink);
+
+  --ds-info:              var(--t-info);
+  --ds-info-bg:           var(--t-info-bg-soft);
+  --ds-info-border:       var(--t-info-border);
+  --ds-info-ink:          var(--t-info-ink);
+
+  /* Elevation */
+  --ds-shadow-sm:         var(--t-shadow-sm);
+  --ds-shadow-md:         var(--t-shadow-md);
+  --ds-shadow-lg:         var(--t-shadow-lg);
+}

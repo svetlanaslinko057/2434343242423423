@@ -35,6 +35,16 @@ export default function Root({ children }: PropsWithChildren) {
           overflow: "hidden",
           display: "flex",
           flexDirection: "column",
+          // ─── AUDIT-EXCEPTION: theme-independent SSR substrate ────────────
+          // This style is emitted in the server-rendered HTML root, *before*
+          // the React tree mounts and before `T` / CSS-variables are
+          // injected into the document. Using `var(--t-bg)` here would not
+          // resolve at first paint (the user-agent would fall back to white)
+          // and cause a visible FOUC flash. Keeping a hardcoded substrate
+          // value here is a documented architectural choice — the colour is
+          // intentionally close to the dark substrate so the bridge from
+          // SSR → React first paint is visually seamless. UX convention.
+          backgroundColor: "#121211",
         }}
       >
         {children}

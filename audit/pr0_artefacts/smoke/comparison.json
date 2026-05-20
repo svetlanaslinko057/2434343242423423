@@ -1,0 +1,530 @@
+{
+  "comparisons": [
+    {
+      "label": "escrow",
+      "equal": true,
+      "diff": null,
+      "baseline_structure": {
+        "table_outcomes": [
+          {
+            "step": "T0_seeded_pending_invoice",
+            "module_diverged": false,
+            "module_classes": []
+          },
+          {
+            "step": "T1_invoice_paid_chain_fired",
+            "module_diverged": true,
+            "module_classes": [
+              "ledger_missing"
+            ]
+          },
+          {
+            "step": "T2_module_done_escrow_released",
+            "module_diverged": true,
+            "module_classes": [
+              "wallet_not_credited",
+              "escrow_payouts_orphan",
+              "ledger_missing"
+            ]
+          },
+          {
+            "step": "T3_final_settled_state",
+            "module_diverged": true,
+            "module_classes": [
+              "wallet_not_credited",
+              "escrow_payouts_orphan",
+              "ledger_missing"
+            ]
+          }
+        ],
+        "snapshot_classes": [
+          {
+            "step": "T0_seeded_pending_invoice",
+            "module_classes": [],
+            "module_ok": true
+          },
+          {
+            "step": "T1_invoice_paid_chain_fired",
+            "module_classes": [
+              "ledger_missing"
+            ],
+            "module_ok": false
+          },
+          {
+            "step": "T2_module_done_escrow_released",
+            "module_classes": [
+              "wallet_not_credited",
+              "escrow_payouts_orphan",
+              "ledger_missing"
+            ],
+            "module_ok": false
+          },
+          {
+            "step": "T3_final_settled_state",
+            "module_classes": [
+              "wallet_not_credited",
+              "escrow_payouts_orphan",
+              "ledger_missing"
+            ],
+            "module_ok": false
+          }
+        ]
+      },
+      "post_structure": {
+        "table_outcomes": [
+          {
+            "step": "T0_seeded_pending_invoice",
+            "module_diverged": false,
+            "module_classes": []
+          },
+          {
+            "step": "T1_invoice_paid_chain_fired",
+            "module_diverged": true,
+            "module_classes": [
+              "ledger_missing"
+            ]
+          },
+          {
+            "step": "T2_module_done_escrow_released",
+            "module_diverged": true,
+            "module_classes": [
+              "wallet_not_credited",
+              "escrow_payouts_orphan",
+              "ledger_missing"
+            ]
+          },
+          {
+            "step": "T3_final_settled_state",
+            "module_diverged": true,
+            "module_classes": [
+              "wallet_not_credited",
+              "escrow_payouts_orphan",
+              "ledger_missing"
+            ]
+          }
+        ],
+        "snapshot_classes": [
+          {
+            "step": "T0_seeded_pending_invoice",
+            "module_classes": [],
+            "module_ok": true
+          },
+          {
+            "step": "T1_invoice_paid_chain_fired",
+            "module_classes": [
+              "ledger_missing"
+            ],
+            "module_ok": false
+          },
+          {
+            "step": "T2_module_done_escrow_released",
+            "module_classes": [
+              "wallet_not_credited",
+              "escrow_payouts_orphan",
+              "ledger_missing"
+            ],
+            "module_ok": false
+          },
+          {
+            "step": "T3_final_settled_state",
+            "module_classes": [
+              "wallet_not_credited",
+              "escrow_payouts_orphan",
+              "ledger_missing"
+            ],
+            "module_ok": false
+          }
+        ]
+      }
+    },
+    {
+      "label": "work_execution",
+      "equal": true,
+      "diff": null,
+      "baseline_structure": {
+        "table_outcomes": [
+          {
+            "step": "T0_seeded_task_in_progress",
+            "module_diverged": false,
+            "module_classes": null
+          },
+          {
+            "step": "T1_task_completed_qa_pending",
+            "module_diverged": false,
+            "module_classes": null
+          },
+          {
+            "step": "T2_qa_passed_payout_pending",
+            "module_diverged": true,
+            "module_classes": null
+          },
+          {
+            "step": "T3_payout_approved",
+            "module_diverged": true,
+            "module_classes": null
+          },
+          {
+            "step": "T4_payout_marked_paid_earnings_inserted",
+            "module_diverged": true,
+            "module_classes": null
+          },
+          {
+            "step": "T5_final_settled_state",
+            "module_diverged": true,
+            "module_classes": null
+          }
+        ],
+        "snapshot_classes": [
+          {
+            "step": "T0_seeded_task_in_progress",
+            "module_classes": [],
+            "module_ok": true
+          },
+          {
+            "step": "T1_task_completed_qa_pending",
+            "module_classes": [],
+            "module_ok": true
+          },
+          {
+            "step": "T2_qa_passed_payout_pending",
+            "module_classes": [
+              "payouts_root_orphan"
+            ],
+            "module_ok": false
+          },
+          {
+            "step": "T3_payout_approved",
+            "module_classes": [
+              "payouts_root_orphan"
+            ],
+            "module_ok": false
+          },
+          {
+            "step": "T4_payout_marked_paid_earnings_inserted",
+            "module_classes": [
+              "payouts_root_orphan",
+              "earnings_root_orphan"
+            ],
+            "module_ok": false
+          },
+          {
+            "step": "T5_final_settled_state",
+            "module_classes": [
+              "payouts_root_orphan",
+              "earnings_root_orphan"
+            ],
+            "module_ok": false
+          }
+        ]
+      },
+      "post_structure": {
+        "table_outcomes": [
+          {
+            "step": "T0_seeded_task_in_progress",
+            "module_diverged": false,
+            "module_classes": null
+          },
+          {
+            "step": "T1_task_completed_qa_pending",
+            "module_diverged": false,
+            "module_classes": null
+          },
+          {
+            "step": "T2_qa_passed_payout_pending",
+            "module_diverged": true,
+            "module_classes": null
+          },
+          {
+            "step": "T3_payout_approved",
+            "module_diverged": true,
+            "module_classes": null
+          },
+          {
+            "step": "T4_payout_marked_paid_earnings_inserted",
+            "module_diverged": true,
+            "module_classes": null
+          },
+          {
+            "step": "T5_final_settled_state",
+            "module_diverged": true,
+            "module_classes": null
+          }
+        ],
+        "snapshot_classes": [
+          {
+            "step": "T0_seeded_task_in_progress",
+            "module_classes": [],
+            "module_ok": true
+          },
+          {
+            "step": "T1_task_completed_qa_pending",
+            "module_classes": [],
+            "module_ok": true
+          },
+          {
+            "step": "T2_qa_passed_payout_pending",
+            "module_classes": [
+              "payouts_root_orphan"
+            ],
+            "module_ok": false
+          },
+          {
+            "step": "T3_payout_approved",
+            "module_classes": [
+              "payouts_root_orphan"
+            ],
+            "module_ok": false
+          },
+          {
+            "step": "T4_payout_marked_paid_earnings_inserted",
+            "module_classes": [
+              "payouts_root_orphan",
+              "earnings_root_orphan"
+            ],
+            "module_ok": false
+          },
+          {
+            "step": "T5_final_settled_state",
+            "module_classes": [
+              "payouts_root_orphan",
+              "earnings_root_orphan"
+            ],
+            "module_ok": false
+          }
+        ]
+      }
+    },
+    {
+      "label": "withdrawal",
+      "equal": true,
+      "diff": null,
+      "baseline_structure": {
+        "split_brain_summary_normalised": {
+          "canonical_path_complete": {
+            "final_status_in_dev_withdrawals": "paid",
+            "expected": "pending=0, withdrawn=800 (wallet credited correctly)"
+          },
+          "mobile_admin_path_orphan": {
+            "final_status_in_withdrawals_collection": "approved",
+            "visible_in_dev_withdrawals_collection": false,
+            "expected_under_decision_4_recommendation_4A": "row visible in dev_withdrawals AND wallet adjusted \u2014 NEITHER happened"
+          },
+          "decision_4_evidence": {
+            "split_brain_confirmed": true,
+            "writers": {
+              "dev_withdrawals": [
+                "server.py:11087/11147/11169/11210"
+              ],
+              "withdrawals": [
+                "admin_mobile.py:516/566"
+              ]
+            },
+            "readers": {
+              "dev_withdrawals": [
+                "server.py developer view, admin queue"
+              ],
+              "withdrawals": [
+                "admin_mobile.py only"
+              ]
+            },
+            "overlap": "zero \u2014 no path writes to both, no path reads from both"
+          }
+        },
+        "part_1_step_arc": [
+          "T0_seeded_wallet_2000_available",
+          "T1_developer_requested_800",
+          "T2_canonical_admin_approved",
+          "T3_canonical_admin_marked_paid"
+        ],
+        "part_1_divergence_classes": [
+          {
+            "step": "T0_seeded_wallet_2000_available",
+            "developer_classes": [
+              "wallet_journal_drift",
+              "legacy_drift_total_earnings"
+            ],
+            "developer_ok": false
+          },
+          {
+            "step": "T1_developer_requested_800",
+            "developer_classes": [
+              "wallet_journal_drift",
+              "legacy_drift_total_earnings"
+            ],
+            "developer_ok": false
+          },
+          {
+            "step": "T2_canonical_admin_approved",
+            "developer_classes": [
+              "wallet_journal_drift",
+              "legacy_drift_total_earnings"
+            ],
+            "developer_ok": false
+          },
+          {
+            "step": "T3_canonical_admin_marked_paid",
+            "developer_classes": [
+              "wallet_journal_drift",
+              "legacy_drift_total_earnings"
+            ],
+            "developer_ok": false
+          }
+        ],
+        "part_2_step_arc": [
+          "S0_planted_row_in_withdrawals_collection",
+          "S1_admin_mobile_approved_in_withdrawals_collection",
+          "S2_check_mobile_row_visibility_in_dev_view",
+          "S3_wallet_state_after_mobile_action"
+        ],
+        "part_2_divergence_classes": [
+          {
+            "step": "S0_planted_row_in_withdrawals_collection",
+            "developer_classes": [
+              "wallet_journal_drift",
+              "legacy_drift_total_earnings"
+            ],
+            "developer_ok": false
+          },
+          {
+            "step": "S1_admin_mobile_approved_in_withdrawals_collection",
+            "developer_classes": [
+              "wallet_journal_drift",
+              "legacy_drift_total_earnings"
+            ],
+            "developer_ok": false
+          },
+          {
+            "step": "S2_check_mobile_row_visibility_in_dev_view",
+            "developer_classes": [
+              "wallet_journal_drift",
+              "legacy_drift_total_earnings"
+            ],
+            "developer_ok": false
+          },
+          {
+            "step": "S3_wallet_state_after_mobile_action",
+            "developer_classes": [
+              "wallet_journal_drift",
+              "legacy_drift_total_earnings"
+            ],
+            "developer_ok": false
+          }
+        ]
+      },
+      "post_structure": {
+        "split_brain_summary_normalised": {
+          "canonical_path_complete": {
+            "final_status_in_dev_withdrawals": "paid",
+            "expected": "pending=0, withdrawn=800 (wallet credited correctly)"
+          },
+          "mobile_admin_path_orphan": {
+            "final_status_in_withdrawals_collection": "approved",
+            "visible_in_dev_withdrawals_collection": false,
+            "expected_under_decision_4_recommendation_4A": "row visible in dev_withdrawals AND wallet adjusted \u2014 NEITHER happened"
+          },
+          "decision_4_evidence": {
+            "split_brain_confirmed": true,
+            "writers": {
+              "dev_withdrawals": [
+                "server.py:11087/11147/11169/11210"
+              ],
+              "withdrawals": [
+                "admin_mobile.py:516/566"
+              ]
+            },
+            "readers": {
+              "dev_withdrawals": [
+                "server.py developer view, admin queue"
+              ],
+              "withdrawals": [
+                "admin_mobile.py only"
+              ]
+            },
+            "overlap": "zero \u2014 no path writes to both, no path reads from both"
+          }
+        },
+        "part_1_step_arc": [
+          "T0_seeded_wallet_2000_available",
+          "T1_developer_requested_800",
+          "T2_canonical_admin_approved",
+          "T3_canonical_admin_marked_paid"
+        ],
+        "part_1_divergence_classes": [
+          {
+            "step": "T0_seeded_wallet_2000_available",
+            "developer_classes": [
+              "wallet_journal_drift",
+              "legacy_drift_total_earnings"
+            ],
+            "developer_ok": false
+          },
+          {
+            "step": "T1_developer_requested_800",
+            "developer_classes": [
+              "wallet_journal_drift",
+              "legacy_drift_total_earnings"
+            ],
+            "developer_ok": false
+          },
+          {
+            "step": "T2_canonical_admin_approved",
+            "developer_classes": [
+              "wallet_journal_drift",
+              "legacy_drift_total_earnings"
+            ],
+            "developer_ok": false
+          },
+          {
+            "step": "T3_canonical_admin_marked_paid",
+            "developer_classes": [
+              "wallet_journal_drift",
+              "legacy_drift_total_earnings"
+            ],
+            "developer_ok": false
+          }
+        ],
+        "part_2_step_arc": [
+          "S0_planted_row_in_withdrawals_collection",
+          "S1_admin_mobile_approved_in_withdrawals_collection",
+          "S2_check_mobile_row_visibility_in_dev_view",
+          "S3_wallet_state_after_mobile_action"
+        ],
+        "part_2_divergence_classes": [
+          {
+            "step": "S0_planted_row_in_withdrawals_collection",
+            "developer_classes": [
+              "wallet_journal_drift",
+              "legacy_drift_total_earnings"
+            ],
+            "developer_ok": false
+          },
+          {
+            "step": "S1_admin_mobile_approved_in_withdrawals_collection",
+            "developer_classes": [
+              "wallet_journal_drift",
+              "legacy_drift_total_earnings"
+            ],
+            "developer_ok": false
+          },
+          {
+            "step": "S2_check_mobile_row_visibility_in_dev_view",
+            "developer_classes": [
+              "wallet_journal_drift",
+              "legacy_drift_total_earnings"
+            ],
+            "developer_ok": false
+          },
+          {
+            "step": "S3_wallet_state_after_mobile_action",
+            "developer_classes": [
+              "wallet_journal_drift",
+              "legacy_drift_total_earnings"
+            ],
+            "developer_ok": false
+          }
+        ]
+      }
+    }
+  ],
+  "all_equal": true
+}

@@ -1,0 +1,57 @@
+{
+  "summary": "Stage 4 re-test (post-fix) PASSED. All 3 critical regressions identified in iteration_3 are now resolved: (1) /api/mobile/auth/login user payload now includes states=['tester'] AND active_context='tester'; (2) /api/auth/me now exposes states, active_context, active_role and roles; (3) /api/validation/{id}/pass replay by same tester returns 200 with idempotent:true (was 400 before). Cross-action guard (/fail after /pass) still correctly 400s with 'passed' hint. Frontend: all 3 tester routes reachable (HTTP 200) with their testIDs rendered; QA Cockpit displays 4 KPI cards, Open queue CTA, MY VALIDATIONS list and 3-tab bottom nav (Home/Queue/History). Pytest: 11 passed, 1 skipped (skip is environmental — only 1 unclaimed pending validation in seed, consumed by the pass test before the symmetric /fail test could run).",
+  "backend_issues": {
+    "critical": [],
+    "minor": [
+      {
+        "endpoint": "Seed (validation_tasks)",
+        "issue": "Only ONE unclaimed pending row exists in the tester seed, which means a single pytest run can exercise EITHER pass-idempotency OR fail-idempotency but not both. test_fail_idempotent_symmetric is therefore skipped at runtime. Suggest seeding at least TWO unclaimed pending rows so both symmetric idempotency tests run on every CI invocation."
+      },
+      {
+        "endpoint": "Frontend console (post-login state-set)",
+        "issue": "React warning: 'React has detected a change in the order of Hooks called by %s' fires once right after we set the auth token in localStorage and the resolver re-runs. Non-fatal (no red screen) but indicates a conditional-hook in resolve-entry or in the (tabs) layout that should be cleaned up. Re-renders correctly afterward."
+      }
+    ]
+  },
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": [],
+    "react_native_issues": []
+  },
+  "regression_results": {
+    "REGRESSION-1_login_states_active_context": "PASS — user.states=['tester'], user.active_context='tester', user.role='tester', user.active_role='tester', user.roles contains 'tester'",
+    "REGRESSION-2_auth_me_states": "PASS — /api/auth/me returns states, active_context, active_role, roles (all reflect 'tester')",
+    "REGRESSION-3_pass_idempotent": "PASS — first /pass: 200 {message:'Validation passed'}; second /pass: 200 {message:'Validation passed', idempotent:true} (verified against val_2119715865d2 in backend logs and via pytest assertion)",
+    "REGRESSION-3b_fail_after_pass_blocked": "PASS — /fail after /pass: 400 with hint containing 'passed'",
+    "REGRESSION-3c_fail_idempotent_symmetric": "SKIPPED at runtime — no second unclaimed pending row in seed. Backend code path is symmetrically implemented per main agent's note; verified by code path parity but not by live HTTP. Recommend re-running on a fresh DB OR seeding a 2nd unclaimed pending so this assertion runs.",
+    "HAPPY_PATH_validation_tasks_6": "PASS — /api/tester/validation-tasks returns 6 items with mix of pending/in_progress/passed/failed",
+    "HAPPY_PATH_details_and_issues": "PASS — work_unit.title and submission.summary populated; issues listing works; file-issue endpoint with Idempotency-Key returns 200 and the new row appears immediately in the listing",
+    "FRONTEND_resolve_entry": "PASS — /tester/home, /tester/validations, /tester/history each return HTTP 200; testIDs tester-home, tester-validations, tester-history all found; no red screen; QA Cockpit renders KPI cards + Open queue CTA + MY VALIDATIONS + 3-tab nav (Home/Queue/History — validation/[id] correctly hidden)"
+  },
+  "test_report_links": [
+    "/app/backend/tests/test_tester_surface.py",
+    "/app/test_reports/pytest/tester_surface_results.xml"
+  ],
+  "action_items": [
+    "MINOR: Add at least one extra unclaimed pending validation row to the tester seed so test_fail_idempotent_symmetric runs (today it skips because the pass-test consumes the only pending row).",
+    "MINOR: Investigate the 'change in order of Hooks' React warning that fires once after token injection / resolve-entry re-render. Likely a conditional useEffect or useState in the resolve-entry chain or a (tabs)/_layout guard. Not blocking, but worth a cleanup."
+  ],
+  "critical_code_review_comments": [
+    "Natural-key idempotency (validation_id, action, tester_id) is a cleaner contract than header-keyed cache replay for this domain — first decision wins, repeats are no-ops, cross-action still 400s. Good fit.",
+    "Idempotency-Key header is accepted but ignored for content matching; consider documenting this on the route's OpenAPI description so callers don't expect strict header-cache replay semantics.",
+    "/api/auth/me now merges fields from a fresh db.users read on top of the strict User Pydantic model — works, but it means the response shape is no longer fully described by a single Pydantic model. Consider extending the User model with optional states/active_context/active_role/roles so the schema is self-describing."
+  ],
+  "updated_files": [
+    "/app/backend/tests/test_tester_surface.py (added explicit idempotent:true assertion on /pass replay, stricter /auth/me assertions for states+active_context+active_role+roles, new test_fail_idempotent_symmetric)"
+  ],
+  "success_rate": {
+    "backend": "100% on executed cases (11/11 passed, 1 skipped due to seed constraint — not a failure)",
+    "frontend": "100% on reachability + smoke-render (3/3 tester routes 200 + testIDs present + no red screen)"
+  },
+  "seed_data_creation": "Each pytest run creates one TEST_-prefixed issue on the in_progress validation via POST /api/validation/{id}/issue. The pass-idempotency test additionally consumes the lone pending row (pending → passed). For repeat runs, main agent must re-seed at least one unclaimed pending row.",
+  "retest_needed": false,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "Re-run: `/root/.venv/bin/python -m pytest /app/backend/tests/test_tester_surface.py -v --tb=short`. Expect 11 passed + 1 skipped on a stale DB; on a freshly seeded DB with 2+ unclaimed pending rows expect 12 passed. The XML report lives at /app/test_reports/pytest/tester_surface_results.xml.",
+  "rca_of_issue": "All three issues from iteration_3 are fixed: (1) mobile_adapter._to_mobile_user now derives states/active_context from roles/active_role with safe fallbacks — confirmed in the login response on the wire; (2) /api/auth/me re-reads from db.users and merges states/active_context/active_role/roles onto the strict User dump — confirmed in the wire response and via pytest assertions; (3) /pass and /fail handlers now early-return {idempotent:true} when (validation_id, action, tester_id) match an already-decided row — confirmed live by val_2119715865d2 pass#1=200, pass#2=200 idempotent:true, fail-after-pass=400 with hint."
+}

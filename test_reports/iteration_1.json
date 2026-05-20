@@ -1,0 +1,42 @@
+{
+  "summary": "End-to-end backend testing of the new TOTP-based 2FA flow. 19/19 pytest cases pass covering setup, enrollment, login challenge, TOTP verify, recovery-code verify+consumption, recovery-code reuse rejection, wrong code, 5-attempt lockout (429), consumed-challenge replay rejection, invalid challenge tokens, recovery-codes status accounting (10/9 after consume), regenerate (TOTP required / recovery rejected, old codes invalidated), disable via TOTP and via recovery code (with post-disable login no longer requiring 2FA), bad-code disable rejection, legacy /enable returning 400, and the web cookie-based /auth/login + /auth/2fa/verify path. john@atlas.dev's 2FA state is reset to off between tests.",
+  "backend_issues": {
+    "critical": [],
+    "minor": [
+      {
+        "endpoint": "All HTTPException-raising 2FA endpoints",
+        "issue": "Server's global error envelope wraps FastAPI's `detail` into `{ok:false, code, message, request_id, ...}`. The `detail` key the raw HTTPException raises does NOT appear in the client-facing JSON. This is consistent across the app so probably intentional, but worth noting because docs / mobile clients that expect FastAPI's default `{detail: ...}` shape will see `null`. Status codes themselves (400/410/429) are correct."
+      }
+    ]
+  },
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "test_report_links": [
+    "/app/backend/tests/test_two_factor.py",
+    "/app/test_reports/pytest/two_factor_results.xml"
+  ],
+  "action_items": [],
+  "critical_code_review_comments": [
+    "two_factor.py is clean, well-scoped (~440 lines), uses async DB, bcrypt-hashes recovery codes, normalizes input (whitespace+dashes), 30s clock-drift window (valid_window=1) on TOTP. Good.",
+    "Challenge collection `two_factor_challenges` is written per login but there is no TTL index on `expires_at` — over time these will accumulate. Recommend creating a MongoDB TTL index, e.g. `db.two_factor_challenges.createIndex({expires_at: 1}, {expireAfterSeconds: 0})`, or sweeping in a background task. Non-blocking.",
+    "5-attempt lockout is per-challenge_token, not per-user. An attacker who keeps re-logging-in gets a fresh challenge each time and effectively unlimited TOTP guesses (still bounded by the 30s window + valid_window=1, but no global rate limit). Consider per-user attempt counter or IP throttle as a future hardening.",
+    "Setting `secure=True, samesite='none'` on the session cookie in both verify endpoints is correct for the cross-origin Expo preview, just make sure the production deploy is HTTPS-only (which it is).",
+    "`web_verify` returns the raw user document via `user.pop('password_hash', None)` — only password_hash is stripped. Consider whether `totp_secret`, `totp_pending_secret`, `recovery_codes` could ever leak; they shouldn't be present after a successful login on a 2FA-enabled user (they're loaded from DB unscoped). Recommend an explicit allow-list projection or pop the 2FA fields too as defence in depth."
+  ],
+  "updated_files": [
+    "/app/backend/tests/test_two_factor.py"
+  ],
+  "success_rate": {
+    "backend": "100%",
+    "frontend": "not tested (per request)"
+  },
+  "test_credentials": "john@atlas.dev / dev123 (from /app/memory/test_credentials.md). DB reset between tests via direct MongoDB write.",
+  "seed_data_creation": "None — relied on existing seed user john@atlas.dev. Fixture `fresh_user` clears 2FA state on `users` and purges `two_factor_challenges` collection before+after each test.",
+  "retest_needed": false,
+  "main_agent_can_self_test": true,
+  "context_for_next_testing_agent": "Re-running: `cd /app && REACT_APP_BACKEND_URL=https://mobile-expo-app-1.preview.emergentagent.com MONGO_URL=mongodb://localhost:27017 DB_NAME=test_database /root/.venv/bin/python -m pytest backend/tests/test_two_factor.py -v`. Each test resets john's 2FA state via pymongo, so order-independent. Frontend (Expo web bundle) was deliberately skipped per main-agent instruction.",
+  "rca of the issue": "N/A — no functional bugs found. The only test failure during the first pass was an over-tight assertion expecting FastAPI's default `{detail: ...}` envelope; the app uses a custom error envelope `{ok:false, message, code, request_id}`. Updated the test to accept either, no production code change needed."
+}

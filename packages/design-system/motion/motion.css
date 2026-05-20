@@ -1,0 +1,40 @@
+/* ============================================================
+ * motion.css — animation timings + easings.
+ *
+ * IDENTICAL in dark and light.
+ * ============================================================ */
+
+:root {
+  --ds-duration-instant:    80ms;
+  --ds-duration-fast:       120ms;
+  --ds-duration-normal:     150ms;
+  --ds-duration-slow:       200ms;
+  --ds-duration-deliberate: 320ms;
+
+  --ds-easing-standard: cubic-bezier(0.16, 1, 0.3, 1);
+  --ds-easing-enter:    cubic-bezier(0, 0, 0.2, 1);
+  --ds-easing-exit:     cubic-bezier(0.4, 0, 1, 1);
+}
+
+/* Global interaction transition — applies to interactive elements inside
+   any themed surface. */
+[data-theme] a,
+[data-theme] button,
+[data-theme] input,
+[data-theme] select,
+[data-theme] textarea,
+[data-theme] .clickable,
+[data-theme] [role="button"],
+.theme-dark a, .theme-dark button, .theme-dark input, .theme-dark select, .theme-dark textarea,
+.theme-light a, .theme-light button, .theme-light input, .theme-light select, .theme-light textarea {
+  transition:
+    color           var(--ds-duration-normal) var(--ds-easing-standard),
+    background-color var(--ds-duration-normal) var(--ds-easing-standard),
+    border-color    var(--ds-duration-normal) var(--ds-easing-standard),
+    box-shadow      var(--ds-duration-normal) var(--ds-easing-standard),
+    transform       var(--ds-duration-fast)   var(--ds-easing-standard);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}

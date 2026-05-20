@@ -1,0 +1,19 @@
+{
+  "captured_at": "2026-05-09T20:01:11.313699+00:00",
+  "totals": {
+    "surfaces_scanned": 51,
+    "navigated_ok": 51,
+    "total_api_calls": 404,
+    "compat_hits_total": 0,
+    "unique_legacy_routes": 0,
+    "page_failures": 0
+  },
+  "by_severity": {
+    "hot": 0,
+    "warm": 0,
+    "warm_agg": 0,
+    "cold": 0,
+    "unknown": 0
+  },
+  "top10": []
+}

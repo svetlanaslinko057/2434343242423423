@@ -1,0 +1,557 @@
+{
+  "generated_at": "2026-05-18T18:48:02Z",
+  "pre_graft_source": "/app/audit/run1_pre_graft/scope-benchmark-corpus.json",
+  "post_graft_source": "/app/audit/scope-benchmark-corpus.json",
+  "target_categories": [
+    "reliability_recovery",
+    "qa_edge_cases"
+  ],
+  "v2_extra_keyword_counts": {
+    "reliability_recovery": 26,
+    "qa_edge_cases": 31
+  },
+  "runs": {
+    "pre_graft": {
+      "rows": [
+        {
+          "archetype_id": "slack",
+          "archetype_name": "Slack clone (team chat MVP)",
+          "ai_generated": true,
+          "per_target": {
+            "reliability_recovery": {
+              "v1_recognized": false,
+              "v2_recognized": false,
+              "newly_recognized_v2": false,
+              "v1_matched_keywords": [],
+              "v2_matched_keywords": [],
+              "v2_new_matches": [],
+              "sample_evidence": null
+            },
+            "qa_edge_cases": {
+              "v1_recognized": false,
+              "v2_recognized": false,
+              "newly_recognized_v2": false,
+              "v1_matched_keywords": [],
+              "v2_matched_keywords": [],
+              "v2_new_matches": [],
+              "sample_evidence": null
+            }
+          }
+        },
+        {
+          "archetype_id": "linear",
+          "archetype_name": "Linear clone (issue tracker)",
+          "ai_generated": true,
+          "per_target": {
+            "reliability_recovery": {
+              "v1_recognized": false,
+              "v2_recognized": false,
+              "newly_recognized_v2": false,
+              "v1_matched_keywords": [],
+              "v2_matched_keywords": [],
+              "v2_new_matches": [],
+              "sample_evidence": null
+            },
+            "qa_edge_cases": {
+              "v1_recognized": false,
+              "v2_recognized": false,
+              "newly_recognized_v2": false,
+              "v1_matched_keywords": [],
+              "v2_matched_keywords": [],
+              "v2_new_matches": [],
+              "sample_evidence": null
+            }
+          }
+        },
+        {
+          "archetype_id": "stripe_for_x",
+          "archetype_name": "Stripe-for-X (vertical payments platform)",
+          "ai_generated": true,
+          "per_target": {
+            "reliability_recovery": {
+              "v1_recognized": false,
+              "v2_recognized": false,
+              "newly_recognized_v2": false,
+              "v1_matched_keywords": [],
+              "v2_matched_keywords": [],
+              "v2_new_matches": [],
+              "sample_evidence": null
+            },
+            "qa_edge_cases": {
+              "v1_recognized": false,
+              "v2_recognized": false,
+              "newly_recognized_v2": false,
+              "v1_matched_keywords": [],
+              "v2_matched_keywords": [],
+              "v2_new_matches": [],
+              "sample_evidence": null
+            }
+          }
+        },
+        {
+          "archetype_id": "b2b_crm",
+          "archetype_name": "B2B CRM",
+          "ai_generated": true,
+          "per_target": {
+            "reliability_recovery": {
+              "v1_recognized": false,
+              "v2_recognized": false,
+              "newly_recognized_v2": false,
+              "v1_matched_keywords": [],
+              "v2_matched_keywords": [],
+              "v2_new_matches": [],
+              "sample_evidence": null
+            },
+            "qa_edge_cases": {
+              "v1_recognized": false,
+              "v2_recognized": false,
+              "newly_recognized_v2": false,
+              "v1_matched_keywords": [],
+              "v2_matched_keywords": [],
+              "v2_new_matches": [],
+              "sample_evidence": null
+            }
+          }
+        },
+        {
+          "archetype_id": "ai_copilot",
+          "archetype_name": "AI copilot (LLM product)",
+          "ai_generated": true,
+          "per_target": {
+            "reliability_recovery": {
+              "v1_recognized": false,
+              "v2_recognized": false,
+              "newly_recognized_v2": false,
+              "v1_matched_keywords": [],
+              "v2_matched_keywords": [],
+              "v2_new_matches": [],
+              "sample_evidence": null
+            },
+            "qa_edge_cases": {
+              "v1_recognized": false,
+              "v2_recognized": false,
+              "newly_recognized_v2": false,
+              "v1_matched_keywords": [],
+              "v2_matched_keywords": [],
+              "v2_new_matches": [],
+              "sample_evidence": null
+            }
+          }
+        },
+        {
+          "archetype_id": "infra_observability",
+          "archetype_name": "Infrastructure observability platform",
+          "ai_generated": true,
+          "per_target": {
+            "reliability_recovery": {
+              "v1_recognized": false,
+              "v2_recognized": true,
+              "newly_recognized_v2": true,
+              "v1_matched_keywords": [],
+              "v2_matched_keywords": [
+                "failover",
+                "reliability"
+              ],
+              "v2_new_matches": [
+                "failover",
+                "reliability"
+              ],
+              "sample_evidence": "nd permissions management.\nmonitoring & reliability\nset up infrastructure monitoring and fa"
+            },
+            "qa_edge_cases": {
+              "v1_recognized": false,
+              "v2_recognized": false,
+              "newly_recognized_v2": false,
+              "v1_matched_keywords": [],
+              "v2_matched_keywords": [],
+              "v2_new_matches": [],
+              "sample_evidence": null
+            }
+          }
+        },
+        {
+          "archetype_id": "marketplace",
+          "archetype_name": "Two-sided marketplace",
+          "ai_generated": true,
+          "per_target": {
+            "reliability_recovery": {
+              "v1_recognized": false,
+              "v2_recognized": false,
+              "newly_recognized_v2": false,
+              "v1_matched_keywords": [],
+              "v2_matched_keywords": [],
+              "v2_new_matches": [],
+              "sample_evidence": null
+            },
+            "qa_edge_cases": {
+              "v1_recognized": false,
+              "v2_recognized": false,
+              "newly_recognized_v2": false,
+              "v1_matched_keywords": [],
+              "v2_matched_keywords": [],
+              "v2_new_matches": [],
+              "sample_evidence": null
+            }
+          }
+        },
+        {
+          "archetype_id": "multiplayer",
+          "archetype_name": "Realtime multiplayer experience",
+          "ai_generated": true,
+          "per_target": {
+            "reliability_recovery": {
+              "v1_recognized": false,
+              "v2_recognized": false,
+              "newly_recognized_v2": false,
+              "v1_matched_keywords": [],
+              "v2_matched_keywords": [],
+              "v2_new_matches": [],
+              "sample_evidence": null
+            },
+            "qa_edge_cases": {
+              "v1_recognized": false,
+              "v2_recognized": false,
+              "newly_recognized_v2": false,
+              "v1_matched_keywords": [],
+              "v2_matched_keywords": [],
+              "v2_new_matches": [],
+              "sample_evidence": null
+            }
+          }
+        },
+        {
+          "archetype_id": "banking_dashboard",
+          "archetype_name": "Banking-grade financial dashboard",
+          "ai_generated": true,
+          "per_target": {
+            "reliability_recovery": {
+              "v1_recognized": false,
+              "v2_recognized": false,
+              "newly_recognized_v2": false,
+              "v1_matched_keywords": [],
+              "v2_matched_keywords": [],
+              "v2_new_matches": [],
+              "sample_evidence": null
+            },
+            "qa_edge_cases": {
+              "v1_recognized": false,
+              "v2_recognized": false,
+              "newly_recognized_v2": false,
+              "v1_matched_keywords": [],
+              "v2_matched_keywords": [],
+              "v2_new_matches": [],
+              "sample_evidence": null
+            }
+          }
+        },
+        {
+          "archetype_id": "enterprise_erp",
+          "archetype_name": "Enterprise ERP system",
+          "ai_generated": true,
+          "per_target": {
+            "reliability_recovery": {
+              "v1_recognized": false,
+              "v2_recognized": false,
+              "newly_recognized_v2": false,
+              "v1_matched_keywords": [],
+              "v2_matched_keywords": [],
+              "v2_new_matches": [],
+              "sample_evidence": null
+            },
+            "qa_edge_cases": {
+              "v1_recognized": false,
+              "v2_recognized": false,
+              "newly_recognized_v2": false,
+              "v1_matched_keywords": [],
+              "v2_matched_keywords": [],
+              "v2_new_matches": [],
+              "sample_evidence": null
+            }
+          }
+        }
+      ],
+      "aggregate": {
+        "reliability_recovery": {
+          "v1_recognized_count": 0,
+          "v2_recognized_count": 1,
+          "delta": 1,
+          "total_archetypes": 10
+        },
+        "qa_edge_cases": {
+          "v1_recognized_count": 0,
+          "v2_recognized_count": 0,
+          "delta": 0,
+          "total_archetypes": 10
+        }
+      }
+    },
+    "post_graft": {
+      "rows": [
+        {
+          "archetype_id": "slack",
+          "archetype_name": "Slack clone (team chat MVP)",
+          "ai_generated": true,
+          "per_target": {
+            "reliability_recovery": {
+              "v1_recognized": false,
+              "v2_recognized": false,
+              "newly_recognized_v2": false,
+              "v1_matched_keywords": [],
+              "v2_matched_keywords": [],
+              "v2_new_matches": [],
+              "sample_evidence": null
+            },
+            "qa_edge_cases": {
+              "v1_recognized": false,
+              "v2_recognized": false,
+              "newly_recognized_v2": false,
+              "v1_matched_keywords": [],
+              "v2_matched_keywords": [],
+              "v2_new_matches": [],
+              "sample_evidence": null
+            }
+          }
+        },
+        {
+          "archetype_id": "linear",
+          "archetype_name": "Linear clone (issue tracker)",
+          "ai_generated": true,
+          "per_target": {
+            "reliability_recovery": {
+              "v1_recognized": false,
+              "v2_recognized": false,
+              "newly_recognized_v2": false,
+              "v1_matched_keywords": [],
+              "v2_matched_keywords": [],
+              "v2_new_matches": [],
+              "sample_evidence": null
+            },
+            "qa_edge_cases": {
+              "v1_recognized": false,
+              "v2_recognized": false,
+              "newly_recognized_v2": false,
+              "v1_matched_keywords": [],
+              "v2_matched_keywords": [],
+              "v2_new_matches": [],
+              "sample_evidence": null
+            }
+          }
+        },
+        {
+          "archetype_id": "stripe_for_x",
+          "archetype_name": "Stripe-for-X (vertical payments platform)",
+          "ai_generated": false,
+          "per_target": {
+            "reliability_recovery": {
+              "v1_recognized": false,
+              "v2_recognized": false,
+              "newly_recognized_v2": false,
+              "v1_matched_keywords": [],
+              "v2_matched_keywords": [],
+              "v2_new_matches": [],
+              "sample_evidence": null
+            },
+            "qa_edge_cases": {
+              "v1_recognized": false,
+              "v2_recognized": false,
+              "newly_recognized_v2": false,
+              "v1_matched_keywords": [],
+              "v2_matched_keywords": [],
+              "v2_new_matches": [],
+              "sample_evidence": null
+            }
+          }
+        },
+        {
+          "archetype_id": "b2b_crm",
+          "archetype_name": "B2B CRM",
+          "ai_generated": true,
+          "per_target": {
+            "reliability_recovery": {
+              "v1_recognized": false,
+              "v2_recognized": false,
+              "newly_recognized_v2": false,
+              "v1_matched_keywords": [],
+              "v2_matched_keywords": [],
+              "v2_new_matches": [],
+              "sample_evidence": null
+            },
+            "qa_edge_cases": {
+              "v1_recognized": false,
+              "v2_recognized": false,
+              "newly_recognized_v2": false,
+              "v1_matched_keywords": [],
+              "v2_matched_keywords": [],
+              "v2_new_matches": [],
+              "sample_evidence": null
+            }
+          }
+        },
+        {
+          "archetype_id": "ai_copilot",
+          "archetype_name": "AI copilot (LLM product)",
+          "ai_generated": true,
+          "per_target": {
+            "reliability_recovery": {
+              "v1_recognized": false,
+              "v2_recognized": false,
+              "newly_recognized_v2": false,
+              "v1_matched_keywords": [],
+              "v2_matched_keywords": [],
+              "v2_new_matches": [],
+              "sample_evidence": null
+            },
+            "qa_edge_cases": {
+              "v1_recognized": false,
+              "v2_recognized": false,
+              "newly_recognized_v2": false,
+              "v1_matched_keywords": [],
+              "v2_matched_keywords": [],
+              "v2_new_matches": [],
+              "sample_evidence": null
+            }
+          }
+        },
+        {
+          "archetype_id": "infra_observability",
+          "archetype_name": "Infrastructure observability platform",
+          "ai_generated": true,
+          "per_target": {
+            "reliability_recovery": {
+              "v1_recognized": false,
+              "v2_recognized": false,
+              "newly_recognized_v2": false,
+              "v1_matched_keywords": [],
+              "v2_matched_keywords": [],
+              "v2_new_matches": [],
+              "sample_evidence": null
+            },
+            "qa_edge_cases": {
+              "v1_recognized": false,
+              "v2_recognized": false,
+              "newly_recognized_v2": false,
+              "v1_matched_keywords": [],
+              "v2_matched_keywords": [],
+              "v2_new_matches": [],
+              "sample_evidence": null
+            }
+          }
+        },
+        {
+          "archetype_id": "marketplace",
+          "archetype_name": "Two-sided marketplace",
+          "ai_generated": true,
+          "per_target": {
+            "reliability_recovery": {
+              "v1_recognized": false,
+              "v2_recognized": false,
+              "newly_recognized_v2": false,
+              "v1_matched_keywords": [],
+              "v2_matched_keywords": [],
+              "v2_new_matches": [],
+              "sample_evidence": null
+            },
+            "qa_edge_cases": {
+              "v1_recognized": false,
+              "v2_recognized": false,
+              "newly_recognized_v2": false,
+              "v1_matched_keywords": [],
+              "v2_matched_keywords": [],
+              "v2_new_matches": [],
+              "sample_evidence": null
+            }
+          }
+        },
+        {
+          "archetype_id": "multiplayer",
+          "archetype_name": "Realtime multiplayer experience",
+          "ai_generated": true,
+          "per_target": {
+            "reliability_recovery": {
+              "v1_recognized": false,
+              "v2_recognized": false,
+              "newly_recognized_v2": false,
+              "v1_matched_keywords": [],
+              "v2_matched_keywords": [],
+              "v2_new_matches": [],
+              "sample_evidence": null
+            },
+            "qa_edge_cases": {
+              "v1_recognized": false,
+              "v2_recognized": false,
+              "newly_recognized_v2": false,
+              "v1_matched_keywords": [],
+              "v2_matched_keywords": [],
+              "v2_new_matches": [],
+              "sample_evidence": null
+            }
+          }
+        },
+        {
+          "archetype_id": "banking_dashboard",
+          "archetype_name": "Banking-grade financial dashboard",
+          "ai_generated": true,
+          "per_target": {
+            "reliability_recovery": {
+              "v1_recognized": false,
+              "v2_recognized": false,
+              "newly_recognized_v2": false,
+              "v1_matched_keywords": [],
+              "v2_matched_keywords": [],
+              "v2_new_matches": [],
+              "sample_evidence": null
+            },
+            "qa_edge_cases": {
+              "v1_recognized": false,
+              "v2_recognized": false,
+              "newly_recognized_v2": false,
+              "v1_matched_keywords": [],
+              "v2_matched_keywords": [],
+              "v2_new_matches": [],
+              "sample_evidence": null
+            }
+          }
+        },
+        {
+          "archetype_id": "enterprise_erp",
+          "archetype_name": "Enterprise ERP system",
+          "ai_generated": true,
+          "per_target": {
+            "reliability_recovery": {
+              "v1_recognized": false,
+              "v2_recognized": false,
+              "newly_recognized_v2": false,
+              "v1_matched_keywords": [],
+              "v2_matched_keywords": [],
+              "v2_new_matches": [],
+              "sample_evidence": null
+            },
+            "qa_edge_cases": {
+              "v1_recognized": false,
+              "v2_recognized": false,
+              "newly_recognized_v2": false,
+              "v1_matched_keywords": [],
+              "v2_matched_keywords": [],
+              "v2_new_matches": [],
+              "sample_evidence": null
+            }
+          }
+        }
+      ],
+      "aggregate": {
+        "reliability_recovery": {
+          "v1_recognized_count": 0,
+          "v2_recognized_count": 0,
+          "delta": 0,
+          "total_archetypes": 10
+        },
+        "qa_edge_cases": {
+          "v1_recognized_count": 0,
+          "v2_recognized_count": 0,
+          "delta": 0,
+          "total_archetypes": 10
+        }
+      }
+    }
+  }
+}

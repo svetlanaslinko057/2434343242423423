@@ -1,0 +1,1417 @@
+[
+ {
+  "file": "App.js",
+  "method": "GET",
+  "path": "/api/auth/me"
+ },
+ {
+  "file": "App.js",
+  "method": "POST",
+  "path": "/api/auth/login"
+ },
+ {
+  "file": "App.js",
+  "method": "POST",
+  "path": "/api/auth/logout"
+ },
+ {
+  "file": "components/AIRecommendationsPanel.js",
+  "method": "GET",
+  "path": "/api/ai/recommendations"
+ },
+ {
+  "file": "components/AIRecommendationsPanel.js",
+  "method": "POST",
+  "path": "/api/ai/recommendations/{v}/dismiss"
+ },
+ {
+  "file": "components/AIRecommendationsPanel.js",
+  "method": "POST",
+  "path": "/api/ai/recommendations/{v}/accept"
+ },
+ {
+  "file": "components/AssignmentPanel.js",
+  "method": "GET",
+  "path": "/api/admin/assignment-engine/{v}/candidates"
+ },
+ {
+  "file": "components/AssignmentPanel.js",
+  "method": "POST",
+  "path": "/api/admin/assignment-engine/{v}/assign"
+ },
+ {
+  "file": "components/AssignmentPanel.js",
+  "method": "POST",
+  "path": "/api/admin/assignment-engine/{v}/assign-best"
+ },
+ {
+  "file": "components/NotificationBell.js",
+  "method": "GET",
+  "path": "/api/notifications/unread-count"
+ },
+ {
+  "file": "components/NotificationBell.js",
+  "method": "GET",
+  "path": "/api/notifications"
+ },
+ {
+  "file": "components/NotificationBell.js",
+  "method": "POST",
+  "path": "/api/notifications/{v}/read"
+ },
+ {
+  "file": "components/NotificationBell.js",
+  "method": "POST",
+  "path": "/api/notifications/read-all"
+ },
+ {
+  "file": "components/AutoPricingPanel.js",
+  "method": "POST",
+  "path": "/api/ai/estimate-price"
+ },
+ {
+  "file": "components/AutoPricingPanel.js",
+  "method": "POST",
+  "path": "/api/ai/price-override"
+ },
+ {
+  "file": "components/AdminReviewQueue.js",
+  "method": "GET",
+  "path": "/api/admin/submissions"
+ },
+ {
+  "file": "components/AdminReviewQueue.js",
+  "method": "POST",
+  "path": "/api/admin/review"
+ },
+ {
+  "file": "components/profit/ProjectProfitDetailSheet.js",
+  "method": "GET",
+  "path": "/api/admin/profit/projects/{v}"
+ },
+ {
+  "file": "lib/payWithGate.js",
+  "method": "POST",
+  "path": "/api/client/invoices/{v}/pay"
+ },
+ {
+  "file": "lib/payWithGate.js",
+  "method": "POST",
+  "path": "/api/contracts/prepare"
+ },
+ {
+  "file": "pages/DeveloperWorkPage.js",
+  "method": "GET",
+  "path": "/api/developer/work-units"
+ },
+ {
+  "file": "pages/DeveloperWorkPage.js",
+  "method": "GET",
+  "path": "/api/work-units/{v}/logs"
+ },
+ {
+  "file": "pages/DeveloperWorkPage.js",
+  "method": "GET",
+  "path": "/api/work-units/{v}/submissions"
+ },
+ {
+  "file": "pages/DeveloperWorkPage.js",
+  "method": "POST",
+  "path": "/api/developer/work-units/{v}/start"
+ },
+ {
+  "file": "pages/DeveloperWorkPage.js",
+  "method": "POST",
+  "path": "/api/work-units/{v}/log"
+ },
+ {
+  "file": "pages/DeveloperWorkPage.js",
+  "method": "POST",
+  "path": "/api/work-units/{v}/submit"
+ },
+ {
+  "file": "pages/ProviderAuth.js",
+  "method": "POST",
+  "path": "/api/auth/demo-provider"
+ },
+ {
+  "file": "pages/DeveloperIntelGrowth.js",
+  "method": "GET",
+  "path": "/api/developer/intelligence/growth"
+ },
+ {
+  "file": "pages/AdminProjectWarRoom.js",
+  "method": "GET",
+  "path": "/api/admin/projects/{v}/war-room"
+ },
+ {
+  "file": "pages/ClientProjectWorkspaceOS.js",
+  "method": "GET",
+  "path": "/api/client/projects/{v}/workspace"
+ },
+ {
+  "file": "pages/ClientProjectWorkspaceOS.js",
+  "method": "POST",
+  "path": "/api/client/modules/{v}/approve"
+ },
+ {
+  "file": "pages/ClientProjectWorkspaceOS.js",
+  "method": "POST",
+  "path": "/api/client/modules/{v}/reject"
+ },
+ {
+  "file": "pages/DeveloperHub.js",
+  "method": "GET",
+  "path": "/api/developer/work-units"
+ },
+ {
+  "file": "pages/AdminV2Workflow.js",
+  "method": "GET",
+  "path": "/api/admin/mobile/workflow"
+ },
+ {
+  "file": "pages/AdminV2Workflow.js",
+  "method": "POST",
+  "path": "/api/admin/mobile/qa/{v}/{v}"
+ },
+ {
+  "file": "pages/NewRequest.js",
+  "method": "POST",
+  "path": "/api/ai/match-template"
+ },
+ {
+  "file": "pages/NewRequest.js",
+  "method": "POST",
+  "path": "/api/ai/generate-scope"
+ },
+ {
+  "file": "pages/NewRequest.js",
+  "method": "POST",
+  "path": "/api/requests"
+ },
+ {
+  "file": "pages/ClientAuth.js",
+  "method": "POST",
+  "path": "/api/auth/quick"
+ },
+ {
+  "file": "pages/ClientAuth.js",
+  "method": "POST",
+  "path": "/api/auth/onboarding"
+ },
+ {
+  "file": "pages/ClientDeliverablePage.js",
+  "method": "GET",
+  "path": "/api/deliverables/{v}"
+ },
+ {
+  "file": "pages/ClientDeliverablePage.js",
+  "method": "POST",
+  "path": "/api/deliverables/{v}/approve"
+ },
+ {
+  "file": "pages/ClientDeliverablePage.js",
+  "method": "POST",
+  "path": "/api/deliverables/{v}/reject"
+ },
+ {
+  "file": "pages/AdminQAPage.js",
+  "method": "GET",
+  "path": "/api/admin/mobile/qa"
+ },
+ {
+  "file": "pages/AdminQAPage.js",
+  "method": "POST",
+  "path": "/api/admin/mobile/qa/{v}/{v}"
+ },
+ {
+  "file": "pages/AdminGrowthPage.js",
+  "method": "GET",
+  "path": "/api/admin/growth/overview"
+ },
+ {
+  "file": "pages/AdminGrowthPage.js",
+  "method": "GET",
+  "path": "/api/admin/growth/payouts"
+ },
+ {
+  "file": "pages/AdminGrowthPage.js",
+  "method": "POST",
+  "path": "/api/admin/growth/payouts/{v}/approve"
+ },
+ {
+  "file": "pages/AdminGrowthPage.js",
+  "method": "POST",
+  "path": "/api/admin/growth/payouts/{v}/cancel"
+ },
+ {
+  "file": "pages/AdminGrowthPage.js",
+  "method": "GET",
+  "path": "/api/referral/dashboard"
+ },
+ {
+  "file": "pages/GPTScopeBuilder.js",
+  "method": "GET",
+  "path": "/api/requests/{v}"
+ },
+ {
+  "file": "pages/GPTScopeBuilder.js",
+  "method": "POST",
+  "path": "/api/ai/generate-scope"
+ },
+ {
+  "file": "pages/GPTScopeBuilder.js",
+  "method": "POST",
+  "path": "/api/admin/scopes"
+ },
+ {
+  "file": "pages/GPTScopeBuilder.js",
+  "method": "POST",
+  "path": "/api/ai/scope-to-units"
+ },
+ {
+  "file": "pages/ClientLeaderboardPage.js",
+  "method": "GET",
+  "path": "/api/client/growth/leaderboard"
+ },
+ {
+  "file": "pages/ClientReferralPage.js",
+  "method": "GET",
+  "path": "/api/referral/dashboard"
+ },
+ {
+  "file": "pages/DeveloperAssignments.js",
+  "method": "GET",
+  "path": "/api/developer/work-units"
+ },
+ {
+  "file": "pages/ClientContractPage.js",
+  "method": "GET",
+  "path": "/api/client/projects/{v}/contract"
+ },
+ {
+  "file": "pages/ClientContractPage.js",
+  "method": "POST",
+  "path": "/api/client/contracts/{v}/sign"
+ },
+ {
+  "file": "pages/ClientBillingOS.js",
+  "method": "GET",
+  "path": "/api/client/invoices-os"
+ },
+ {
+  "file": "pages/AdminInboxPage.js",
+  "method": "GET",
+  "path": "/api/admin/messages/inbox"
+ },
+ {
+  "file": "pages/AdminInboxPage.js",
+  "method": "GET",
+  "path": "/api/admin/messages/thread/{v}"
+ },
+ {
+  "file": "pages/AdminInboxPage.js",
+  "method": "POST",
+  "path": "/api/admin/messages/thread/{v}/reply"
+ },
+ {
+  "file": "pages/ClientDocumentsPage.js",
+  "method": "GET",
+  "path": "/api/contracts/my"
+ },
+ {
+  "file": "pages/ClientDocumentsPage.js",
+  "method": "GET",
+  "path": "/api/contracts/{v}/evidence"
+ },
+ {
+  "file": "pages/AdminSystemUsers.js",
+  "method": "GET",
+  "path": "/api/admin/system/users"
+ },
+ {
+  "file": "pages/AdminDeliverableBuilder.js",
+  "method": "GET",
+  "path": "/api/admin/projects"
+ },
+ {
+  "file": "pages/AdminDeliverableBuilder.js",
+  "method": "GET",
+  "path": "/api/admin/projects/{v}/completed-units"
+ },
+ {
+  "file": "pages/AdminDeliverableBuilder.js",
+  "method": "POST",
+  "path": "/api/admin/deliverable"
+ },
+ {
+  "file": "pages/AdminV2Team.js",
+  "method": "GET",
+  "path": "/api/admin/team/overloaded"
+ },
+ {
+  "file": "pages/AdminV2Team.js",
+  "method": "POST",
+  "path": "/api/admin/team/rebalance/{v}"
+ },
+ {
+  "file": "pages/AdminV2Team.js",
+  "method": "POST",
+  "path": "/api/admin/team/auto-rebalance"
+ },
+ {
+  "file": "pages/ScopeBuilder.js",
+  "method": "GET",
+  "path": "/api/projects/{v}"
+ },
+ {
+  "file": "pages/ScopeBuilder.js",
+  "method": "GET",
+  "path": "/api/admin/projects/{v}/scope"
+ },
+ {
+  "file": "pages/ScopeBuilder.js",
+  "method": "GET",
+  "path": "/api/admin/developers/available"
+ },
+ {
+  "file": "pages/ScopeBuilder.js",
+  "method": "POST",
+  "path": "/api/admin/projects/{v}/scope"
+ },
+ {
+  "file": "pages/ScopeBuilder.js",
+  "method": "POST",
+  "path": "/api/admin/scopes/{v}/units/bulk"
+ },
+ {
+  "file": "pages/ScopeBuilder.js",
+  "method": "POST",
+  "path": "/api/admin/scopes/{v}/units"
+ },
+ {
+  "file": "pages/ScopeBuilder.js",
+  "method": "POST",
+  "path": "/api/admin/work-units/{v}/assign"
+ },
+ {
+  "file": "pages/ScopeBuilder.js",
+  "method": "POST",
+  "path": "/api/admin/work-units/{v}/review"
+ },
+ {
+  "file": "pages/ScopeBuilder.js",
+  "method": "GET",
+  "path": "/api/admin/work-units/{v}"
+ },
+ {
+  "file": "pages/AdminLoginPage.js",
+  "method": "POST",
+  "path": "/api/auth/login"
+ },
+ {
+  "file": "pages/AdminLoginPage.js",
+  "method": "POST",
+  "path": "/api/auth/demo"
+ },
+ {
+  "file": "pages/ClientEstimatePage.js",
+  "method": "POST",
+  "path": "/api/ai/estimate-price"
+ },
+ {
+  "file": "pages/ClientEstimatePage.js",
+  "method": "POST",
+  "path": "/api/ai/estimate"
+ },
+ {
+  "file": "pages/AdminBillingPage.js",
+  "method": "POST",
+  "path": "/api/admin/billing/invoices/{v}/resend"
+ },
+ {
+  "file": "pages/AdminBillingPage.js",
+  "method": "POST",
+  "path": "/api/admin/billing/invoices/{v}/mark-paid"
+ },
+ {
+  "file": "pages/DeveloperWorkspace.js",
+  "method": "GET",
+  "path": "/api/developer/marketplace/my-modules"
+ },
+ {
+  "file": "pages/DeveloperWorkspace.js",
+  "method": "POST",
+  "path": "/api/modules/{v}/submit"
+ },
+ {
+  "file": "pages/DeveloperWorkspace.js",
+  "method": "POST",
+  "path": "/api/marketplace/modules/{v}/release"
+ },
+ {
+  "file": "pages/ClientAuthPage.js",
+  "method": "POST",
+  "path": "/api/public/capture-referral"
+ },
+ {
+  "file": "pages/ClientAuthPage.js",
+  "method": "POST",
+  "path": "/api/referral/bind"
+ },
+ {
+  "file": "pages/ClientAuthPage.js",
+  "method": "POST",
+  "path": "/api/auth/register"
+ },
+ {
+  "file": "pages/ClientAuthPage.js",
+  "method": "POST",
+  "path": "/api/auth/demo"
+ },
+ {
+  "file": "pages/ClientAuthPage.js",
+  "method": "POST",
+  "path": "/api/auth/google"
+ },
+ {
+  "file": "pages/DeveloperWorkspaceV2.js",
+  "method": "GET",
+  "path": "/api/developer/focus"
+ },
+ {
+  "file": "pages/DeveloperWorkspaceV2.js",
+  "method": "GET",
+  "path": "/api/developer/workload"
+ },
+ {
+  "file": "pages/DeveloperWorkspaceV2.js",
+  "method": "GET",
+  "path": "/api/developer/performance"
+ },
+ {
+  "file": "pages/ContractSignEvidencePage.js",
+  "method": "GET",
+  "path": "/api/contracts/{v}"
+ },
+ {
+  "file": "pages/ContractSignEvidencePage.js",
+  "method": "GET",
+  "path": "/api/legal/profile"
+ },
+ {
+  "file": "pages/ContractSignEvidencePage.js",
+  "method": "POST",
+  "path": "/api/contracts/{v}/sign/request-otp"
+ },
+ {
+  "file": "pages/ContractSignEvidencePage.js",
+  "method": "POST",
+  "path": "/api/contracts/{v}/sign/confirm"
+ },
+ {
+  "file": "pages/TesterIssues.js",
+  "method": "GET",
+  "path": "/api/tester/issues"
+ },
+ {
+  "file": "pages/AdminContractsPage.js",
+  "method": "GET",
+  "path": "/api/admin/contracts/{v}"
+ },
+ {
+  "file": "pages/AdminTemplatesPage.js",
+  "method": "GET",
+  "path": "/api/ai/templates"
+ },
+ {
+  "file": "pages/AdminTemplatesPage.js",
+  "method": "POST",
+  "path": "/api/ai/templates"
+ },
+ {
+  "file": "pages/AdminTemplatesPage.js",
+  "method": "DELETE",
+  "path": "/api/ai/templates/{v}"
+ },
+ {
+  "file": "pages/ClientDeliverable.js",
+  "method": "GET",
+  "path": "/api/projects/mine"
+ },
+ {
+  "file": "pages/ClientDeliverable.js",
+  "method": "GET",
+  "path": "/api/projects/{v}/deliverables"
+ },
+ {
+  "file": "pages/ClientDeliverable.js",
+  "method": "POST",
+  "path": "/api/deliverables/{v}/approve"
+ },
+ {
+  "file": "pages/ClientDeliverable.js",
+  "method": "POST",
+  "path": "/api/deliverables/{v}/reject"
+ },
+ {
+  "file": "pages/ClientHub.js",
+  "method": "GET",
+  "path": "/api/projects/mine"
+ },
+ {
+  "file": "pages/ClientHub.js",
+  "method": "POST",
+  "path": "/api/requests"
+ },
+ {
+  "file": "pages/ClientHub.js",
+  "method": "POST",
+  "path": "/api/ai/estimate-price"
+ },
+ {
+  "file": "pages/ClientHub.js",
+  "method": "PATCH",
+  "path": "/api/requests/{v}"
+ },
+ {
+  "file": "pages/AdminV2System.js",
+  "method": "GET",
+  "path": "/api/admin/audit-log"
+ },
+ {
+  "file": "pages/ClientOperator.js",
+  "method": "GET",
+  "path": "/api/client/operator"
+ },
+ {
+  "file": "pages/ClientOperator.js",
+  "method": "POST",
+  "path": "/api/client/operator/{v}/action"
+ },
+ {
+  "file": "pages/AdminDashboard.js",
+  "method": "GET",
+  "path": "/api/admin/users"
+ },
+ {
+  "file": "pages/AdminDashboard.js",
+  "method": "GET",
+  "path": "/api/admin/requests"
+ },
+ {
+  "file": "pages/AdminDashboard.js",
+  "method": "GET",
+  "path": "/api/admin/projects"
+ },
+ {
+  "file": "pages/AdminDashboard.js",
+  "method": "GET",
+  "path": "/api/admin/work-units"
+ },
+ {
+  "file": "pages/AdminDashboard.js",
+  "method": "GET",
+  "path": "/api/admin/submissions"
+ },
+ {
+  "file": "pages/AdminDashboard.js",
+  "method": "GET",
+  "path": "/api/admin/support-tickets"
+ },
+ {
+  "file": "pages/AdminDashboard.js",
+  "method": "GET",
+  "path": "/api/admin/scope-templates"
+ },
+ {
+  "file": "pages/AdminDashboard.js",
+  "method": "POST",
+  "path": "/api/admin/scope-templates"
+ },
+ {
+  "file": "pages/AdminDashboard.js",
+  "method": "DELETE",
+  "path": "/api/admin/scope-templates/{v}"
+ },
+ {
+  "file": "pages/AdminDashboard.js",
+  "method": "POST",
+  "path": "/api/admin/master/request/{v}/start-review"
+ },
+ {
+  "file": "pages/AdminDashboard.js",
+  "method": "POST",
+  "path": "/api/admin/master/request/{v}/proposal"
+ },
+ {
+  "file": "pages/AcceptanceQueue.js",
+  "method": "GET",
+  "path": "/api/developer/tasks/awaiting-response"
+ },
+ {
+  "file": "pages/AcceptanceQueue.js",
+  "method": "POST",
+  "path": "/api/developer/tasks/{v}/accept"
+ },
+ {
+  "file": "pages/AcceptanceQueue.js",
+  "method": "POST",
+  "path": "/api/developer/tasks/{v}/decline"
+ },
+ {
+  "file": "pages/AcceptanceQueue.js",
+  "method": "POST",
+  "path": "/api/developer/tasks/{v}/clarification"
+ },
+ {
+  "file": "pages/DeveloperMarketplace.js",
+  "method": "GET",
+  "path": "/api/marketplace/modules"
+ },
+ {
+  "file": "pages/DeveloperMarketplace.js",
+  "method": "GET",
+  "path": "/api/developer/marketplace/my-modules"
+ },
+ {
+  "file": "pages/DeveloperMarketplace.js",
+  "method": "POST",
+  "path": "/api/marketplace/modules/{v}/accept"
+ },
+ {
+  "file": "pages/DeveloperMarketplace.js",
+  "method": "POST",
+  "path": "/api/marketplace/modules/{v}/start"
+ },
+ {
+  "file": "pages/DeveloperMarketplace.js",
+  "method": "POST",
+  "path": "/api/marketplace/modules/{v}/release"
+ },
+ {
+  "file": "pages/DeveloperIntelFeedback.js",
+  "method": "GET",
+  "path": "/api/developer/feedback"
+ },
+ {
+  "file": "pages/AdminWithdrawalsPage.js",
+  "method": "POST",
+  "path": "/api/admin/withdrawals/{v}/{v}"
+ },
+ {
+  "file": "pages/WorkUnitDetail.js",
+  "method": "GET",
+  "path": "/api/admin/work-units"
+ },
+ {
+  "file": "pages/AdminV2Profile.js",
+  "method": "GET",
+  "path": "/api/admin/mobile/profile"
+ },
+ {
+  "file": "pages/ExecutorBoard.js",
+  "method": "GET",
+  "path": "/api/developer/work-units"
+ },
+ {
+  "file": "pages/ExecutorBoard.js",
+  "method": "POST",
+  "path": "/api/developer/work-units/{v}/start"
+ },
+ {
+  "file": "pages/ExecutorBoard.js",
+  "method": "PATCH",
+  "path": "/api/work-units/{v}/status"
+ },
+ {
+  "file": "pages/ExecutorBoard.js",
+  "method": "POST",
+  "path": "/api/work-units/{v}/submit"
+ },
+ {
+  "file": "pages/AdminV2Dashboard.js",
+  "method": "GET",
+  "path": "/api/admin/mobile/home"
+ },
+ {
+  "file": "pages/TesterValidation.js",
+  "method": "GET",
+  "path": "/api/tester/validation-tasks"
+ },
+ {
+  "file": "pages/TesterValidation.js",
+  "method": "GET",
+  "path": "/api/tester/validation/{v}/details"
+ },
+ {
+  "file": "pages/TesterValidation.js",
+  "method": "GET",
+  "path": "/api/tester/validation/{v}/issues"
+ },
+ {
+  "file": "pages/TesterValidation.js",
+  "method": "POST",
+  "path": "/api/validation/{v}/pass"
+ },
+ {
+  "file": "pages/TesterValidation.js",
+  "method": "POST",
+  "path": "/api/validation/{v}/fail"
+ },
+ {
+  "file": "pages/TesterValidation.js",
+  "method": "POST",
+  "path": "/api/validation/{v}/issue"
+ },
+ {
+  "file": "pages/ProviderInbox.js",
+  "method": "GET",
+  "path": "/api/provider/profile"
+ },
+ {
+  "file": "pages/ProviderInbox.js",
+  "method": "GET",
+  "path": "/api/provider/inbox"
+ },
+ {
+  "file": "pages/ProviderInbox.js",
+  "method": "GET",
+  "path": "/api/provider/pressure"
+ },
+ {
+  "file": "pages/ProviderInbox.js",
+  "method": "GET",
+  "path": "/api/provider/missed"
+ },
+ {
+  "file": "pages/ProviderInbox.js",
+  "method": "POST",
+  "path": "/api/provider/status"
+ },
+ {
+  "file": "pages/ProviderInbox.js",
+  "method": "POST",
+  "path": "/api/provider/quick-mode"
+ },
+ {
+  "file": "pages/ProviderInbox.js",
+  "method": "POST",
+  "path": "/api/provider/requests/{v}/accept"
+ },
+ {
+  "file": "pages/ProviderInbox.js",
+  "method": "POST",
+  "path": "/api/provider/requests/{v}/reject"
+ },
+ {
+  "file": "pages/BuilderAuth.js",
+  "method": "POST",
+  "path": "/api/auth/quick"
+ },
+ {
+  "file": "pages/BuilderAuth.js",
+  "method": "POST",
+  "path": "/api/auth/onboarding"
+ },
+ {
+  "file": "pages/MasterAdminDashboard.js",
+  "method": "GET",
+  "path": "/api/admin/master/pipeline"
+ },
+ {
+  "file": "pages/MasterAdminDashboard.js",
+  "method": "POST",
+  "path": "/api/admin/master/request/{v}/start-review"
+ },
+ {
+  "file": "pages/MasterAdminDashboard.js",
+  "method": "GET",
+  "path": "/api/admin/master/request/{v}"
+ },
+ {
+  "file": "pages/MasterAdminDashboard.js",
+  "method": "POST",
+  "path": "/api/admin/master/request/{v}/proposal"
+ },
+ {
+  "file": "pages/MasterAdminDashboard.js",
+  "method": "POST",
+  "path": "/api/admin/master/request/{v}/reject"
+ },
+ {
+  "file": "pages/TesterPerformance.js",
+  "method": "GET",
+  "path": "/api/tester/validation-tasks"
+ },
+ {
+  "file": "pages/TesterPerformance.js",
+  "method": "GET",
+  "path": "/api/tester/issues"
+ },
+ {
+  "file": "pages/CreateModuleDominance.js",
+  "method": "POST",
+  "path": "/api/modules/create-with-pricing"
+ },
+ {
+  "file": "pages/ClientVersionsPage.js",
+  "method": "GET",
+  "path": "/api/projects/{v}/versions"
+ },
+ {
+  "file": "pages/ClientVersionsPage.js",
+  "method": "GET",
+  "path": "/api/client/projects"
+ },
+ {
+  "file": "pages/ClientTransparency.js",
+  "method": "GET",
+  "path": "/api/client/transparency"
+ },
+ {
+  "file": "pages/ClientTransparency.js",
+  "method": "GET",
+  "path": "/api/client/billing/summary"
+ },
+ {
+  "file": "pages/ClientTransparency.js",
+  "method": "POST",
+  "path": "/api/client/billing/continue"
+ },
+ {
+  "file": "pages/ClientTransparency.js",
+  "method": "POST",
+  "path": "/api/client/billing/auto-charge"
+ },
+ {
+  "file": "pages/AdminPaymentsPage.js",
+  "method": "GET",
+  "path": "/api/admin/settings/integrations"
+ },
+ {
+  "file": "pages/AdminPaymentsPage.js",
+  "method": "GET",
+  "path": "/api/admin/payments/transactions"
+ },
+ {
+  "file": "pages/AdminPaymentsPage.js",
+  "method": "PUT",
+  "path": "/api/admin/settings/integrations/{v}"
+ },
+ {
+  "file": "pages/AdminPaymentsPage.js",
+  "method": "POST",
+  "path": "/api/admin/settings/integrations/test-checkout"
+ },
+ {
+  "file": "pages/AdminDeveloperProfile.js",
+  "method": "GET",
+  "path": "/api/admin/developers/{v}/profile"
+ },
+ {
+  "file": "pages/DeveloperPerformance.js",
+  "method": "GET",
+  "path": "/api/developer/work-units"
+ },
+ {
+  "file": "pages/ClientDashboard.js",
+  "method": "GET",
+  "path": "/api/projects/mine"
+ },
+ {
+  "file": "pages/ClientDashboard.js",
+  "method": "GET",
+  "path": "/api/requests"
+ },
+ {
+  "file": "pages/ClientDashboard.js",
+  "method": "GET",
+  "path": "/api/client/support-tickets"
+ },
+ {
+  "file": "pages/ClientDashboard.js",
+  "method": "GET",
+  "path": "/api/projects/{v}/deliverables"
+ },
+ {
+  "file": "pages/AdminMarketplaceQuality.js",
+  "method": "GET",
+  "path": "/api/admin/qa/overview"
+ },
+ {
+  "file": "pages/AdminMarketplaceQuality.js",
+  "method": "GET",
+  "path": "/api/admin/qa/providers"
+ },
+ {
+  "file": "pages/AdminMarketplaceQuality.js",
+  "method": "GET",
+  "path": "/api/admin/qa/issues"
+ },
+ {
+  "file": "pages/AdminMarketplaceQuality.js",
+  "method": "POST",
+  "path": "/api/admin/qa/flag-provider"
+ },
+ {
+  "file": "pages/AdminMarketplaceQuality.js",
+  "method": "POST",
+  "path": "/api/admin/qa/limit-provider"
+ },
+ {
+  "file": "pages/AdminMarketplaceQuality.js",
+  "method": "POST",
+  "path": "/api/admin/qa/unlimit-provider"
+ },
+ {
+  "file": "pages/ProjectDetails.js",
+  "method": "GET",
+  "path": "/api/projects/{v}"
+ },
+ {
+  "file": "pages/ProjectDetails.js",
+  "method": "GET",
+  "path": "/api/projects/{v}/deliverables"
+ },
+ {
+  "file": "pages/ProjectDetails.js",
+  "method": "GET",
+  "path": "/api/projects/{v}/scope"
+ },
+ {
+  "file": "pages/ClientCabinet.js",
+  "method": "GET",
+  "path": "/api/client/projects/{v}/full"
+ },
+ {
+  "file": "pages/ClientCabinet.js",
+  "method": "POST",
+  "path": "/api/client/deliverables/{v}/simulate-payment"
+ },
+ {
+  "file": "pages/ClientProjectPage.js",
+  "method": "GET",
+  "path": "/api/projects/{v}"
+ },
+ {
+  "file": "pages/ClientProjectPage.js",
+  "method": "GET",
+  "path": "/api/requests/{v}"
+ },
+ {
+  "file": "pages/ClientProjectPage.js",
+  "method": "GET",
+  "path": "/api/client/projects/{v}/workspace"
+ },
+ {
+  "file": "pages/ClientProjectPage.js",
+  "method": "GET",
+  "path": "/api/projects/{v}/deliverables"
+ },
+ {
+  "file": "pages/ClientProjectPage.js",
+  "method": "GET",
+  "path": "/api/client/projects/{v}/work-status"
+ },
+ {
+  "file": "pages/ClientProjectPage.js",
+  "method": "POST",
+  "path": "/api/requests/{v}/approve-proposal"
+ },
+ {
+  "file": "pages/ClientProjectPage.js",
+  "method": "POST",
+  "path": "/api/requests/{v}/request-changes"
+ },
+ {
+  "file": "pages/ClientProjectPage.js",
+  "method": "POST",
+  "path": "/api/deliverables/{v}/approve"
+ },
+ {
+  "file": "pages/ClientProjectPage.js",
+  "method": "POST",
+  "path": "/api/client/deliverables/{v}/pay"
+ },
+ {
+  "file": "pages/ClientProjectPage.js",
+  "method": "POST",
+  "path": "/api/deliverables/{v}/reject"
+ },
+ {
+  "file": "pages/AdminTeamPanel.js",
+  "method": "GET",
+  "path": "/api/admin/team/capacity"
+ },
+ {
+  "file": "pages/AdminTeamPanel.js",
+  "method": "GET",
+  "path": "/api/admin/team/developers"
+ },
+ {
+  "file": "pages/AdminTeamPanel.js",
+  "method": "GET",
+  "path": "/api/admin/team/bottlenecks"
+ },
+ {
+  "file": "pages/TesterHub.js",
+  "method": "GET",
+  "path": "/api/tester/validation-tasks"
+ },
+ {
+  "file": "pages/ClientSupport.js",
+  "method": "GET",
+  "path": "/api/client/support-tickets"
+ },
+ {
+  "file": "pages/ClientSupport.js",
+  "method": "GET",
+  "path": "/api/projects/mine"
+ },
+ {
+  "file": "pages/ClientSupport.js",
+  "method": "POST",
+  "path": "/api/client/support-tickets"
+ },
+ {
+  "file": "pages/DeveloperGrowthPage.js",
+  "method": "GET",
+  "path": "/api/developer/growth/dashboard"
+ },
+ {
+  "file": "pages/DeveloperGrowthPage.js",
+  "method": "GET",
+  "path": "/api/developer/growth/leaderboard"
+ },
+ {
+  "file": "pages/DeveloperGrowthPage.js",
+  "method": "GET",
+  "path": "/api/developer/growth/link"
+ },
+ {
+  "file": "pages/DeveloperGrowthPage.js",
+  "method": "POST",
+  "path": "/api/developer/growth/recalculate-score"
+ },
+ {
+  "file": "pages/DeliverableBuilder.js",
+  "method": "GET",
+  "path": "/api/admin/projects"
+ },
+ {
+  "file": "pages/DeliverableBuilder.js",
+  "method": "GET",
+  "path": "/api/admin/work-units"
+ },
+ {
+  "file": "pages/DeliverableBuilder.js",
+  "method": "POST",
+  "path": "/api/admin/deliverable"
+ },
+ {
+  "file": "pages/ClientCosts.js",
+  "method": "GET",
+  "path": "/api/client/costs"
+ },
+ {
+  "file": "pages/ClientCosts.js",
+  "method": "POST",
+  "path": "/api/admin/payouts/{v}/approve"
+ },
+ {
+  "file": "pages/ClientCosts.js",
+  "method": "POST",
+  "path": "/api/modules/{v}/pause"
+ },
+ {
+  "file": "pages/ClientProjects.js",
+  "method": "GET",
+  "path": "/api/projects/mine"
+ },
+ {
+  "file": "pages/ClientProjects.js",
+  "method": "GET",
+  "path": "/api/requests/mine"
+ },
+ {
+  "file": "pages/ClientProjects.js",
+  "method": "DELETE",
+  "path": "/api/requests/{v}"
+ },
+ {
+  "file": "pages/ClientProjects.js",
+  "method": "DELETE",
+  "path": "/api/projects/{v}"
+ },
+ {
+  "file": "pages/AdminIntegrationsPage.js",
+  "method": "GET",
+  "path": "/api/admin/settings/llm"
+ },
+ {
+  "file": "pages/AdminIntegrationsPage.js",
+  "method": "GET",
+  "path": "/api/admin/settings/integrations"
+ },
+ {
+  "file": "pages/AdminIntegrationsPage.js",
+  "method": "PUT",
+  "path": "/api/admin/settings/integrations/{v}"
+ },
+ {
+  "file": "pages/AdminIntegrationsPage.js",
+  "method": "PUT",
+  "path": "/api/admin/settings/llm"
+ },
+ {
+  "file": "pages/DeveloperIntelLeaderboard.js",
+  "method": "GET",
+  "path": "/api/developer/intelligence/leaderboard"
+ },
+ {
+  "file": "pages/AdminUsersPage.js",
+  "method": "GET",
+  "path": "/api/admin/users-v2"
+ },
+ {
+  "file": "pages/AdminUsersPage.js",
+  "method": "GET",
+  "path": "/api/admin/users-v2/{v}"
+ },
+ {
+  "file": "pages/AdminUsersPage.js",
+  "method": "POST",
+  "path": "/api/admin/users-v2/{v}/block"
+ },
+ {
+  "file": "pages/AdminUsersPage.js",
+  "method": "POST",
+  "path": "/api/admin/users-v2/{v}/unblock"
+ },
+ {
+  "file": "pages/AdminUsersPage.js",
+  "method": "POST",
+  "path": "/api/admin/users-v2/{v}/role"
+ },
+ {
+  "file": "pages/AdminUsersPage.js",
+  "method": "POST",
+  "path": "/api/admin/users-v2/{v}/logout-all"
+ },
+ {
+  "file": "pages/AdminUsersPage.js",
+  "method": "DELETE",
+  "path": "/api/admin/users-v2/{v}"
+ },
+ {
+  "file": "pages/ClientDashboardOS.js",
+  "method": "GET",
+  "path": "/api/client/dashboard"
+ },
+ {
+  "file": "pages/ClientDashboardOS.js",
+  "method": "GET",
+  "path": "/api/client/projects/{v}/contract"
+ },
+ {
+  "file": "pages/ClientDashboardOS.js",
+  "method": "GET",
+  "path": "/api/client/projects/{v}/trust"
+ },
+ {
+  "file": "pages/ClientDashboardOS.js",
+  "method": "GET",
+  "path": "/api/client/projects/{v}/risks"
+ },
+ {
+  "file": "pages/ClientDashboardOS.js",
+  "method": "GET",
+  "path": "/api/client/projects/{v}/next-steps"
+ },
+ {
+  "file": "pages/ClientDashboardOS.js",
+  "method": "GET",
+  "path": "/api/client/projects/{v}/transparency"
+ },
+ {
+  "file": "pages/ClientDashboardOS.js",
+  "method": "GET",
+  "path": "/api/client/projects/{v}/updates"
+ },
+ {
+  "file": "pages/BuilderAuthPage.js",
+  "method": "POST",
+  "path": "/api/public/capture-referral"
+ },
+ {
+  "file": "pages/BuilderAuthPage.js",
+  "method": "POST",
+  "path": "/api/developer/growth/bind"
+ },
+ {
+  "file": "pages/BuilderAuthPage.js",
+  "method": "POST",
+  "path": "/api/auth/register"
+ },
+ {
+  "file": "pages/BuilderAuthPage.js",
+  "method": "POST",
+  "path": "/api/auth/demo"
+ },
+ {
+  "file": "pages/AdminEarningsControl.js",
+  "method": "GET",
+  "path": "/api/admin/earnings/overview"
+ },
+ {
+  "file": "pages/AdminEarningsControl.js",
+  "method": "GET",
+  "path": "/api/admin/earnings/approved"
+ },
+ {
+  "file": "pages/AdminEarningsControl.js",
+  "method": "GET",
+  "path": "/api/admin/payout/batches"
+ },
+ {
+  "file": "pages/AdminEarningsControl.js",
+  "method": "GET",
+  "path": "/api/admin/earnings/held"
+ },
+ {
+  "file": "pages/AdminEarningsControl.js",
+  "method": "GET",
+  "path": "/api/admin/earnings/flagged"
+ },
+ {
+  "file": "pages/AdminEarningsControl.js",
+  "method": "POST",
+  "path": "/api/admin/payout/batches"
+ },
+ {
+  "file": "pages/AdminEarningsControl.js",
+  "method": "POST",
+  "path": "/api/admin/payout/batches/{v}/approve"
+ },
+ {
+  "file": "pages/AdminEarningsControl.js",
+  "method": "POST",
+  "path": "/api/admin/payout/batches/{v}/mark-paid"
+ },
+ {
+  "file": "pages/AdminEarningsControl.js",
+  "method": "GET",
+  "path": "/api/admin/payout/batches/{v}"
+ },
+ {
+  "file": "pages/TesterValidationList.js",
+  "method": "GET",
+  "path": "/api/tester/validation-tasks"
+ },
+ {
+  "file": "pages/AdminV2Finance.js",
+  "method": "GET",
+  "path": "/api/admin/mobile/finance"
+ },
+ {
+  "file": "pages/AdminFinancialsPage.js",
+  "method": "GET",
+  "path": "/api/admin/projects/{v}/financials"
+ },
+ {
+  "file": "pages/AdminFinancialsPage.js",
+  "method": "GET",
+  "path": "/api/billing/invoices/{v}"
+ },
+ {
+  "file": "pages/AdminFinancialsPage.js",
+  "method": "GET",
+  "path": "/api/projects/{v}"
+ },
+ {
+  "file": "pages/AdminFinancialsPage.js",
+  "method": "POST",
+  "path": "/api/billing/invoice"
+ },
+ {
+  "file": "pages/AdminFinancialsPage.js",
+  "method": "POST",
+  "path": "/api/billing/invoice/{v}/mark-paid"
+ },
+ {
+  "file": "pages/TesterDashboard.js",
+  "method": "GET",
+  "path": "/api/tester/validation-tasks"
+ },
+ {
+  "file": "pages/DeveloperEarnings.js",
+  "method": "GET",
+  "path": "/api/developer/earnings/summary"
+ },
+ {
+  "file": "pages/DeveloperEarnings.js",
+  "method": "GET",
+  "path": "/api/developer/earnings/tasks"
+ },
+ {
+  "file": "pages/DeveloperEarnings.js",
+  "method": "GET",
+  "path": "/api/developer/earnings/held"
+ },
+ {
+  "file": "pages/DeveloperEarnings.js",
+  "method": "GET",
+  "path": "/api/developer/earnings/flagged"
+ },
+ {
+  "file": "pages/DeveloperEarnings.js",
+  "method": "GET",
+  "path": "/api/developer/payout/batches"
+ },
+ {
+  "file": "pages/TesterValidationPage.js",
+  "method": "GET",
+  "path": "/api/tester/validations"
+ },
+ {
+  "file": "pages/TesterValidationPage.js",
+  "method": "POST",
+  "path": "/api/validation/{v}/start"
+ },
+ {
+  "file": "pages/TesterValidationPage.js",
+  "method": "POST",
+  "path": "/api/validation/{v}/pass"
+ },
+ {
+  "file": "pages/TesterValidationPage.js",
+  "method": "POST",
+  "path": "/api/validation/{v}/fail"
+ },
+ {
+  "file": "pages/DeveloperWorkUnit.js",
+  "method": "GET",
+  "path": "/api/developer/work-units"
+ },
+ {
+  "file": "pages/DeveloperWorkUnit.js",
+  "method": "GET",
+  "path": "/api/developer/work-logs/{v}"
+ },
+ {
+  "file": "pages/DeveloperWorkUnit.js",
+  "method": "POST",
+  "path": "/api/developer/work-units/{v}/start"
+ },
+ {
+  "file": "pages/DeveloperWorkUnit.js",
+  "method": "POST",
+  "path": "/api/work-units/{v}/log"
+ },
+ {
+  "file": "pages/DeveloperWorkUnit.js",
+  "method": "POST",
+  "path": "/api/work-units/{v}/submit"
+ }
+]

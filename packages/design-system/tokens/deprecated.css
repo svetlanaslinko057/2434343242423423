@@ -1,0 +1,176 @@
+/* ============================================================
+ * deprecated.css — bridge for the old 4 namespaces.
+ *
+ * GOAL: 96 web pages + 50+ mobile screens keep working during Phase 2
+ * migration. Every legacy variable points at the new canonical `--t-*`
+ * source, so visual style is automatically corrected without page edits.
+ *
+ * REMOVAL POLICY: this entire file disappears at end of Phase 3, after
+ * all pages have been migrated to `--t-*` / `--ds-*` / semantic Tailwind.
+ *
+ * DO NOT add new aliases here. New tokens go straight to palette.css.
+ * DO NOT reference these `--*` names in NEW code — only legacy code.
+ * ============================================================ */
+
+/* ----- LEGACY (web/src/index.css original "DEV OS" namespace) ----- */
+.theme-dark, .dark, [data-theme="dark"], :root,
+.theme-light, .light, [data-theme="light"] {
+  --background:        var(--t-bg);
+  --surface:           var(--t-surface);
+  --surface-hover:     var(--t-surface-raised);
+  --surface-active:    var(--t-surface-raised);
+  --border:            var(--t-border-default);
+  --border-hover:      var(--t-border-strong);
+  --border-active:     var(--t-border-strong);
+  --text-primary:      var(--t-text-primary);
+  --text-secondary:    var(--t-text-secondary);
+  --text-muted:        var(--t-text-muted);
+  --status-success:    var(--t-success);
+  --status-warning:    var(--t-warning);
+  --status-error:      var(--t-danger);
+}
+
+/* ----- TAILWIND HSL semantic (CRA shadcn-style) -----
+   These are consumed by Tailwind's `bg-background`, `text-foreground`,
+   `bg-card`, `border-border`, `bg-muted`, `text-muted-foreground`,
+   `bg-primary`, etc. We override with non-HSL values — Tailwind's color
+   functions accept either format. */
+.theme-dark, .dark, [data-theme="dark"], :root,
+.theme-light, .light, [data-theme="light"] {
+  --foreground:           var(--t-text-primary);
+  --card:                 var(--t-surface);
+  --card-foreground:      var(--t-text-primary);
+  --popover:              var(--t-surface-raised);
+  --popover-foreground:   var(--t-text-primary);
+  --muted:                var(--t-surface-raised);
+  --muted-foreground:     var(--t-text-secondary);
+  --input:                var(--t-surface);
+  --ring:                 var(--t-signal);
+  --primary:              var(--t-signal);
+  --primary-foreground:   var(--t-signal-ink);
+  --secondary:            var(--t-surface-raised);
+  --secondary-foreground: var(--t-text-primary);
+  --accent:               var(--t-signal-bg-soft);
+  --accent-foreground:    var(--t-signal);
+  --destructive:          var(--t-danger);
+  --destructive-foreground: var(--t-danger-ink);
+  --trust:                var(--t-signal);
+  --trust-2:              var(--t-info);
+  --risk:                 var(--t-warning);
+  --warning:              var(--t-warning);
+  --success:              var(--t-success);
+  --info:                 var(--t-info);
+  --surface-1:            var(--t-surface);
+  --surface-2:            var(--t-surface-raised);
+  --surface-3:            var(--t-surface-sunken);
+}
+
+/* ----- TOKEN-V3 (`--token-*` from previous Light v3 polish pass) ----- */
+.theme-dark, .dark, [data-theme="dark"], :root,
+.theme-light, .light, [data-theme="light"] {
+  --token-bg:                  var(--t-bg);
+  --token-surface:             var(--t-surface);
+  --token-surface-secondary:   var(--t-surface-raised);
+  --token-surface-elevated:    var(--t-surface-raised);
+  --token-text-primary:        var(--t-text-primary);
+  --token-text-secondary:      var(--t-text-secondary);
+  --token-text-muted:          var(--t-text-muted);
+  --token-primary:             var(--t-signal);
+  --token-primary-hover:       var(--t-signal-hover);
+  --token-primary-active:      var(--t-signal-active);
+  --token-primary-ink:         var(--t-signal-ink);
+  --token-primary-accent:      var(--t-signal);
+  --token-primary-accent-soft: var(--t-signal-bg-soft);
+  --token-success:             var(--t-success);
+  --token-success-tint:        var(--t-success-bg-soft);
+  --token-success-border:      var(--t-success-border);
+  --token-warning:             var(--t-warning);
+  --token-warning-tint:        var(--t-warning-bg-soft);
+  --token-warning-border:      var(--t-warning-border);
+  --token-danger:              var(--t-danger);
+  --token-danger-tint:         var(--t-danger-bg-soft);
+  --token-danger-border:       var(--t-danger-border);
+  --token-info:                var(--t-info);
+  --token-info-tint:           var(--t-info-bg-soft);
+  --token-info-border:         var(--t-info-border);
+  --token-border:              var(--t-border-default);
+  --token-border-strong:       var(--t-border-strong);
+  --token-divider:             var(--t-border-subtle);
+  --token-card-bg:             var(--t-surface);
+  --token-card-hover:          var(--t-surface-raised);
+  --token-shadow-card:         var(--t-shadow-md);
+  --token-shadow-hover:        var(--t-shadow-lg);
+}
+
+/* ----- ADMIN SCOPE (`--*-admin`, `--danger`, `--info`, `--success` from
+        AdminEarningsControl / AdminPayments overlay) ----- */
+.theme-dark, .dark, [data-theme="dark"], :root,
+.theme-light, .light, [data-theme="light"] {
+  --bg-admin:              var(--t-bg);
+  --bg-admin-2:            var(--t-surface-raised);
+  --surface-admin-1:       var(--t-surface);
+  --surface-admin-2:       var(--t-surface-raised);
+  --surface-admin-3:       var(--t-surface-raised);
+  --border-admin:          var(--t-border-default);
+  --border-admin-strong:   var(--t-border-strong);
+  --text-admin:            var(--t-text-primary);
+  --text-admin-secondary:  var(--t-text-secondary);
+  --text-admin-muted:      var(--t-text-muted);
+  --text-admin-faint:      var(--t-text-muted);
+  --focus-ring-admin:      var(--t-signal-border);
+  --shadow-elev-1:         var(--t-shadow-md);
+  --shadow-elev-2:         var(--t-shadow-lg);
+  --danger:                var(--t-danger);
+  --danger-ink:            var(--t-danger-ink);
+  --danger-surface:        var(--t-danger-bg-soft);
+  --danger-border:         var(--t-danger-border);
+  --warning-ink:           var(--t-warning-ink);
+  --warning-surface:       var(--t-warning-bg-soft);
+  --warning-border:        var(--t-warning-border);
+  --info-ink:              var(--t-info-ink);
+  --info-surface:          var(--t-info-bg-soft);
+  --info-border:           var(--t-info-border);
+  --success-ink:           var(--t-success-ink);
+  --success-surface:       var(--t-success-bg-soft);
+  --success-border:        var(--t-success-border);
+  --neutral-admin:         var(--t-text-secondary);
+}
+
+/* ----- MOBILE `--t-*` (Expo native theme bridge) ----- */
+/* The mobile bridge in /app/frontend/src/theme.ts injects its own
+   variables (`--t-*`). Most of these now collide with our canonical
+   names — same prefix, same semantics, so they Just Work. The few that
+   diverged are aliased here. */
+.theme-dark, .dark, [data-theme="dark"], :root,
+.theme-light, .light, [data-theme="light"] {
+  --t-surface2:             var(--t-surface-raised);
+  --t-surface3:             var(--t-surface-sunken);
+  --t-header-bg:            var(--t-surface);
+  --t-text:                 var(--t-text-primary);
+  --t-primary:              var(--t-signal);
+  --t-primary-ink:          var(--t-signal-ink);
+  --t-primary-accent:       var(--t-signal);
+  --t-primary-bg:           var(--t-signal-bg-soft);
+  --t-primary-bg-strong:    var(--t-signal-bg-strong);
+  --t-primary-border:       var(--t-signal-border);
+  --t-primary-border-strong:var(--t-signal-border);
+  --t-success-tint:         var(--t-success-bg-soft);
+  --t-success-bg:           var(--t-success-bg-soft);
+  --t-success-bg-strong:    var(--t-success-bg-soft);
+  --t-success-border-strong:var(--t-success-border);
+  --t-warning-tint:         var(--t-warning-bg-soft);
+  --t-warning-bg:           var(--t-warning-bg-soft);
+  --t-warning-bg-strong:    var(--t-warning-bg-soft);
+  --t-warning-border-strong:var(--t-warning-border);
+  --t-danger-tint:          var(--t-danger-bg-soft);
+  --t-danger-bg:            var(--t-danger-bg-soft);
+  --t-danger-bg-strong:     var(--t-danger-bg-soft);
+  --t-danger-border-strong: var(--t-danger-border);
+  --t-info-tint:            var(--t-info-bg-soft);
+  --t-info-bg:              var(--t-info-bg-soft);
+  --t-info-bg-strong:       var(--t-info-bg-soft);
+  --t-info-border-strong:   var(--t-info-border);
+  --t-role:                 var(--t-warning); /* legacy "role" tint → warning */
+  --t-neutral-tint:         var(--t-surface-raised);
+  --t-neutral-border:       var(--t-border-default);
+}

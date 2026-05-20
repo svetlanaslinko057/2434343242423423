@@ -1,0 +1,171 @@
+{
+  "project_name": "ATLAS DevOS",
+  "theme_blueprint": {
+    "description": "Unified dual-theme design system for Web and Expo applications.",
+    "colors": {
+      "dark": {
+        "bg": "#0B0F14",
+        "surface": "#11161D",
+        "surfaceSecondary": "#1A212A",
+        "surfaceElevated": "#222B36",
+        "textPrimary": "#FFFFFF",
+        "textSecondary": "#A1B0C0",
+        "textMuted": "#6A7B8E",
+        "primary": "#2FE6A6",
+        "primaryHover": "#5CEDB7",
+        "primaryActive": "#1FBE86",
+        "primaryInk": "#052E20",
+        "primaryAccent": "#2FE6A6",
+        "primaryAccentSoft": "rgba(47, 230, 166, 0.15)",
+        "success": "#2FE6A6",
+        "successTint": "rgba(47, 230, 166, 0.1)",
+        "successBorder": "rgba(47, 230, 166, 0.3)",
+        "warning": "#FFB020",
+        "warningTint": "rgba(255, 176, 32, 0.1)",
+        "warningBorder": "rgba(255, 176, 32, 0.3)",
+        "danger": "#FF4D4D",
+        "dangerTint": "rgba(255, 77, 77, 0.1)",
+        "dangerBorder": "rgba(255, 77, 77, 0.3)",
+        "info": "#3399FF",
+        "infoTint": "rgba(51, 153, 255, 0.1)",
+        "infoBorder": "rgba(51, 153, 255, 0.3)",
+        "border": "#222B36",
+        "borderStrong": "#3A4756",
+        "divider": "#1A212A",
+        "cardBg": "#11161D",
+        "cardHover": "#161C24",
+        "shadowCard": "0px 4px 20px rgba(0, 0, 0, 0.4)",
+        "shadowHover": "0px 8px 30px rgba(0, 0, 0, 0.6)"
+      },
+      "light": {
+        "bg": "#F8FAFC",
+        "surface": "#FFFFFF",
+        "surfaceSecondary": "#F1F5F9",
+        "surfaceElevated": "#FFFFFF",
+        "textPrimary": "#0F172A",
+        "textSecondary": "#475569",
+        "textMuted": "#94A3B8",
+        "primary": "#059669",
+        "primaryHover": "#047857",
+        "primaryActive": "#065F46",
+        "primaryInk": "#FFFFFF",
+        "primaryAccent": "#10B981",
+        "primaryAccentSoft": "rgba(16, 185, 129, 0.1)",
+        "success": "#10B981",
+        "successTint": "rgba(16, 185, 129, 0.1)",
+        "successBorder": "rgba(16, 185, 129, 0.3)",
+        "warning": "#D97706",
+        "warningTint": "rgba(245, 158, 11, 0.1)",
+        "warningBorder": "rgba(245, 158, 11, 0.3)",
+        "danger": "#DC2626",
+        "dangerTint": "rgba(239, 68, 68, 0.1)",
+        "dangerBorder": "rgba(239, 68, 68, 0.3)",
+        "info": "#2563EB",
+        "infoTint": "rgba(59, 130, 246, 0.1)",
+        "infoBorder": "rgba(59, 130, 246, 0.3)",
+        "border": "#E2E8F0",
+        "borderStrong": "#CBD5E1",
+        "divider": "#F1F5F9",
+        "cardBg": "#FFFFFF",
+        "cardHover": "#F8FAFC",
+        "shadowCard": "0px 2px 8px rgba(15, 23, 42, 0.05)",
+        "shadowHover": "0px 6px 16px rgba(15, 23, 42, 0.08)"
+      }
+    },
+    "typography": {
+      "fonts": {
+        "heading": "Cabinet Grotesk, ui-sans-serif, system-ui, sans-serif",
+        "body": "IBM Plex Sans, ui-sans-serif, system-ui, sans-serif",
+        "mono": "JetBrains Mono, ui-monospace, SFMono-Regular, monospace"
+      },
+      "scale": {
+        "h1": "text-4xl sm:text-5xl tracking-tight font-bold",
+        "h2": "text-2xl sm:text-3xl tracking-tight font-semibold",
+        "h3": "text-xl sm:text-2xl tracking-tight font-medium",
+        "body": "text-base leading-relaxed",
+        "small": "text-sm text-token-textSecondary",
+        "kicker": "text-xs tracking-[0.2em] uppercase font-semibold text-token-primary",
+        "mono": "font-mono text-sm"
+      }
+    },
+    "spacing": {
+      "4": "0.25rem",
+      "8": "0.5rem",
+      "12": "0.75rem",
+      "16": "1rem",
+      "24": "1.5rem",
+      "32": "2rem",
+      "48": "3rem"
+    },
+    "components": {
+      "app_card": "bg-token-cardBg border border-token-border rounded-xl shadow-token-shadowCard transition-all duration-200 hover:shadow-token-shadowHover hover:border-token-borderStrong",
+      "btn_primary": "bg-token-primary text-token-primaryInk px-4 py-2 rounded-lg font-medium hover:bg-token-primaryHover active:bg-token-primaryActive transition-colors data-testid=\"btn-primary\"",
+      "btn_secondary": "bg-token-surfaceElevated text-token-textPrimary border border-token-border hover:border-token-borderStrong px-4 py-2 rounded-lg font-medium transition-colors data-testid=\"btn-secondary\"",
+      "btn_ghost": "bg-transparent text-token-textPrimary hover:bg-token-surfaceSecondary px-4 py-2 rounded-lg font-medium transition-colors data-testid=\"btn-ghost\"",
+      "status_badge": {
+        "base": "inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border",
+        "variants": {
+          "success": "bg-token-successTint text-token-success border-token-successBorder",
+          "warning": "bg-token-warningTint text-token-warning border-token-warningBorder",
+          "danger": "bg-token-dangerTint text-token-danger border-token-dangerBorder",
+          "info": "bg-token-infoTint text-token-info border-token-infoBorder",
+          "neutral": "bg-token-surfaceSecondary text-token-textSecondary border-token-border"
+        }
+      },
+      "input": "bg-token-surface text-token-textPrimary border border-token-border rounded-lg px-4 py-2 focus:ring-2 focus:ring-token-primaryAccentSoft focus:border-token-primaryAccent transition-all placeholder:text-token-textMuted data-testid=\"input-field\"",
+      "sidebar_item": "flex items-center gap-3 px-3 py-2 rounded-lg text-token-textSecondary hover:bg-token-surfaceSecondary hover:text-token-textPrimary transition-colors data-[active=true]:bg-token-primaryAccentSoft data-[active=true]:text-token-primaryAccent data-testid=\"sidebar-item\"",
+      "modal": "bg-token-surfaceElevated border border-token-border rounded-2xl shadow-2xl max-w-lg w-full p-6 data-testid=\"modal-container\"",
+      "list_row": "flex items-center justify-between p-4 border-b border-token-divider hover:bg-token-surfaceSecondary transition-colors",
+      "kicker": "text-xs tracking-[0.2em] uppercase font-semibold text-token-primary",
+      "chart_color_palette": [
+        "var(--token-primary)",
+        "var(--token-info)",
+        "var(--token-warning)",
+        "var(--token-success)",
+        "var(--token-textSecondary)"
+      ]
+    }
+  },
+  "auth_screen_layout": {
+    "desktop": "split-pane. Left side: visual brand container displaying ATLAS DevOS imagery and tone. Right side: auth form container centered vertically and horizontally.",
+    "mobile_and_expo": "single-column. Form centered, taking up main screen real estate with minimalistic header.",
+    "flow": {
+      "default": "Password-first input. Email field followed by password field immediately visible.",
+      "tabs": "Toggle between 'Sign in' and 'Register' at the top of the form.",
+      "links": "'Forgot password?' link strictly placed below the password input field.",
+      "supplements": "Secondary actions underneath the main login button: 'Continue with Google', 'Try Demo'."
+    }
+  },
+  "forgot_password_flow": {
+    "step_1_request": "Screen asking for email input with a 'Send Reset Code' button.",
+    "step_2_verify": "Screen asking for 6-digit code/token sent via email. Must include a 'Resend code' timer/button.",
+    "step_3_reset": "Screen for 'New password' and 'Confirm password' with a 'Set new password' final button."
+  },
+  "migration_checklist": [
+    "1. Replace all explicit bg-[#0B0F14] hex classes with semantic bg-token-bg (or bg-app).",
+    "2. Strip all hardcoded text hex colors (e.g., text-[#FFFFFF], text-[#A1B0C0]) and apply text-token-textPrimary, text-token-textSecondary, or text-token-textMuted.",
+    "3. Swap specific mint green text instances text-[#2FE6A6] with text-token-primaryAccent.",
+    "4. Convert generic semi-transparent blocks bg-white/5 to bg-token-surfaceSecondary or bg-token-surfaceElevated.",
+    "5. Migrate explicit border-white/10 or similar to border-token-border.",
+    "6. Standardize all card containers to use the app-card semantic blueprint classes (bg-token-cardBg border border-token-border...).",
+    "7. Update all buttons to match btn-primary, btn-secondary, or btn-ghost classes.",
+    "8. Audit all hardcoded spacing and convert to the 4/8/12/16/24/32/48 token scale.",
+    "9. Update Typography: Remove font-sans or generic text-xl and apply the standardized hierarchy (text-4xl sm:text-5xl tracking-tight font-bold for H1, etc.).",
+    "10. Standardize badge components to the dual-theme status-badge blueprint rather than custom inline background opacities.",
+    "11. Convert chart colors to use CSS variables from chart-color-palette (var(--token-primary), etc.).",
+    "12. Ensure inputs explicitly define background (bg-token-surface), border (border-token-border), and text (text-token-textPrimary).",
+    "13. Add data-[active=true] logic to interactive sidebar or menu items instead of manually swapping bg classes on state changes.",
+    "14. Remove raw shadow-[...] classes and implement shadow-token-shadowCard or shadow-token-shadowHover.",
+    "15. Replace raw dividers border-b border-[#1A212A] with border-token-divider.",
+    "16. Audit SVGs: replace hardcoded hex fills/strokes with currentColor and set text color on the parent.",
+    "17. Implement AsyncStorage (Expo) and localStorage (Web) persistence for theme switcher.",
+    "18. Sync web tokens file /app/web/src/theme/tokens.js perfectly with Expo tokens file /app/frontend/src/theme/tokens.ts.",
+    "19. Test Dark Theme to ensure it perfectly mirrors the original mood but with variables instead of hardcoded values.",
+    "20. Test Light Theme to ensure paper-white/slate inversion is fully readable with AAA/AA WCAG contrast.",
+    "21. Add data-testid to all newly refactored interactive elements, following the format data-testid=\"[action]-[element]\".",
+    "22. Audit modal components across Expo and Web to ensure they use bg-token-surfaceElevated instead of pure dark/light backgrounds.",
+    "23. Verify hover states are visible on Light Theme (often neglected when migrating from a Dark-only theme).",
+    "24. Create a global theme context/provider for React/Expo that injects CSS variables or React Native StyleSheet dynamically.",
+    "25. Ensure standard UI borders do not bleed or glow unintentionally—stick to strict 'institutional' aesthetic."
+  ]
+}

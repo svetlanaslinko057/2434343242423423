@@ -1,0 +1,77 @@
+{
+  "summary": "Backend conversion + deposit chain is 100% green (8/8 pytest cases). Frontend mobile UI is OUT OF SYNC with the review_request: /auth has no Sign-up form (passwordless email-only screen), /client home does not render awaiting-deposit-sidebar, and /client/projects/{id} does not render deposit-card / pay-deposit-btn for a project that the backend reports as awaiting_deposit. Backend deposit block, idempotent mock-payment checkout, and /client/attention awaiting_deposit surfacing all work as specified.",
+  "backend_issues": {
+    "critical": [],
+    "minor": [
+      {
+        "endpoint": "GET /api/client/project/{id}/workspace",
+        "issue": "deposit.project_status='awaiting_deposit' is nested inside the deposit block, but top-level body.project.status is null and there is no top-level project_status. The review_request describes 'project_status=awaiting_deposit' on the deposit object — that is correct. Recommend ALSO exposing project.status at the top level for clients that read body.project."
+      }
+    ]
+  },
+  "frontend_issues": {
+    "ui_bugs": [
+      {
+        "component": "/app/frontend/app/auth.tsx (mobile /auth screen)",
+        "issue": "The current screen is a passwordless email-only flow ('Continue to your product · Just your email — no password required') with only [data-testid=auth-email-input] and [data-testid=auth-continue-btn]. There is NO 'Sign up' tab, NO password field, NO name field. The review_request scenario 'switch to Sign up and register a brand new user' is therefore IMPOSSIBLE through the current UI. POST /api/auth/register works perfectly via API, but no UI surface exposes it on Expo mobile.",
+        "testID": "auth-email-input, auth-continue-btn",
+        "priority": "CRITICAL"
+      },
+      {
+        "component": "/app/frontend/app/client/home.tsx",
+        "issue": "After login (session cookie + token), /client renders a Dashboard with [data-testid=client-home-project-{pid}] for each project but does NOT render [data-testid=awaiting-deposit-sidebar] nor [data-testid=awaiting-deposit-{pid}] rows — even when /api/client/attention returns awaiting_deposit=1 and the project's workspace deposit block has required:true / paid:false. The sidebar component appears to either not be wired in or its visibility flag is wrong (likely depends on a different status field).",
+        "testID": "awaiting-deposit-sidebar, awaiting-deposit-{project_id}",
+        "priority": "CRITICAL"
+      },
+      {
+        "component": "/app/frontend/app/client/projects/[id].tsx",
+        "issue": "Project detail screen shows status 'BUILDING' and does NOT render [data-testid=deposit-card] or [data-testid=pay-deposit-btn] for a project that backend reports as status='awaiting_deposit' with deposit.required=true. The deposit-card branch is never rendered. Top header pill reads 'BUILDING' which contradicts the backend project status. Likely the page reads project.status from a different field/endpoint, or the awaiting_deposit branch is not implemented.",
+        "testID": "deposit-card, pay-deposit-btn",
+        "priority": "CRITICAL"
+      },
+      {
+        "component": "/app/frontend/app/estimate-result.tsx (visitor flow)",
+        "issue": "[data-testid=estimate-continue-btn] opens an INLINE email-capture card on the SAME /estimate-result page (testIDs capture-step-email / capture-email / capture-email-save / capture-email-back) instead of navigating to /auth as described. This means atlas_pending_lead_id auto-claim post-auth wiring cannot be exercised through the documented visitor → /describe → /estimate-result → Continue → /auth path. Either restore navigation-to-/auth OR document that the inline email-capture is the new path and update the flow to support /api/auth/register password creation after capture.",
+        "testID": "estimate-continue-btn, capture-step-email",
+        "priority": "HIGH"
+      }
+    ],
+    "integration_issues": [
+      {
+        "flow": "visitor → describe → estimate-result → /auth → register → /client (awaiting-deposit sidebar + deposit-card)",
+        "issue": "End-to-end UI path is BROKEN at three points: (a) estimate-continue-btn does not navigate to /auth, it opens an inline email capture; (b) /auth has no signup form (passwordless only); (c) /client home and /client/projects/{id} do not surface awaiting-deposit components even when authed and project is genuinely awaiting_deposit on the backend.",
+        "affected_testIDs": ["estimate-continue-btn", "auth-email-input", "auth-continue-btn", "awaiting-deposit-sidebar", "deposit-card", "pay-deposit-btn"]
+      }
+    ],
+    "design_issues": [],
+    "react_native_issues": []
+  },
+  "test_report_links": [
+    "/app/backend/tests/test_conversion_deposit_flow.py",
+    "/app/test_reports/pytest/conversion_deposit_iter8.xml"
+  ],
+  "action_items": [
+    "[CRITICAL] Restore / add the Sign-up form on /app/frontend/app/auth.tsx with testIDs: auth-mode-signup (tab/toggle), auth-email-input, auth-password-input, auth-name-input (optional), auth-submit-btn. Wire submit to POST /api/auth/register, then if atlas_pending_lead_id is in storage call POST /api/leads/{lead_id}/claim and route to /client.",
+    "[CRITICAL] Wire awaiting-deposit-sidebar into /app/frontend/app/client/home.tsx — render testID=awaiting-deposit-sidebar at the top of the dashboard when /api/client/attention returns awaiting_deposit > 0, with a row per project carrying testID=awaiting-deposit-{project_id} that navigates to /client/projects/{id}.",
+    "[CRITICAL] In /app/frontend/app/client/projects/[id].tsx, add the deposit-card branch: when workspace.deposit.required && !workspace.deposit.paid (or project.status==='awaiting_deposit'), render testID=deposit-card at the top with 'Pay deposit · $X' and testID=pay-deposit-btn. On press, call POST /api/client/projects/{id}/deposit/checkout and open the returned payment_url (which is the mock URL in this iteration).",
+    "[HIGH] Reconcile /estimate-result → /auth navigation. Either replace the inline capture-email card with a 'Continue → /auth (Sign up)' route, or extend the capture flow to write atlas_pending_lead_id and then navigate to /auth so the existing post-auth claim wiring fires.",
+    "[LOW] In GET /api/client/project/{id}/workspace, also expose project.status at the top level (currently only inside deposit.project_status)."
+  ],
+  "critical_code_review_comments": [
+    "Backend chain is correct: estimate persists anonymous_lead, register issues bearer token + cookie, claim mutates lead.status='converted' + lead.project_id and creates project status='awaiting_deposit' with deposit_amount = round(final_price*0.10, 2). Admin GET /api/admin/leads?status=converted and PATCH /api/admin/leads/{id} both work. /api/client/attention surfaces awaiting_deposit count and awaiting_deposit_projects list. /api/client/projects/{id}/deposit/checkout returns mode='mock' / provider='mock-payment' with a stable invoice_id on repeat calls (idempotent).",
+    "Backend logs confirm integrations.mock.MOCK_PAYMENT.checkout fires correctly when checkout is hit; Stripe path is intentionally inactive (STRIPE_SECRET_KEY absent).",
+    "Frontend deviates from the review_request in three components (auth.tsx, client/home.tsx, client/projects/[id].tsx). Either the new wiring was not pushed, or it is gated behind a feature flag / state shape that does not match what the backend currently returns."
+  ],
+  "updated_files": [
+    "/app/backend/tests/test_conversion_deposit_flow.py (NEW — 8-case pytest covering full conversion + deposit chain)"
+  ],
+  "success_rate": {
+    "backend": "100% (8/8 PASS) — estimate, register, claim+10%-deposit, admin-sees-converted, admin-patch, workspace.deposit, deposit/checkout idempotent mock, /client/attention awaiting_deposit",
+    "frontend": "~25% — visitor /describe → /estimate-result works (visitor-goal-input, visitor-start-cta, estimate-continue-btn render). Auth, awaiting-deposit-sidebar, deposit-card, pay-deposit-btn are missing/not wired."
+  },
+  "seed_data_creation": "Created ~5 anonymous leads + 5 test client users (sidebar_*@atlas.test, dcard_*@atlas.test, fe_iter8_*@atlas.test, test_iter8_*@atlas.test) each with one awaiting_deposit project. No cleanup needed — test data is prefixed for easy identification.",
+  "retest_needed": true,
+  "should_main_agent_self_test": false,
+  "context_for_next_testing_agent": "Re-run backend suite: EXPO_BACKEND_URL=https://expo-mobile-app-17.preview.emergentagent.com /root/.venv/bin/python -m pytest /app/backend/tests/test_conversion_deposit_flow.py -v. Expect 8/8 PASS. For frontend re-test after main agent fixes: (a) /auth must show a Sign-up form with testIDs auth-mode-signup, auth-email-input, auth-password-input, auth-submit-btn; (b) after register, /client must render testID=awaiting-deposit-sidebar with a row testID=awaiting-deposit-{project_id}; (c) tapping the row opens /client/projects/{id} where testID=deposit-card and testID=pay-deposit-btn are visible at the top; pressing pay-deposit-btn should call POST /api/client/projects/{id}/deposit/checkout and open the payment_url (mock URL). Easy reproduction: page.request.post the three backend endpoints (estimate → register → claim) to provision a state, set localStorage atlas_auth_token + atlas_user, then page.goto /client to verify sidebar.",
+  "rca_of_issue": "FRONTEND-AUTH-NO-SIGNUP: /app/frontend/app/auth.tsx currently renders a single email + Continue button (testIDs auth-email-input, auth-continue-btn) — passwordless magic-link UX. The review_request's 'Sign up' tab does not exist in the rendered DOM. No mode-toggle testID is present. Likely the older login-only build is still deployed, or a guard/feature-flag is hiding the signup form. ATTENTION-SIDEBAR-MISSING: After authing (session cookie issued by /api/auth/register on the same browser context), /client renders the dashboard via client-home-project-{pid} tiles but the awaiting-deposit-sidebar component is not in the rendered tree. The backend correctly returns /api/client/attention with awaiting_deposit=1 and awaiting_deposit_projects=[…], but the React Native component either ignores this field or is not rendered. DEPOSIT-CARD-MISSING: Project detail screen shows status pill 'BUILDING' instead of 'AWAITING DEPOSIT' and deposit-card / pay-deposit-btn are not in the DOM, although /api/client/project/{id}/workspace returns deposit.required=true, deposit.paid=false, deposit.amount=10%*final_price, deposit.project_status='awaiting_deposit'. Either the page reads project.status from a different field or the awaiting_deposit branch is not implemented."
+}

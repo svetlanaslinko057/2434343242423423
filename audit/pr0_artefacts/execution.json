@@ -1,0 +1,42 @@
+{
+  "actions": [
+    {
+      "step": "backfill_source_path",
+      "collection": "dev_earning_log",
+      "filter": {
+        "source_path": {
+          "$exists": false
+        }
+      },
+      "set": {
+        "source_path": "approve_module"
+      },
+      "matched": 6,
+      "modified": 6
+    },
+    {
+      "step": "index",
+      "collection": "dev_earning_log",
+      "key": [
+        [
+          "module_id",
+          1
+        ],
+        [
+          "source_path",
+          1
+        ]
+      ],
+      "unique": true,
+      "name": "dev_earning_log_module_source_unique",
+      "status": "ok"
+    },
+    {
+      "step": "index",
+      "collection": "escrow_payouts",
+      "status": "FAILED",
+      "error": "Index already exists with a different name: payout_id_1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: payout_id_1', 'code': 85, 'codeName': 'IndexOptionsConflict'}"
+    }
+  ],
+  "status": "FAILED_AT_ESCROW_PAYOUTS_INDEX"
+}

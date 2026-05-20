@@ -1,0 +1,9 @@
+{
+  "name": "@evax/runtime-client",
+  "version": "0.1.0",
+  "description": "Transport / runtime / platform client for EVA-X (web + expo). Platform-agnostic core + per-surface adapters.",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "private": true,
+  "license": "UNLICENSED"
+}

@@ -1,0 +1,97 @@
+{
+  "pilot": "p4_expo_wallet",
+  "description": "Pilot #4 \u2014 Expo developer wallet (smoke)",
+  "role": "developer",
+  "url": "https://681ec133-7045-47dc-8d28-9f6ca9049c50.preview.emergentagent.com/developer/wallet",
+  "nav_status": "ok",
+  "api_calls": [
+    {
+      "method": "GET",
+      "url": "https://mobile-web-stack-11.preview.emergentagent.com/api/integrations/manifest",
+      "status": 200,
+      "request_id": "0da0c6ea8071430a",
+      "compat": null,
+      "canonical": null
+    },
+    {
+      "method": "GET",
+      "url": "https://mobile-web-stack-11.preview.emergentagent.com/api/developer/withdrawals",
+      "status": 200,
+      "request_id": "f1f96125f36a4620",
+      "compat": null,
+      "canonical": null
+    },
+    {
+      "method": "GET",
+      "url": "https://mobile-web-stack-11.preview.emergentagent.com/api/developer/wallet",
+      "status": 200,
+      "request_id": "374f6584be7c4184",
+      "compat": null,
+      "canonical": null
+    },
+    {
+      "method": "GET",
+      "url": "https://mobile-web-stack-11.preview.emergentagent.com/api/mobile/auth/me",
+      "status": 200,
+      "request_id": "req_7a1e443a_19e0e48a14e",
+      "compat": null,
+      "canonical": null
+    },
+    {
+      "method": "GET",
+      "url": "https://mobile-web-stack-11.preview.emergentagent.com/api/client/alerts",
+      "status": 200,
+      "request_id": "req_0f103f52_19e0e48a14d",
+      "compat": null,
+      "canonical": null
+    },
+    {
+      "method": "GET",
+      "url": "https://mobile-web-stack-11.preview.emergentagent.com/api/client/alerts",
+      "status": 200,
+      "request_id": "req_619e1196_19e0e48a14e",
+      "compat": null,
+      "canonical": null
+    },
+    {
+      "method": "GET",
+      "url": "https://mobile-web-stack-11.preview.emergentagent.com/api/me",
+      "status": 200,
+      "request_id": "req_258df1e6_19e0e48a1d6",
+      "compat": null,
+      "canonical": null
+    },
+    {
+      "method": "GET",
+      "url": "https://mobile-web-stack-11.preview.emergentagent.com/api/notifications/my?unread=true&limit=10",
+      "status": 200,
+      "request_id": "req_b627ca14_19e0e48a9a5",
+      "compat": null,
+      "canonical": null
+    }
+  ],
+  "console": [
+    {
+      "type": "log",
+      "text": "Running application \"main\" with appParams:\n {rootTag: #root, hydrate: undefined} \nDevelopment-level warnings: ON.\nPerformance optimizations: OFF.",
+      "kind": "warning"
+    },
+    {
+      "type": "warning",
+      "text": "\"shadow*\" style props are deprecated. Use \"boxShadow\".",
+      "kind": "info"
+    },
+    {
+      "type": "warning",
+      "text": "[expo-notifications] Listening to push token changes is not yet fully supported on web. Adding a listener will have no effect.",
+      "kind": "info"
+    },
+    {
+      "type": "warning",
+      "text": "props.pointerEvents is deprecated. Use style.pointerEvents",
+      "kind": "info"
+    }
+  ],
+  "pageerrors": [],
+  "screenshot": "/app/audit/baseline/p4_expo_wallet.jpg"
+}

@@ -1,0 +1,4836 @@
+[
+ {
+  "method": "GET",
+  "path": "/api/account/me",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 2,
+  "files": [
+   "app/client/account.tsx",
+   "app/settings.tsx"
+  ]
+ },
+ {
+  "method": "PATCH",
+  "path": "/api/account/me",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 2,
+  "files": [
+   "app/client/account.tsx",
+   "src/i18n.tsx"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/account/me/2fa/disable/confirm",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 2,
+  "files": [
+   "app/client/account.tsx",
+   "app/settings.tsx"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/account/me/2fa/disable/request",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 2,
+  "files": [
+   "app/client/account.tsx",
+   "app/settings.tsx"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/account/me/2fa/enable",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 2,
+  "files": [
+   "app/client/account.tsx",
+   "app/settings.tsx"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/account/me/avatar",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/client/account.tsx"
+  ]
+ },
+ {
+  "method": "DELETE",
+  "path": "/api/account/me/avatar",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/client/account.tsx"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/account/me/avatar/signature",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/client/account.tsx"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/account/me/change-email/confirm",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/client/account.tsx"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/account/me/change-email/request",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/client/account.tsx"
+  ]
+ },
+ {
+  "method": "DELETE",
+  "path": "/api/account/me/confirm",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/client/account.tsx"
+  ]
+ },
+ {
+  "method": "DELETE",
+  "path": "/api/account/me/request",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/client/account.tsx"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/account/sessions",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/client/account.tsx"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/account/sessions/revoke-others",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/client/account.tsx"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/modules/{v}/boost",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/stuck-module-actions.tsx"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/payouts/{v}/approve",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ClientCosts.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/scopes",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/GPTScopeBuilder.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/system/users",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminSystemUsers.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/users-v2",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminUsersPage.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/users-v2/{v}",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminUsersPage.js"
+  ]
+ },
+ {
+  "method": "DELETE",
+  "path": "/api/admin/users-v2/{v}",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminUsersPage.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/users-v2/{v}/block",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminUsersPage.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/users-v2/{v}/logout-all",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminUsersPage.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/users-v2/{v}/role",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminUsersPage.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/users-v2/{v}/unblock",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminUsersPage.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/auth/send-code",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 2,
+  "files": [
+   "app/auth.tsx",
+   "src/auth-gate.tsx"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/auth/verify-code",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/auth.tsx"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/dashboard",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ClientDashboardOS.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/invoices-os",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ClientBillingOS.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/client/modules/{v}/reject",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ClientProjectWorkspaceOS.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/notifications",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/magic-client-pull.tsx"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/opportunities",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/client-opportunity-feed.tsx"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/client/opportunities/{v}/accept",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/client-opportunity-feed.tsx"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/client/opportunities/{v}/dismiss",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/client-opportunity-feed.tsx"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/projects",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ClientVersionsPage.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/recommendations",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/magic-client-pull.tsx"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/retainer-offer",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/retainer-offer.tsx"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/client/retainer/{v}/accept",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/retainer-offer.tsx"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/revenue-timeline",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/revenue-timeline.tsx"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/support/tickets",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/client/support.tsx"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/client/support/tickets",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/client/support.tsx"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/dev/tasks",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/developer/work.tsx"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/dev/tasks/{v}/complete",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/developer/work.tsx"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/dev/tasks/{v}/start",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/developer/work.tsx"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/developer/motivation",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/dev-motivation.tsx"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/developer/rank",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/developer/market.tsx"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/developer/recommended-modules",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/dev-recommended-modules.tsx"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/estimate/parse-file",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/index.tsx"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/global/actions",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/inbox.tsx"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/global/pressure",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/inbox.tsx"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/global/status",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/global-control-bar.tsx"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/leads/by-email/pending",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/pending-lead-banner.tsx"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/leads/claim",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/auth-gate.tsx"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/leads/intake",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/estimate-result.tsx"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/leads/{v}",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/lead/workspace.tsx"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/leads/{v}/claim",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 3,
+  "files": [
+   "app/auth.tsx",
+   "app/lead/workspace.tsx",
+   "src/pending-lead-banner.tsx"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/marketplace/feed",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 2,
+  "files": [
+   "app/developer/market.tsx",
+   "src/dev-opportunities-pressure.tsx"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/metrics/event",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/metrics.ts"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/mobile/auth/demo",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/auth.tsx"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/mobile/auth/google",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/auth.tsx"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/mobile/auth/login",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/auth.tsx"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/mobile/auth/logout",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/auth.tsx"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/mobile/auth/me",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/auth.tsx"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/mobile/auth/register",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/auth.tsx"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/mobile/auth/switch-role",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/auth.tsx"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/modules/{v}/assign",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/magic-client-pull.tsx"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/modules/{v}/bid",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/developer/market.tsx"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/modules/{v}/invite-developers",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/recommended-developers.tsx"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/modules/{v}/pause",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ClientCosts.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/modules/{v}/recommended-developers",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/recommended-developers.tsx"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/modules/{v}/reopen-bidding",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/stuck-module-actions.tsx"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/operator/auto-balance",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/system-balance.tsx"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/operator/auto-run",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/operator.tsx"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/operator/automation",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/operator.tsx"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/operator/execute/{v}",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 2,
+  "files": [
+   "app/operator.tsx",
+   "src/workspace-operator-hints.tsx"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/operator/feed",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/operator.tsx"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/operator/history",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/operator/history.tsx"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/projects/{v}/operator-hints",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/workspace-operator-hints.tsx"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/projects/{v}/scope",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ProjectDetails.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/system/health/deep",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/system-balance.tsx"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/system/truth",
+  "status": "MISSING",
+  "backend_match": null,
+  "backend_method": null,
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/system-truth.tsx"
+  ]
+ },
+ {
+  "method": "DELETE",
+  "path": "/api/projects/{v}",
+  "status": "METHOD_MISMATCH",
+  "backend_match": "/api/projects/mine",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ClientProjects.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/activity/live",
+  "status": "OK",
+  "backend_match": "/api/activity/live",
+  "backend_method": "GET",
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/activity.tsx"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/activity/workspace/{v}",
+  "status": "OK",
+  "backend_match": "/api/activity/workspace/{project_id}",
+  "backend_method": "GET",
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/workspace/[id].tsx"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/assignment-engine/{v}/assign",
+  "status": "OK",
+  "backend_match": "/api/admin/assignment-engine/{work_unit_id}/assign",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "components/AssignmentPanel.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/assignment-engine/{v}/assign-best",
+  "status": "OK",
+  "backend_match": "/api/admin/assignment-engine/{work_unit_id}/assign-best",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "components/AssignmentPanel.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/assignment-engine/{v}/candidates",
+  "status": "OK",
+  "backend_match": "/api/admin/assignment-engine/{work_unit_id}/candidates",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "components/AssignmentPanel.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/audit-log",
+  "status": "OK",
+  "backend_match": "/api/admin/audit-log",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminV2System.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/billing/invoices/{v}/mark-paid",
+  "status": "OK",
+  "backend_match": "/api/admin/billing/invoices/{invoice_id}/mark-paid",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminBillingPage.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/billing/invoices/{v}/resend",
+  "status": "OK",
+  "backend_match": "/api/admin/billing/invoices/{invoice_id}/resend",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminBillingPage.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/contracts/{v}",
+  "status": "OK",
+  "backend_match": "/api/admin/contracts/{contract_id}",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminContractsPage.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/deliverable",
+  "status": "OK",
+  "backend_match": "/api/admin/deliverable",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "pages/AdminDeliverableBuilder.js",
+   "pages/DeliverableBuilder.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/developers/available",
+  "status": "OK",
+  "backend_match": "/api/admin/developers/available",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ScopeBuilder.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/developers/{v}/profile",
+  "status": "OK",
+  "backend_match": "/api/admin/developers/{developer_id}/profile",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminDeveloperProfile.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/earnings/approved",
+  "status": "OK",
+  "backend_match": "/api/admin/earnings/approved",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminEarningsControl.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/earnings/flagged",
+  "status": "OK",
+  "backend_match": "/api/admin/earnings/flagged",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminEarningsControl.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/earnings/held",
+  "status": "OK",
+  "backend_match": "/api/admin/earnings/held",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminEarningsControl.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/earnings/overview",
+  "status": "OK",
+  "backend_match": "/api/admin/earnings/overview",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminEarningsControl.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/growth/overview",
+  "status": "OK",
+  "backend_match": "/api/admin/growth/overview",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminGrowthPage.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/growth/payouts",
+  "status": "OK",
+  "backend_match": "/api/admin/growth/payouts",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminGrowthPage.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/growth/payouts/{v}/approve",
+  "status": "OK",
+  "backend_match": "/api/admin/growth/payouts/{payout_id}/approve",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminGrowthPage.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/growth/payouts/{v}/cancel",
+  "status": "OK",
+  "backend_match": "/api/admin/growth/payouts/{payout_id}/cancel",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminGrowthPage.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/master/pipeline",
+  "status": "OK",
+  "backend_match": "/api/admin/master/pipeline",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/MasterAdminDashboard.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/master/request/{v}",
+  "status": "OK",
+  "backend_match": "/api/admin/master/request/{request_id}",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/MasterAdminDashboard.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/master/request/{v}/proposal",
+  "status": "OK",
+  "backend_match": "/api/admin/master/request/{request_id}/proposal",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "pages/AdminDashboard.js",
+   "pages/MasterAdminDashboard.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/master/request/{v}/reject",
+  "status": "OK",
+  "backend_match": "/api/admin/master/request/{request_id}/reject",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/MasterAdminDashboard.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/master/request/{v}/start-review",
+  "status": "OK",
+  "backend_match": "/api/admin/master/request/{request_id}/start-review",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "pages/AdminDashboard.js",
+   "pages/MasterAdminDashboard.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/messages/inbox",
+  "status": "OK",
+  "backend_match": "/api/admin/messages/inbox",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminInboxPage.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/messages/thread/{v}",
+  "status": "OK",
+  "backend_match": "/api/admin/messages/thread/{thread_id}",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminInboxPage.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/messages/thread/{v}/reply",
+  "status": "OK",
+  "backend_match": "/api/admin/messages/thread/{thread_id}/reply",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminInboxPage.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/mobile/finance",
+  "status": "OK",
+  "backend_match": "/api/admin/mobile/finance",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminV2Finance.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/mobile/home",
+  "status": "OK",
+  "backend_match": "/api/admin/mobile/home",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminV2Dashboard.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/mobile/payout-batches/{v}/approve",
+  "status": "OK",
+  "backend_match": "/api/admin/mobile/payout-batches/{batch_id}/approve",
+  "backend_method": "POST",
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/admin/finance.tsx"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/mobile/profile",
+  "status": "OK",
+  "backend_match": "/api/admin/mobile/profile",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminV2Profile.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/mobile/qa",
+  "status": "OK",
+  "backend_match": "/api/admin/mobile/qa",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminQAPage.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/mobile/qa/{v}/{v}",
+  "status": "OK",
+  "backend_match": "/api/admin/mobile/qa/{module_id}/approve",
+  "backend_method": "POST",
+  "sources": [
+   "expo",
+   "web"
+  ],
+  "file_count": 3,
+  "files": [
+   "app/admin/qa.tsx",
+   "pages/AdminQAPage.js",
+   "pages/AdminV2Workflow.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/mobile/withdrawals/{v}/approve",
+  "status": "OK",
+  "backend_match": "/api/admin/mobile/withdrawals/{withdrawal_id}/approve",
+  "backend_method": "POST",
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/admin/finance.tsx"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/mobile/withdrawals/{v}/reject",
+  "status": "OK",
+  "backend_match": "/api/admin/mobile/withdrawals/{withdrawal_id}/reject",
+  "backend_method": "POST",
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/admin/finance.tsx"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/mobile/workflow",
+  "status": "OK",
+  "backend_match": "/api/admin/mobile/workflow",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminV2Workflow.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/payments/transactions",
+  "status": "OK",
+  "backend_match": "/api/admin/payments/transactions",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminPaymentsPage.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/payout/batches",
+  "status": "OK",
+  "backend_match": "/api/admin/payout/batches",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminEarningsControl.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/payout/batches",
+  "status": "OK",
+  "backend_match": "/api/admin/payout/batches",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminEarningsControl.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/payout/batches/{v}",
+  "status": "OK",
+  "backend_match": "/api/admin/payout/batches/{batch_id}",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminEarningsControl.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/payout/batches/{v}/approve",
+  "status": "OK",
+  "backend_match": "/api/admin/payout/batches/{batch_id}/approve",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminEarningsControl.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/payout/batches/{v}/mark-paid",
+  "status": "OK",
+  "backend_match": "/api/admin/payout/batches/{batch_id}/mark-paid",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminEarningsControl.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/profit/projects/{v}",
+  "status": "OK",
+  "backend_match": "/api/admin/profit/projects/{project_id}",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "components/profit/ProjectProfitDetailSheet.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/projects",
+  "status": "OK",
+  "backend_match": "/api/admin/projects",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 3,
+  "files": [
+   "pages/AdminDashboard.js",
+   "pages/AdminDeliverableBuilder.js",
+   "pages/DeliverableBuilder.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/projects/{v}/completed-units",
+  "status": "OK",
+  "backend_match": "/api/admin/projects/{project_id}/completed-units",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminDeliverableBuilder.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/projects/{v}/financials",
+  "status": "OK",
+  "backend_match": "/api/admin/projects/{project_id}/financials",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminFinancialsPage.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/projects/{v}/scope",
+  "status": "OK",
+  "backend_match": "/api/admin/projects/{project_id}/scope",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ScopeBuilder.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/projects/{v}/scope",
+  "status": "OK",
+  "backend_match": "/api/admin/projects/{project_id}/scope",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ScopeBuilder.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/projects/{v}/war-room",
+  "status": "OK",
+  "backend_match": "/api/admin/projects/{project_id}/war-room",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminProjectWarRoom.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/qa/flag-provider",
+  "status": "OK",
+  "backend_match": "/api/admin/qa/flag-provider",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminMarketplaceQuality.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/qa/issues",
+  "status": "OK",
+  "backend_match": "/api/admin/qa/issues",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminMarketplaceQuality.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/qa/limit-provider",
+  "status": "OK",
+  "backend_match": "/api/admin/qa/limit-provider",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminMarketplaceQuality.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/qa/overview",
+  "status": "OK",
+  "backend_match": "/api/admin/qa/overview",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminMarketplaceQuality.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/qa/providers",
+  "status": "OK",
+  "backend_match": "/api/admin/qa/providers",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminMarketplaceQuality.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/qa/unlimit-provider",
+  "status": "OK",
+  "backend_match": "/api/admin/qa/unlimit-provider",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminMarketplaceQuality.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/requests",
+  "status": "OK",
+  "backend_match": "/api/admin/requests",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminDashboard.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/review",
+  "status": "OK",
+  "backend_match": "/api/admin/review",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "components/AdminReviewQueue.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/scope-templates",
+  "status": "OK",
+  "backend_match": "/api/admin/scope-templates",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminDashboard.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/scope-templates",
+  "status": "OK",
+  "backend_match": "/api/admin/scope-templates",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminDashboard.js"
+  ]
+ },
+ {
+  "method": "DELETE",
+  "path": "/api/admin/scope-templates/{v}",
+  "status": "OK",
+  "backend_match": "/api/admin/scope-templates/{template_id}",
+  "backend_method": "DELETE",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminDashboard.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/scopes/{v}/units",
+  "status": "OK",
+  "backend_match": "/api/admin/scopes/{scope_id}/units",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ScopeBuilder.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/scopes/{v}/units/bulk",
+  "status": "OK",
+  "backend_match": "/api/admin/scopes/{scope_id}/units/bulk",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ScopeBuilder.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/settings/integrations",
+  "status": "OK",
+  "backend_match": "/api/admin/settings/integrations",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "pages/AdminIntegrationsPage.js",
+   "pages/AdminPaymentsPage.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/settings/integrations/test-checkout",
+  "status": "OK",
+  "backend_match": "/api/admin/settings/integrations/test-checkout",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminPaymentsPage.js"
+  ]
+ },
+ {
+  "method": "PUT",
+  "path": "/api/admin/settings/integrations/{v}",
+  "status": "OK",
+  "backend_match": "/api/admin/settings/integrations/app",
+  "backend_method": "PUT",
+  "sources": [
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "pages/AdminIntegrationsPage.js",
+   "pages/AdminPaymentsPage.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/settings/llm",
+  "status": "OK",
+  "backend_match": "/api/admin/settings/llm",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminIntegrationsPage.js"
+  ]
+ },
+ {
+  "method": "PUT",
+  "path": "/api/admin/settings/llm",
+  "status": "OK",
+  "backend_match": "/api/admin/settings/llm",
+  "backend_method": "PUT",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminIntegrationsPage.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/submissions",
+  "status": "OK",
+  "backend_match": "/api/admin/submissions",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "components/AdminReviewQueue.js",
+   "pages/AdminDashboard.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/support-tickets",
+  "status": "OK",
+  "backend_match": "/api/admin/support-tickets",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminDashboard.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/team/auto-rebalance",
+  "status": "OK",
+  "backend_match": "/api/admin/team/auto-rebalance",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminV2Team.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/team/bottlenecks",
+  "status": "OK",
+  "backend_match": "/api/admin/team/bottlenecks",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminTeamPanel.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/team/capacity",
+  "status": "OK",
+  "backend_match": "/api/admin/team/capacity",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminTeamPanel.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/team/developers",
+  "status": "OK",
+  "backend_match": "/api/admin/team/developers",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminTeamPanel.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/team/overloaded",
+  "status": "OK",
+  "backend_match": "/api/admin/team/overloaded",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminV2Team.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/team/rebalance/{v}",
+  "status": "OK",
+  "backend_match": "/api/admin/team/rebalance/{dev_id}",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminV2Team.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/users",
+  "status": "OK",
+  "backend_match": "/api/admin/users",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminDashboard.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/withdrawals/{v}/{v}",
+  "status": "OK",
+  "backend_match": "/api/admin/withdrawals/{withdrawal_id}/approve",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminWithdrawalsPage.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/work-units",
+  "status": "OK",
+  "backend_match": "/api/admin/work-units",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 3,
+  "files": [
+   "pages/AdminDashboard.js",
+   "pages/DeliverableBuilder.js",
+   "pages/WorkUnitDetail.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/admin/work-units/{v}",
+  "status": "OK",
+  "backend_match": "/api/admin/work-units/{unit_id}",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ScopeBuilder.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/work-units/{v}/assign",
+  "status": "OK",
+  "backend_match": "/api/admin/work-units/{unit_id}/assign",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ScopeBuilder.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/admin/work-units/{v}/review",
+  "status": "OK",
+  "backend_match": "/api/admin/work-units/{unit_id}/review",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ScopeBuilder.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/ai/estimate",
+  "status": "OK",
+  "backend_match": "/api/ai/estimate",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ClientEstimatePage.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/ai/estimate-price",
+  "status": "OK",
+  "backend_match": "/api/ai/estimate-price",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 3,
+  "files": [
+   "components/AutoPricingPanel.js",
+   "pages/ClientEstimatePage.js",
+   "pages/ClientHub.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/ai/generate-scope",
+  "status": "OK",
+  "backend_match": "/api/ai/generate-scope",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "pages/GPTScopeBuilder.js",
+   "pages/NewRequest.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/ai/match-template",
+  "status": "OK",
+  "backend_match": "/api/ai/match-template",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/NewRequest.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/ai/price-override",
+  "status": "OK",
+  "backend_match": "/api/ai/price-override",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "components/AutoPricingPanel.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/ai/recommendations",
+  "status": "OK",
+  "backend_match": "/api/ai/recommendations",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "components/AIRecommendationsPanel.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/ai/recommendations/{v}/accept",
+  "status": "OK",
+  "backend_match": "/api/ai/recommendations/{rec_id}/accept",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "components/AIRecommendationsPanel.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/ai/recommendations/{v}/dismiss",
+  "status": "OK",
+  "backend_match": "/api/ai/recommendations/{rec_id}/dismiss",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "components/AIRecommendationsPanel.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/ai/scope-to-units",
+  "status": "OK",
+  "backend_match": "/api/ai/scope-to-units",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/GPTScopeBuilder.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/ai/templates",
+  "status": "OK",
+  "backend_match": "/api/ai/templates",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminTemplatesPage.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/ai/templates",
+  "status": "OK",
+  "backend_match": "/api/ai/templates",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminTemplatesPage.js"
+  ]
+ },
+ {
+  "method": "DELETE",
+  "path": "/api/ai/templates/{v}",
+  "status": "OK",
+  "backend_match": "/api/ai/templates/{template_id}",
+  "backend_method": "DELETE",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminTemplatesPage.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/auth/demo",
+  "status": "OK",
+  "backend_match": "/api/auth/demo",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 3,
+  "files": [
+   "pages/AdminLoginPage.js",
+   "pages/BuilderAuthPage.js",
+   "pages/ClientAuthPage.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/auth/demo-provider",
+  "status": "OK",
+  "backend_match": "/api/auth/demo-provider",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ProviderAuth.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/auth/exists",
+  "status": "OK",
+  "backend_match": "/api/auth/exists",
+  "backend_method": "GET",
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/auth.tsx"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/auth/google",
+  "status": "OK",
+  "backend_match": "/api/auth/google",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ClientAuthPage.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/auth/login",
+  "status": "OK",
+  "backend_match": "/api/auth/login",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "App.js",
+   "pages/AdminLoginPage.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/auth/logout",
+  "status": "OK",
+  "backend_match": "/api/auth/logout",
+  "backend_method": "POST",
+  "sources": [
+   "expo",
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "App.js",
+   "app/admin/profile.tsx"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/auth/me",
+  "status": "OK",
+  "backend_match": "/api/auth/me",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "App.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/auth/onboarding",
+  "status": "OK",
+  "backend_match": "/api/auth/onboarding",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "pages/BuilderAuth.js",
+   "pages/ClientAuth.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/auth/quick",
+  "status": "OK",
+  "backend_match": "/api/auth/quick",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "pages/BuilderAuth.js",
+   "pages/ClientAuth.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/auth/register",
+  "status": "OK",
+  "backend_match": "/api/auth/register",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "pages/BuilderAuthPage.js",
+   "pages/ClientAuthPage.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/auto-actions/{v}/revert",
+  "status": "OK",
+  "backend_match": "/api/auto-actions/{action_id}/revert",
+  "backend_method": "POST",
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/system-actions-feed.tsx"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/billing/invoice",
+  "status": "OK",
+  "backend_match": "/api/billing/invoice",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminFinancialsPage.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/billing/invoice/{v}/mark-paid",
+  "status": "OK",
+  "backend_match": "/api/billing/invoice/{invoice_id}/mark-paid",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminFinancialsPage.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/billing/invoices/{v}",
+  "status": "OK",
+  "backend_match": "/api/billing/invoices/{project_id}",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/AdminFinancialsPage.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/billing/plans",
+  "status": "OK",
+  "backend_match": "/api/billing/plans",
+  "backend_method": "GET",
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/client/billing/plans.tsx"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/chat/message",
+  "status": "OK",
+  "backend_match": "/api/chat/message",
+  "backend_method": "POST",
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/chat.tsx"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/activity/full",
+  "status": "OK",
+  "backend_match": "/api/client/activity/full",
+  "backend_method": "GET",
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/client/projects/[id].tsx"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/alerts",
+  "status": "OK",
+  "backend_match": "/api/client/alerts",
+  "backend_method": "GET",
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/alerts-sheet.tsx"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/attention",
+  "status": "OK",
+  "backend_match": "/api/client/attention",
+  "backend_method": "GET",
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/client/home.tsx"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/client/billing/auto-charge",
+  "status": "OK",
+  "backend_match": "/api/client/billing/auto-charge",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ClientTransparency.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/client/billing/continue",
+  "status": "OK",
+  "backend_match": "/api/client/billing/continue",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ClientTransparency.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/billing/summary",
+  "status": "OK",
+  "backend_match": "/api/client/billing/summary",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ClientTransparency.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/client/contracts/{v}/sign",
+  "status": "OK",
+  "backend_match": "/api/client/contracts/{contract_id}/sign",
+  "backend_method": "POST",
+  "sources": [
+   "expo",
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "app/client/contract/[id].tsx",
+   "pages/ClientContractPage.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/costs",
+  "status": "OK",
+  "backend_match": "/api/client/costs",
+  "backend_method": "GET",
+  "sources": [
+   "expo",
+   "web"
+  ],
+  "file_count": 4,
+  "files": [
+   "app/client/billing.tsx",
+   "app/client/home.tsx",
+   "app/client/profile.tsx",
+   "pages/ClientCosts.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/client/deliverables/{v}/approve",
+  "status": "OK",
+  "backend_match": "/api/client/deliverables/{deliverable_id}/approve",
+  "backend_method": "POST",
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/chat.tsx"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/client/deliverables/{v}/pay",
+  "status": "OK",
+  "backend_match": "/api/client/deliverables/{deliverable_id}/pay",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ClientProjectPage.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/client/deliverables/{v}/reject",
+  "status": "OK",
+  "backend_match": "/api/client/deliverables/{deliverable_id}/reject",
+  "backend_method": "POST",
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/chat.tsx"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/client/deliverables/{v}/simulate-payment",
+  "status": "OK",
+  "backend_match": "/api/client/deliverables/{deliverable_id}/simulate-payment",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ClientCabinet.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/client/deliverables/{v}/{v}",
+  "status": "OK",
+  "backend_match": "/api/client/deliverables/{deliverable_id}/approve",
+  "backend_method": "POST",
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/client/projects/[id].tsx"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/growth/leaderboard",
+  "status": "OK",
+  "backend_match": "/api/client/growth/leaderboard",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ClientLeaderboardPage.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/invoices",
+  "status": "OK",
+  "backend_match": "/api/client/invoices",
+  "backend_method": "GET",
+  "sources": [
+   "expo"
+  ],
+  "file_count": 3,
+  "files": [
+   "app/client/billing.tsx",
+   "app/client/contract/[id].tsx",
+   "app/client/projects/[id].tsx"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/invoices/{v}",
+  "status": "OK",
+  "backend_match": "/api/client/invoices/{invoice_id}",
+  "backend_method": "GET",
+  "sources": [
+   "expo"
+  ],
+  "file_count": 2,
+  "files": [
+   "app/client/billing.tsx",
+   "app/client/contract/[id].tsx"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/client/invoices/{v}/pay",
+  "status": "OK",
+  "backend_match": "/api/client/invoices/{invoice_id}/pay",
+  "backend_method": "POST",
+  "sources": [
+   "expo",
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "lib/payWithGate.js",
+   "src/pay-with-gate.ts"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/modules/catalog",
+  "status": "OK",
+  "backend_match": "/api/client/modules/catalog",
+  "backend_method": "GET",
+  "sources": [
+   "expo"
+  ],
+  "file_count": 2,
+  "files": [
+   "app/client/modules/catalog.tsx",
+   "app/client/projects/[id].tsx"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/client/modules/{v}/approve",
+  "status": "OK",
+  "backend_match": "/api/client/modules/{module_id}/approve",
+  "backend_method": "POST",
+  "sources": [
+   "expo",
+   "web"
+  ],
+  "file_count": 3,
+  "files": [
+   "app/client/activity.tsx",
+   "app/workspace/[id].tsx",
+   "pages/ClientProjectWorkspaceOS.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/client/modules/{v}/request-changes",
+  "status": "OK",
+  "backend_match": "/api/client/modules/{module_id}/request-changes",
+  "backend_method": "POST",
+  "sources": [
+   "expo"
+  ],
+  "file_count": 2,
+  "files": [
+   "app/client/activity.tsx",
+   "app/workspace/[id].tsx"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/operator",
+  "status": "OK",
+  "backend_match": "/api/client/operator",
+  "backend_method": "GET",
+  "sources": [
+   "expo",
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "app/client/home.tsx",
+   "pages/ClientOperator.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/client/operator/{v}/action",
+  "status": "OK",
+  "backend_match": "/api/client/operator/{project_id}/action",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ClientOperator.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/owner-summary",
+  "status": "OK",
+  "backend_match": "/api/client/owner-summary",
+  "backend_method": "GET",
+  "sources": [
+   "expo"
+  ],
+  "file_count": 2,
+  "files": [
+   "app/client/home.tsx",
+   "app/client/profile.tsx"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/pending-deliverables",
+  "status": "OK",
+  "backend_match": "/api/client/pending-deliverables",
+  "backend_method": "GET",
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/decision-hub.tsx"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/project/{v}/workspace",
+  "status": "OK",
+  "backend_match": "/api/client/project/{project_id}/workspace",
+  "backend_method": "GET",
+  "sources": [
+   "expo"
+  ],
+  "file_count": 6,
+  "files": [
+   "app/client/control.tsx",
+   "app/client/projects/[id].tsx",
+   "app/client/projects/index.tsx",
+   "app/hub.tsx",
+   "app/project-booting.tsx"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/projects/{v}/contract",
+  "status": "OK",
+  "backend_match": "/api/client/projects/{project_id}/contract",
+  "backend_method": "GET",
+  "sources": [
+   "expo",
+   "web"
+  ],
+  "file_count": 3,
+  "files": [
+   "app/client/contract/[id].tsx",
+   "pages/ClientContractPage.js",
+   "pages/ClientDashboardOS.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/projects/{v}/deliverables",
+  "status": "OK",
+  "backend_match": "/api/client/projects/{project_id}/deliverables",
+  "backend_method": "GET",
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/client/projects/[id].tsx"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/projects/{v}/full",
+  "status": "OK",
+  "backend_match": "/api/client/projects/{project_id}/full",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ClientCabinet.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/client/projects/{v}/modules/add",
+  "status": "OK",
+  "backend_match": "/api/client/projects/{project_id}/modules/add",
+  "backend_method": "POST",
+  "sources": [
+   "expo"
+  ],
+  "file_count": 2,
+  "files": [
+   "app/client/modules/catalog.tsx",
+   "app/client/projects/[id].tsx"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/projects/{v}/next-steps",
+  "status": "OK",
+  "backend_match": "/api/client/projects/{project_id}/next-steps",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ClientDashboardOS.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/client/projects/{v}/payment-plan",
+  "status": "OK",
+  "backend_match": "/api/client/projects/{project_id}/payment-plan",
+  "backend_method": "POST",
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/client/payment-plan/[id].tsx"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/projects/{v}/payment-plan/preview",
+  "status": "OK",
+  "backend_match": "/api/client/projects/{project_id}/payment-plan/preview",
+  "backend_method": "GET",
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/client/payment-plan/[id].tsx"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/projects/{v}/risks",
+  "status": "OK",
+  "backend_match": "/api/client/projects/{project_id}/risks",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ClientDashboardOS.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/projects/{v}/transparency",
+  "status": "OK",
+  "backend_match": "/api/client/projects/{project_id}/transparency",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ClientDashboardOS.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/projects/{v}/trust",
+  "status": "OK",
+  "backend_match": "/api/client/projects/{project_id}/trust",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ClientDashboardOS.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/projects/{v}/updates",
+  "status": "OK",
+  "backend_match": "/api/client/projects/{project_id}/updates",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ClientDashboardOS.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/projects/{v}/work-status",
+  "status": "OK",
+  "backend_match": "/api/client/projects/{project_id}/work-status",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ClientProjectPage.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/projects/{v}/workspace",
+  "status": "OK",
+  "backend_match": "/api/client/projects/{project_id}/workspace",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "pages/ClientProjectPage.js",
+   "pages/ClientProjectWorkspaceOS.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/client/subscribe",
+  "status": "OK",
+  "backend_match": "/api/client/subscribe",
+  "backend_method": "POST",
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/client/billing/plans.tsx"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/subscription",
+  "status": "OK",
+  "backend_match": "/api/client/subscription",
+  "backend_method": "GET",
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/client/billing/plans.tsx"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/support-tickets",
+  "status": "OK",
+  "backend_match": "/api/client/support-tickets",
+  "backend_method": "GET",
+  "sources": [
+   "expo",
+   "web"
+  ],
+  "file_count": 3,
+  "files": [
+   "app/client/profile.tsx",
+   "pages/ClientDashboard.js",
+   "pages/ClientSupport.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/client/support-tickets",
+  "status": "OK",
+  "backend_match": "/api/client/support-tickets",
+  "backend_method": "POST",
+  "sources": [
+   "expo",
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "app/client/profile.tsx",
+   "pages/ClientSupport.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/system-actions",
+  "status": "OK",
+  "backend_match": "/api/client/system-actions",
+  "backend_method": "GET",
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/system-actions-feed.tsx"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/client/transparency",
+  "status": "OK",
+  "backend_match": "/api/client/transparency",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ClientTransparency.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/contracts/my",
+  "status": "OK",
+  "backend_match": "/api/contracts/my",
+  "backend_method": "GET",
+  "sources": [
+   "expo",
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "app/documents.tsx",
+   "pages/ClientDocumentsPage.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/contracts/prepare",
+  "status": "OK",
+  "backend_match": "/api/contracts/prepare",
+  "backend_method": "POST",
+  "sources": [
+   "expo",
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "lib/payWithGate.js",
+   "src/pay-with-gate.ts"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/contracts/{v}",
+  "status": "OK",
+  "backend_match": "/api/contracts/my",
+  "backend_method": "GET",
+  "sources": [
+   "expo",
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "app/contract/[id]/sign.tsx",
+   "pages/ContractSignEvidencePage.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/contracts/{v}/evidence",
+  "status": "OK",
+  "backend_match": "/api/contracts/{contract_id}/evidence",
+  "backend_method": "GET",
+  "sources": [
+   "expo",
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "app/documents.tsx",
+   "pages/ClientDocumentsPage.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/contracts/{v}/sign/confirm",
+  "status": "OK",
+  "backend_match": "/api/contracts/{contract_id}/sign/confirm",
+  "backend_method": "POST",
+  "sources": [
+   "expo",
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "app/contract/[id]/sign.tsx",
+   "pages/ContractSignEvidencePage.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/contracts/{v}/sign/request-otp",
+  "status": "OK",
+  "backend_match": "/api/contracts/{contract_id}/sign/request-otp",
+  "backend_method": "POST",
+  "sources": [
+   "expo",
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "app/contract/[id]/sign.tsx",
+   "pages/ContractSignEvidencePage.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/deliverables/{v}",
+  "status": "OK",
+  "backend_match": "/api/deliverables/{deliverable_id}",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ClientDeliverablePage.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/deliverables/{v}/approve",
+  "status": "OK",
+  "backend_match": "/api/deliverables/{deliverable_id}/approve",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 3,
+  "files": [
+   "pages/ClientDeliverable.js",
+   "pages/ClientDeliverablePage.js",
+   "pages/ClientProjectPage.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/deliverables/{v}/reject",
+  "status": "OK",
+  "backend_match": "/api/deliverables/{deliverable_id}/reject",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 3,
+  "files": [
+   "pages/ClientDeliverable.js",
+   "pages/ClientDeliverablePage.js",
+   "pages/ClientProjectPage.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/dev/work",
+  "status": "OK",
+  "backend_match": "/api/dev/work",
+  "backend_method": "GET",
+  "sources": [
+   "expo"
+  ],
+  "file_count": 4,
+  "files": [
+   "app/developer/home.tsx",
+   "app/developer/work.tsx",
+   "app/hub.tsx",
+   "src/dev-retention-layer.tsx"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/developer/apply",
+  "status": "OK",
+  "backend_match": "/api/developer/apply",
+  "backend_method": "POST",
+  "sources": [
+   "expo"
+  ],
+  "file_count": 3,
+  "files": [
+   "app/auth.tsx",
+   "app/gateway.tsx",
+   "app/hub.tsx"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/developer/earnings/flagged",
+  "status": "OK",
+  "backend_match": "/api/developer/earnings/flagged",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/DeveloperEarnings.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/developer/earnings/held",
+  "status": "OK",
+  "backend_match": "/api/developer/earnings/held",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/DeveloperEarnings.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/developer/earnings/summary",
+  "status": "OK",
+  "backend_match": "/api/developer/earnings/summary",
+  "backend_method": "GET",
+  "sources": [
+   "expo",
+   "web"
+  ],
+  "file_count": 3,
+  "files": [
+   "app/developer/earnings.tsx",
+   "pages/DeveloperEarnings.js",
+   "src/dev-retention-layer.tsx"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/developer/earnings/tasks",
+  "status": "OK",
+  "backend_match": "/api/developer/earnings/tasks",
+  "backend_method": "GET",
+  "sources": [
+   "expo",
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "app/developer/earnings.tsx",
+   "pages/DeveloperEarnings.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/developer/feedback",
+  "status": "OK",
+  "backend_match": "/api/developer/feedback",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/DeveloperIntelFeedback.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/developer/focus",
+  "status": "OK",
+  "backend_match": "/api/developer/focus",
+  "backend_method": "GET",
+  "sources": [
+   "expo",
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "pages/DeveloperWorkspaceV2.js",
+   "src/dev-retention-layer.tsx"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/developer/growth/bind",
+  "status": "OK",
+  "backend_match": "/api/developer/growth/bind",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/BuilderAuthPage.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/developer/growth/dashboard",
+  "status": "OK",
+  "backend_match": "/api/developer/growth/dashboard",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/DeveloperGrowthPage.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/developer/growth/leaderboard",
+  "status": "OK",
+  "backend_match": "/api/developer/growth/leaderboard",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/DeveloperGrowthPage.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/developer/growth/link",
+  "status": "OK",
+  "backend_match": "/api/developer/growth/link",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/DeveloperGrowthPage.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/developer/growth/recalculate-score",
+  "status": "OK",
+  "backend_match": "/api/developer/growth/recalculate-score",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/DeveloperGrowthPage.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/developer/intelligence/growth",
+  "status": "OK",
+  "backend_match": "/api/developer/intelligence/growth",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/DeveloperIntelGrowth.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/developer/intelligence/leaderboard",
+  "status": "OK",
+  "backend_match": "/api/developer/intelligence/leaderboard",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/DeveloperIntelLeaderboard.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/developer/marketplace/my-modules",
+  "status": "OK",
+  "backend_match": "/api/developer/marketplace/my-modules",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "pages/DeveloperMarketplace.js",
+   "pages/DeveloperWorkspace.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/developer/payout/batches",
+  "status": "OK",
+  "backend_match": "/api/developer/payout/batches",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/DeveloperEarnings.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/developer/performance",
+  "status": "OK",
+  "backend_match": "/api/developer/performance",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/DeveloperWorkspaceV2.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/developer/tasks/awaiting-response",
+  "status": "OK",
+  "backend_match": "/api/developer/tasks/awaiting-response",
+  "backend_method": "GET",
+  "sources": [
+   "expo",
+   "web"
+  ],
+  "file_count": 3,
+  "files": [
+   "app/developer/acceptance.tsx",
+   "app/developer/work.tsx",
+   "pages/AcceptanceQueue.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/developer/tasks/{v}/accept",
+  "status": "OK",
+  "backend_match": "/api/developer/tasks/{task_id}/accept",
+  "backend_method": "POST",
+  "sources": [
+   "expo",
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "app/developer/acceptance.tsx",
+   "pages/AcceptanceQueue.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/developer/tasks/{v}/clarification",
+  "status": "OK",
+  "backend_match": "/api/developer/tasks/{task_id}/clarification",
+  "backend_method": "POST",
+  "sources": [
+   "expo",
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "app/developer/acceptance.tsx",
+   "pages/AcceptanceQueue.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/developer/tasks/{v}/decline",
+  "status": "OK",
+  "backend_match": "/api/developer/tasks/{task_id}/decline",
+  "backend_method": "POST",
+  "sources": [
+   "expo",
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "app/developer/acceptance.tsx",
+   "pages/AcceptanceQueue.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/developer/time-logs",
+  "status": "OK",
+  "backend_match": "/api/developer/time-logs",
+  "backend_method": "GET",
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/developer/time-logs.tsx"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/developer/wallet",
+  "status": "OK",
+  "backend_match": "/api/developer/wallet",
+  "backend_method": "GET",
+  "sources": [
+   "expo"
+  ],
+  "file_count": 2,
+  "files": [
+   "app/developer/profile.tsx",
+   "app/developer/wallet.tsx"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/developer/withdraw",
+  "status": "OK",
+  "backend_match": "/api/developer/withdraw",
+  "backend_method": "POST",
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/developer/wallet.tsx"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/developer/withdrawals",
+  "status": "OK",
+  "backend_match": "/api/developer/withdrawals",
+  "backend_method": "GET",
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/developer/wallet.tsx"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/developer/work-logs/{v}",
+  "status": "OK",
+  "backend_match": "/api/developer/work-logs/{unit_id}",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/DeveloperWorkUnit.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/developer/work-units",
+  "status": "OK",
+  "backend_match": "/api/developer/work-units",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 6,
+  "files": [
+   "pages/DeveloperAssignments.js",
+   "pages/DeveloperHub.js",
+   "pages/DeveloperPerformance.js",
+   "pages/DeveloperWorkPage.js",
+   "pages/DeveloperWorkUnit.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/developer/work-units/{v}/start",
+  "status": "OK",
+  "backend_match": "/api/developer/work-units/{unit_id}/start",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 3,
+  "files": [
+   "pages/DeveloperWorkPage.js",
+   "pages/DeveloperWorkUnit.js",
+   "pages/ExecutorBoard.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/developer/workload",
+  "status": "OK",
+  "backend_match": "/api/developer/workload",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/DeveloperWorkspaceV2.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/devices/register",
+  "status": "OK",
+  "backend_match": "/api/devices/register",
+  "backend_method": "POST",
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/push.ts"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/estimate",
+  "status": "OK",
+  "backend_match": "/api/estimate",
+  "backend_method": "POST",
+  "sources": [
+   "expo"
+  ],
+  "file_count": 4,
+  "files": [
+   "app/estimate-improve.tsx",
+   "app/hub.tsx",
+   "app/index.tsx",
+   "app/project/wizard.tsx"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/legal/profile",
+  "status": "OK",
+  "backend_match": "/api/legal/profile",
+  "backend_method": "GET",
+  "sources": [
+   "expo",
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "app/contract/[id]/sign.tsx",
+   "pages/ContractSignEvidencePage.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/marketplace/modules",
+  "status": "OK",
+  "backend_match": "/api/marketplace/modules",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/DeveloperMarketplace.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/marketplace/modules/{v}/accept",
+  "status": "OK",
+  "backend_match": "/api/marketplace/modules/{module_id}/accept",
+  "backend_method": "POST",
+  "sources": [
+   "expo",
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "app/developer/market.tsx",
+   "pages/DeveloperMarketplace.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/marketplace/modules/{v}/release",
+  "status": "OK",
+  "backend_match": "/api/marketplace/modules/{module_id}/release",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "pages/DeveloperMarketplace.js",
+   "pages/DeveloperWorkspace.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/marketplace/modules/{v}/start",
+  "status": "OK",
+  "backend_match": "/api/marketplace/modules/{module_id}/start",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/DeveloperMarketplace.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/me",
+  "status": "OK",
+  "backend_match": "/api/me",
+  "backend_method": "GET",
+  "sources": [
+   "expo"
+  ],
+  "file_count": 3,
+  "files": [
+   "app/auth.tsx",
+   "app/project-booting.tsx",
+   "src/use-me.ts"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/me/context",
+  "status": "OK",
+  "backend_match": "/api/me/context",
+  "backend_method": "POST",
+  "sources": [
+   "expo"
+  ],
+  "file_count": 2,
+  "files": [
+   "app/developer/profile.tsx",
+   "app/profile.tsx"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/modules/create-with-pricing",
+  "status": "OK",
+  "backend_match": "/api/modules/create-with-pricing",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/CreateModuleDominance.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/modules/{v}/submit",
+  "status": "OK",
+  "backend_match": "/api/modules/{module_id}/submit",
+  "backend_method": "POST",
+  "sources": [
+   "expo",
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "app/developer/work.tsx",
+   "pages/DeveloperWorkspace.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/modules/{v}/team",
+  "status": "OK",
+  "backend_match": "/api/modules/{module_id}/team",
+  "backend_method": "GET",
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/module-team.tsx"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/notifications",
+  "status": "OK",
+  "backend_match": "/api/notifications",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "components/NotificationBell.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/notifications/mark-read",
+  "status": "OK",
+  "backend_match": "/api/notifications/mark-read",
+  "backend_method": "POST",
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/notification-poller.tsx"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/notifications/my",
+  "status": "OK",
+  "backend_match": "/api/notifications/my",
+  "backend_method": "GET",
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "src/notification-poller.tsx"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/notifications/read-all",
+  "status": "OK",
+  "backend_match": "/api/notifications/read-all",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "components/NotificationBell.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/notifications/unread-count",
+  "status": "OK",
+  "backend_match": "/api/notifications/unread-count",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "components/NotificationBell.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/notifications/{v}/read",
+  "status": "OK",
+  "backend_match": "/api/notifications/{notification_id}/read",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "components/NotificationBell.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/payments/wayforpay/create",
+  "status": "OK",
+  "backend_match": "/api/payments/wayforpay/create",
+  "backend_method": "POST",
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/client/billing.tsx"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/pricing/preview",
+  "status": "OK",
+  "backend_match": "/api/pricing/preview",
+  "backend_method": "POST",
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/hub.tsx"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/projects",
+  "status": "OK",
+  "backend_match": "/api/projects",
+  "backend_method": "POST",
+  "sources": [
+   "expo"
+  ],
+  "file_count": 3,
+  "files": [
+   "app/estimate-result.tsx",
+   "app/hub.tsx",
+   "app/project/wizard.tsx"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/projects/mine",
+  "status": "OK",
+  "backend_match": "/api/projects/mine",
+  "backend_method": "GET",
+  "sources": [
+   "expo",
+   "web"
+  ],
+  "file_count": 10,
+  "files": [
+   "app/client/billing.tsx",
+   "app/client/control.tsx",
+   "app/client/profile.tsx",
+   "app/client/projects/index.tsx",
+   "app/hub.tsx"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/projects/{v}",
+  "status": "OK",
+  "backend_match": "/api/projects/mine",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 4,
+  "files": [
+   "pages/AdminFinancialsPage.js",
+   "pages/ClientProjectPage.js",
+   "pages/ProjectDetails.js",
+   "pages/ScopeBuilder.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/projects/{v}/deliverables",
+  "status": "OK",
+  "backend_match": "/api/projects/{project_id}/deliverables",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 4,
+  "files": [
+   "pages/ClientDashboard.js",
+   "pages/ClientDeliverable.js",
+   "pages/ClientProjectPage.js",
+   "pages/ProjectDetails.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/projects/{v}/versions",
+  "status": "OK",
+  "backend_match": "/api/projects/{project_id}/versions",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ClientVersionsPage.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/provider/inbox",
+  "status": "OK",
+  "backend_match": "/api/provider/inbox",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ProviderInbox.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/provider/missed",
+  "status": "OK",
+  "backend_match": "/api/provider/missed",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ProviderInbox.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/provider/pressure",
+  "status": "OK",
+  "backend_match": "/api/provider/pressure",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ProviderInbox.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/provider/profile",
+  "status": "OK",
+  "backend_match": "/api/provider/profile",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ProviderInbox.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/provider/quick-mode",
+  "status": "OK",
+  "backend_match": "/api/provider/quick-mode",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ProviderInbox.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/provider/requests/{v}/accept",
+  "status": "OK",
+  "backend_match": "/api/provider/requests/{request_id}/accept",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ProviderInbox.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/provider/requests/{v}/reject",
+  "status": "OK",
+  "backend_match": "/api/provider/requests/{request_id}/reject",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ProviderInbox.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/provider/status",
+  "status": "OK",
+  "backend_match": "/api/provider/status",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ProviderInbox.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/public/capture-referral",
+  "status": "OK",
+  "backend_match": "/api/public/capture-referral",
+  "backend_method": "POST",
+  "sources": [
+   "expo",
+   "web"
+  ],
+  "file_count": 3,
+  "files": [
+   "pages/BuilderAuthPage.js",
+   "pages/ClientAuthPage.js",
+   "src/referral.ts"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/referral/bind",
+  "status": "OK",
+  "backend_match": "/api/referral/bind",
+  "backend_method": "POST",
+  "sources": [
+   "expo",
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "pages/ClientAuthPage.js",
+   "src/referral.ts"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/referral/dashboard",
+  "status": "OK",
+  "backend_match": "/api/referral/dashboard",
+  "backend_method": "GET",
+  "sources": [
+   "expo",
+   "web"
+  ],
+  "file_count": 3,
+  "files": [
+   "app/client/referrals.tsx",
+   "pages/AdminGrowthPage.js",
+   "pages/ClientReferralPage.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/referral/my-link",
+  "status": "OK",
+  "backend_match": "/api/referral/my-link",
+  "backend_method": "GET",
+  "sources": [
+   "expo"
+  ],
+  "file_count": 1,
+  "files": [
+   "app/client/referrals.tsx"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/requests",
+  "status": "OK",
+  "backend_match": "/api/requests",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "pages/ClientHub.js",
+   "pages/NewRequest.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/requests",
+  "status": "OK",
+  "backend_match": "/api/requests",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ClientDashboard.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/requests/mine",
+  "status": "OK",
+  "backend_match": "/api/requests/mine",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ClientProjects.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/requests/{v}",
+  "status": "OK",
+  "backend_match": "/api/requests/mine",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "pages/ClientProjectPage.js",
+   "pages/GPTScopeBuilder.js"
+  ]
+ },
+ {
+  "method": "PATCH",
+  "path": "/api/requests/{v}",
+  "status": "OK",
+  "backend_match": "/api/requests/{request_id}",
+  "backend_method": "PATCH",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ClientHub.js"
+  ]
+ },
+ {
+  "method": "DELETE",
+  "path": "/api/requests/{v}",
+  "status": "OK",
+  "backend_match": "/api/requests/{request_id}",
+  "backend_method": "DELETE",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ClientProjects.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/requests/{v}/approve-proposal",
+  "status": "OK",
+  "backend_match": "/api/requests/{request_id}/approve-proposal",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ClientProjectPage.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/requests/{v}/request-changes",
+  "status": "OK",
+  "backend_match": "/api/requests/{request_id}/request-changes",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ClientProjectPage.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/tester/issues",
+  "status": "OK",
+  "backend_match": "/api/tester/issues",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "pages/TesterIssues.js",
+   "pages/TesterPerformance.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/tester/validation-tasks",
+  "status": "OK",
+  "backend_match": "/api/tester/validation-tasks",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 5,
+  "files": [
+   "pages/TesterDashboard.js",
+   "pages/TesterHub.js",
+   "pages/TesterPerformance.js",
+   "pages/TesterValidation.js",
+   "pages/TesterValidationList.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/tester/validation/{v}/details",
+  "status": "OK",
+  "backend_match": "/api/tester/validation/{validation_id}/details",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/TesterValidation.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/tester/validation/{v}/issues",
+  "status": "OK",
+  "backend_match": "/api/tester/validation/{validation_id}/issues",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/TesterValidation.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/tester/validations",
+  "status": "OK",
+  "backend_match": "/api/tester/validations",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/TesterValidationPage.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/validation/{v}/fail",
+  "status": "OK",
+  "backend_match": "/api/validation/{validation_id}/fail",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "pages/TesterValidation.js",
+   "pages/TesterValidationPage.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/validation/{v}/issue",
+  "status": "OK",
+  "backend_match": "/api/validation/{validation_id}/issue",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/TesterValidation.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/validation/{v}/pass",
+  "status": "OK",
+  "backend_match": "/api/validation/{validation_id}/pass",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "pages/TesterValidation.js",
+   "pages/TesterValidationPage.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/validation/{v}/start",
+  "status": "OK",
+  "backend_match": "/api/validation/{validation_id}/start",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/TesterValidationPage.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/work-units/{v}/log",
+  "status": "OK",
+  "backend_match": "/api/work-units/{unit_id}/log",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 2,
+  "files": [
+   "pages/DeveloperWorkPage.js",
+   "pages/DeveloperWorkUnit.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/work-units/{v}/logs",
+  "status": "OK",
+  "backend_match": "/api/work-units/{unit_id}/logs",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/DeveloperWorkPage.js"
+  ]
+ },
+ {
+  "method": "PATCH",
+  "path": "/api/work-units/{v}/status",
+  "status": "OK",
+  "backend_match": "/api/work-units/{unit_id}/status",
+  "backend_method": "PATCH",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/ExecutorBoard.js"
+  ]
+ },
+ {
+  "method": "GET",
+  "path": "/api/work-units/{v}/submissions",
+  "status": "OK",
+  "backend_match": "/api/work-units/{unit_id}/submissions",
+  "backend_method": "GET",
+  "sources": [
+   "web"
+  ],
+  "file_count": 1,
+  "files": [
+   "pages/DeveloperWorkPage.js"
+  ]
+ },
+ {
+  "method": "POST",
+  "path": "/api/work-units/{v}/submit",
+  "status": "OK",
+  "backend_match": "/api/work-units/{unit_id}/submit",
+  "backend_method": "POST",
+  "sources": [
+   "web"
+  ],
+  "file_count": 3,
+  "files": [
+   "pages/DeveloperWorkPage.js",
+   "pages/DeveloperWorkUnit.js",
+   "pages/ExecutorBoard.js"
+  ]
+ }
+]

@@ -1,0 +1,798 @@
+{
+  "generated_at": "2026-05-18T12:01:32.298073Z",
+  "bases_swept": [
+    1500,
+    5000,
+    8000
+  ],
+  "rows": [
+    {
+      "base_price": 1500,
+      "archetype": "Slack clone (team chat MVP)",
+      "axes": {
+        "product_maturity": "production",
+        "system_coupling": "platform",
+        "unknowns": "medium",
+        "realtime_pressure": "critical",
+        "longevity": "long_term"
+      },
+      "engine_price": 14580.0,
+      "multiplier": 9.72,
+      "market_band": [
+        30000,
+        80000
+      ],
+      "verdict": "under",
+      "chips": [
+        "Production-grade",
+        "Platform complexity",
+        "Discovery work",
+        "Realtime",
+        "Long-term product"
+      ],
+      "judgment_notes": "Realtime is non-negotiable (critical, not collab). Multi-tenant from day one \u2192 platform. Chat is well-understood domain \u2192 medium unknowns, not high."
+    },
+    {
+      "base_price": 1500,
+      "archetype": "Linear clone (issue tracker)",
+      "axes": {
+        "product_maturity": "production",
+        "system_coupling": "connected",
+        "unknowns": "medium",
+        "realtime_pressure": "collaborative",
+        "longevity": "long_term"
+      },
+      "engine_price": 8505.0,
+      "multiplier": 5.67,
+      "market_band": [
+        25000,
+        60000
+      ],
+      "verdict": "under",
+      "chips": [
+        "Production-grade",
+        "Connected system",
+        "Discovery work",
+        "Collaboration",
+        "Long-term product"
+      ],
+      "judgment_notes": "Realtime is collab (presence, optimistic updates) \u2014 not critical. Coupling is connected (Slack/GitHub webhooks) \u2014 not full platform."
+    },
+    {
+      "base_price": 1500,
+      "archetype": "Stripe-for-X (vertical payments)",
+      "axes": {
+        "product_maturity": "production",
+        "system_coupling": "platform",
+        "unknowns": "high",
+        "realtime_pressure": "async",
+        "longevity": "infrastructure"
+      },
+      "engine_price": 15897.6,
+      "multiplier": 10.5984,
+      "market_band": [
+        80000,
+        200000
+      ],
+      "verdict": "under",
+      "chips": [
+        "Production-grade",
+        "Platform complexity",
+        "High uncertainty",
+        "Infrastructure"
+      ],
+      "judgment_notes": "Compliance + chargebacks + reconciliation = high unknowns. Infrastructure-grade longevity (multi-year audit horizon). Realtime is async \u2014 webhooks not WebSockets."
+    },
+    {
+      "base_price": 1500,
+      "archetype": "B2B CRM (sales pipeline MVP)",
+      "axes": {
+        "product_maturity": "production",
+        "system_coupling": "connected",
+        "unknowns": "medium",
+        "realtime_pressure": "async",
+        "longevity": "long_term"
+      },
+      "engine_price": 6986.25,
+      "multiplier": 4.6575,
+      "market_band": [
+        20000,
+        50000
+      ],
+      "verdict": "under",
+      "chips": [
+        "Production-grade",
+        "Connected system",
+        "Discovery work",
+        "Long-term product"
+      ],
+      "judgment_notes": "Well-trodden domain. Connected (email/calendar integrations). No realtime requirements."
+    },
+    {
+      "base_price": 1500,
+      "archetype": "AI copilot (LLM-powered assistant)",
+      "axes": {
+        "product_maturity": "production",
+        "system_coupling": "platform",
+        "unknowns": "high",
+        "realtime_pressure": "critical",
+        "longevity": "long_term"
+      },
+      "engine_price": 18662.4,
+      "multiplier": 12.4416,
+      "market_band": [
+        30000,
+        80000
+      ],
+      "verdict": "under",
+      "chips": [
+        "Production-grade",
+        "Platform complexity",
+        "High uncertainty",
+        "Realtime",
+        "Long-term product"
+      ],
+      "judgment_notes": "LLM behaviour = high unknowns. Streaming responses \u2192 realtime critical. Platform (auth + billing + history + retrieval)."
+    },
+    {
+      "base_price": 1500,
+      "archetype": "Infra observability tool (Datadog-lite)",
+      "axes": {
+        "product_maturity": "production",
+        "system_coupling": "platform",
+        "unknowns": "high",
+        "realtime_pressure": "critical",
+        "longevity": "infrastructure"
+      },
+      "engine_price": 24883.2,
+      "multiplier": 16.5888,
+      "market_band": [
+        60000,
+        150000
+      ],
+      "verdict": "under",
+      "chips": [
+        "Production-grade",
+        "Platform complexity",
+        "High uncertainty",
+        "Realtime",
+        "Infrastructure"
+      ],
+      "judgment_notes": "Time-series + query perf at scale = high unknowns. Realtime alerting critical. Infrastructure longevity (clients trust this for years)."
+    },
+    {
+      "base_price": 1500,
+      "archetype": "Marketplace (Etsy/Airbnb MVP)",
+      "axes": {
+        "product_maturity": "production",
+        "system_coupling": "platform",
+        "unknowns": "medium",
+        "realtime_pressure": "async",
+        "longevity": "long_term"
+      },
+      "engine_price": 9315.0,
+      "multiplier": 6.21,
+      "market_band": [
+        30000,
+        80000
+      ],
+      "verdict": "under",
+      "chips": [
+        "Production-grade",
+        "Platform complexity",
+        "Discovery work",
+        "Long-term product"
+      ],
+      "judgment_notes": "Two-sided platform. Search + payments + trust system. Async realtime (notifications). Domain is well-understood."
+    },
+    {
+      "base_price": 1500,
+      "archetype": "Realtime multiplayer backend",
+      "axes": {
+        "product_maturity": "production",
+        "system_coupling": "platform",
+        "unknowns": "high",
+        "realtime_pressure": "critical",
+        "longevity": "long_term"
+      },
+      "engine_price": 18662.4,
+      "multiplier": 12.4416,
+      "market_band": [
+        40000,
+        100000
+      ],
+      "verdict": "under",
+      "chips": [
+        "Production-grade",
+        "Platform complexity",
+        "High uncertainty",
+        "Realtime",
+        "Long-term product"
+      ],
+      "judgment_notes": "State sync + latency budgets + anti-cheat = high unknowns. Realtime is THE product. Platform."
+    },
+    {
+      "base_price": 1500,
+      "archetype": "Banking dashboard",
+      "axes": {
+        "product_maturity": "production",
+        "system_coupling": "platform",
+        "unknowns": "high",
+        "realtime_pressure": "collaborative",
+        "longevity": "infrastructure"
+      },
+      "engine_price": 19353.6,
+      "multiplier": 12.9024,
+      "market_band": [
+        50000,
+        120000
+      ],
+      "verdict": "under",
+      "chips": [
+        "Production-grade",
+        "Platform complexity",
+        "High uncertainty",
+        "Collaboration",
+        "Infrastructure"
+      ],
+      "judgment_notes": "Compliance + audit + role hierarchies = high unknowns. Collab (multi-user reconcile). Infrastructure (regulator-readable for years)."
+    },
+    {
+      "base_price": 1500,
+      "archetype": "Enterprise ERP (SAP-lite)",
+      "axes": {
+        "product_maturity": "scaled",
+        "system_coupling": "operating_system",
+        "unknowns": "research",
+        "realtime_pressure": "collaborative",
+        "longevity": "infrastructure"
+      },
+      "engine_price": 50820.0,
+      "multiplier": 33.88,
+      "market_band": [
+        200000,
+        2000000
+      ],
+      "verdict": "under",
+      "chips": [
+        "Scaled production",
+        "Operating-system scope",
+        "Research-grade",
+        "Collaboration",
+        "Infrastructure"
+      ],
+      "judgment_notes": "Becomes the company's operating-system. Org-specific = research unknowns. Multi-year horizons. Engine almost certainly under-prices here \u2014 that's expected; this archetype lives outside our engagement model."
+    },
+    {
+      "base_price": 5000,
+      "archetype": "Slack clone (team chat MVP)",
+      "axes": {
+        "product_maturity": "production",
+        "system_coupling": "platform",
+        "unknowns": "medium",
+        "realtime_pressure": "critical",
+        "longevity": "long_term"
+      },
+      "engine_price": 48600.0,
+      "multiplier": 9.72,
+      "market_band": [
+        30000,
+        80000
+      ],
+      "verdict": "within",
+      "chips": [
+        "Production-grade",
+        "Platform complexity",
+        "Discovery work",
+        "Realtime",
+        "Long-term product"
+      ],
+      "judgment_notes": "Realtime is non-negotiable (critical, not collab). Multi-tenant from day one \u2192 platform. Chat is well-understood domain \u2192 medium unknowns, not high."
+    },
+    {
+      "base_price": 5000,
+      "archetype": "Linear clone (issue tracker)",
+      "axes": {
+        "product_maturity": "production",
+        "system_coupling": "connected",
+        "unknowns": "medium",
+        "realtime_pressure": "collaborative",
+        "longevity": "long_term"
+      },
+      "engine_price": 28350.0,
+      "multiplier": 5.67,
+      "market_band": [
+        25000,
+        60000
+      ],
+      "verdict": "within",
+      "chips": [
+        "Production-grade",
+        "Connected system",
+        "Discovery work",
+        "Collaboration",
+        "Long-term product"
+      ],
+      "judgment_notes": "Realtime is collab (presence, optimistic updates) \u2014 not critical. Coupling is connected (Slack/GitHub webhooks) \u2014 not full platform."
+    },
+    {
+      "base_price": 5000,
+      "archetype": "Stripe-for-X (vertical payments)",
+      "axes": {
+        "product_maturity": "production",
+        "system_coupling": "platform",
+        "unknowns": "high",
+        "realtime_pressure": "async",
+        "longevity": "infrastructure"
+      },
+      "engine_price": 52992.0,
+      "multiplier": 10.5984,
+      "market_band": [
+        80000,
+        200000
+      ],
+      "verdict": "under",
+      "chips": [
+        "Production-grade",
+        "Platform complexity",
+        "High uncertainty",
+        "Infrastructure"
+      ],
+      "judgment_notes": "Compliance + chargebacks + reconciliation = high unknowns. Infrastructure-grade longevity (multi-year audit horizon). Realtime is async \u2014 webhooks not WebSockets."
+    },
+    {
+      "base_price": 5000,
+      "archetype": "B2B CRM (sales pipeline MVP)",
+      "axes": {
+        "product_maturity": "production",
+        "system_coupling": "connected",
+        "unknowns": "medium",
+        "realtime_pressure": "async",
+        "longevity": "long_term"
+      },
+      "engine_price": 23287.5,
+      "multiplier": 4.6575,
+      "market_band": [
+        20000,
+        50000
+      ],
+      "verdict": "within",
+      "chips": [
+        "Production-grade",
+        "Connected system",
+        "Discovery work",
+        "Long-term product"
+      ],
+      "judgment_notes": "Well-trodden domain. Connected (email/calendar integrations). No realtime requirements."
+    },
+    {
+      "base_price": 5000,
+      "archetype": "AI copilot (LLM-powered assistant)",
+      "axes": {
+        "product_maturity": "production",
+        "system_coupling": "platform",
+        "unknowns": "high",
+        "realtime_pressure": "critical",
+        "longevity": "long_term"
+      },
+      "engine_price": 62208.0,
+      "multiplier": 12.4416,
+      "market_band": [
+        30000,
+        80000
+      ],
+      "verdict": "within",
+      "chips": [
+        "Production-grade",
+        "Platform complexity",
+        "High uncertainty",
+        "Realtime",
+        "Long-term product"
+      ],
+      "judgment_notes": "LLM behaviour = high unknowns. Streaming responses \u2192 realtime critical. Platform (auth + billing + history + retrieval)."
+    },
+    {
+      "base_price": 5000,
+      "archetype": "Infra observability tool (Datadog-lite)",
+      "axes": {
+        "product_maturity": "production",
+        "system_coupling": "platform",
+        "unknowns": "high",
+        "realtime_pressure": "critical",
+        "longevity": "infrastructure"
+      },
+      "engine_price": 82944.0,
+      "multiplier": 16.5888,
+      "market_band": [
+        60000,
+        150000
+      ],
+      "verdict": "within",
+      "chips": [
+        "Production-grade",
+        "Platform complexity",
+        "High uncertainty",
+        "Realtime",
+        "Infrastructure"
+      ],
+      "judgment_notes": "Time-series + query perf at scale = high unknowns. Realtime alerting critical. Infrastructure longevity (clients trust this for years)."
+    },
+    {
+      "base_price": 5000,
+      "archetype": "Marketplace (Etsy/Airbnb MVP)",
+      "axes": {
+        "product_maturity": "production",
+        "system_coupling": "platform",
+        "unknowns": "medium",
+        "realtime_pressure": "async",
+        "longevity": "long_term"
+      },
+      "engine_price": 31050.0,
+      "multiplier": 6.21,
+      "market_band": [
+        30000,
+        80000
+      ],
+      "verdict": "within",
+      "chips": [
+        "Production-grade",
+        "Platform complexity",
+        "Discovery work",
+        "Long-term product"
+      ],
+      "judgment_notes": "Two-sided platform. Search + payments + trust system. Async realtime (notifications). Domain is well-understood."
+    },
+    {
+      "base_price": 5000,
+      "archetype": "Realtime multiplayer backend",
+      "axes": {
+        "product_maturity": "production",
+        "system_coupling": "platform",
+        "unknowns": "high",
+        "realtime_pressure": "critical",
+        "longevity": "long_term"
+      },
+      "engine_price": 62208.0,
+      "multiplier": 12.4416,
+      "market_band": [
+        40000,
+        100000
+      ],
+      "verdict": "within",
+      "chips": [
+        "Production-grade",
+        "Platform complexity",
+        "High uncertainty",
+        "Realtime",
+        "Long-term product"
+      ],
+      "judgment_notes": "State sync + latency budgets + anti-cheat = high unknowns. Realtime is THE product. Platform."
+    },
+    {
+      "base_price": 5000,
+      "archetype": "Banking dashboard",
+      "axes": {
+        "product_maturity": "production",
+        "system_coupling": "platform",
+        "unknowns": "high",
+        "realtime_pressure": "collaborative",
+        "longevity": "infrastructure"
+      },
+      "engine_price": 64512.0,
+      "multiplier": 12.9024,
+      "market_band": [
+        50000,
+        120000
+      ],
+      "verdict": "within",
+      "chips": [
+        "Production-grade",
+        "Platform complexity",
+        "High uncertainty",
+        "Collaboration",
+        "Infrastructure"
+      ],
+      "judgment_notes": "Compliance + audit + role hierarchies = high unknowns. Collab (multi-user reconcile). Infrastructure (regulator-readable for years)."
+    },
+    {
+      "base_price": 5000,
+      "archetype": "Enterprise ERP (SAP-lite)",
+      "axes": {
+        "product_maturity": "scaled",
+        "system_coupling": "operating_system",
+        "unknowns": "research",
+        "realtime_pressure": "collaborative",
+        "longevity": "infrastructure"
+      },
+      "engine_price": 169400.0,
+      "multiplier": 33.88,
+      "market_band": [
+        200000,
+        2000000
+      ],
+      "verdict": "under",
+      "chips": [
+        "Scaled production",
+        "Operating-system scope",
+        "Research-grade",
+        "Collaboration",
+        "Infrastructure"
+      ],
+      "judgment_notes": "Becomes the company's operating-system. Org-specific = research unknowns. Multi-year horizons. Engine almost certainly under-prices here \u2014 that's expected; this archetype lives outside our engagement model."
+    },
+    {
+      "base_price": 8000,
+      "archetype": "Slack clone (team chat MVP)",
+      "axes": {
+        "product_maturity": "production",
+        "system_coupling": "platform",
+        "unknowns": "medium",
+        "realtime_pressure": "critical",
+        "longevity": "long_term"
+      },
+      "engine_price": 77760.0,
+      "multiplier": 9.72,
+      "market_band": [
+        30000,
+        80000
+      ],
+      "verdict": "within",
+      "chips": [
+        "Production-grade",
+        "Platform complexity",
+        "Discovery work",
+        "Realtime",
+        "Long-term product"
+      ],
+      "judgment_notes": "Realtime is non-negotiable (critical, not collab). Multi-tenant from day one \u2192 platform. Chat is well-understood domain \u2192 medium unknowns, not high."
+    },
+    {
+      "base_price": 8000,
+      "archetype": "Linear clone (issue tracker)",
+      "axes": {
+        "product_maturity": "production",
+        "system_coupling": "connected",
+        "unknowns": "medium",
+        "realtime_pressure": "collaborative",
+        "longevity": "long_term"
+      },
+      "engine_price": 45360.0,
+      "multiplier": 5.67,
+      "market_band": [
+        25000,
+        60000
+      ],
+      "verdict": "within",
+      "chips": [
+        "Production-grade",
+        "Connected system",
+        "Discovery work",
+        "Collaboration",
+        "Long-term product"
+      ],
+      "judgment_notes": "Realtime is collab (presence, optimistic updates) \u2014 not critical. Coupling is connected (Slack/GitHub webhooks) \u2014 not full platform."
+    },
+    {
+      "base_price": 8000,
+      "archetype": "Stripe-for-X (vertical payments)",
+      "axes": {
+        "product_maturity": "production",
+        "system_coupling": "platform",
+        "unknowns": "high",
+        "realtime_pressure": "async",
+        "longevity": "infrastructure"
+      },
+      "engine_price": 84787.2,
+      "multiplier": 10.5984,
+      "market_band": [
+        80000,
+        200000
+      ],
+      "verdict": "within",
+      "chips": [
+        "Production-grade",
+        "Platform complexity",
+        "High uncertainty",
+        "Infrastructure"
+      ],
+      "judgment_notes": "Compliance + chargebacks + reconciliation = high unknowns. Infrastructure-grade longevity (multi-year audit horizon). Realtime is async \u2014 webhooks not WebSockets."
+    },
+    {
+      "base_price": 8000,
+      "archetype": "B2B CRM (sales pipeline MVP)",
+      "axes": {
+        "product_maturity": "production",
+        "system_coupling": "connected",
+        "unknowns": "medium",
+        "realtime_pressure": "async",
+        "longevity": "long_term"
+      },
+      "engine_price": 37260.0,
+      "multiplier": 4.6575,
+      "market_band": [
+        20000,
+        50000
+      ],
+      "verdict": "within",
+      "chips": [
+        "Production-grade",
+        "Connected system",
+        "Discovery work",
+        "Long-term product"
+      ],
+      "judgment_notes": "Well-trodden domain. Connected (email/calendar integrations). No realtime requirements."
+    },
+    {
+      "base_price": 8000,
+      "archetype": "AI copilot (LLM-powered assistant)",
+      "axes": {
+        "product_maturity": "production",
+        "system_coupling": "platform",
+        "unknowns": "high",
+        "realtime_pressure": "critical",
+        "longevity": "long_term"
+      },
+      "engine_price": 99532.8,
+      "multiplier": 12.4416,
+      "market_band": [
+        30000,
+        80000
+      ],
+      "verdict": "over",
+      "chips": [
+        "Production-grade",
+        "Platform complexity",
+        "High uncertainty",
+        "Realtime",
+        "Long-term product"
+      ],
+      "judgment_notes": "LLM behaviour = high unknowns. Streaming responses \u2192 realtime critical. Platform (auth + billing + history + retrieval)."
+    },
+    {
+      "base_price": 8000,
+      "archetype": "Infra observability tool (Datadog-lite)",
+      "axes": {
+        "product_maturity": "production",
+        "system_coupling": "platform",
+        "unknowns": "high",
+        "realtime_pressure": "critical",
+        "longevity": "infrastructure"
+      },
+      "engine_price": 132710.4,
+      "multiplier": 16.5888,
+      "market_band": [
+        60000,
+        150000
+      ],
+      "verdict": "within",
+      "chips": [
+        "Production-grade",
+        "Platform complexity",
+        "High uncertainty",
+        "Realtime",
+        "Infrastructure"
+      ],
+      "judgment_notes": "Time-series + query perf at scale = high unknowns. Realtime alerting critical. Infrastructure longevity (clients trust this for years)."
+    },
+    {
+      "base_price": 8000,
+      "archetype": "Marketplace (Etsy/Airbnb MVP)",
+      "axes": {
+        "product_maturity": "production",
+        "system_coupling": "platform",
+        "unknowns": "medium",
+        "realtime_pressure": "async",
+        "longevity": "long_term"
+      },
+      "engine_price": 49680.0,
+      "multiplier": 6.21,
+      "market_band": [
+        30000,
+        80000
+      ],
+      "verdict": "within",
+      "chips": [
+        "Production-grade",
+        "Platform complexity",
+        "Discovery work",
+        "Long-term product"
+      ],
+      "judgment_notes": "Two-sided platform. Search + payments + trust system. Async realtime (notifications). Domain is well-understood."
+    },
+    {
+      "base_price": 8000,
+      "archetype": "Realtime multiplayer backend",
+      "axes": {
+        "product_maturity": "production",
+        "system_coupling": "platform",
+        "unknowns": "high",
+        "realtime_pressure": "critical",
+        "longevity": "long_term"
+      },
+      "engine_price": 99532.8,
+      "multiplier": 12.4416,
+      "market_band": [
+        40000,
+        100000
+      ],
+      "verdict": "within",
+      "chips": [
+        "Production-grade",
+        "Platform complexity",
+        "High uncertainty",
+        "Realtime",
+        "Long-term product"
+      ],
+      "judgment_notes": "State sync + latency budgets + anti-cheat = high unknowns. Realtime is THE product. Platform."
+    },
+    {
+      "base_price": 8000,
+      "archetype": "Banking dashboard",
+      "axes": {
+        "product_maturity": "production",
+        "system_coupling": "platform",
+        "unknowns": "high",
+        "realtime_pressure": "collaborative",
+        "longevity": "infrastructure"
+      },
+      "engine_price": 103219.2,
+      "multiplier": 12.9024,
+      "market_band": [
+        50000,
+        120000
+      ],
+      "verdict": "within",
+      "chips": [
+        "Production-grade",
+        "Platform complexity",
+        "High uncertainty",
+        "Collaboration",
+        "Infrastructure"
+      ],
+      "judgment_notes": "Compliance + audit + role hierarchies = high unknowns. Collab (multi-user reconcile). Infrastructure (regulator-readable for years)."
+    },
+    {
+      "base_price": 8000,
+      "archetype": "Enterprise ERP (SAP-lite)",
+      "axes": {
+        "product_maturity": "scaled",
+        "system_coupling": "operating_system",
+        "unknowns": "research",
+        "realtime_pressure": "collaborative",
+        "longevity": "infrastructure"
+      },
+      "engine_price": 271040.0,
+      "multiplier": 33.88,
+      "market_band": [
+        200000,
+        2000000
+      ],
+      "verdict": "within",
+      "chips": [
+        "Scaled production",
+        "Operating-system scope",
+        "Research-grade",
+        "Collaboration",
+        "Infrastructure"
+      ],
+      "judgment_notes": "Becomes the company's operating-system. Org-specific = research unknowns. Multi-year horizons. Engine almost certainly under-prices here \u2014 that's expected; this archetype lives outside our engagement model."
+    }
+  ],
+  "summary_per_base": {
+    "1500": {
+      "within": 0,
+      "under": 10,
+      "over": 0
+    },
+    "5000": {
+      "within": 8,
+      "under": 2,
+      "over": 0
+    },
+    "8000": {
+      "within": 9,
+      "under": 0,
+      "over": 1
+    }
+  }
+}

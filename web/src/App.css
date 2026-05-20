@@ -1,0 +1,15 @@
+/*
+ * App.css — kept intentionally minimal.
+ *
+ * The design system (colors, typography, spacing) lives in `index.css`
+ * and matches the mobile app exactly via `.dark` CSS variables.
+ *
+ * Earlier this file declared its own `:root { --background: #FFFFFF; ... }`
+ * which overrode the dark palette and forced the entire admin UI into a
+ * broken light theme (white body, dark text on dark cards, unreadable).
+ * Removed: do not re-introduce theme tokens here.
+ */
+
+/* Imported by Inter elsewhere; kept here only for legacy callers that
+   reference 'Inter' explicitly. The default font stack is set by index.css. */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');

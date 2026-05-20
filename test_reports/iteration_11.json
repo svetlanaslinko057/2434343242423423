@@ -1,0 +1,54 @@
+{
+  "summary": "Frontend-only verification of admin parity expansion (8 new read-only screens + Operations grid on /admin/home) and runtime-shim non-regression. Admin login -> /admin/home works; OPERATIONS section renders with all 8 tiles (testIDs admin-ops-{users|team|contracts|templates|integrations|inbox|marketplace|master} present). Each of the 8 new routes (/admin/users, /admin/team, /admin/contracts, /admin/templates, /admin/integrations, /admin/inbox, /admin/marketplace, /admin/master) renders without crashes, shows AdminHeader, admin-list-scroll, filter chips where defined, and either empty-state or data rows (integrations endpoint returned mock provider rows). Existing admin/home cockpit still renders backend data (alerts=1 QA pending, 8 active devs, 14 active modules) proving the runtime shim path works for legacy api.get callsites. Existing admin/qa, admin/validation, admin/finance, admin/profile screens load their layout (no JS crashes) under the shim. ONE TAB-BAR REGRESSION CANDIDATE: an extra 'execution-console' tab is visible alongside the 5 expected tabs (Home/QA/Validation/Finance/Profile). The 8 new parity screens are correctly hidden via href:null and do NOT appear in tab bar.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [
+      {
+        "component": "app/admin/_layout.tsx",
+        "issue": "An extra tab 'execution-console' is visible in the admin tab bar (6 tabs total instead of expected 5). The file /app/frontend/app/admin/execution-console.tsx exists but is NOT registered with href:null in _layout.tsx, so expo-router auto-detects it and renders it as a tab. The 8 NEW parity screens (users/team/contracts/templates/integrations/inbox/marketplace/master) are correctly hidden — only execution-console leaked. The tab label also renders as '\u2304\u2304execution-console' (icon glyph + text wrapping issue).",
+        "testID": "n/a (tab nav)",
+        "priority": "MEDIUM"
+      },
+      {
+        "component": "app/admin/_layout.tsx header comment",
+        "issue": "Comment at top of _layout.tsx says '4 surfaces only: Home \u00b7 QA \u00b7 Finance \u00b7 Profile' but the code actually registers 5 tabs (Home/QA/Validation/Finance/Profile). Comment is stale — cosmetic only.",
+        "testID": "n/a",
+        "priority": "LOW"
+      }
+    ],
+    "integration_issues": [],
+    "design_issues": [
+      {
+        "screen": "admin tab bar (390px viewport)",
+        "issues": [
+          "With 6 tabs in 390px viewport, last tab 'execution-console' is truncated ('execution-co...') and overlaps with the previous 'Profile' label slightly. Removing execution-console (via href:null) fixes the layout too."
+        ]
+      }
+    ],
+    "react_native_issues": [
+      {
+        "component": "theme tokens used in inline styles (seen across admin screens)",
+        "issue": "Console errors: 'Invalid style property of \"borderColor\". Value is \"var(--t-primary)33\" but only single values are supported.' Happens on web target — RN style parser rejects CSS-var concatenation for borderColor (and similar). Cosmetic on web; does not crash, but pollutes console. Same with deprecated 'shadow*' props and 'pointerEvents' prop warnings."
+      }
+    ]
+  },
+  "test_report_links": [],
+  "action_items": [
+    "Add `<Tabs.Screen name=\"execution-console\" options={{ href: null }} />` to /app/frontend/app/admin/_layout.tsx so the extra tab disappears (restoring the intended 5-tab cockpit).",
+    "Update the comment block at top of admin/_layout.tsx — it says '4 surfaces only' but 5 tabs are now registered (Home/QA/Validation/Finance/Profile).",
+    "(Low priority) Replace `T.primary + '33'` style concatenation in admin screens with rgba()/hex values so web target stops throwing borderColor parser errors."
+  ],
+  "critical_code_review_comments": [
+    "src/api.ts shim is well-structured (path normalisation, axios-compat response shape, runtime delegation). Verified in practice: admin/home shows live data via api.get('/admin/mobile/home') confirming the legacy-shape path still works.",
+    "src/admin/useAdminResource.ts uses JSON.stringify(options.params) inside useCallback deps array — works but slightly fragile; non-blocking.",
+    "app/admin/home.tsx: OPS_TILES is colocated with the screen — comment correctly notes a tile addition must mirror _layout.tsx. Good.",
+    "admin/_layout.tsx: relies on expo-router 'unknown screen auto-detection' — but the comment claims listing everything triggers 'Too many screens' warnings while in fact omitting a screen (execution-console) causes it to render in tab bar. The 8 NEW screens were correctly added with href:null; execution-console was likely overlooked."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "n/a (frontend-only)", "frontend": "95% (10/11 acceptance items pass; only the 5-tab requirement fails due to leftover execution-console)"},
+  "seed_data_creation": "None.",
+  "retest_needed": false,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "Login flow is 2-step: input email -> click 'Continue' -> input password -> click 'Continue to your product'. Use page.get_by_text('Continue', exact=True).first for step 1 and page.get_by_text('Continue to your product', exact=True).first for step 2. Cookies + localStorage hold session; clearing cookies between users in the same browser context can leave atlas_token in localStorage and confuse the auth state — open a fresh context per role. Admin home testID is 'admin-home-screen'; the OPS grid is 'admin-operations-grid' with tiles 'admin-ops-{id}'. All 8 new screens use shared 'admin-list-scroll' for pull-to-refresh.",
+  "rca_of_issue": "Extra 'execution-console' tab: expo-router Tabs auto-detects every .tsx file in /app/frontend/app/admin/. The new parity-expansion PR added 8 explicit <Tabs.Screen ... href:null /> entries for the new files but forgot to add one for the pre-existing execution-console.tsx. Result: that screen still inherits default tab visibility and renders as a 6th tab. Fix: one-line addition in _layout.tsx. Verified by globbing /app/frontend/app/admin/*.tsx and cross-referencing against the entries in _layout.tsx."
+}

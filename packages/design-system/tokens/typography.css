@@ -1,0 +1,34 @@
+/* ============================================================
+ * typography.css — type scale + families.
+ *
+ * IDENTICAL in dark and light. Only anti-aliasing differs (see palette.css).
+ * ============================================================ */
+
+:root {
+  --ds-font-display: 'Space Grotesk', 'IBM Plex Sans', sans-serif;
+  --ds-font-body:    'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --ds-font-mono:    'IBM Plex Mono', 'JetBrains Mono', monospace;
+
+  --ds-text-tiny:  11px;
+  --ds-text-small: 13px;
+  --ds-text-body:  15px;
+  --ds-text-h3:    18px;
+  --ds-text-h2:    22px;
+  --ds-text-h1:    28px;
+  --ds-text-display: 40px;
+
+  --ds-lh-tight: 1.2;
+  --ds-lh-ui:    1.4;
+  --ds-lh-body:  1.5;
+  --ds-lh-read:  1.6;
+
+  --ds-tracking-display: -0.02em;
+  --ds-tracking-heading: -0.01em;
+  --ds-tracking-body:    0;
+  --ds-tracking-kicker:  0.1em;
+
+  --ds-weight-regular:  400;
+  --ds-weight-medium:   500;
+  --ds-weight-semibold: 600;
+  --ds-weight-bold:     700;
+}

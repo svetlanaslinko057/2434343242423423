@@ -1,0 +1,3318 @@
+{
+  "generated_at": "2026-05-18T18:58:50Z",
+  "endpoint": "http://localhost:8001/api/estimate",
+  "mode": "hybrid",
+  "categories": {
+    "authentication_identity": {
+      "audience": "both",
+      "keyword_count": 26
+    },
+    "authorization_rbac": {
+      "audience": "both",
+      "keyword_count": 14
+    },
+    "data_persistence": {
+      "audience": "operator",
+      "keyword_count": 12
+    },
+    "admin_operations": {
+      "audience": "operator",
+      "keyword_count": 16
+    },
+    "observability_monitoring": {
+      "audience": "operator",
+      "keyword_count": 19
+    },
+    "deployment_infrastructure": {
+      "audience": "operator",
+      "keyword_count": 21
+    },
+    "payments_billing": {
+      "audience": "both",
+      "keyword_count": 19
+    },
+    "realtime_synchronization": {
+      "audience": "user",
+      "keyword_count": 20
+    },
+    "integrations_external": {
+      "audience": "operator",
+      "keyword_count": 13
+    },
+    "ai_orchestration": {
+      "audience": "operator",
+      "keyword_count": 18
+    },
+    "reliability_recovery": {
+      "audience": "operator",
+      "keyword_count": 15
+    },
+    "compliance_security": {
+      "audience": "operator",
+      "keyword_count": 18
+    },
+    "collaboration_multiplayer": {
+      "audience": "user",
+      "keyword_count": 16
+    },
+    "notifications_delivery": {
+      "audience": "both",
+      "keyword_count": 17
+    },
+    "analytics_reporting": {
+      "audience": "both",
+      "keyword_count": 18
+    },
+    "qa_edge_cases": {
+      "audience": "operator",
+      "keyword_count": 15
+    }
+  },
+  "archetype_count": 10,
+  "rows": [
+    {
+      "archetype_id": "slack",
+      "archetype_name": "Slack clone (team chat MVP)",
+      "brief": "Build a team chat app where companies create workspaces, users join channels and DMs, send messages with attachments, and stay connected in real-time. Production product, not a demo.",
+      "estimate": {
+        "base": 2500.0,
+        "multiplier": 0.75,
+        "final_price": 128039.73,
+        "implementation_price": 13172.81,
+        "reality_multiplier": 9.72,
+        "timeline": "9-10 weeks",
+        "complexity": "medium",
+        "quality_band": "enhanced",
+        "estimated_hours": 395
+      },
+      "reality_layer": {
+        "axes": {
+          "product_maturity": "production",
+          "system_coupling": "platform",
+          "unknowns": "medium",
+          "realtime_pressure": "critical",
+          "longevity": "long_term"
+        },
+        "axes_source": "llm_inferred",
+        "multiplier": 9.72,
+        "breakdown": [
+          {
+            "axis": "product_maturity",
+            "label": "Product maturity",
+            "level": "production",
+            "multiplier": 1.8,
+            "delta": 10538.25
+          },
+          {
+            "axis": "system_coupling",
+            "label": "System coupling",
+            "level": "platform",
+            "multiplier": 1.6,
+            "delta": 14226.64
+          },
+          {
+            "axis": "unknowns",
+            "label": "Unknowns",
+            "level": "medium",
+            "multiplier": 1.25,
+            "delta": 9484.42
+          },
+          {
+            "axis": "realtime_pressure",
+            "label": "Realtime pressure",
+            "level": "critical",
+            "multiplier": 1.8,
+            "delta": 37937.7
+          },
+          {
+            "axis": "longevity",
+            "label": "Longevity",
+            "level": "long_term",
+            "multiplier": 1.5,
+            "delta": 42679.91
+          }
+        ],
+        "narrative_chips": [
+          "Production-grade",
+          "Platform complexity",
+          "Discovery work",
+          "Realtime",
+          "Long-term product"
+        ]
+      },
+      "modules_detailed": [
+        {
+          "title": "User Authentication",
+          "description": "Manage user registration, login, and secure sessions.",
+          "hours": 40
+        },
+        {
+          "title": "Workspace Creation",
+          "description": "Allow companies to create and manage their workspaces.",
+          "hours": 30
+        },
+        {
+          "title": "Channel Management",
+          "description": "Create, join, and manage communication channels within workspaces.",
+          "hours": 35
+        },
+        {
+          "title": "Direct Messaging",
+          "description": "Enable one-on-one conversation between users through DMs.",
+          "hours": 30
+        },
+        {
+          "title": "Real-time Messaging",
+          "description": "Implement live message delivery and updates across all channels and DMs.",
+          "hours": 50
+        },
+        {
+          "title": "Attachments & File Sharing",
+          "description": "Allow users to send and receive files within messages.",
+          "hours": 45
+        },
+        {
+          "title": "Roles & Permissions",
+          "description": "Define user roles and access levels within workspaces and channels.",
+          "hours": 30
+        },
+        {
+          "title": "Observability & Logging",
+          "description": "Setup logging and monitoring for application health and usage insights.",
+          "hours": 25
+        },
+        {
+          "title": "Deployment & CI/CD",
+          "description": "Establish CI/CD pipelines for automated deployment and integration.",
+          "hours": 40
+        },
+        {
+          "title": "Message Retries",
+          "description": "Implement retries for message delivery to ensure fault tolerance.",
+          "hours": 40,
+          "_source": "operational_hardening_pass",
+          "_category": "reliability"
+        },
+        {
+          "title": "Input Validation",
+          "description": "Ensure proper validation of user inputs to prevent errors and security issues.",
+          "hours": 30,
+          "_source": "operational_hardening_pass",
+          "_category": "qa"
+        }
+      ],
+      "modules_preview": [
+        "User Authentication",
+        "Workspace Creation",
+        "Channel Management",
+        "Direct Messaging",
+        "Real-time Messaging",
+        "Attachments & File Sharing",
+        "Roles & Permissions",
+        "Observability & Logging",
+        "Deployment & CI/CD",
+        "Message Retries",
+        "Input Validation"
+      ],
+      "tech_stack": [
+        "Node.js",
+        "React",
+        "WebSocket",
+        "MongoDB",
+        "Redis",
+        "Docker"
+      ],
+      "complexity": "medium",
+      "confidence": 0.88,
+      "ai_generated": true,
+      "matched_template": null,
+      "goal_length": 182,
+      "elapsed_seconds": 11.98,
+      "classification": {
+        "authentication_identity": {
+          "recognized": true,
+          "audience": "both",
+          "matched_keywords": [
+            "authentication",
+            "login",
+            "registration"
+          ],
+          "hit_count": 4,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "authorization_rbac": {
+          "recognized": true,
+          "audience": "both",
+          "matched_keywords": [
+            "user roles"
+          ],
+          "hit_count": 1,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "data_persistence": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "admin_operations": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "observability_monitoring": {
+          "recognized": true,
+          "audience": "operator",
+          "matched_keywords": [
+            "logging",
+            "monitoring",
+            "observability"
+          ],
+          "hit_count": 6,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "deployment_infrastructure": {
+          "recognized": true,
+          "audience": "operator",
+          "matched_keywords": [
+            "ci/cd",
+            "docker"
+          ],
+          "hit_count": 4,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "payments_billing": {
+          "recognized": false,
+          "audience": "both",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "realtime_synchronization": {
+          "recognized": true,
+          "audience": "user",
+          "matched_keywords": [
+            "real-time",
+            "realtime",
+            "websocket"
+          ],
+          "hit_count": 4,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "integrations_external": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "ai_orchestration": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "reliability_recovery": {
+          "recognized": true,
+          "audience": "operator",
+          "matched_keywords": [
+            "retries"
+          ],
+          "hit_count": 3,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "compliance_security": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "collaboration_multiplayer": {
+          "recognized": false,
+          "audience": "user",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "notifications_delivery": {
+          "recognized": false,
+          "audience": "both",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "analytics_reporting": {
+          "recognized": false,
+          "audience": "both",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "qa_edge_cases": {
+          "recognized": true,
+          "audience": "operator",
+          "matched_keywords": [
+            "input validation",
+            "validation"
+          ],
+          "hit_count": 5,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        }
+      },
+      "asymmetry": {
+        "user_side_coverage": 0.429,
+        "operator_side_coverage": 0.429,
+        "user_recognized": 3,
+        "operator_recognized": 6,
+        "user_total": 7,
+        "operator_total": 14,
+        "asymmetry_ratio": 1.0,
+        "asymmetric_high": false
+      }
+    },
+    {
+      "archetype_id": "linear",
+      "archetype_name": "Linear clone (issue tracker)",
+      "brief": "Build a fast issue tracker for software teams. Users create issues, assign owners, move them through statuses on a board, and see updates live as teammates work. Long-term product, multiple companies use it.",
+      "estimate": {
+        "base": 2500.0,
+        "multiplier": 0.75,
+        "final_price": 147135.9,
+        "implementation_price": 15137.44,
+        "reality_multiplier": 9.72,
+        "timeline": "10-11 weeks",
+        "complexity": "medium",
+        "quality_band": "enhanced",
+        "estimated_hours": 457
+      },
+      "reality_layer": {
+        "axes": {
+          "product_maturity": "production",
+          "system_coupling": "platform",
+          "unknowns": "medium",
+          "realtime_pressure": "critical",
+          "longevity": "long_term"
+        },
+        "axes_source": "llm_inferred",
+        "multiplier": 9.72,
+        "breakdown": [
+          {
+            "axis": "product_maturity",
+            "label": "Product maturity",
+            "level": "production",
+            "multiplier": 1.8,
+            "delta": 12109.95
+          },
+          {
+            "axis": "system_coupling",
+            "label": "System coupling",
+            "level": "platform",
+            "multiplier": 1.6,
+            "delta": 16348.43
+          },
+          {
+            "axis": "unknowns",
+            "label": "Unknowns",
+            "level": "medium",
+            "multiplier": 1.25,
+            "delta": 10898.96
+          },
+          {
+            "axis": "realtime_pressure",
+            "label": "Realtime pressure",
+            "level": "critical",
+            "multiplier": 1.8,
+            "delta": 43595.82
+          },
+          {
+            "axis": "longevity",
+            "label": "Longevity",
+            "level": "long_term",
+            "multiplier": 1.5,
+            "delta": 49045.3
+          }
+        ],
+        "narrative_chips": [
+          "Production-grade",
+          "Platform complexity",
+          "Discovery work",
+          "Realtime",
+          "Long-term product"
+        ]
+      },
+      "modules_detailed": [
+        {
+          "title": "User authentication",
+          "description": "Manage user registrations, logins, and authentication workflows.",
+          "hours": 40
+        },
+        {
+          "title": "Role-based access",
+          "description": "Implement user roles to control access to various features and data.",
+          "hours": 30
+        },
+        {
+          "title": "Issue management",
+          "description": "Allow users to create, assign, and update issues easily.",
+          "hours": 50
+        },
+        {
+          "title": "Workflow board",
+          "description": "Visual representation of issues in different statuses on a board.",
+          "hours": 60
+        },
+        {
+          "title": "Live updates",
+          "description": "Implement real-time updates for issues and board status changes.",
+          "hours": 45
+        },
+        {
+          "title": "Notifications system",
+          "description": "Notify users about updates and changes to assigned issues.",
+          "hours": 30
+        },
+        {
+          "title": "Analytics dashboard",
+          "description": "Provide insights and statistics on issues and team performance.",
+          "hours": 40
+        },
+        {
+          "title": "Observability & logging",
+          "description": "Set up monitoring and logging for system performance and error tracking.",
+          "hours": 50
+        },
+        {
+          "title": "Deployment & CI/CD",
+          "description": "Automate deployment and integrate continuous delivery processes.",
+          "hours": 40
+        },
+        {
+          "title": "Retries and Rollback",
+          "description": "Implement retry logic, rollback mechanisms, and ensure data integrity for issue updates.",
+          "hours": 40,
+          "_source": "operational_hardening_pass",
+          "_category": "reliability"
+        },
+        {
+          "title": "Input Validation Tests",
+          "description": "Create validation tests for user inputs and issue updates to handle edge cases.",
+          "hours": 32,
+          "_source": "operational_hardening_pass",
+          "_category": "qa"
+        }
+      ],
+      "modules_preview": [
+        "User authentication",
+        "Role-based access",
+        "Issue management",
+        "Workflow board",
+        "Live updates",
+        "Notifications system",
+        "Analytics dashboard",
+        "Observability & logging",
+        "Deployment & CI/CD",
+        "Retries and Rollback",
+        "Input Validation Tests"
+      ],
+      "tech_stack": [
+        "Node.js",
+        "React",
+        "MongoDB",
+        "Socket.io",
+        "Docker",
+        "Kubernetes"
+      ],
+      "complexity": "medium",
+      "confidence": 0.91,
+      "ai_generated": true,
+      "matched_template": null,
+      "goal_length": 207,
+      "elapsed_seconds": 9.71,
+      "classification": {
+        "authentication_identity": {
+          "recognized": true,
+          "audience": "both",
+          "matched_keywords": [
+            "authentication"
+          ],
+          "hit_count": 3,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "authorization_rbac": {
+          "recognized": true,
+          "audience": "both",
+          "matched_keywords": [
+            "role-based",
+            "user roles"
+          ],
+          "hit_count": 3,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "data_persistence": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "admin_operations": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "observability_monitoring": {
+          "recognized": true,
+          "audience": "operator",
+          "matched_keywords": [
+            "error tracking",
+            "logging",
+            "monitoring",
+            "observability"
+          ],
+          "hit_count": 7,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "deployment_infrastructure": {
+          "recognized": true,
+          "audience": "operator",
+          "matched_keywords": [
+            "ci/cd",
+            "docker",
+            "kubernetes"
+          ],
+          "hit_count": 4,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "payments_billing": {
+          "recognized": false,
+          "audience": "both",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "realtime_synchronization": {
+          "recognized": true,
+          "audience": "user",
+          "matched_keywords": [
+            "real-time",
+            "realtime",
+            "socket.io"
+          ],
+          "hit_count": 3,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "integrations_external": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "ai_orchestration": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "reliability_recovery": {
+          "recognized": true,
+          "audience": "operator",
+          "matched_keywords": [
+            "retries",
+            "retry logic"
+          ],
+          "hit_count": 3,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "compliance_security": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "collaboration_multiplayer": {
+          "recognized": false,
+          "audience": "user",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "notifications_delivery": {
+          "recognized": false,
+          "audience": "both",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "analytics_reporting": {
+          "recognized": true,
+          "audience": "both",
+          "matched_keywords": [
+            "analytics",
+            "dashboard"
+          ],
+          "hit_count": 4,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "qa_edge_cases": {
+          "recognized": true,
+          "audience": "operator",
+          "matched_keywords": [
+            "input validation",
+            "validation"
+          ],
+          "hit_count": 5,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        }
+      },
+      "asymmetry": {
+        "user_side_coverage": 0.571,
+        "operator_side_coverage": 0.5,
+        "user_recognized": 4,
+        "operator_recognized": 7,
+        "user_total": 7,
+        "operator_total": 14,
+        "asymmetry_ratio": 1.143,
+        "asymmetric_high": false
+      }
+    },
+    {
+      "archetype_id": "stripe_for_x",
+      "archetype_name": "Stripe-for-X (vertical payments platform)",
+      "brief": "Build a payments platform for a specific industry (think: Stripe for law firms). Merchants onboard, accept cards, manage chargebacks, see settlements, and reconcile their books. Production, multi-year horizon.",
+      "estimate": {
+        "base": 2500.0,
+        "multiplier": 0.75,
+        "final_price": 582343.45,
+        "implementation_price": 59911.88,
+        "reality_multiplier": 9.72,
+        "timeline": "44-45 weeks",
+        "complexity": "complex",
+        "quality_band": "enhanced",
+        "estimated_hours": 1870
+      },
+      "reality_layer": {
+        "axes": {
+          "product_maturity": "production",
+          "system_coupling": "platform",
+          "unknowns": "medium",
+          "realtime_pressure": "critical",
+          "longevity": "long_term"
+        },
+        "axes_source": "llm_inferred",
+        "multiplier": 9.72,
+        "breakdown": [
+          {
+            "axis": "product_maturity",
+            "label": "Product maturity",
+            "level": "production",
+            "multiplier": 1.8,
+            "delta": 47929.5
+          },
+          {
+            "axis": "system_coupling",
+            "label": "System coupling",
+            "level": "platform",
+            "multiplier": 1.6,
+            "delta": 64704.83
+          },
+          {
+            "axis": "unknowns",
+            "label": "Unknowns",
+            "level": "medium",
+            "multiplier": 1.25,
+            "delta": 43136.55
+          },
+          {
+            "axis": "realtime_pressure",
+            "label": "Realtime pressure",
+            "level": "critical",
+            "multiplier": 1.8,
+            "delta": 172546.21
+          },
+          {
+            "axis": "longevity",
+            "label": "Longevity",
+            "level": "long_term",
+            "multiplier": 1.5,
+            "delta": 194114.48
+          }
+        ],
+        "narrative_chips": [
+          "Production-grade",
+          "Platform complexity",
+          "Discovery work",
+          "Realtime",
+          "Long-term product"
+        ]
+      },
+      "modules_detailed": [
+        {
+          "title": "User authentication",
+          "description": "Secure onboarding and login processes for merchants and users.",
+          "hours": 120
+        },
+        {
+          "title": "Merchant onboarding",
+          "description": "Process for onboarding new merchants with necessary compliance checks.",
+          "hours": 200
+        },
+        {
+          "title": "Payments processing",
+          "description": "Handle card transactions, including authorization and settlement.",
+          "hours": 300
+        },
+        {
+          "title": "Chargeback management",
+          "description": "Tools to help merchants handle and respond to chargebacks effectively.",
+          "hours": 220
+        },
+        {
+          "title": "Transaction reporting",
+          "description": "Reports for merchants to view transaction history and settlements.",
+          "hours": 150
+        },
+        {
+          "title": "Reconciliation tools",
+          "description": "Features for merchants to reconcile their accounts and manage finances.",
+          "hours": 180
+        },
+        {
+          "title": "Observability & logging",
+          "description": "Set up monitoring and logging for system performance and issue tracking.",
+          "hours": 160
+        },
+        {
+          "title": "Roles & permissions",
+          "description": "Management of user roles and permissions for secure access control.",
+          "hours": 100
+        },
+        {
+          "title": "Deployment & CI/CD",
+          "description": "Automated deployment strategies and continuous integration pipelines.",
+          "hours": 140
+        },
+        {
+          "title": "Idempotency Guarantees",
+          "description": "Implement idempotency for payment workflows to avoid duplicate transactions.",
+          "hours": 40,
+          "_source": "operational_hardening_pass",
+          "_category": "reliability"
+        },
+        {
+          "title": "Error Handling Strategies",
+          "description": "Define error handling procedures for transaction failures and system malfunctions.",
+          "hours": 32,
+          "_source": "operational_hardening_pass",
+          "_category": "qa"
+        }
+      ],
+      "modules_preview": [
+        "User authentication",
+        "Merchant onboarding",
+        "Payments processing",
+        "Chargeback management",
+        "Transaction reporting",
+        "Reconciliation tools",
+        "Observability & logging",
+        "Roles & permissions",
+        "Deployment & CI/CD",
+        "Idempotency Guarantees",
+        "Error Handling Strategies"
+      ],
+      "tech_stack": [
+        "Node.js",
+        "React",
+        "PostgreSQL",
+        "AWS",
+        "Docker",
+        "Kubernetes"
+      ],
+      "complexity": "complex",
+      "confidence": 0.91,
+      "ai_generated": true,
+      "matched_template": null,
+      "goal_length": 209,
+      "elapsed_seconds": 8.91,
+      "classification": {
+        "authentication_identity": {
+          "recognized": true,
+          "audience": "both",
+          "matched_keywords": [
+            "authentication",
+            "login"
+          ],
+          "hit_count": 3,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "authorization_rbac": {
+          "recognized": true,
+          "audience": "both",
+          "matched_keywords": [
+            "access control",
+            "roles and permissions",
+            "user roles"
+          ],
+          "hit_count": 3,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "data_persistence": {
+          "recognized": true,
+          "audience": "operator",
+          "matched_keywords": [
+            "transaction"
+          ],
+          "hit_count": 4,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "admin_operations": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "observability_monitoring": {
+          "recognized": true,
+          "audience": "operator",
+          "matched_keywords": [
+            "logging",
+            "monitoring",
+            "observability"
+          ],
+          "hit_count": 6,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "deployment_infrastructure": {
+          "recognized": true,
+          "audience": "operator",
+          "matched_keywords": [
+            "ci/cd",
+            "continuous integration",
+            "docker",
+            "kubernetes"
+          ],
+          "hit_count": 5,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "payments_billing": {
+          "recognized": true,
+          "audience": "both",
+          "matched_keywords": [
+            "chargeback",
+            "payment",
+            "reconciliation",
+            "settlement"
+          ],
+          "hit_count": 6,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "realtime_synchronization": {
+          "recognized": true,
+          "audience": "user",
+          "matched_keywords": [
+            "realtime"
+          ],
+          "hit_count": 1,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "integrations_external": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "ai_orchestration": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "reliability_recovery": {
+          "recognized": true,
+          "audience": "operator",
+          "matched_keywords": [
+            "idempotency"
+          ],
+          "hit_count": 3,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "compliance_security": {
+          "recognized": true,
+          "audience": "operator",
+          "matched_keywords": [
+            "compliance"
+          ],
+          "hit_count": 1,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "collaboration_multiplayer": {
+          "recognized": false,
+          "audience": "user",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "notifications_delivery": {
+          "recognized": false,
+          "audience": "both",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "analytics_reporting": {
+          "recognized": true,
+          "audience": "both",
+          "matched_keywords": [
+            "reporting"
+          ],
+          "hit_count": 2,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "qa_edge_cases": {
+          "recognized": true,
+          "audience": "operator",
+          "matched_keywords": [
+            "error handling"
+          ],
+          "hit_count": 3,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        }
+      },
+      "asymmetry": {
+        "user_side_coverage": 0.714,
+        "operator_side_coverage": 0.714,
+        "user_recognized": 5,
+        "operator_recognized": 10,
+        "user_total": 7,
+        "operator_total": 14,
+        "asymmetry_ratio": 1.0,
+        "asymmetric_high": false
+      }
+    },
+    {
+      "archetype_id": "b2b_crm",
+      "archetype_name": "B2B CRM",
+      "brief": "Build a CRM for B2B sales teams: contacts, accounts, deals in a pipeline, activity timeline, email integration, reports. Each company has 20-200 reps. Real product, paying customers expected.",
+      "estimate": {
+        "base": 2500.0,
+        "multiplier": 0.75,
+        "final_price": 151091.31,
+        "implementation_price": 19985.62,
+        "reality_multiplier": 7.56,
+        "timeline": "14-15 weeks",
+        "complexity": "medium",
+        "quality_band": "enhanced",
+        "estimated_hours": 610
+      },
+      "reality_layer": {
+        "axes": {
+          "product_maturity": "production",
+          "system_coupling": "platform",
+          "unknowns": "medium",
+          "realtime_pressure": "collaborative",
+          "longevity": "long_term"
+        },
+        "axes_source": "llm_inferred",
+        "multiplier": 7.56,
+        "breakdown": [
+          {
+            "axis": "product_maturity",
+            "label": "Product maturity",
+            "level": "production",
+            "multiplier": 1.8,
+            "delta": 15988.5
+          },
+          {
+            "axis": "system_coupling",
+            "label": "System coupling",
+            "level": "platform",
+            "multiplier": 1.6,
+            "delta": 21584.47
+          },
+          {
+            "axis": "unknowns",
+            "label": "Unknowns",
+            "level": "medium",
+            "multiplier": 1.25,
+            "delta": 14389.65
+          },
+          {
+            "axis": "realtime_pressure",
+            "label": "Realtime pressure",
+            "level": "collaborative",
+            "multiplier": 1.4,
+            "delta": 28779.3
+          },
+          {
+            "axis": "longevity",
+            "label": "Longevity",
+            "level": "long_term",
+            "multiplier": 1.5,
+            "delta": 50363.77
+          }
+        ],
+        "narrative_chips": [
+          "Production-grade",
+          "Platform complexity",
+          "Discovery work",
+          "Collaboration",
+          "Long-term product"
+        ]
+      },
+      "modules_detailed": [
+        {
+          "title": "User authentication",
+          "description": "Secure login and user registration for CRM access.",
+          "hours": 40
+        },
+        {
+          "title": "Roles & permissions",
+          "description": "Define access levels for different user roles in the CRM.",
+          "hours": 30
+        },
+        {
+          "title": "Contacts management",
+          "description": "Add, edit, and organize contacts in the CRM.",
+          "hours": 60
+        },
+        {
+          "title": "Accounts management",
+          "description": "Manage accounts associated with contacts and deals.",
+          "hours": 50
+        },
+        {
+          "title": "Deals pipeline",
+          "description": "Track deals through various stages in the sales pipeline.",
+          "hours": 70
+        },
+        {
+          "title": "Activity timeline",
+          "description": "Log activities related to contacts and deals for viewing history.",
+          "hours": 50
+        },
+        {
+          "title": "Email integration",
+          "description": "Connect and sync email accounts for communication tracking.",
+          "hours": 80
+        },
+        {
+          "title": "Reporting & analytics",
+          "description": "Generate reports on sales performance and user activities.",
+          "hours": 70
+        },
+        {
+          "title": "Deployment & CI/CD",
+          "description": "Set up continuous integration and delivery for the application.",
+          "hours": 40
+        },
+        {
+          "title": "Observability & logging",
+          "description": "Implement logging and monitoring for performance and issues.",
+          "hours": 40
+        },
+        {
+          "title": "Fault Tolerance",
+          "description": "Implement retry logic and error handling for robust operations.",
+          "hours": 40,
+          "_source": "operational_hardening_pass",
+          "_category": "reliability"
+        },
+        {
+          "title": "Edge Case Testing",
+          "description": "Test for unusual scenarios and validation rules for data integrity.",
+          "hours": 40,
+          "_source": "operational_hardening_pass",
+          "_category": "qa"
+        }
+      ],
+      "modules_preview": [
+        "User authentication",
+        "Roles & permissions",
+        "Contacts management",
+        "Accounts management",
+        "Deals pipeline",
+        "Activity timeline",
+        "Email integration",
+        "Reporting & analytics",
+        "Deployment & CI/CD",
+        "Observability & logging",
+        "Fault Tolerance",
+        "Edge Case Testing"
+      ],
+      "tech_stack": [
+        "React",
+        "Node.js",
+        "PostgreSQL",
+        "Express",
+        "AWS",
+        "Docker"
+      ],
+      "complexity": "medium",
+      "confidence": 0.89,
+      "ai_generated": true,
+      "matched_template": null,
+      "goal_length": 191,
+      "elapsed_seconds": 11.07,
+      "classification": {
+        "authentication_identity": {
+          "recognized": true,
+          "audience": "both",
+          "matched_keywords": [
+            "authentication",
+            "login",
+            "registration"
+          ],
+          "hit_count": 4,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "authorization_rbac": {
+          "recognized": true,
+          "audience": "both",
+          "matched_keywords": [
+            "user roles"
+          ],
+          "hit_count": 1,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "data_persistence": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "admin_operations": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "observability_monitoring": {
+          "recognized": true,
+          "audience": "operator",
+          "matched_keywords": [
+            "logging",
+            "monitoring",
+            "observability"
+          ],
+          "hit_count": 6,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "deployment_infrastructure": {
+          "recognized": true,
+          "audience": "operator",
+          "matched_keywords": [
+            "ci/cd",
+            "continuous integration",
+            "docker"
+          ],
+          "hit_count": 4,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "payments_billing": {
+          "recognized": false,
+          "audience": "both",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "realtime_synchronization": {
+          "recognized": false,
+          "audience": "user",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "integrations_external": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "ai_orchestration": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "reliability_recovery": {
+          "recognized": true,
+          "audience": "operator",
+          "matched_keywords": [
+            "retry logic"
+          ],
+          "hit_count": 1,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "compliance_security": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "collaboration_multiplayer": {
+          "recognized": false,
+          "audience": "user",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "notifications_delivery": {
+          "recognized": false,
+          "audience": "both",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "analytics_reporting": {
+          "recognized": true,
+          "audience": "both",
+          "matched_keywords": [
+            "analytics",
+            "reporting"
+          ],
+          "hit_count": 4,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "qa_edge_cases": {
+          "recognized": true,
+          "audience": "operator",
+          "matched_keywords": [
+            "edge case",
+            "error handling",
+            "validation"
+          ],
+          "hit_count": 4,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        }
+      },
+      "asymmetry": {
+        "user_side_coverage": 0.429,
+        "operator_side_coverage": 0.5,
+        "user_recognized": 3,
+        "operator_recognized": 7,
+        "user_total": 7,
+        "operator_total": 14,
+        "asymmetry_ratio": 0.857,
+        "asymmetric_high": false
+      }
+    },
+    {
+      "archetype_id": "ai_copilot",
+      "archetype_name": "AI copilot (LLM product)",
+      "brief": "Build an AI copilot inside a domain SaaS app (e.g. legal). Users chat with the assistant, it pulls from their documents, drafts responses, learns their style. Production-grade product with paying users.",
+      "estimate": {
+        "base": 2500.0,
+        "multiplier": 0.75,
+        "final_price": 161152.74,
+        "implementation_price": 21316.5,
+        "reality_multiplier": 7.56,
+        "timeline": "15-16 weeks",
+        "complexity": "complex",
+        "quality_band": "enhanced",
+        "estimated_hours": 652
+      },
+      "reality_layer": {
+        "axes": {
+          "product_maturity": "production",
+          "system_coupling": "platform",
+          "unknowns": "medium",
+          "realtime_pressure": "collaborative",
+          "longevity": "long_term"
+        },
+        "axes_source": "llm_inferred",
+        "multiplier": 7.56,
+        "breakdown": [
+          {
+            "axis": "product_maturity",
+            "label": "Product maturity",
+            "level": "production",
+            "multiplier": 1.8,
+            "delta": 17053.2
+          },
+          {
+            "axis": "system_coupling",
+            "label": "System coupling",
+            "level": "platform",
+            "multiplier": 1.6,
+            "delta": 23021.82
+          },
+          {
+            "axis": "unknowns",
+            "label": "Unknowns",
+            "level": "medium",
+            "multiplier": 1.25,
+            "delta": 15347.88
+          },
+          {
+            "axis": "realtime_pressure",
+            "label": "Realtime pressure",
+            "level": "collaborative",
+            "multiplier": 1.4,
+            "delta": 30695.76
+          },
+          {
+            "axis": "longevity",
+            "label": "Longevity",
+            "level": "long_term",
+            "multiplier": 1.5,
+            "delta": 53717.58
+          }
+        ],
+        "narrative_chips": [
+          "Production-grade",
+          "Platform complexity",
+          "Discovery work",
+          "Collaboration",
+          "Long-term product"
+        ]
+      },
+      "modules_detailed": [
+        {
+          "title": "User Authentication",
+          "description": "Secure user authentication to access the AI copilot features.",
+          "hours": 40
+        },
+        {
+          "title": "Document Management",
+          "description": "Upload, store, and manage user documents for AI processing.",
+          "hours": 60
+        },
+        {
+          "title": "AI Chat Interface",
+          "description": "User interface for interacting with the AI copilot in real-time.",
+          "hours": 80
+        },
+        {
+          "title": "Response Drafting",
+          "description": "AI generates draft responses based on user documents and chat history.",
+          "hours": 100
+        },
+        {
+          "title": "Style Learning",
+          "description": "AI learns and adapts to the user's writing style over time.",
+          "hours": 100
+        },
+        {
+          "title": "Roles & Permissions",
+          "description": "Management of user roles and permissions for secure access.",
+          "hours": 50
+        },
+        {
+          "title": "Deployment & CI/CD",
+          "description": "Automated deployment pipeline for continuous integration and delivery.",
+          "hours": 40
+        },
+        {
+          "title": "Observability & Logging",
+          "description": "Implement logging and monitoring for system performance and user activity.",
+          "hours": 50
+        },
+        {
+          "title": "QA & Validation",
+          "description": "Quality assurance processes to validate AI output and overall system.",
+          "hours": 60
+        },
+        {
+          "title": "Retries & Idempotency",
+          "description": "Implement retry logic and ensure idempotency for AI requests.",
+          "hours": 40,
+          "_source": "operational_hardening_pass",
+          "_category": "reliability"
+        },
+        {
+          "title": "Error Handling Strategy",
+          "description": "Define how to handle errors and validate inputs in AI responses.",
+          "hours": 32,
+          "_source": "operational_hardening_pass",
+          "_category": "qa"
+        }
+      ],
+      "modules_preview": [
+        "User Authentication",
+        "Document Management",
+        "AI Chat Interface",
+        "Response Drafting",
+        "Style Learning",
+        "Roles & Permissions",
+        "Deployment & CI/CD",
+        "Observability & Logging",
+        "QA & Validation",
+        "Retries & Idempotency",
+        "Error Handling Strategy"
+      ],
+      "tech_stack": [
+        "Node.js",
+        "React",
+        "Python",
+        "TensorFlow",
+        "PostgreSQL",
+        "Docker"
+      ],
+      "complexity": "complex",
+      "confidence": 0.9,
+      "ai_generated": true,
+      "matched_template": null,
+      "goal_length": 202,
+      "elapsed_seconds": 9.51,
+      "classification": {
+        "authentication_identity": {
+          "recognized": true,
+          "audience": "both",
+          "matched_keywords": [
+            "authentication"
+          ],
+          "hit_count": 3,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "authorization_rbac": {
+          "recognized": true,
+          "audience": "both",
+          "matched_keywords": [
+            "roles and permissions",
+            "user roles"
+          ],
+          "hit_count": 2,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "data_persistence": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "admin_operations": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "observability_monitoring": {
+          "recognized": true,
+          "audience": "operator",
+          "matched_keywords": [
+            "logging",
+            "monitoring",
+            "observability"
+          ],
+          "hit_count": 6,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "deployment_infrastructure": {
+          "recognized": true,
+          "audience": "operator",
+          "matched_keywords": [
+            "ci/cd",
+            "continuous integration",
+            "deployment pipeline",
+            "docker"
+          ],
+          "hit_count": 5,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "payments_billing": {
+          "recognized": false,
+          "audience": "both",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "realtime_synchronization": {
+          "recognized": true,
+          "audience": "user",
+          "matched_keywords": [
+            "real-time"
+          ],
+          "hit_count": 1,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "integrations_external": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "ai_orchestration": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "reliability_recovery": {
+          "recognized": true,
+          "audience": "operator",
+          "matched_keywords": [
+            "idempotency",
+            "retries",
+            "retry logic"
+          ],
+          "hit_count": 6,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "compliance_security": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "collaboration_multiplayer": {
+          "recognized": false,
+          "audience": "user",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "notifications_delivery": {
+          "recognized": false,
+          "audience": "both",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "analytics_reporting": {
+          "recognized": false,
+          "audience": "both",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "qa_edge_cases": {
+          "recognized": true,
+          "audience": "operator",
+          "matched_keywords": [
+            "error handling",
+            "validation"
+          ],
+          "hit_count": 4,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        }
+      },
+      "asymmetry": {
+        "user_side_coverage": 0.429,
+        "operator_side_coverage": 0.429,
+        "user_recognized": 3,
+        "operator_recognized": 6,
+        "user_total": 7,
+        "operator_total": 14,
+        "asymmetry_ratio": 1.0,
+        "asymmetric_high": false
+      }
+    },
+    {
+      "archetype_id": "infra_observability",
+      "archetype_name": "Infrastructure observability platform",
+      "brief": "Build an observability platform: customers send logs/metrics/traces from their infrastructure, we ingest at scale, run queries, build dashboards, fire alerts. Multi-tenant, production, infra-grade reliability.",
+      "estimate": {
+        "base": 2500.0,
+        "multiplier": 0.75,
+        "final_price": 587891.16,
+        "implementation_price": 32660.62,
+        "reality_multiplier": 18.0,
+        "timeline": "24-25 weeks",
+        "complexity": "complex",
+        "quality_band": "enhanced",
+        "estimated_hours": 1010
+      },
+      "reality_layer": {
+        "axes": {
+          "product_maturity": "scaled",
+          "system_coupling": "platform",
+          "unknowns": "medium",
+          "realtime_pressure": "critical",
+          "longevity": "infrastructure"
+        },
+        "axes_source": "llm_inferred",
+        "multiplier": 18.0,
+        "breakdown": [
+          {
+            "axis": "product_maturity",
+            "label": "Product maturity",
+            "level": "scaled",
+            "multiplier": 2.5,
+            "delta": 48990.93
+          },
+          {
+            "axis": "system_coupling",
+            "label": "System coupling",
+            "level": "platform",
+            "multiplier": 1.6,
+            "delta": 48990.93
+          },
+          {
+            "axis": "unknowns",
+            "label": "Unknowns",
+            "level": "medium",
+            "multiplier": 1.25,
+            "delta": 32660.62
+          },
+          {
+            "axis": "realtime_pressure",
+            "label": "Realtime pressure",
+            "level": "critical",
+            "multiplier": 1.8,
+            "delta": 130642.48
+          },
+          {
+            "axis": "longevity",
+            "label": "Longevity",
+            "level": "infrastructure",
+            "multiplier": 2.0,
+            "delta": 293945.58
+          }
+        ],
+        "narrative_chips": [
+          "Scaled production",
+          "Platform complexity",
+          "Discovery work",
+          "Realtime",
+          "Infrastructure"
+        ]
+      },
+      "modules_detailed": [
+        {
+          "title": "Data Ingestion",
+          "description": "Ingest logs, metrics, and traces from various customer infrastructures.",
+          "hours": 120
+        },
+        {
+          "title": "Query Engine",
+          "description": "Engine to run optimized queries on ingested data for analysis.",
+          "hours": 150
+        },
+        {
+          "title": "Dashboard Builder",
+          "description": "Tool for users to create and customize their dashboards based on the data.",
+          "hours": 130
+        },
+        {
+          "title": "Alerting System",
+          "description": "Trigger alerts based on defined thresholds and conditions in data.",
+          "hours": 100
+        },
+        {
+          "title": "User Authentication",
+          "description": "Manage user authentication to ensure secure access to the platform.",
+          "hours": 80
+        },
+        {
+          "title": "Multi-Tenancy Layer",
+          "description": "Implement mechanisms to support multiple clients with data isolation.",
+          "hours": 140
+        },
+        {
+          "title": "Observability & Logging",
+          "description": "Incorporate logging for observability and debugging of the platform itself.",
+          "hours": 90
+        },
+        {
+          "title": "Deployment & CI/CD",
+          "description": "Setup continuous integration and deployment pipelines for platform updates.",
+          "hours": 100
+        },
+        {
+          "title": "Fault Tolerance Mechanisms",
+          "description": "Implement retries and fault tolerance for data ingestion and processing.",
+          "hours": 40,
+          "_source": "operational_hardening_pass",
+          "_category": "reliability"
+        },
+        {
+          "title": "Input Validation Testing",
+          "description": "Thorough validation and testing of data inputs from customers for edge cases.",
+          "hours": 32,
+          "_source": "operational_hardening_pass",
+          "_category": "qa"
+        }
+      ],
+      "modules_preview": [
+        "Data Ingestion",
+        "Query Engine",
+        "Dashboard Builder",
+        "Alerting System",
+        "User Authentication",
+        "Multi-Tenancy Layer",
+        "Observability & Logging",
+        "Deployment & CI/CD",
+        "Fault Tolerance Mechanisms",
+        "Input Validation Testing"
+      ],
+      "tech_stack": [
+        "Node.js",
+        "PostgreSQL",
+        "Kafka",
+        "Grafana",
+        "Prometheus",
+        "React"
+      ],
+      "complexity": "complex",
+      "confidence": 0.91,
+      "ai_generated": true,
+      "matched_template": null,
+      "goal_length": 209,
+      "elapsed_seconds": 6.76,
+      "classification": {
+        "authentication_identity": {
+          "recognized": true,
+          "audience": "both",
+          "matched_keywords": [
+            "authentication"
+          ],
+          "hit_count": 3,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "authorization_rbac": {
+          "recognized": false,
+          "audience": "both",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "data_persistence": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "admin_operations": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "observability_monitoring": {
+          "recognized": true,
+          "audience": "operator",
+          "matched_keywords": [
+            "alerting",
+            "grafana",
+            "logging",
+            "logs",
+            "metrics",
+            "observability",
+            "prometheus"
+          ],
+          "hit_count": 12,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "deployment_infrastructure": {
+          "recognized": true,
+          "audience": "operator",
+          "matched_keywords": [
+            "ci/cd",
+            "continuous integration",
+            "infrastructure"
+          ],
+          "hit_count": 4,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "payments_billing": {
+          "recognized": false,
+          "audience": "both",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "realtime_synchronization": {
+          "recognized": true,
+          "audience": "user",
+          "matched_keywords": [
+            "realtime"
+          ],
+          "hit_count": 1,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "integrations_external": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "ai_orchestration": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "reliability_recovery": {
+          "recognized": true,
+          "audience": "operator",
+          "matched_keywords": [
+            "retries"
+          ],
+          "hit_count": 1,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "compliance_security": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "collaboration_multiplayer": {
+          "recognized": false,
+          "audience": "user",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "notifications_delivery": {
+          "recognized": false,
+          "audience": "both",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "analytics_reporting": {
+          "recognized": true,
+          "audience": "both",
+          "matched_keywords": [
+            "dashboard"
+          ],
+          "hit_count": 2,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "qa_edge_cases": {
+          "recognized": true,
+          "audience": "operator",
+          "matched_keywords": [
+            "input validation",
+            "validation"
+          ],
+          "hit_count": 5,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        }
+      },
+      "asymmetry": {
+        "user_side_coverage": 0.429,
+        "operator_side_coverage": 0.429,
+        "user_recognized": 3,
+        "operator_recognized": 6,
+        "user_total": 7,
+        "operator_total": 14,
+        "asymmetry_ratio": 1.0,
+        "asymmetric_high": false
+      }
+    },
+    {
+      "archetype_id": "marketplace",
+      "archetype_name": "Two-sided marketplace",
+      "brief": "Build an online marketplace where buyers find services and sellers list offers, messages and bookings happen on-platform, payments held in escrow until delivery, with reviews and dispute handling. Real production product.",
+      "estimate": {
+        "base": 2500.0,
+        "multiplier": 0.75,
+        "final_price": 158757.15,
+        "implementation_price": 20999.62,
+        "reality_multiplier": 7.56,
+        "timeline": "15-16 weeks",
+        "complexity": "complex",
+        "quality_band": "enhanced",
+        "estimated_hours": 642
+      },
+      "reality_layer": {
+        "axes": {
+          "product_maturity": "production",
+          "system_coupling": "platform",
+          "unknowns": "medium",
+          "realtime_pressure": "collaborative",
+          "longevity": "long_term"
+        },
+        "axes_source": "llm_inferred",
+        "multiplier": 7.56,
+        "breakdown": [
+          {
+            "axis": "product_maturity",
+            "label": "Product maturity",
+            "level": "production",
+            "multiplier": 1.8,
+            "delta": 16799.7
+          },
+          {
+            "axis": "system_coupling",
+            "label": "System coupling",
+            "level": "platform",
+            "multiplier": 1.6,
+            "delta": 22679.59
+          },
+          {
+            "axis": "unknowns",
+            "label": "Unknowns",
+            "level": "medium",
+            "multiplier": 1.25,
+            "delta": 15119.73
+          },
+          {
+            "axis": "realtime_pressure",
+            "label": "Realtime pressure",
+            "level": "collaborative",
+            "multiplier": 1.4,
+            "delta": 30239.46
+          },
+          {
+            "axis": "longevity",
+            "label": "Longevity",
+            "level": "long_term",
+            "multiplier": 1.5,
+            "delta": 52919.05
+          }
+        ],
+        "narrative_chips": [
+          "Production-grade",
+          "Platform complexity",
+          "Discovery work",
+          "Collaboration",
+          "Long-term product"
+        ]
+      },
+      "modules_detailed": [
+        {
+          "title": "User Authentication",
+          "description": "Enable users to register, log in, and manage accounts securely.",
+          "hours": 40
+        },
+        {
+          "title": "Service Listings",
+          "description": "Allow sellers to create, edit, and manage service offers on the platform.",
+          "hours": 60
+        },
+        {
+          "title": "Search & Filter",
+          "description": "Implement search and filtering capabilities for buyers to find services easily.",
+          "hours": 50
+        },
+        {
+          "title": "Booking System",
+          "description": "Facilitate on-platform bookings for services with a user-friendly calendar interface.",
+          "hours": 70
+        },
+        {
+          "title": "Payments & Escrow",
+          "description": "Manage payment transactions with escrow system for added buyer protection.",
+          "hours": 80
+        },
+        {
+          "title": "Reviews & Ratings",
+          "description": "Enable users to rate and review services after completion.",
+          "hours": 50
+        },
+        {
+          "title": "Dispute Handling",
+          "description": "Create a process for resolving disputes between buyers and sellers effectively.",
+          "hours": 60
+        },
+        {
+          "title": "Admin Dashboard",
+          "description": "Provide administrators with tools to manage users, listings, and transactions.",
+          "hours": 70
+        },
+        {
+          "title": "Logging & Observability",
+          "description": "Implement logging for user activities and system observability for monitoring.",
+          "hours": 40
+        },
+        {
+          "title": "Deployment & CI/CD",
+          "description": "Set up deployment processes and continuous integration for reliable updates.",
+          "hours": 50
+        },
+        {
+          "title": "Data Integrity Checks",
+          "description": "Ensure consistency and validity of data across transactions and user interactions.",
+          "hours": 40,
+          "_source": "operational_hardening_pass",
+          "_category": "reliability"
+        },
+        {
+          "title": "Error Handling Strategies",
+          "description": "Implement comprehensive error handling for user interactions and system processes.",
+          "hours": 32,
+          "_source": "operational_hardening_pass",
+          "_category": "qa"
+        }
+      ],
+      "modules_preview": [
+        "User Authentication",
+        "Service Listings",
+        "Search & Filter",
+        "Booking System",
+        "Payments & Escrow",
+        "Reviews & Ratings",
+        "Dispute Handling",
+        "Admin Dashboard",
+        "Logging & Observability",
+        "Deployment & CI/CD",
+        "Data Integrity Checks",
+        "Error Handling Strategies"
+      ],
+      "tech_stack": [
+        "Node.js",
+        "React",
+        "PostgreSQL",
+        "Redis",
+        "AWS",
+        "Docker"
+      ],
+      "complexity": "complex",
+      "confidence": 0.93,
+      "ai_generated": true,
+      "matched_template": null,
+      "goal_length": 221,
+      "elapsed_seconds": 11.98,
+      "classification": {
+        "authentication_identity": {
+          "recognized": true,
+          "audience": "both",
+          "matched_keywords": [
+            "authentication",
+            "log in",
+            "register"
+          ],
+          "hit_count": 4,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "authorization_rbac": {
+          "recognized": false,
+          "audience": "both",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "data_persistence": {
+          "recognized": true,
+          "audience": "operator",
+          "matched_keywords": [
+            "consistency"
+          ],
+          "hit_count": 1,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "admin_operations": {
+          "recognized": true,
+          "audience": "operator",
+          "matched_keywords": [
+            "admin dashboard",
+            "manage users"
+          ],
+          "hit_count": 3,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "observability_monitoring": {
+          "recognized": true,
+          "audience": "operator",
+          "matched_keywords": [
+            "logging",
+            "monitoring",
+            "observability"
+          ],
+          "hit_count": 7,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "deployment_infrastructure": {
+          "recognized": true,
+          "audience": "operator",
+          "matched_keywords": [
+            "ci/cd",
+            "continuous integration",
+            "docker"
+          ],
+          "hit_count": 4,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "payments_billing": {
+          "recognized": true,
+          "audience": "both",
+          "matched_keywords": [
+            "escrow",
+            "payment"
+          ],
+          "hit_count": 4,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "realtime_synchronization": {
+          "recognized": false,
+          "audience": "user",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "integrations_external": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "ai_orchestration": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "reliability_recovery": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "compliance_security": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "collaboration_multiplayer": {
+          "recognized": false,
+          "audience": "user",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "notifications_delivery": {
+          "recognized": false,
+          "audience": "both",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "analytics_reporting": {
+          "recognized": true,
+          "audience": "both",
+          "matched_keywords": [
+            "dashboard"
+          ],
+          "hit_count": 2,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "qa_edge_cases": {
+          "recognized": true,
+          "audience": "operator",
+          "matched_keywords": [
+            "error handling"
+          ],
+          "hit_count": 3,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        }
+      },
+      "asymmetry": {
+        "user_side_coverage": 0.429,
+        "operator_side_coverage": 0.571,
+        "user_recognized": 3,
+        "operator_recognized": 8,
+        "user_total": 7,
+        "operator_total": 14,
+        "asymmetry_ratio": 0.75,
+        "asymmetric_high": false
+      }
+    },
+    {
+      "archetype_id": "multiplayer",
+      "archetype_name": "Realtime multiplayer experience",
+      "brief": "Build a realtime multiplayer collaborative whiteboard. Multiple users see each other's cursors, edit shapes together with no flicker, comment, share via link. Production product, teams use it daily.",
+      "estimate": {
+        "base": 2500.0,
+        "multiplier": 0.75,
+        "final_price": 148675.93,
+        "implementation_price": 15295.88,
+        "reality_multiplier": 9.72,
+        "timeline": "11-12 weeks",
+        "complexity": "medium",
+        "quality_band": "enhanced",
+        "estimated_hours": 462
+      },
+      "reality_layer": {
+        "axes": {
+          "product_maturity": "production",
+          "system_coupling": "platform",
+          "unknowns": "medium",
+          "realtime_pressure": "critical",
+          "longevity": "long_term"
+        },
+        "axes_source": "llm_inferred",
+        "multiplier": 9.72,
+        "breakdown": [
+          {
+            "axis": "product_maturity",
+            "label": "Product maturity",
+            "level": "production",
+            "multiplier": 1.8,
+            "delta": 12236.7
+          },
+          {
+            "axis": "system_coupling",
+            "label": "System coupling",
+            "level": "platform",
+            "multiplier": 1.6,
+            "delta": 16519.55
+          },
+          {
+            "axis": "unknowns",
+            "label": "Unknowns",
+            "level": "medium",
+            "multiplier": 1.25,
+            "delta": 11013.03
+          },
+          {
+            "axis": "realtime_pressure",
+            "label": "Realtime pressure",
+            "level": "critical",
+            "multiplier": 1.8,
+            "delta": 44052.13
+          },
+          {
+            "axis": "longevity",
+            "label": "Longevity",
+            "level": "long_term",
+            "multiplier": 1.5,
+            "delta": 49558.64
+          }
+        ],
+        "narrative_chips": [
+          "Production-grade",
+          "Platform complexity",
+          "Discovery work",
+          "Realtime",
+          "Long-term product"
+        ]
+      },
+      "modules_detailed": [
+        {
+          "title": "User authentication",
+          "description": "Securely manage user accounts and sessions for collaboration.",
+          "hours": 40
+        },
+        {
+          "title": "Real-time collaboration",
+          "description": "Enable real-time editing with cursor visibility and shape manipulation.",
+          "hours": 120
+        },
+        {
+          "title": "Commenting system",
+          "description": "Allow users to add comments on shapes and collaborate asynchronously.",
+          "hours": 60
+        },
+        {
+          "title": "Shareable links",
+          "description": "Create unique links for users to access whiteboard sessions easily.",
+          "hours": 30
+        },
+        {
+          "title": "Roles & permissions",
+          "description": "Manage user roles to control editing and commenting rights.",
+          "hours": 50
+        },
+        {
+          "title": "Logging & observability",
+          "description": "Implement logging for user actions and performance monitoring.",
+          "hours": 40
+        },
+        {
+          "title": "Deployment & CI/CD",
+          "description": "Set up continuous integration and deployment for automated builds.",
+          "hours": 50
+        },
+        {
+          "title": "Fault Tolerance",
+          "description": "Implement retries and idempotency for critical operations to ensure reliability.",
+          "hours": 40,
+          "_source": "operational_hardening_pass",
+          "_category": "reliability"
+        },
+        {
+          "title": "Edge Case Testing",
+          "description": "Develop tests for edge cases and error handling in collaborative features.",
+          "hours": 32,
+          "_source": "operational_hardening_pass",
+          "_category": "qa"
+        }
+      ],
+      "modules_preview": [
+        "User authentication",
+        "Real-time collaboration",
+        "Commenting system",
+        "Shareable links",
+        "Roles & permissions",
+        "Logging & observability",
+        "Deployment & CI/CD",
+        "Fault Tolerance",
+        "Edge Case Testing"
+      ],
+      "tech_stack": [
+        "React",
+        "Node.js",
+        "WebSocket",
+        "PostgreSQL",
+        "Redis",
+        "Docker"
+      ],
+      "complexity": "medium",
+      "confidence": 0.9,
+      "ai_generated": true,
+      "matched_template": null,
+      "goal_length": 198,
+      "elapsed_seconds": 10.49,
+      "classification": {
+        "authentication_identity": {
+          "recognized": true,
+          "audience": "both",
+          "matched_keywords": [
+            "authentication"
+          ],
+          "hit_count": 2,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "authorization_rbac": {
+          "recognized": true,
+          "audience": "both",
+          "matched_keywords": [
+            "user roles"
+          ],
+          "hit_count": 1,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "data_persistence": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "admin_operations": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "observability_monitoring": {
+          "recognized": true,
+          "audience": "operator",
+          "matched_keywords": [
+            "logging",
+            "monitoring",
+            "observability"
+          ],
+          "hit_count": 6,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "deployment_infrastructure": {
+          "recognized": true,
+          "audience": "operator",
+          "matched_keywords": [
+            "ci/cd",
+            "continuous integration",
+            "docker"
+          ],
+          "hit_count": 4,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "payments_billing": {
+          "recognized": false,
+          "audience": "both",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "realtime_synchronization": {
+          "recognized": true,
+          "audience": "user",
+          "matched_keywords": [
+            "real-time",
+            "realtime",
+            "websocket"
+          ],
+          "hit_count": 5,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "integrations_external": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "ai_orchestration": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "reliability_recovery": {
+          "recognized": true,
+          "audience": "operator",
+          "matched_keywords": [
+            "idempotency",
+            "retries"
+          ],
+          "hit_count": 2,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "compliance_security": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "collaboration_multiplayer": {
+          "recognized": true,
+          "audience": "user",
+          "matched_keywords": [
+            "commenting",
+            "comments"
+          ],
+          "hit_count": 4,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "notifications_delivery": {
+          "recognized": false,
+          "audience": "both",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "analytics_reporting": {
+          "recognized": false,
+          "audience": "both",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "qa_edge_cases": {
+          "recognized": true,
+          "audience": "operator",
+          "matched_keywords": [
+            "edge case",
+            "error handling"
+          ],
+          "hit_count": 3,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        }
+      },
+      "asymmetry": {
+        "user_side_coverage": 0.571,
+        "operator_side_coverage": 0.429,
+        "user_recognized": 4,
+        "operator_recognized": 6,
+        "user_total": 7,
+        "operator_total": 14,
+        "asymmetry_ratio": 1.333,
+        "asymmetric_high": false
+      }
+    },
+    {
+      "archetype_id": "banking_dashboard",
+      "archetype_name": "Banking-grade financial dashboard",
+      "brief": "Build a financial dashboard for a fintech: customers see accounts, transactions, transfer money between accounts, set up scheduled payments, view statements. Production banking-grade product, regulated environment.",
+      "estimate": {
+        "base": 2500.0,
+        "multiplier": 0.75,
+        "final_price": 191180.25,
+        "implementation_price": 19668.75,
+        "reality_multiplier": 9.72,
+        "timeline": "14-15 weeks",
+        "complexity": "complex",
+        "quality_band": "enhanced",
+        "estimated_hours": 600
+      },
+      "reality_layer": {
+        "axes": {
+          "product_maturity": "production",
+          "system_coupling": "platform",
+          "unknowns": "medium",
+          "realtime_pressure": "critical",
+          "longevity": "long_term"
+        },
+        "axes_source": "llm_inferred",
+        "multiplier": 9.72,
+        "breakdown": [
+          {
+            "axis": "product_maturity",
+            "label": "Product maturity",
+            "level": "production",
+            "multiplier": 1.8,
+            "delta": 15735.0
+          },
+          {
+            "axis": "system_coupling",
+            "label": "System coupling",
+            "level": "platform",
+            "multiplier": 1.6,
+            "delta": 21242.25
+          },
+          {
+            "axis": "unknowns",
+            "label": "Unknowns",
+            "level": "medium",
+            "multiplier": 1.25,
+            "delta": 14161.5
+          },
+          {
+            "axis": "realtime_pressure",
+            "label": "Realtime pressure",
+            "level": "critical",
+            "multiplier": 1.8,
+            "delta": 56646.0
+          },
+          {
+            "axis": "longevity",
+            "label": "Longevity",
+            "level": "long_term",
+            "multiplier": 1.5,
+            "delta": 63726.75
+          }
+        ],
+        "narrative_chips": [
+          "Production-grade",
+          "Platform complexity",
+          "Discovery work",
+          "Realtime",
+          "Long-term product"
+        ]
+      },
+      "modules_detailed": [
+        {
+          "title": "User authentication",
+          "description": "Secure user login and session management for accessing the dashboard.",
+          "hours": 40
+        },
+        {
+          "title": "Account overview",
+          "description": "Display user's financial accounts and their balances in real-time.",
+          "hours": 60
+        },
+        {
+          "title": "Transaction history",
+          "description": "Show detailed transaction history for each account.",
+          "hours": 80
+        },
+        {
+          "title": "Money transfers",
+          "description": "Enable users to transfer money between their accounts securely.",
+          "hours": 100
+        },
+        {
+          "title": "Scheduled payments",
+          "description": "Allow users to set up recurring payments easily.",
+          "hours": 70
+        },
+        {
+          "title": "Statements viewer",
+          "description": "Provide downloadable financial statements for user accounts.",
+          "hours": 50
+        },
+        {
+          "title": "Roles & permissions",
+          "description": "Manage user permissions and roles to enhance security and compliance.",
+          "hours": 30
+        },
+        {
+          "title": "Observability & logging",
+          "description": "Implement logging for transaction tracking and system performance monitoring.",
+          "hours": 40
+        },
+        {
+          "title": "Deployment & CI/CD",
+          "description": "Set up continuous integration and deployment for seamless updates.",
+          "hours": 50
+        },
+        {
+          "title": "Retries and Rollback",
+          "description": "Implement retries, idempotency, and rollback for transaction reliability.",
+          "hours": 40,
+          "_source": "operational_hardening_pass",
+          "_category": "reliability"
+        },
+        {
+          "title": "Validation and Testing",
+          "description": "Ensure input validation and comprehensive testing for robust error handling.",
+          "hours": 40,
+          "_source": "operational_hardening_pass",
+          "_category": "qa"
+        }
+      ],
+      "modules_preview": [
+        "User authentication",
+        "Account overview",
+        "Transaction history",
+        "Money transfers",
+        "Scheduled payments",
+        "Statements viewer",
+        "Roles & permissions",
+        "Observability & logging",
+        "Deployment & CI/CD",
+        "Retries and Rollback",
+        "Validation and Testing"
+      ],
+      "tech_stack": [
+        "React",
+        "Node.js",
+        "PostgreSQL",
+        "AWS",
+        "Docker",
+        "Kubernetes"
+      ],
+      "complexity": "complex",
+      "confidence": 0.92,
+      "ai_generated": true,
+      "matched_template": null,
+      "goal_length": 214,
+      "elapsed_seconds": 17.7,
+      "classification": {
+        "authentication_identity": {
+          "recognized": true,
+          "audience": "both",
+          "matched_keywords": [
+            "authentication",
+            "login",
+            "session"
+          ],
+          "hit_count": 4,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "authorization_rbac": {
+          "recognized": false,
+          "audience": "both",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "data_persistence": {
+          "recognized": true,
+          "audience": "operator",
+          "matched_keywords": [
+            "transaction"
+          ],
+          "hit_count": 5,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "admin_operations": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "observability_monitoring": {
+          "recognized": true,
+          "audience": "operator",
+          "matched_keywords": [
+            "logging",
+            "monitoring",
+            "observability"
+          ],
+          "hit_count": 6,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "deployment_infrastructure": {
+          "recognized": true,
+          "audience": "operator",
+          "matched_keywords": [
+            "ci/cd",
+            "continuous integration",
+            "docker",
+            "kubernetes"
+          ],
+          "hit_count": 5,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "payments_billing": {
+          "recognized": false,
+          "audience": "both",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "realtime_synchronization": {
+          "recognized": true,
+          "audience": "user",
+          "matched_keywords": [
+            "real-time",
+            "realtime"
+          ],
+          "hit_count": 2,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "integrations_external": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "ai_orchestration": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "reliability_recovery": {
+          "recognized": true,
+          "audience": "operator",
+          "matched_keywords": [
+            "idempotency",
+            "retries"
+          ],
+          "hit_count": 4,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "compliance_security": {
+          "recognized": true,
+          "audience": "operator",
+          "matched_keywords": [
+            "compliance"
+          ],
+          "hit_count": 1,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "collaboration_multiplayer": {
+          "recognized": false,
+          "audience": "user",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "notifications_delivery": {
+          "recognized": false,
+          "audience": "both",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "analytics_reporting": {
+          "recognized": true,
+          "audience": "both",
+          "matched_keywords": [
+            "dashboard"
+          ],
+          "hit_count": 1,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "qa_edge_cases": {
+          "recognized": true,
+          "audience": "operator",
+          "matched_keywords": [
+            "error handling",
+            "input validation",
+            "validation"
+          ],
+          "hit_count": 5,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        }
+      },
+      "asymmetry": {
+        "user_side_coverage": 0.429,
+        "operator_side_coverage": 0.571,
+        "user_recognized": 3,
+        "operator_recognized": 8,
+        "user_total": 7,
+        "operator_total": 14,
+        "asymmetry_ratio": 0.75,
+        "asymmetric_high": false
+      }
+    },
+    {
+      "archetype_id": "enterprise_erp",
+      "archetype_name": "Enterprise ERP system",
+      "brief": "Build an ERP for mid-size manufacturers: inventory, purchase orders, invoices, general ledger, customer/vendor records, basic HR, role-based access. Used by 50-500 employees per company. Production, long-term contract.",
+      "estimate": {
+        "base": 2500.0,
+        "multiplier": 0.75,
+        "final_price": 135917.51,
+        "implementation_price": 21886.88,
+        "reality_multiplier": 6.21,
+        "timeline": "16-17 weeks",
+        "complexity": "complex",
+        "quality_band": "enhanced",
+        "estimated_hours": 670
+      },
+      "reality_layer": {
+        "axes": {
+          "product_maturity": "production",
+          "system_coupling": "platform",
+          "unknowns": "medium",
+          "realtime_pressure": "async",
+          "longevity": "long_term"
+        },
+        "axes_source": "llm_inferred",
+        "multiplier": 6.21,
+        "breakdown": [
+          {
+            "axis": "product_maturity",
+            "label": "Product maturity",
+            "level": "production",
+            "multiplier": 1.8,
+            "delta": 17509.5
+          },
+          {
+            "axis": "system_coupling",
+            "label": "System coupling",
+            "level": "platform",
+            "multiplier": 1.6,
+            "delta": 23637.83
+          },
+          {
+            "axis": "unknowns",
+            "label": "Unknowns",
+            "level": "medium",
+            "multiplier": 1.25,
+            "delta": 15758.55
+          },
+          {
+            "axis": "realtime_pressure",
+            "label": "Realtime pressure",
+            "level": "async",
+            "multiplier": 1.15,
+            "delta": 11818.91
+          },
+          {
+            "axis": "longevity",
+            "label": "Longevity",
+            "level": "long_term",
+            "multiplier": 1.5,
+            "delta": 45305.84
+          }
+        ],
+        "narrative_chips": [
+          "Production-grade",
+          "Platform complexity",
+          "Discovery work",
+          "Long-term product"
+        ]
+      },
+      "modules_detailed": [
+        {
+          "title": "User Authentication",
+          "description": "Manage user identities and session management securely.",
+          "hours": 40
+        },
+        {
+          "title": "Roles & Permissions",
+          "description": "Define user roles and permissions for secure access control.",
+          "hours": 30
+        },
+        {
+          "title": "Inventory Management",
+          "description": "Track and manage inventory levels and stock movements effectively.",
+          "hours": 80
+        },
+        {
+          "title": "Purchase Orders",
+          "description": "Create, track, and manage purchase orders for suppliers.",
+          "hours": 60
+        },
+        {
+          "title": "Invoicing System",
+          "description": "Generate and send invoices to customers with payment tracking.",
+          "hours": 70
+        },
+        {
+          "title": "General Ledger",
+          "description": "Maintain accounting records and financial reporting for compliance.",
+          "hours": 90
+        },
+        {
+          "title": "Customer/Vendor Records",
+          "description": "Store and manage data for customers and vendors efficiently.",
+          "hours": 50
+        },
+        {
+          "title": "Basic HR Module",
+          "description": "Manage employee records, roles, and payroll basics.",
+          "hours": 70
+        },
+        {
+          "title": "Deployment & CI/CD",
+          "description": "Set up automated deployment and continuous integration for the application.",
+          "hours": 60
+        },
+        {
+          "title": "Observability & Logging",
+          "description": "Implement monitoring and logging systems for application health tracking.",
+          "hours": 50
+        },
+        {
+          "title": "Data Integrity Checks",
+          "description": "Ensure data consistency and integrity across the system during operations.",
+          "hours": 40,
+          "_source": "operational_hardening_pass",
+          "_category": "reliability"
+        },
+        {
+          "title": "Error Handling Strategies",
+          "description": "Implement robust error handling to manage unforeseen scenarios gracefully.",
+          "hours": 30,
+          "_source": "operational_hardening_pass",
+          "_category": "qa"
+        }
+      ],
+      "modules_preview": [
+        "User Authentication",
+        "Roles & Permissions",
+        "Inventory Management",
+        "Purchase Orders",
+        "Invoicing System",
+        "General Ledger",
+        "Customer/Vendor Records",
+        "Basic HR Module",
+        "Deployment & CI/CD",
+        "Observability & Logging",
+        "Data Integrity Checks",
+        "Error Handling Strategies"
+      ],
+      "tech_stack": [
+        "JavaScript",
+        "Node.js",
+        "MongoDB",
+        "React",
+        "Docker",
+        "AWS"
+      ],
+      "complexity": "complex",
+      "confidence": 0.92,
+      "ai_generated": true,
+      "matched_template": null,
+      "goal_length": 218,
+      "elapsed_seconds": 12.31,
+      "classification": {
+        "authentication_identity": {
+          "recognized": true,
+          "audience": "both",
+          "matched_keywords": [
+            "authentication",
+            "session"
+          ],
+          "hit_count": 3,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "authorization_rbac": {
+          "recognized": true,
+          "audience": "both",
+          "matched_keywords": [
+            "access control",
+            "roles and permissions",
+            "user roles"
+          ],
+          "hit_count": 3,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "data_persistence": {
+          "recognized": true,
+          "audience": "operator",
+          "matched_keywords": [
+            "consistency"
+          ],
+          "hit_count": 1,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "admin_operations": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "observability_monitoring": {
+          "recognized": true,
+          "audience": "operator",
+          "matched_keywords": [
+            "logging",
+            "monitoring",
+            "observability"
+          ],
+          "hit_count": 6,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "deployment_infrastructure": {
+          "recognized": true,
+          "audience": "operator",
+          "matched_keywords": [
+            "ci/cd",
+            "continuous integration",
+            "docker"
+          ],
+          "hit_count": 4,
+          "false_simplicity": true,
+          "false_simplicity_evidence": "roles, and payroll basics.\ndeployment & ci/cd\nset up automated deployment and continu"
+        },
+        "payments_billing": {
+          "recognized": true,
+          "audience": "both",
+          "matched_keywords": [
+            "invoicing",
+            "payment"
+          ],
+          "hit_count": 3,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "realtime_synchronization": {
+          "recognized": false,
+          "audience": "user",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "integrations_external": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "ai_orchestration": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "reliability_recovery": {
+          "recognized": false,
+          "audience": "operator",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "compliance_security": {
+          "recognized": true,
+          "audience": "operator",
+          "matched_keywords": [
+            "compliance"
+          ],
+          "hit_count": 1,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "collaboration_multiplayer": {
+          "recognized": false,
+          "audience": "user",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "notifications_delivery": {
+          "recognized": false,
+          "audience": "both",
+          "matched_keywords": [],
+          "hit_count": 0,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "analytics_reporting": {
+          "recognized": true,
+          "audience": "both",
+          "matched_keywords": [
+            "reporting"
+          ],
+          "hit_count": 1,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        },
+        "qa_edge_cases": {
+          "recognized": true,
+          "audience": "operator",
+          "matched_keywords": [
+            "error handling"
+          ],
+          "hit_count": 3,
+          "false_simplicity": false,
+          "false_simplicity_evidence": null
+        }
+      },
+      "asymmetry": {
+        "user_side_coverage": 0.571,
+        "operator_side_coverage": 0.643,
+        "user_recognized": 4,
+        "operator_recognized": 9,
+        "user_total": 7,
+        "operator_total": 14,
+        "asymmetry_ratio": 0.889,
+        "asymmetric_high": false
+      }
+    }
+  ]
+}

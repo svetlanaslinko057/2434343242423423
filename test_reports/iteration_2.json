@@ -1,0 +1,51 @@
+{
+  "summary": "End-to-end backend testing of the new 'Trust this device for 30 days' addition to the 2FA flow on both mobile (/api/mobile/auth/login + /api/mobile/auth/2fa/verify) and web cookie (/api/auth/login + /api/auth/2fa/verify) paths. 15/15 new trusted_devices tests pass and 19/19 pre-existing 2FA tests continue to pass after the addition (34/34 total). All scenarios in the review request were exercised: untrusted/known/different/missing/short fingerprints, trust+session issuance, re-trust idempotency, list/delete/revoke-all device management, expired-trust fail-safe, trust_device=true silent no-op without fingerprint, cross-user isolation with same fingerprint string, and web /auth/2fa/verify sensitive-field stripping (totp_secret, totp_pending_secret, recovery_codes, password_hash).",
+  "backend_issues": {
+    "critical": [],
+    "minor": [
+      {
+        "endpoint": "is_device_trusted (two_factor.py:96)",
+        "issue": "Each trusted-device lookup loops through every record for the user and bcrypt-checks each one (rounds=8). For users with many devices this is O(n) * bcrypt-time. Bounded by 30-day TTL and small per-user device counts, so non-blocking. Could index lookups with a non-secret prefix hint if scale ever justifies it."
+      },
+      {
+        "endpoint": "is_device_trusted",
+        "issue": "Does not bump last_used_at on a trust HIT (only on trust_device write). The /trusted-devices list therefore shows last_used_at = created_at until the user re-runs the 2FA challenge again. Minor UX gap, not a security issue."
+      }
+    ]
+  },
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "test_report_links": [
+    "/app/backend/tests/test_trusted_devices.py",
+    "/app/backend/tests/test_two_factor.py",
+    "/app/test_reports/pytest/trusted_devices_results.xml",
+    "/app/test_reports/pytest/two_factor_results.xml"
+  ],
+  "action_items": [],
+  "critical_code_review_comments": [
+    "Trusted-device write/read are bcrypt-hashed (rounds=8) and keyed on (user_id, fingerprint_hash) — DB compromise alone cannot grant device trust to an attacker. Good defence in depth.",
+    "Fingerprints shorter than 8 chars are silently treated as untrusted both on read AND on write (is_device_trusted + trust_device early-return). This is a sensible defence against trivially-collidable fingerprints; verified in test.",
+    "trust_device updates the existing record's expiry rather than inserting duplicates (verified — re-trust after manual expiry yields exactly 1 doc). Good.",
+    "Web /api/auth/2fa/verify explicitly strips totp_secret, totp_pending_secret, recovery_codes, and password_hash before returning the user document. Mobile /mobile/auth/2fa/verify shapes via _to_mobile_user which already excludes secrets — consistent.",
+    "/api/account/me/2fa/trusted-devices/{device_id} DELETE is correctly scoped to {user_id, device_id} pair, so user A cannot revoke user B's device by guessing device_id (404). Verified.",
+    "TTL index on trusted_devices.expires_at_ts is created in ensure_indexes() so expired grants self-purge — verified that an expired record (manually backdated) is treated as untrusted by is_device_trusted even before the TTL sweep fires.",
+    "Suggestion (non-blocking): set last_used_at on each successful trust HIT so the management UI reflects real recency. Currently only re-trust updates it.",
+    "Suggestion (non-blocking): the global error envelope wraps HTTPException.detail into {ok,false,code,message} — same observation as iteration 1; clients expecting FastAPI's default {detail} shape will see message instead. Consistent across the app."
+  ],
+  "updated_files": [
+    "/app/backend/tests/test_trusted_devices.py"
+  ],
+  "success_rate": {
+    "backend": "100% (34/34 — 15 new trusted_devices + 19 pre-existing 2FA)",
+    "frontend": "not tested (per request — backend only)"
+  },
+  "test_credentials": "john@atlas.dev / dev123 and admin@atlas.dev / admin123 (from /app/memory/test_credentials.md). Tests reset both users' 2FA state and trusted_devices via direct MongoDB writes before and after each test using the `enrolled` fixture.",
+  "seed_data_creation": "None — relied on existing seed users john@atlas.dev and admin@atlas.dev. The `enrolled` fixture enables 2FA for john on every test and tears it down, plus purges trusted_devices. The cross-user isolation test transiently enables 2FA on admin and resets it after.",
+  "retest_needed": false,
+  "main_agent_can_self_test": true,
+  "context_for_next_testing_agent": "Re-run: `cd /app && REACT_APP_BACKEND_URL=https://mobile-expo-app-1.preview.emergentagent.com MONGO_URL=mongodb://localhost:27017 DB_NAME=test_database /root/.venv/bin/python -m pytest backend/tests/test_trusted_devices.py backend/tests/test_two_factor.py -v`. Each test is order-independent — the `enrolled` fixture clears both `users` (2FA state) and `trusted_devices` rows for john before+after. Cross-user test (TestCrossUserIsolation, TestTrustedDevicesManagement::test_revoke_all_clears_user_only) also touches admin@atlas.dev and resets it in a `finally` block. Frontend (Expo + web SPA) was skipped per main agent instruction.",
+  "rca of the issue": "N/A — no functional bugs found. Backend correctly: (1) issues challenge for untrusted/missing/short fingerprints, (2) short-circuits with valid trust both on mobile and web login paths, (3) re-trust updates expiry rather than duplicating, (4) DELETE and revoke-all are user-scoped (admin's trust is preserved when john revokes-all), (5) expired records (forced via mongo) are not treated as trusted, (6) web /auth/2fa/verify strips all four sensitive fields. All 15 trusted_devices tests + 19 pre-existing 2FA tests green."
+}

@@ -1,0 +1,81 @@
+{
+  "summary": "Stage 4 tester surface tested end-to-end. Backend: 8/11 pytest cases pass. Three CRITICAL backend gaps found that block the resolve-entry routing contract AND the documented idempotency contract. Frontend: tester/home renders with correct testIDs, 4 KPI cards, Open Queue CTA, MY VALIDATIONS section, and bottom tabs show exactly 3 entries (Home/Queue/History) — validation/[id] correctly hidden via href:null.",
+  "backend_issues": {
+    "critical": [
+      {
+        "endpoint": "POST /api/mobile/auth/login (tester@atlas.dev)",
+        "issue": "Response.user is MISSING both `states` and `active_context`. Actual user keys: ['active_modules','active_role','capacity','email','is_demo','level','name','picture','rating','role','roles','skills','strikes','tier','user_id']. The spec requires `user.states` to include 'tester' and `user.active_context='tester'`. Today only `role='tester'`, `active_role='tester'`, and `roles=[...]` are returned. agent-to-agent context (smoke_verified) claimed the login returns these — it does NOT.",
+        "priority": "CRITICAL"
+      },
+      {
+        "endpoint": "GET /api/auth/me (bearer tester token)",
+        "issue": "Response is MISSING `states`, `active_context`, and even `active_role`. Actual keys: ['active_load','behavior_risk_level','completed_tasks','created_at','email','level','marketplace_blocked_until','name','picture','rating','role','skills','strikes','subscription','subscription_started_at','user_id']. /api/auth/me is what `resolveUserEntry()` in /app/frontend/src/resolve-entry.ts consumes — that function does `if (states.length === 0) return '/gateway'`. So a fresh tester landing on the app will be redirected to /gateway INSTEAD of /tester/home. The RESOLVE-ENTRY review item in the request is therefore failing on the backend contract, not the frontend.",
+        "priority": "CRITICAL"
+      },
+      {
+        "endpoint": "POST /api/validation/{id}/pass (and /fail) with Idempotency-Key",
+        "issue": "Calling pass a 2nd time with the SAME Idempotency-Key returns HTTP 400 `{ok:false, code:'invalid_input', message:'Cannot pass validation in status: passed'}` instead of replaying the original 200 response. The header is being IGNORED — the endpoint just re-runs the status-transition guard. Per spec: '2nd call to the SAME action with the same Idempotency-Key must be idempotent (return same shape, no double transition)'. Verified live against val_2119715865d2 (pending → pass → pass-replay = 400). Different-action-after-decided (pass then fail) DOES correctly 400 with a hint — that part works.",
+        "priority": "CRITICAL"
+      }
+    ],
+    "minor": [
+      {
+        "endpoint": "GET /api/tester/validation-tasks (historical)",
+        "issue": "Backend logs from earlier today show ResponseValidationError: missing `work_unit_id` for all 6 seeded docs — proves the seed was created BEFORE the backfill. Current calls (12:33 UTC) return 200 with 6 items. Likely fixed by the work_unit_id backfill mentioned in the agent-to-agent note, but worth confirming the seed routine itself writes work_unit_id on first creation (next fresh DB will reproduce)."
+      }
+    ]
+  },
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [
+      {
+        "flow": "RESOLVE-ENTRY single-role tester → /tester/home",
+        "issue": "Cannot be verified end-to-end because /api/auth/me does not expose `states` or `active_context`. resolveUserEntry({...me}) will see states.length===0 and route to /gateway. Frontend code is correct (resolve-entry.ts already has the `if (states.includes('tester')) return '/tester/home'` and active_context==='tester' branches). Pure backend gap.",
+        "affected_testIDs": []
+      }
+    ],
+    "design_issues": [],
+    "react_native_issues": []
+  },
+  "verified_working": [
+    "GET /api/tester/validation-tasks returns 6 items with assigned_to + work_unit_id keys (NOT tester_id/unit_id)",
+    "Seed mix: pending + in_progress + passed + failed all present",
+    "GET /api/tester/issues → array",
+    "GET /api/tester/validation/{in_progress_id}/details → work_unit.title='Onboarding Flow' and submission.summary populated",
+    "GET /api/tester/validation/{in_progress_id}/issues returns the previously-filed seed issue (length>=1)",
+    "POST /api/validation/{id}/issue (with Idempotency-Key) → 200 and immediately visible in /issues listing (verified by title match)",
+    "POST /api/validation/{id}/fail AFTER /pass → 400 with readable hint (cross-action guard works)",
+    "Tester Home web preview: tester-home testID present, 4 KPI cards (Mine open/Queue/Passed today/Failed today), Open Queue CTA, MY VALIDATIONS empty-state, footer issues-link, bottom tabs render exactly 3 entries (Home/Queue/History) — validation/[id] hidden as expected"
+  ],
+  "test_report_links": [
+    "/app/backend/tests/test_tester_surface.py",
+    "/app/test_reports/pytest/tester_surface_results.xml"
+  ],
+  "action_items": [
+    "BACKEND: in the /api/mobile/auth/login user shape, populate `states` (list of contexts, must include 'tester' for tester user) and `active_context` ('tester'). The presence of `active_role`+`roles` is not enough — frontend resolve-entry.ts and the spec both key off `states` + `active_context`.",
+    "BACKEND: in /api/auth/me, expose `states` and `active_context` on the user payload (same fields as login). Without this, resolveUserEntry always returns /gateway and the entire single-role tester routing breaks.",
+    "BACKEND: make POST /api/validation/{id}/pass and /api/validation/{id}/fail HONOR the Idempotency-Key header. On replay with the same key, return the cached response (200) rather than re-running the status-guard and 400-ing. The cross-action guard (pass then fail) is fine and should stay.",
+    "BACKEND (minor): ensure the seed for validation_tasks writes `work_unit_id` directly on creation, not via a post-hoc backfill — older logs prove the first response was a 500 ResponseValidationError on missing work_unit_id for all 6 docs.",
+    "CREDENTIALS DOC: /app/memory/test_credentials.md still does not list `tester@atlas.dev / tester123`. Add it for future test agents."
+  ],
+  "critical_code_review_comments": [
+    "Idempotency contract is undocumented at the route level — neither /pass nor /fail read the Idempotency-Key header in the handler (verified by behaviour). Either implement a shared idempotency middleware or document that pass/fail are NOT idempotent.",
+    "Two ValidationTask Pydantic models exist (per agent-to-agent note). The LATER one wins, which is fragile — Pydantic doesn't raise on duplicate class names within the same module, you just silently lose the earlier model. Consider de-duping or renaming.",
+    "/api/auth/me payload is mounted on a different DTO than /api/mobile/auth/login user — they expose different field sets (login has active_role/roles/active_modules/capacity, me has subscription/level/marketplace_blocked_until). Single source of truth for the user shape would prevent the states/active_context drift seen here.",
+    "Frontend tester/home, validations, validation/[id], history screens are clean: every interactive element has a testID, runtime-client is used throughout (no axios), KeyboardAvoidingView is wired on the detail screen, decision buttons are gated by `canDecide = status in ['pending','in_progress']`, and href:null hides the deep-link route from tabs as required.",
+    "frontend/.env exports EXPO_PUBLIC_BACKEND_URL but the system prompt's PROTECTED_VARIABLES says EXPO_BACKEND_URL. Tests should consume EXPO_PUBLIC_BACKEND_URL going forward (already done in test_tester_surface.py)."
+  ],
+  "updated_files": [
+    "/app/backend/tests/test_tester_surface.py (new)"
+  ],
+  "success_rate": {
+    "backend": "73% (8/11) — 3 critical contract failures (login states/active_context, /auth/me states/active_context, pass-idempotency)",
+    "frontend": "smoke-only — tester/home renders correctly with all testIDs + 3-tab bottom nav. Full flow not exercised because auth-chain routing is blocked by backend gap above."
+  },
+  "test_credentials": "tester@atlas.dev / tester123 was NOT in /app/memory/test_credentials.md — taken from review_request. The login works (200 + correct role), but the response shape is incomplete (see critical findings).",
+  "seed_data_creation": "Created one TEST_ issue per pytest run via POST /api/validation/{in_progress_id}/issue. Title prefixed 'TEST_ Issue <uuid>' for easy cleanup. Pass-test also flipped one pending validation to 'passed' — once consumed the seed needs a pending re-seed before this test file can re-run cleanly (or use a fresh idempotency key on a still-pending row).",
+  "retest_needed": true,
+  "should_main_agent_self_test": false,
+  "context_for_next_testing_agent": "Re-run: `cd /app && /root/.venv/bin/python -m pytest backend/tests/test_tester_surface.py -v --tb=short`. NOTE: test_pass_idempotent_same_key consumes one pending validation per run (transitions it to passed) — main agent must re-seed at least 1 unclaimed pending row before each re-test, OR change the test to seed-its-own pending row via a backend admin endpoint. The 3 critical failures (login.states, me.states, pass idempotency) will all reproduce as long as the backend DTOs and pass/fail handlers stay as today.",
+  "rca_of_issue": "1) Login/me missing states+active_context: the user serializer used by /api/mobile/auth/login and /api/auth/me appears to predate the 'states/active_context' model — it still exposes the legacy 'role/active_role/roles' triplet. The frontend was already migrated to read states+active_context (see /app/frontend/src/resolve-entry.ts), so they desynced. Fix: extend the user DTO in /app/backend/server.py to include states (list derived from roles+role) and active_context (mirror of active_role) on BOTH endpoints. 2) Pass/fail not idempotent: the handlers run the FSM guard before consulting any Idempotency-Key cache. There is no Idempotency-Key→response cache (verified by behaviour). Fix: wrap pass/fail handlers with a shared idempotency middleware that caches the first response keyed by (user_id, route, Idempotency-Key) and replays it on subsequent calls within a TTL (e.g., 24h). Cross-action guard (pass-then-fail) must remain — that's a different code path and works."
+}

@@ -1,0 +1,310 @@
+{
+  "run_id": "cbf8b7b6",
+  "ids": {
+    "run_id": "cbf8b7b6",
+    "developer_id": "smoke_devW_cbf8b7b6"
+  },
+  "part_1_canonical": [
+    {
+      "step": "T0_seeded_wallet_2000_available",
+      "at": "2026-05-14T20:49:10.973497+00:00",
+      "raw": {
+        "wallet.earned_lifetime": 2000.0,
+        "wallet.available_balance": 2000.0,
+        "wallet.pending_withdrawal": 0.0,
+        "wallet.withdrawn_lifetime": 0.0,
+        "dev_withdrawals_count": 0,
+        "dev_withdrawals": [],
+        "withdrawals_collection_count": 0,
+        "withdrawals_collection": []
+      },
+      "developer_divergence": {
+        "ok": false,
+        "classes": [
+          "wallet_journal_drift",
+          "legacy_drift_total_earnings"
+        ],
+        "withdrawal_detail": null
+      }
+    },
+    {
+      "step": "T1_developer_requested_800",
+      "at": "2026-05-14T20:49:10.987341+00:00",
+      "raw": {
+        "wallet.earned_lifetime": 2000.0,
+        "wallet.available_balance": 1200.0,
+        "wallet.pending_withdrawal": 800.0,
+        "wallet.withdrawn_lifetime": 0.0,
+        "dev_withdrawals_count": 1,
+        "dev_withdrawals": [
+          {
+            "id": "wd_fa8aeef6f7e6",
+            "amount": 800.0,
+            "status": "requested"
+          }
+        ],
+        "withdrawals_collection_count": 0,
+        "withdrawals_collection": []
+      },
+      "developer_divergence": {
+        "ok": false,
+        "classes": [
+          "wallet_journal_drift",
+          "legacy_drift_total_earnings"
+        ],
+        "withdrawal_detail": null
+      }
+    },
+    {
+      "step": "T2_canonical_admin_approved",
+      "at": "2026-05-14T20:49:10.989841+00:00",
+      "raw": {
+        "wallet.earned_lifetime": 2000.0,
+        "wallet.available_balance": 1200.0,
+        "wallet.pending_withdrawal": 800.0,
+        "wallet.withdrawn_lifetime": 0.0,
+        "dev_withdrawals_count": 1,
+        "dev_withdrawals": [
+          {
+            "id": "wd_fa8aeef6f7e6",
+            "amount": 800.0,
+            "status": "approved"
+          }
+        ],
+        "withdrawals_collection_count": 0,
+        "withdrawals_collection": []
+      },
+      "developer_divergence": {
+        "ok": false,
+        "classes": [
+          "wallet_journal_drift",
+          "legacy_drift_total_earnings"
+        ],
+        "withdrawal_detail": null
+      }
+    },
+    {
+      "step": "T3_canonical_admin_marked_paid",
+      "at": "2026-05-14T20:49:10.993102+00:00",
+      "raw": {
+        "wallet.earned_lifetime": 2000.0,
+        "wallet.available_balance": 1200.0,
+        "wallet.pending_withdrawal": 0.0,
+        "wallet.withdrawn_lifetime": 800.0,
+        "dev_withdrawals_count": 1,
+        "dev_withdrawals": [
+          {
+            "id": "wd_fa8aeef6f7e6",
+            "amount": 800.0,
+            "status": "paid"
+          }
+        ],
+        "withdrawals_collection_count": 0,
+        "withdrawals_collection": []
+      },
+      "developer_divergence": {
+        "ok": false,
+        "classes": [
+          "wallet_journal_drift",
+          "legacy_drift_total_earnings"
+        ],
+        "withdrawal_detail": null
+      }
+    }
+  ],
+  "part_2_split_brain": [
+    {
+      "step": "S0_planted_row_in_withdrawals_collection",
+      "at": "2026-05-14T20:49:11.005516+00:00",
+      "raw": {
+        "wallet.earned_lifetime": 2000.0,
+        "wallet.available_balance": 1200.0,
+        "wallet.pending_withdrawal": 0.0,
+        "wallet.withdrawn_lifetime": 800.0,
+        "dev_withdrawals_count": 1,
+        "dev_withdrawals": [
+          {
+            "id": "wd_fa8aeef6f7e6",
+            "amount": 800.0,
+            "status": "paid"
+          }
+        ],
+        "withdrawals_collection_count": 1,
+        "withdrawals_collection": [
+          {
+            "id": "wd_mob_39a513be84",
+            "amount": 500.0,
+            "status": "pending"
+          }
+        ]
+      },
+      "developer_divergence": {
+        "ok": false,
+        "classes": [
+          "wallet_journal_drift",
+          "legacy_drift_total_earnings"
+        ],
+        "withdrawal_detail": null
+      }
+    },
+    {
+      "step": "S1_admin_mobile_approved_in_withdrawals_collection",
+      "at": "2026-05-14T20:49:11.009324+00:00",
+      "raw": {
+        "wallet.earned_lifetime": 2000.0,
+        "wallet.available_balance": 1200.0,
+        "wallet.pending_withdrawal": 0.0,
+        "wallet.withdrawn_lifetime": 800.0,
+        "dev_withdrawals_count": 1,
+        "dev_withdrawals": [
+          {
+            "id": "wd_fa8aeef6f7e6",
+            "amount": 800.0,
+            "status": "paid"
+          }
+        ],
+        "withdrawals_collection_count": 1,
+        "withdrawals_collection": [
+          {
+            "id": "wd_mob_39a513be84",
+            "amount": 500.0,
+            "status": "approved"
+          }
+        ]
+      },
+      "developer_divergence": {
+        "ok": false,
+        "classes": [
+          "wallet_journal_drift",
+          "legacy_drift_total_earnings"
+        ],
+        "withdrawal_detail": null
+      },
+      "admin_mobile_result": {
+        "approved_in_collection": "withdrawals",
+        "withdrawal_id": "wd_mob_39a513be84"
+      }
+    },
+    {
+      "step": "S2_check_mobile_row_visibility_in_dev_view",
+      "at": "2026-05-14T20:49:11.013021+00:00",
+      "raw": {
+        "wallet.earned_lifetime": 2000.0,
+        "wallet.available_balance": 1200.0,
+        "wallet.pending_withdrawal": 0.0,
+        "wallet.withdrawn_lifetime": 800.0,
+        "dev_withdrawals_count": 1,
+        "dev_withdrawals": [
+          {
+            "id": "wd_fa8aeef6f7e6",
+            "amount": 800.0,
+            "status": "paid"
+          }
+        ],
+        "withdrawals_collection_count": 1,
+        "withdrawals_collection": [
+          {
+            "id": "wd_mob_39a513be84",
+            "amount": 500.0,
+            "status": "approved"
+          }
+        ]
+      },
+      "developer_divergence": {
+        "ok": false,
+        "classes": [
+          "wallet_journal_drift",
+          "legacy_drift_total_earnings"
+        ],
+        "withdrawal_detail": null
+      },
+      "mobile_row_visible_to_developer": false
+    },
+    {
+      "step": "S3_wallet_state_after_mobile_action",
+      "at": "2026-05-14T20:49:11.016436+00:00",
+      "raw": {
+        "wallet.earned_lifetime": 2000.0,
+        "wallet.available_balance": 1200.0,
+        "wallet.pending_withdrawal": 0.0,
+        "wallet.withdrawn_lifetime": 800.0,
+        "dev_withdrawals_count": 1,
+        "dev_withdrawals": [
+          {
+            "id": "wd_fa8aeef6f7e6",
+            "amount": 800.0,
+            "status": "paid"
+          }
+        ],
+        "withdrawals_collection_count": 1,
+        "withdrawals_collection": [
+          {
+            "id": "wd_mob_39a513be84",
+            "amount": 500.0,
+            "status": "approved"
+          }
+        ]
+      },
+      "developer_divergence": {
+        "ok": false,
+        "classes": [
+          "wallet_journal_drift",
+          "legacy_drift_total_earnings"
+        ],
+        "withdrawal_detail": null
+      },
+      "wallet_post_mobile_approve": {
+        "available_balance": 1200.0,
+        "pending_withdrawal": 0.0,
+        "withdrawn_lifetime": 800.0
+      }
+    }
+  ],
+  "split_brain_summary": {
+    "canonical_path_complete": {
+      "withdrawal_id": "wd_fa8aeef6f7e6",
+      "amount": 800.0,
+      "final_status_in_dev_withdrawals": "paid",
+      "wallet_pending_withdrawal_after": 0.0,
+      "wallet_withdrawn_lifetime_after": 800.0,
+      "expected": "pending=0, withdrawn=800 (wallet credited correctly)"
+    },
+    "mobile_admin_path_orphan": {
+      "withdrawal_id": "wd_mob_39a513be84",
+      "amount": 500.0,
+      "final_status_in_withdrawals_collection": "approved",
+      "visible_in_dev_withdrawals_collection": false,
+      "wallet_pending_withdrawal_after": 0.0,
+      "wallet_withdrawn_lifetime_after": 800.0,
+      "expected_under_decision_4_recommendation_4A": "row visible in dev_withdrawals AND wallet adjusted — NEITHER happened"
+    },
+    "decision_4_evidence": {
+      "split_brain_confirmed": true,
+      "writers": {
+        "dev_withdrawals": [
+          "server.py:11087/11147/11169/11210"
+        ],
+        "withdrawals": [
+          "admin_mobile.py:516/566"
+        ]
+      },
+      "readers": {
+        "dev_withdrawals": [
+          "server.py developer view, admin queue"
+        ],
+        "withdrawals": [
+          "admin_mobile.py only"
+        ]
+      },
+      "overlap": "zero — no path writes to both, no path reads from both"
+    }
+  },
+  "started_at": "2026-05-14T20:49:10.973497+00:00",
+  "finished_at": "2026-05-14T20:49:11.016436+00:00",
+  "cleanup": {
+    "users": 1,
+    "dev_wallets": 1,
+    "dev_withdrawals": 1,
+    "withdrawals": 1
+  }
+}

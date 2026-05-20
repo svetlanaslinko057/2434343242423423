@@ -1,0 +1,48 @@
+{
+  "summary": "Iteration 10 verification PASS on all explicit items. 7/7 new pytest cases green in /app/backend/tests/test_iteration10.py (openapi 200, AUTH_OTP_DEV_MODE dev_code, tester >=5 validations + mixed statuses, /api/tester/issues high-severity present, workspace top-level project.status, /api/estimate regression). Mobile UI confirmed on 390x844 viewport: /describe for unauthenticated visitor renders visitor-home (NOT visitor-loading); /developer/home loads with all 5 tabs (Home/Market/Work/Earnings/Profile) and no runtime errors from the hoisted tabBarIcon components; /auth shows auth-dev-code-banner with the OTP code ('DEV mode — tap to use code 333073') for new users; tester cabinet flows fully: login as tester@atlas.dev → /tester/home renders 4 stat cards + 'Open queue' CTA + 'My validations' list (2 rows) + '1 issue raised by you' footer; /tester/validations with 'All' filter shows 5 rows; tapping a row opens /tester/validation/{id} with Pass/Fail/Issues form; /tester/history shows Performance, 7-day activity chart and recent decisions.",
+  "backend_issues": {
+    "critical": [],
+    "minor": [
+      {"endpoint": "/api/tester/validation-tasks", "issue": "Seed shape differs from review_request spec. Spec said 2 mine + 1 passed + 1 failed + 1 unclaimed queue; ACTUAL seed = 5 validations ALL assigned_to=user_ef9596062219 (tester), with 2 passed instead of 1, and 0 unclaimed (so queue stat = 0). The 5-row count + status mix (pending/in_progress/passed/failed) is correct, only the queue/passed-today counts diverge from spec."},
+      {"endpoint": "/api/tester/validation/{vid}/details", "issue": "For the iter10-seeded validations work_unit is null and submission is null → UI shows 'No work unit linked.' and 'Developer has not submitted yet.' on /tester/validation/[id]. Benign visually but the page is informationally empty when seeded validations are not linked to seeded work_units/submissions."}
+    ]
+  },
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [
+      {"flow": "/tester/home tester-stat-queue & tester-stat-passed", "issue": "UI renders 0 queue and 2 passed (per backend reality), but review_request spec expected 1 queue and 1 passed. UI is correct given the data; backend seed should be tuned if the spec values matter for QA storytelling.", "affected_testIDs": ["tester-stat-queue", "tester-stat-passed"]}
+    ],
+    "design_issues": [],
+    "react_native_issues": []
+  },
+  "test_report_links": [
+    "/app/backend/tests/test_iteration10.py (7 new pytest cases, all green)",
+    "/app/test_reports/pytest/iter10.xml (junit)",
+    "/tmp/iter10_tester_home.png, /tmp/iter10_validations_all.png, /tmp/iter10_validation_detail.png, /tmp/iter10_tester_history.png, /tmp/iter10_describe.png, /tmp/iter10_dev_home.png, /tmp/iter10_devcode_banner.png"
+  ],
+  "action_items": [
+    "[OPTIONAL — spec-alignment] Tester seed inserts all 5 validation_tasks with assigned_to=tester. To match the review_request narrative ('1 unclaimed queue, 1 passed, 1 failed, 2 mine'), set one row's assigned_to=null (queue row) and reduce passed count from 2 → 1. Logic in /app/backend/server.py TESTER SEED (~line 10065).",
+    "[OPTIONAL — UX] Iter10 TESTER SEED should also insert matching work_unit + submission docs so /tester/validation/{id} details page is informationally complete (currently 'No work unit linked.' / 'Developer has not submitted yet.').",
+    "[INFO] /app/backend/tests/test_tester_surface.py is from iter 8 — its assertions of >=6 validation tasks, work_unit populated and an existing seeded issue on the in_progress row no longer hold for iter10 seed. Three tests fail there but they are STALE expectations, not real regressions. Either update those assertions or mark the file as deprecated in favor of test_iteration10.py."
+  ],
+  "critical_code_review_comments": [
+    "openapi.json fix verified: GET /openapi.json on backend now returns 200 (was 500 previously). The HTMLResponse explicit response_class on /api/contracts/{id}/html resolves the FastAPI 'A response class is needed' crash. (Note: external ingress /openapi.json returns 404 because the route is not under /api — that is by design.)",
+    "developer/_layout.tsx tabBarIcon hoist verified: /developer/home renders the 5 visible tabs (Home/Market/Work/Earnings/Profile) with no console errors. The react/no-unstable-nested-components warning is silenced.",
+    "AUTH_OTP_DEV_MODE=true confirmed in /app/backend/.env, propagating both to API (POST /api/auth/send-code returns dev_code) and UI (auth-dev-code-banner renders the code on /auth code step).",
+    "GET /api/client/project/{id}/workspace top-level project.status confirmed for proj_195594554c6d (status='active'); deposit.project_status retained for back-compat."
+  ],
+  "updated_files": [
+    "/app/backend/tests/test_iteration10.py (NEW — 7 focused regression tests for iter 10 items)",
+    "/app/test_reports/iteration_10.json (this report)",
+    "/app/test_reports/pytest/iter10.xml (junit XML)"
+  ],
+  "success_rate": {
+    "backend": "100% (7/7 new iter10 cases)",
+    "frontend": "100% on all iter10 review items (visitor /describe, dev tabs, dev-code banner, tester home/list/detail/history)"
+  },
+  "seed_data_creation": "No new seed created by tester. Verified existing TESTER SEED inserted 5 validations + 1 high-severity issue on backend startup as designed.",
+  "retest_needed": false,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "Iter 10 surfaces are stable. Re-use /app/backend/tests/test_iteration10.py as the canonical regression for this iteration. For tester UI: login via /auth (tester@atlas.dev / tester123 → password step → submit) → /tester/home (tabs at bottom: Home/Queue/History). The 'Queue' bottom tab routes to /tester/validations with default filter='queue' which appears empty because the iter10 seed has 0 unclaimed rows; click the 'All' filter chip to see all 5 rows. Validation detail page renders Pass/Fail buttons and an inline Issue-creation form. The 'Mine' filter is the natural default for activity. /openapi.json must be hit on http://localhost:8001/openapi.json (not /api/openapi.json — that's 404 by routing rules).",
+  "rca_of_issue": "All four bug-fix items in the review_request were verified resolved: (1) /openapi.json 500 fixed by explicit response_class=HTMLResponse on /api/contracts/{id}/html (legal_contract_layer.py line 660). (2) developer/_layout.tsx tabBarIcon hoist eliminated react/no-unstable-nested-components and the 5 tabs render. (3) /describe splash gate (1500ms grace + !!token guard) lets visitor-home render for unauthenticated 390x844 viewport. (4) AUTH_OTP_DEV_MODE=true makes POST /api/auth/send-code return dev_code; the /auth UI banner reads it via the response and renders auth-dev-code-banner."
+}

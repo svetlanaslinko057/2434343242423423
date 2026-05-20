@@ -1,0 +1,143 @@
+{
+  "dry_run": false,
+  "no_legacy_mirror": false,
+  "phase": "2C-B4.0.1",
+  "ran_at": "2026-05-20T14:44:48.497096+00:00",
+  "summary": [
+    {
+      "canonical": {
+        "applied": false,
+        "developer_id": "user_d700fcee8501",
+        "earned_cents": 840000,
+        "email": "alice.kim@atlas.dev",
+        "legs": [
+          "hold_escrow",
+          "release_escrow",
+          "process_payout"
+        ],
+        "paid_cents": 714000,
+        "skipped_reason": "ledger already has pool entries"
+      },
+      "developer_id": "user_d700fcee8501",
+      "email": "alice.kim@atlas.dev",
+      "legacy_mirror": {
+        "action": "no-op",
+        "applied": false
+      }
+    },
+    {
+      "canonical": {
+        "applied": false,
+        "developer_id": "user_76350462fa99",
+        "earned_cents": 710000,
+        "email": "marco.rossi@atlas.dev",
+        "legs": [
+          "hold_escrow",
+          "release_escrow",
+          "process_payout"
+        ],
+        "paid_cents": 603500,
+        "skipped_reason": "ledger already has pool entries"
+      },
+      "developer_id": "user_76350462fa99",
+      "email": "marco.rossi@atlas.dev",
+      "legacy_mirror": {
+        "action": "no-op",
+        "applied": false
+      }
+    },
+    {
+      "canonical": {
+        "applied": false,
+        "developer_id": "user_23c021f31688",
+        "earned_cents": 560000,
+        "email": "priya.shah@atlas.dev",
+        "legs": [
+          "hold_escrow",
+          "release_escrow",
+          "process_payout"
+        ],
+        "paid_cents": 476000,
+        "skipped_reason": "ledger already has pool entries"
+      },
+      "developer_id": "user_23c021f31688",
+      "email": "priya.shah@atlas.dev",
+      "legacy_mirror": {
+        "action": "no-op",
+        "applied": false
+      }
+    },
+    {
+      "canonical": {
+        "applied": false,
+        "developer_id": "user_ae7b673b75c7",
+        "earned_cents": 420000,
+        "email": "luka.horvat@atlas.dev",
+        "legs": [
+          "hold_escrow",
+          "release_escrow",
+          "process_payout"
+        ],
+        "paid_cents": 357000,
+        "skipped_reason": "ledger already has pool entries"
+      },
+      "developer_id": "user_ae7b673b75c7",
+      "email": "luka.horvat@atlas.dev",
+      "legacy_mirror": {
+        "action": "no-op",
+        "applied": false
+      }
+    },
+    {
+      "canonical": {
+        "applied": false,
+        "developer_id": "user_02ad36dd0176",
+        "earned_cents": 240000,
+        "email": "sara.chen@atlas.dev",
+        "legs": [
+          "hold_escrow",
+          "release_escrow",
+          "process_payout"
+        ],
+        "paid_cents": 204000,
+        "skipped_reason": "ledger already has pool entries"
+      },
+      "developer_id": "user_02ad36dd0176",
+      "email": "sara.chen@atlas.dev",
+      "legacy_mirror": {
+        "action": "no-op",
+        "applied": false
+      }
+    },
+    {
+      "canonical": {
+        "applied": false,
+        "developer_id": "user_9ce52986e431",
+        "earned_cents": 980000,
+        "email": "diego.silva@atlas.dev",
+        "legs": [
+          "hold_escrow",
+          "release_escrow",
+          "process_payout"
+        ],
+        "paid_cents": 833000,
+        "skipped_reason": "ledger already has pool entries"
+      },
+      "developer_id": "user_9ce52986e431",
+      "email": "diego.silva@atlas.dev",
+      "legacy_mirror": {
+        "action": "no-op",
+        "applied": false
+      }
+    }
+  ],
+  "totals": {
+    "canonical_already_done": 6,
+    "canonical_applied": 0,
+    "legacy_mirror_noop": 6,
+    "legacy_mirror_written": 0,
+    "legacy_orphan_legacy_format_preserved": 0,
+    "missing_user": 0,
+    "orphan_canary_preserved": 0
+  }
+}

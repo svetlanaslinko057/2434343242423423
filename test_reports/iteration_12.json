@@ -1,0 +1,64 @@
+{
+  "summary": "Post-redeploy validation. Backend: 12/12 pytest cases PASS (all 4 role logins, /api/integrations/manifest with transparent mock reasons, /api/web-ui/ serving CRA HTML, /api/contracts/my, /api/client/invoices with 6 invoices incl. 4 paid, /api/admin/users|team|contracts|integrations). Frontend: EVA-X welcome screen renders cleanly; /describe page renders all sequences and product-build options; client login + /client/home + /documents render WITHOUT crashes; admin login + /admin/home renders the 5-tab shell + drill-down to all 8 new screens (/admin/users, /team, /contracts, /templates, /integrations, /inbox, /marketplace, /master) — none crash, all show appropriate empty-state or mock data. HOWEVER, two integration regressions surfaced: (1) CRITICAL — runtime API client cannot authenticate after /api/auth/login: subsequent calls /api/client/invoices, /api/contracts/my, /api/admin/mobile/* return 401 from the browser even though the same endpoints work via curl with the cookie jar, because atlas_token is NEVER written to localStorage (only evax_capability_manifest_v1 was found) and the fetch wrapper appears to be sending Bearer header without cookies. This causes documents.tsx to show all 'No outstanding invoices/No payments' despite backend returning 6 invoices, and /admin/home to display 'Failed to load · Retry'. (2) The execution-console regression from iteration 11 was NOT fixed — the 6th tab is still present and overlaps with Profile.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [
+      {
+        "component": "app/admin/_layout.tsx",
+        "issue": "REGRESSION FROM ITER 11 — Extra 'execution-console' tab still rendered in admin tab bar. Tab label is glyph+text-wrap-broken ('⏷⏷execution-console'). The 8 new parity screens are hidden, only execution-console leaked. Fix: add <Tabs.Screen name='execution-console' options={{ href: null }} /> to _layout.tsx.",
+        "testID": "n/a (tab nav)",
+        "priority": "MEDIUM"
+      },
+      {
+        "component": "app/admin/home.tsx",
+        "issue": "After successful admin login, /admin/home shows 'Failed to load · Retry' card instead of the cockpit data. Root cause is the auth integration bug (see integration_issues) — api.get('/admin/mobile/home') returns 401.",
+        "testID": "admin-home-screen",
+        "priority": "HIGH"
+      },
+      {
+        "component": "app/documents.tsx",
+        "issue": "Renders empty state in all 3 sections (Signed agreements / Invoices / Payment confirmations) although backend returns 6 invoices (4 paid, 1 pending_payment, 1 draft) for client@atlas.dev. Frontend XHR observed: 401 on /api/client/invoices and 401 on /api/contracts/my. Same root cause as admin/home — auth not propagated by runtime client after /api/auth/login.",
+        "testID": "documents-screen",
+        "priority": "HIGH"
+      }
+    ],
+    "integration_issues": [
+      {
+        "flow": "Login → authenticated API calls (runtime-client shim)",
+        "issue": "CRITICAL: /api/auth/login returns 200 with full user payload but does NOT include a JWT/access_token in the body — it only sets a server cookie. The Expo runtime client (src/api.ts → runtime → fetch) appears to attach Bearer header from AsyncStorage key 'atlas_token', but that key is NEVER written by the login flow (localStorage scan after login only shows 'evax_capability_manifest_v1'). Net effect: every authenticated request from the web preview gets 401 (verified for /api/client/invoices, /api/contracts/my, /api/admin/mobile/home). Curl with -c/-b cookie jar to the same endpoints returns 200 with data, confirming backend auth + seed are healthy. Likely fixes: (a) make /api/auth/login also return access_token and have useAuth persist it as atlas_token; OR (b) make the runtime fetch include {credentials:'include'} so the cookie is sent and the Bearer fallback is no longer required for web. This single bug invalidates the user's claim that '/api/admin/mobile/* 401 only on first load before login' — in the current build it persists AFTER login too.",
+        "affected_testIDs": ["documents-screen", "admin-home-screen", "client-home-screen"]
+      }
+    ],
+    "design_issues": [
+      {
+        "screen": "admin tab bar (390px viewport)",
+        "issues": ["6th 'execution-console' tab overlaps Profile and gets truncated at right edge (same as iter 11)."]
+      }
+    ],
+    "react_native_issues": []
+  },
+  "test_report_links": [
+    "/app/backend/tests/test_iteration12_redeploy.py",
+    "/app/test_reports/pytest/iter12_redeploy.xml"
+  ],
+  "action_items": [
+    "FIX P0: After /api/auth/login the Expo runtime client must be able to authenticate. Either (a) return access_token in the login response and store it as atlas_token via useAuth, or (b) configure the runtime fetch to send credentials:'include' so the server-set cookie reaches every /api/* call. Verify by reloading /documents as client@atlas.dev — should show 4 paid invoices and 1 pending_payment.",
+    "FIX P1: Add <Tabs.Screen name='execution-console' options={{ href: null }} /> in /app/frontend/app/admin/_layout.tsx (iter 11 follow-up was missed).",
+    "FIX P2: Update the header comment in admin/_layout.tsx — it still says '4 surfaces only: Home · QA · Finance · Profile' while 5 tabs are now registered (Home/QA/Validation/Finance/Profile)."
+  ],
+  "critical_code_review_comments": [
+    "src/api.ts shim docstring (line 21) says 'Bearer token comes from the same atlas_token key in AsyncStorage' — but no codepath in the current build seems to write atlas_token at login time. Either docstring is stale or the AsyncStorage write was lost in the runtime-client migration. This is the proximate cause of the post-login 401 wall.",
+    "backend /api/auth/login returns user payload but no token. If the design intent is cookie-only auth, the runtime client MUST send credentials:'include'; if it's Bearer auth, the login endpoint MUST emit a token. The current state is broken on both axes for the Expo web preview.",
+    "/app/frontend/app/admin/_layout.tsx is the same file flagged in iter_11; the recommended one-line fix (href:null for execution-console) is still pending. Worth wrapping the file auto-detection list into a single 'hidden' array to prevent further regressions.",
+    "Integrations manifest exposes mock reasons clearly ('STRIPE_SECRET_KEY missing', 'RESEND_API_KEY missing', etc.) — good honesty pattern, no action needed; matches the user's by-design MOCK note."
+  ],
+  "updated_files": [
+    "/app/backend/tests/test_iteration12_redeploy.py (new — pytest suite for redeploy validation)"
+  ],
+  "success_rate": {"backend": "100% (12/12 pytest)", "frontend": "65% — screens render & navigation works, but post-login auth integration is broken so 3 critical surfaces (documents, /admin/home cockpit data, /client/home financials) show empty/error states"},
+  "seed_data_creation": "None. Used existing mock_seed.py data (client@atlas.dev has 6 invoices, 4 paid, 1 pending_payment, 1 draft).",
+  "retest_needed": true,
+  "should_main_agent_self_test": false,
+  "context_for_next_testing_agent": "Auth integration bug is reproducible deterministically: open the preview URL, complete the two-step /auth login as client@atlas.dev / client123, navigate to /documents — three empty cards appear. Open DevTools → Network → see 401 on /api/client/invoices. localStorage after login should contain only evax_capability_manifest_v1 (no atlas_token). Backend is healthy: same request via `curl -c jar -X POST /api/auth/login` then `curl -b jar /api/client/invoices` returns 6 invoices. Run /app/backend/tests/test_iteration12_redeploy.py via `pytest backend/tests/test_iteration12_redeploy.py -v` for the 12-case regression. Login flow is 2-step: input[type=text] for email → click 'Continue' (exact) → input[type=password] → click 'Continue to your product' (exact). Login route is /auth (not /login).",
+  "rca_of_issue": "Two unrelated bugs.\n\nBUG 1 (P0, AUTH INTEGRATION). The /api/auth/login endpoint sets an httpOnly cookie and returns a user payload with NO access_token. The Expo runtime client (src/api.ts → ./runtime) is documented to attach a Bearer header from AsyncStorage key 'atlas_token', but the login flow never writes that key (verified: localStorage after login contains only 'evax_capability_manifest_v1'). On web the underlying fetch is therefore credential-less, so the browser does not attach the cookie either, and every authenticated /api/* call returns 401. Visible symptoms: documents.tsx shows 'No outstanding invoices/No payments'; /admin/home shows 'Failed to load · Retry'; /client/home shows $0/$0/$0. Verified non-broken from server side: curl with cookie jar returns 6 invoices (4 paid) for the same client. FIX: either return access_token in login response and persist via useAuth, or set the runtime fetch to credentials:'include'.\n\nBUG 2 (P1, ADMIN TAB BAR REGRESSION). /app/frontend/app/admin/execution-console.tsx exists in the directory but has no <Tabs.Screen name='execution-console' options={{href:null}} /> entry in /app/frontend/app/admin/_layout.tsx. expo-router auto-detects the file and renders it as a 6th tab, breaking the intended 5-surface cockpit. This was raised in iter_11 and not fixed. One-line addition resolves it.\n\nPre-existing patterns the user asked to ignore (and which DID appear in console): borderColor var(--t-primary)33, shadow* deprecation, pointerEvents prop deprecation — left as-is."
+}

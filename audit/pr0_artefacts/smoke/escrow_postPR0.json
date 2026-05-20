@@ -1,0 +1,538 @@
+{
+  "run_id": "05881ed1",
+  "ids": {
+    "run_id": "05881ed1",
+    "module_id": "smoke_mod_05881ed1",
+    "client_id": "smoke_cli_05881ed1",
+    "developer_id": "smoke_dev_05881ed1",
+    "invoice_id": "smoke_inv_05881ed1",
+    "project_id": "smoke_proj_05881ed1"
+  },
+  "table": [
+    {
+      "step": "T0_seeded_pending_invoice",
+      "invoice": "pending_payment",
+      "escrow": null,
+      "locked": null,
+      "released": null,
+      "wallet_earned": null,
+      "users.total_earnings": 0.0,
+      "dev_earning_log#": 0,
+      "escrow_payouts#": 0,
+      "ledger#": 0,
+      "module_diverged": false,
+      "module_classes": []
+    },
+    {
+      "step": "T1_invoice_paid_chain_fired",
+      "invoice": "paid",
+      "escrow": "funded",
+      "locked": 1000.0,
+      "released": 0.0,
+      "wallet_earned": null,
+      "users.total_earnings": 0.0,
+      "dev_earning_log#": 0,
+      "escrow_payouts#": 0,
+      "ledger#": 0,
+      "module_diverged": true,
+      "module_classes": [
+        "ledger_missing"
+      ]
+    },
+    {
+      "step": "T2_module_done_escrow_released",
+      "invoice": "paid",
+      "escrow": "completed",
+      "locked": 0.0,
+      "released": 1000.0,
+      "wallet_earned": null,
+      "users.total_earnings": 1000.0,
+      "dev_earning_log#": 0,
+      "escrow_payouts#": 1,
+      "ledger#": 0,
+      "module_diverged": true,
+      "module_classes": [
+        "wallet_not_credited",
+        "escrow_payouts_orphan",
+        "ledger_missing"
+      ]
+    },
+    {
+      "step": "T3_final_settled_state",
+      "invoice": "paid",
+      "escrow": "completed",
+      "locked": 0.0,
+      "released": 1000.0,
+      "wallet_earned": null,
+      "users.total_earnings": 1000.0,
+      "dev_earning_log#": 0,
+      "escrow_payouts#": 1,
+      "ledger#": 0,
+      "module_diverged": true,
+      "module_classes": [
+        "wallet_not_credited",
+        "escrow_payouts_orphan",
+        "ledger_missing"
+      ]
+    }
+  ],
+  "snapshots": [
+    {
+      "step": "T0_seeded_pending_invoice",
+      "at": "2026-05-14T20:49:09.254289+00:00",
+      "raw": {
+        "invoice_status": "pending_payment",
+        "invoice_paid_at": null,
+        "invoice_settlement_escrow_id": null,
+        "escrow_status": null,
+        "escrow_locked": null,
+        "escrow_released": null,
+        "module_status": "accepted",
+        "module_escrow_status": null,
+        "wallet_earned_lifetime": null,
+        "wallet_available_balance": null,
+        "users_total_earnings": 0.0,
+        "users_escrow_earnings": 0.0,
+        "dev_earning_log_rows_for_module": 0,
+        "escrow_payouts_rows_for_module": 0,
+        "ledger_events_for_module_or_invoice": 0
+      },
+      "divergence": {
+        "module": {
+          "ok": true,
+          "classes": [],
+          "full": {
+            "module_id": "smoke_mod_05881ed1",
+            "project_id": "smoke_proj_05881ed1",
+            "module_status": "accepted",
+            "client_price": 1000.0,
+            "domains": {
+              "invoice": {
+                "paid_sum": 0.0,
+                "total_sum": 1000.0,
+                "count": 1,
+                "status_breakdown": {
+                  "pending_payment": 1
+                }
+              },
+              "escrow": {
+                "exists": false,
+                "status": null,
+                "total": 0.0,
+                "locked": 0.0,
+                "released": 0.0,
+                "refunded": 0.0
+              },
+              "wallet": {
+                "credited_sum": 0.0,
+                "log_entries": 0,
+                "developers": []
+              },
+              "audit": {
+                "escrow_payouts_sum": 0.0,
+                "escrow_payouts_count": 0,
+                "escrow_payouts_by_developer": [],
+                "ledger_events_count": 0,
+                "ledger_event_types": []
+              },
+              "frozen": {
+                "payouts_root_sum": 0.0,
+                "payouts_root_count": 0,
+                "earnings_root_sum": 0.0,
+                "earnings_root_count": 0
+              }
+            },
+            "divergences": [],
+            "ok": true,
+            "checked_at": "2026-05-14T20:49:09.249861+00:00"
+          }
+        },
+        "developer": {
+          "ok": true,
+          "classes": [],
+          "canonical": {
+            "earned_lifetime": 0.0,
+            "available_balance": 0.0,
+            "withdrawn_lifetime": 0.0,
+            "pending_withdrawal": 0.0,
+            "log_sum": 0.0,
+            "log_entries": 0
+          },
+          "audit": {
+            "escrow_payouts_sum": 0.0,
+            "escrow_payouts_count": 0
+          },
+          "legacy": {
+            "users_total_earnings": 0.0,
+            "users_escrow_earnings": 0.0
+          }
+        }
+      }
+    },
+    {
+      "step": "T1_invoice_paid_chain_fired",
+      "at": "2026-05-14T20:49:09.266502+00:00",
+      "raw": {
+        "invoice_status": "paid",
+        "invoice_paid_at": "2026-05-14T20:49:09.254307+00:00",
+        "invoice_settlement_escrow_id": null,
+        "escrow_status": "funded",
+        "escrow_locked": 1000.0,
+        "escrow_released": 0.0,
+        "module_status": "in_progress",
+        "module_escrow_status": "funded",
+        "wallet_earned_lifetime": null,
+        "wallet_available_balance": null,
+        "users_total_earnings": 0.0,
+        "users_escrow_earnings": 0.0,
+        "dev_earning_log_rows_for_module": 0,
+        "escrow_payouts_rows_for_module": 0,
+        "ledger_events_for_module_or_invoice": 0
+      },
+      "divergence": {
+        "module": {
+          "ok": false,
+          "classes": [
+            "ledger_missing"
+          ],
+          "full": {
+            "module_id": "smoke_mod_05881ed1",
+            "project_id": "smoke_proj_05881ed1",
+            "module_status": "in_progress",
+            "client_price": 1000.0,
+            "domains": {
+              "invoice": {
+                "paid_sum": 1000.0,
+                "total_sum": 1000.0,
+                "count": 1,
+                "status_breakdown": {
+                  "paid": 1
+                }
+              },
+              "escrow": {
+                "exists": true,
+                "status": "funded",
+                "total": 1000.0,
+                "locked": 1000.0,
+                "released": 0.0,
+                "refunded": 0.0
+              },
+              "wallet": {
+                "credited_sum": 0.0,
+                "log_entries": 0,
+                "developers": []
+              },
+              "audit": {
+                "escrow_payouts_sum": 0.0,
+                "escrow_payouts_count": 0,
+                "escrow_payouts_by_developer": [],
+                "ledger_events_count": 0,
+                "ledger_event_types": []
+              },
+              "frozen": {
+                "payouts_root_sum": 0.0,
+                "payouts_root_count": 0,
+                "earnings_root_sum": 0.0,
+                "earnings_root_count": 0
+              }
+            },
+            "divergences": [
+              {
+                "class": "ledger_missing",
+                "severity": "info",
+                "delta": 0.0,
+                "explanation": "Money changed for this module (invoice paid / escrow locked / released / wallet credited) but no money_ledger_events entries reference it. Audit log is incomplete — older rows predate ledger wiring."
+              }
+            ],
+            "ok": false,
+            "checked_at": "2026-05-14T20:49:09.262893+00:00"
+          }
+        },
+        "developer": {
+          "ok": true,
+          "classes": [],
+          "canonical": {
+            "earned_lifetime": 0.0,
+            "available_balance": 0.0,
+            "withdrawn_lifetime": 0.0,
+            "pending_withdrawal": 0.0,
+            "log_sum": 0.0,
+            "log_entries": 0
+          },
+          "audit": {
+            "escrow_payouts_sum": 0.0,
+            "escrow_payouts_count": 0
+          },
+          "legacy": {
+            "users_total_earnings": 0.0,
+            "users_escrow_earnings": 0.0
+          }
+        }
+      },
+      "chain_result": {
+        "linked": true,
+        "escrow_id": "esc_2c4e5a4a1aa9",
+        "funded": true
+      }
+    },
+    {
+      "step": "T2_module_done_escrow_released",
+      "at": "2026-05-14T20:49:09.276908+00:00",
+      "raw": {
+        "invoice_status": "paid",
+        "invoice_paid_at": "2026-05-14T20:49:09.254307+00:00",
+        "invoice_settlement_escrow_id": null,
+        "escrow_status": "completed",
+        "escrow_locked": 0.0,
+        "escrow_released": 1000.0,
+        "module_status": "done",
+        "module_escrow_status": "completed",
+        "wallet_earned_lifetime": null,
+        "wallet_available_balance": null,
+        "users_total_earnings": 1000.0,
+        "users_escrow_earnings": 1000.0,
+        "dev_earning_log_rows_for_module": 0,
+        "escrow_payouts_rows_for_module": 1,
+        "ledger_events_for_module_or_invoice": 0
+      },
+      "divergence": {
+        "module": {
+          "ok": false,
+          "classes": [
+            "wallet_not_credited",
+            "escrow_payouts_orphan",
+            "ledger_missing"
+          ],
+          "full": {
+            "module_id": "smoke_mod_05881ed1",
+            "project_id": "smoke_proj_05881ed1",
+            "module_status": "done",
+            "client_price": 1000.0,
+            "domains": {
+              "invoice": {
+                "paid_sum": 1000.0,
+                "total_sum": 1000.0,
+                "count": 1,
+                "status_breakdown": {
+                  "paid": 1
+                }
+              },
+              "escrow": {
+                "exists": true,
+                "status": "completed",
+                "total": 1000.0,
+                "locked": 0.0,
+                "released": 1000.0,
+                "refunded": 0.0
+              },
+              "wallet": {
+                "credited_sum": 0.0,
+                "log_entries": 0,
+                "developers": []
+              },
+              "audit": {
+                "escrow_payouts_sum": 1000.0,
+                "escrow_payouts_count": 1,
+                "escrow_payouts_by_developer": [
+                  {
+                    "developer_id": "smoke_dev_05881ed1",
+                    "amount": 1000.0
+                  }
+                ],
+                "ledger_events_count": 0,
+                "ledger_event_types": []
+              },
+              "frozen": {
+                "payouts_root_sum": 0.0,
+                "payouts_root_count": 0,
+                "earnings_root_sum": 0.0,
+                "earnings_root_count": 0
+              }
+            },
+            "divergences": [
+              {
+                "class": "wallet_not_credited",
+                "severity": "error",
+                "delta": 1000.0,
+                "explanation": "Escrow released $1000.00 but dev_earning_log has no entries for this module. _credit_module_reward did not fire OR the dev_earning_log idempotency guard short-circuited against a stale row."
+              },
+              {
+                "class": "escrow_payouts_orphan",
+                "severity": "error",
+                "delta": 1000.0,
+                "explanation": "escrow_payouts records exist ($1000.00) but dev_earning_log is empty. escrow_layer.release_escrow ran without the parallel _credit_module_reward path. This is the structural S-1 evidence: two writers, one ran, the other did not."
+              },
+              {
+                "class": "ledger_missing",
+                "severity": "info",
+                "delta": 0.0,
+                "explanation": "Money changed for this module (invoice paid / escrow locked / released / wallet credited) but no money_ledger_events entries reference it. Audit log is incomplete — older rows predate ledger wiring."
+              }
+            ],
+            "ok": false,
+            "checked_at": "2026-05-14T20:49:09.273683+00:00"
+          }
+        },
+        "developer": {
+          "ok": false,
+          "classes": [
+            "legacy_drift_total_earnings",
+            "escrow_payouts_orphan_dev"
+          ],
+          "canonical": {
+            "earned_lifetime": 0.0,
+            "available_balance": 0.0,
+            "withdrawn_lifetime": 0.0,
+            "pending_withdrawal": 0.0,
+            "log_sum": 0.0,
+            "log_entries": 0
+          },
+          "audit": {
+            "escrow_payouts_sum": 1000.0,
+            "escrow_payouts_count": 1
+          },
+          "legacy": {
+            "users_total_earnings": 1000.0,
+            "users_escrow_earnings": 1000.0
+          }
+        }
+      },
+      "release_result": {
+        "released": true,
+        "release_total": 1000.0,
+        "payouts_count": 1
+      }
+    },
+    {
+      "step": "T3_final_settled_state",
+      "at": "2026-05-14T20:49:09.282959+00:00",
+      "raw": {
+        "invoice_status": "paid",
+        "invoice_paid_at": "2026-05-14T20:49:09.254307+00:00",
+        "invoice_settlement_escrow_id": null,
+        "escrow_status": "completed",
+        "escrow_locked": 0.0,
+        "escrow_released": 1000.0,
+        "module_status": "done",
+        "module_escrow_status": "completed",
+        "wallet_earned_lifetime": null,
+        "wallet_available_balance": null,
+        "users_total_earnings": 1000.0,
+        "users_escrow_earnings": 1000.0,
+        "dev_earning_log_rows_for_module": 0,
+        "escrow_payouts_rows_for_module": 1,
+        "ledger_events_for_module_or_invoice": 0
+      },
+      "divergence": {
+        "module": {
+          "ok": false,
+          "classes": [
+            "wallet_not_credited",
+            "escrow_payouts_orphan",
+            "ledger_missing"
+          ],
+          "full": {
+            "module_id": "smoke_mod_05881ed1",
+            "project_id": "smoke_proj_05881ed1",
+            "module_status": "done",
+            "client_price": 1000.0,
+            "domains": {
+              "invoice": {
+                "paid_sum": 1000.0,
+                "total_sum": 1000.0,
+                "count": 1,
+                "status_breakdown": {
+                  "paid": 1
+                }
+              },
+              "escrow": {
+                "exists": true,
+                "status": "completed",
+                "total": 1000.0,
+                "locked": 0.0,
+                "released": 1000.0,
+                "refunded": 0.0
+              },
+              "wallet": {
+                "credited_sum": 0.0,
+                "log_entries": 0,
+                "developers": []
+              },
+              "audit": {
+                "escrow_payouts_sum": 1000.0,
+                "escrow_payouts_count": 1,
+                "escrow_payouts_by_developer": [
+                  {
+                    "developer_id": "smoke_dev_05881ed1",
+                    "amount": 1000.0
+                  }
+                ],
+                "ledger_events_count": 0,
+                "ledger_event_types": []
+              },
+              "frozen": {
+                "payouts_root_sum": 0.0,
+                "payouts_root_count": 0,
+                "earnings_root_sum": 0.0,
+                "earnings_root_count": 0
+              }
+            },
+            "divergences": [
+              {
+                "class": "wallet_not_credited",
+                "severity": "error",
+                "delta": 1000.0,
+                "explanation": "Escrow released $1000.00 but dev_earning_log has no entries for this module. _credit_module_reward did not fire OR the dev_earning_log idempotency guard short-circuited against a stale row."
+              },
+              {
+                "class": "escrow_payouts_orphan",
+                "severity": "error",
+                "delta": 1000.0,
+                "explanation": "escrow_payouts records exist ($1000.00) but dev_earning_log is empty. escrow_layer.release_escrow ran without the parallel _credit_module_reward path. This is the structural S-1 evidence: two writers, one ran, the other did not."
+              },
+              {
+                "class": "ledger_missing",
+                "severity": "info",
+                "delta": 0.0,
+                "explanation": "Money changed for this module (invoice paid / escrow locked / released / wallet credited) but no money_ledger_events entries reference it. Audit log is incomplete — older rows predate ledger wiring."
+              }
+            ],
+            "ok": false,
+            "checked_at": "2026-05-14T20:49:09.279409+00:00"
+          }
+        },
+        "developer": {
+          "ok": false,
+          "classes": [
+            "legacy_drift_total_earnings",
+            "escrow_payouts_orphan_dev"
+          ],
+          "canonical": {
+            "earned_lifetime": 0.0,
+            "available_balance": 0.0,
+            "withdrawn_lifetime": 0.0,
+            "pending_withdrawal": 0.0,
+            "log_sum": 0.0,
+            "log_entries": 0
+          },
+          "audit": {
+            "escrow_payouts_sum": 1000.0,
+            "escrow_payouts_count": 1
+          },
+          "legacy": {
+            "users_total_earnings": 1000.0,
+            "users_escrow_earnings": 1000.0
+          }
+        }
+      }
+    }
+  ],
+  "started_at": "2026-05-14T20:49:09.254289+00:00",
+  "finished_at": "2026-05-14T20:49:09.282959+00:00",
+  "cleanup": {
+    "modules": 1,
+    "users": 2,
+    "invoices": 1,
+    "module_assignments": 1
+  }
+}

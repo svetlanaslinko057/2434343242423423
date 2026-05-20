@@ -1,0 +1,97 @@
+{
+  "pilot": "p1_admin_finance",
+  "description": "Pilot #1 \u2014 admin finance / earnings",
+  "role": "admin",
+  "url": "https://681ec133-7045-47dc-8d28-9f6ca9049c50.preview.emergentagent.com/api/web-ui/admin/earnings-control",
+  "nav_status": "ok",
+  "api_calls": [
+    {
+      "method": "GET",
+      "url": "/api/web-ui/admin/earnings-control",
+      "status": 200,
+      "request_id": "a4adc60f82aa4947",
+      "compat": null,
+      "canonical": null
+    },
+    {
+      "method": "GET",
+      "url": "/api/web-ui/static/css/main.84cac008.css",
+      "status": 200,
+      "request_id": "284ecfac42744a8b",
+      "compat": null,
+      "canonical": null
+    },
+    {
+      "method": "GET",
+      "url": "/api/web-ui/static/js/main.34198410.js",
+      "status": 200,
+      "request_id": "e58ee4ed85dc4feb",
+      "compat": null,
+      "canonical": null
+    },
+    {
+      "method": "GET",
+      "url": "/api/integrations/manifest",
+      "status": 200,
+      "request_id": "072fe22033d0450a",
+      "compat": null,
+      "canonical": null
+    },
+    {
+      "method": "GET",
+      "url": "/api/auth/me",
+      "status": 200,
+      "request_id": "1db962cec7274b73",
+      "compat": null,
+      "canonical": null
+    },
+    {
+      "method": "GET",
+      "url": "/api/web-ui/evax-logo-light.png",
+      "status": 200,
+      "request_id": "73b80f52bbe94c7a",
+      "compat": null,
+      "canonical": null
+    },
+    {
+      "method": "GET",
+      "url": "/api/notifications/unread-count",
+      "status": 200,
+      "request_id": "2cf6366a5304497a",
+      "compat": null,
+      "canonical": null
+    },
+    {
+      "method": "GET",
+      "url": "/api/admin/mobile/finance",
+      "status": 200,
+      "request_id": "4ce7dcfdc1e24e2a",
+      "compat": null,
+      "canonical": null
+    }
+  ],
+  "console": [
+    {
+      "type": "error",
+      "text": "WebSocket connection to 'wss://681ec133-7045-47dc-8d28-9f6ca9049c50.preview.emergentagent.com/socket.io/?EIO=4&transport=websocket' failed: Error during WebSocket handshake: Unexpected response code: 502",
+      "kind": "error"
+    },
+    {
+      "type": "log",
+      "text": "[Socket] Connection error: websocket error",
+      "kind": "error"
+    },
+    {
+      "type": "error",
+      "text": "WebSocket connection to 'wss://681ec133-7045-47dc-8d28-9f6ca9049c50.preview.emergentagent.com/socket.io/?EIO=4&transport=websocket' failed: Error during WebSocket handshake: Unexpected response code: 502",
+      "kind": "error"
+    },
+    {
+      "type": "log",
+      "text": "[Socket] Connection error: websocket error",
+      "kind": "error"
+    }
+  ],
+  "pageerrors": [],
+  "screenshot": "/app/audit/baseline/p1_admin_finance.jpg"
+}

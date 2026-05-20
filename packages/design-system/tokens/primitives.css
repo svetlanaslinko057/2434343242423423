@@ -1,0 +1,76 @@
+/* ============================================================
+ * primitives.css — semantic utility classes that pages can opt into.
+ *
+ * Phase 1.5 introductions:
+ *   1. `.ds-mono`     — operational telemetry typography (IDs, timestamps,
+ *                       counters, currency columns, sequence labels, chain IDs,
+ *                       compact metrics). NOT for descriptive numbers, hero
+ *                       stats, marketing copy.
+ *   2. `.ds-display`  — Space Grotesk display headings (used sparingly).
+ *   3. Override layer — Tailwind `text-red-*` and `text-yellow-*` utilities
+ *                       are remapped to the operational palette so loud
+ *                       alarm text on the dense substrate becomes restrained
+ *                       oxide / muted ochre. `bg-red-*` and `bg-yellow-*` are
+ *                       INTENTIONALLY left alone — status badges still need
+ *                       a louder voice than running text.
+ *
+ * These rules live OUTSIDE palette/semantic/spacing/typography because they
+ * are application-of-tokens, not declaration-of-tokens. Removal of the
+ * Tailwind override layer is part of Phase 3 cleanup (once codemod replaces
+ * raw color utilities with semantic class names).
+ * ============================================================ */
+
+/* ----- Operational telemetry typography ----------------------------------- */
+.ds-mono,
+.ds-mono * {
+  font-family: var(--ds-font-mono);
+  font-variant-numeric: tabular-nums lining-nums;
+  letter-spacing: 0;
+}
+
+/* ----- Display headings (intentional, sparing use) ------------------------ */
+.ds-display {
+  font-family: var(--ds-font-display);
+  letter-spacing: var(--ds-tracking-display);
+  font-weight: var(--ds-weight-semibold);
+}
+
+/* ============================================================
+ * Tailwind text-red / text-yellow remap.
+ *
+ * Per Phase 1.5 architectural decision: bright Tailwind red (#EF4444 etc.)
+ * and Tailwind yellow (#EAB308 etc.) used on inline TEXT collide with the
+ * operational graphite-and-paper substrate. They read as "dashboard alarm"
+ * inside surfaces designed for observation, not incident response. We remap
+ * inline text only — backgrounds and borders keep their loud identity for
+ * status badges.
+ *
+ * `!important` here is intentional and minimal: Tailwind utility classes
+ * win specificity by being late in the cascade. Without `!important`, our
+ * remap would lose to Tailwind's own utility output.
+ * ============================================================ */
+
+.text-red-300,
+.text-red-400,
+.text-red-500,
+.text-red-600,
+.text-red-700  { color: var(--t-danger)  !important; }
+
+.text-yellow-300,
+.text-yellow-400,
+.text-yellow-500,
+.text-yellow-600,
+.text-yellow-700,
+.text-amber-300,
+.text-amber-400,
+.text-amber-500,
+.text-amber-600 { color: var(--t-warning) !important; }
+
+/* ============================================================
+ * Inline-style escape hatch — last-line defense against literals that
+ * still survived the palette consolidation. Use only when a page sets
+ * `style={{color:'#EF4444'}}` directly. We can't intercept inline styles
+ * cleanly via CSS; this targets the FEW known offenders by class hook.
+ * Add `data-danger-text` or `data-warn-text` data attributes during
+ * Phase 3 cleanup if needed. Empty by default — extension point only.
+ * ============================================================ */
